@@ -1,0 +1,73 @@
+{# Rendered once per language by styleguide.index. Ids are suffixed with the
+   locale so both copies can sit on one page. #}
+<div class="mt-4 space-y-8">
+  <section>
+    <h3 class="font-bold">{{ _("Buttons") }}</h3>
+    <div class="mt-2 flex flex-wrap gap-2">
+      {{ ui.button(_("Save my farm"), type="button") }}
+      {{ ui.button(_("Ask an expert"), "secondary", type="button", icon_name="phone") }}
+    </div>
+  </section>
+
+  <section>
+    <h3 class="font-bold">{{ _("Verdict pills") }}</h3>
+    <div class="mt-2 flex flex-wrap gap-2">
+      {{ ui.verdict_pill("good") }}
+      {{ ui.verdict_pill("warning") }}
+      {{ ui.verdict_pill("critical") }}
+      {{ ui.verdict_pill("good", _("Spray")) }}
+    </div>
+  </section>
+
+  <section>
+    <h3 class="font-bold">{{ _("Confidence badges") }}</h3>
+    <div class="mt-2 flex flex-wrap gap-2">
+      {{ ui.confidence_badge("high") }}
+      {{ ui.confidence_badge("medium") }}
+      {{ ui.confidence_badge("low") }}
+    </div>
+  </section>
+
+  <section>
+    <h3 class="font-bold">{{ _("Result card") }}</h3>
+    <div class="mt-2">
+      {% call ui.result_card(_("Sample result"), trust, share_text=_("Sample result from AgriSense. Not advice.")) %}
+        <p>{{ _("The answer itself goes here: a number, bags or a verdict.") }}</p>
+      {% endcall %}
+    </div>
+  </section>
+
+  <section>
+    <h3 class="font-bold">{{ _("Bag icons") }}</h3>
+    <div class="mt-2 space-y-4">
+      {{ ui.bag_icons(3.5, _("Product A"), bag_kg=45) }}
+      {{ ui.bag_icons(15, _("Product B")) }}
+    </div>
+  </section>
+
+  <section>
+    <h3 class="font-bold">{{ _("Number with unit") }}</h3>
+    <div class="mt-2 space-y-4">
+      {{ ui.number_input("area-" ~ locale_code, _("Field area"), area_units, "area_unit", value="2.5", unit_value="acre") }}
+      {{ ui.number_input("qty-" ~ locale_code, _("Quantity"), weight_units, "qty_unit", unit_value="quintal",
+           error=_("Enter a number, like 12 or 12.5.")) }}
+    </div>
+  </section>
+
+  <section>
+    <h3 class="font-bold">{{ _("Text field") }}</h3>
+    <div class="mt-2 space-y-4">
+      {{ ui.field("phone-" ~ locale_code, _("Mobile number"), type="tel", inputmode="numeric", required=False) }}
+      {{ ui.field("pin-" ~ locale_code, _("PIN"), type="password", required=False, error=_("The PIN must be exactly 4 digits.")) }}
+    </div>
+  </section>
+
+  <section>
+    <h3 class="font-bold">{{ _("Crop names") }}</h3>
+    <ul class="mt-2 flex flex-wrap gap-2">
+      {% for code in ["wheat", "paddy", "mustard", "potato", "sugarcane"] %}
+      <li class="rounded-lg border border-line-soft bg-surface px-3 py-1">{{ crop_name(code) }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>

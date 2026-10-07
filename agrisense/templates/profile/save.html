@@ -1,30 +1,26 @@
 {% extends "base.html" %}
 {% block title %}{{ _("Save my farm") }} · {{ _("AgriSense") }}{% endblock %}
 {% block content %}
-  <h1>{{ _("Save my farm") }}</h1>
+  {% set heading, intro = _("Save my farm"), _("Use your mobile number and a 4-digit PIN to open your farm on any phone.") %}
+  {% include "_page_head.html" %}
   {% include "profile/_error.html" %}
-  <form method="post">
+  <form method="post" class="mt-6 space-y-5">
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-    <label for="phone">{{ _("Mobile number") }}</label>
-    <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required>
-
-    <label for="pin">{{ _("Choose a 4-digit PIN") }}</label>
-    <input id="pin" name="pin" type="password" inputmode="numeric" maxlength="4" autocomplete="new-password" required>
-
-    <label for="pin_confirm">{{ _("Enter the PIN again") }}</label>
-    <input id="pin_confirm" name="pin_confirm" type="password" inputmode="numeric" maxlength="4" autocomplete="new-password" required>
+    {{ ui.field("phone", _("Mobile number"), type="tel", inputmode="numeric", autocomplete="tel") }}
+    {{ ui.field("pin", _("Choose a 4-digit PIN"), type="password", inputmode="numeric", autocomplete="new-password", maxlength=4, hint=_("Avoid easy PINs like 1111 or 1234.")) }}
+    {{ ui.field("pin_confirm", _("Enter the PIN again"), type="password", inputmode="numeric", autocomplete="new-password", maxlength=4) }}
 
     {# TODO(Section 4): final consent text, reviewed against DPDP Act 2023 with faculty. #}
-    <section aria-labelledby="consent-heading">
-      <h2 id="consent-heading">{{ _("What we keep") }}</h2>
-      <p>{{ _("We keep a scrambled form of your mobile number (we cannot read it back), your PIN in scrambled form, and the farm details you enter. We use them only to show your farm's advice. We don't sell or share them, and we never send you messages.") }}</p>
+    <section aria-labelledby="consent-heading" class="rounded-card border border-line-soft bg-surface-2 p-4">
+      <h2 id="consent-heading" class="font-bold">{{ _("What we keep") }}</h2>
+      <p class="mt-1 text-base">{{ _("We keep a scrambled form of your mobile number (we cannot read it back), your PIN in scrambled form, and the farm details you enter. We use them only to show your farm's advice. We don't sell or share them, and we never send you messages.") }}</p>
+      <label class="mt-3 flex min-h-tap cursor-pointer items-center gap-3 font-bold">
+        <input type="checkbox" name="consent" value="yes" required class="size-6 accent-accent">
+        <span>{{ _("I agree") }}</span>
+      </label>
     </section>
-    <label>
-      <input type="checkbox" name="consent" value="yes" required>
-      {{ _("I agree") }}
-    </label>
 
-    <button type="submit">{{ _("Save my farm") }}</button>
+    {{ ui.button(_("Save my farm")) }}
   </form>
-  <p><a href="{{ url_for('profile.login') }}">{{ _("Already saved? Log in") }}</a></p>
+  <p class="mt-6"><a href="{{ url_for('profile.login') }}" class="inline-flex min-h-tap items-center font-bold">{{ _("Already saved? Log in") }}</a></p>
 {% endblock %}

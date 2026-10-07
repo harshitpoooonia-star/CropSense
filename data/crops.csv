@@ -1,0 +1,27 @@
+code,name_en,name_hi,dataset_label
+wheat,Wheat,गेहूँ,
+paddy,Paddy,धान,rice
+mustard,Mustard,सरसों,
+potato,Potato,आलू,
+sugarcane,Sugarcane,गन्ना,
+maize,Maize,मक्का,maize
+chickpea,Chickpea,चना,chickpea
+kidneybeans,Kidney beans,राजमा,kidneybeans
+pigeonpeas,Pigeon pea,अरहर,pigeonpeas
+mothbeans,Moth bean,मोठ,mothbeans
+mungbean,Moong,मूँग,mungbean
+blackgram,Urad,उड़द,blackgram
+lentil,Lentil,मसूर,lentil
+pomegranate,Pomegranate,अनार,pomegranate
+banana,Banana,केला,banana
+mango,Mango,आम,mango
+grapes,Grapes,अंगूर,grapes
+watermelon,Watermelon,तरबूज़,watermelon
+muskmelon,Muskmelon,खरबूज़ा,muskmelon
+apple,Apple,सेब,apple
+orange,Orange,संतरा,orange
+papaya,Papaya,पपीता,papaya
+coconut,Coconut,नारियल,coconut
+cotton,Cotton,कपास,cotton
+jute,Jute,जूट,jute
+coffee,Coffee,कॉफ़ी,coffee

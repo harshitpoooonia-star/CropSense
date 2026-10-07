@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Field") }} · {{ _("AgriSense") }}{% endblock %}
+{% block content %}
+  {% set heading, intro = _("Your field"), _("Location, area, irrigation and soil card, entered once for every tool.") %}
+  {% include "_page_head.html" %}
+  {% set links = [
+    (url_for("field.index"), "field", _("Farm profile"), _("Set up in Section 4.")),
+    (url_for("weather.index"), "today", _("Spray and irrigation"), None),
+    (url_for("fertilizer.index"), "bag", _("Fertilizer for this field"), None),
+  ] %}
+  {% include "_link_list.html" %}
+{% endblock %}
