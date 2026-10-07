@@ -1,0 +1,7 @@
+# Legacy 1.x model training (train.py, predict.py). Section 5 retrains without PCA
+# and updates these pins; the 1.x pins have no Python 3.14 wheels.
+numpy==2.2.5
+pandas==2.2.3
+scikit-learn==1.6.1
+scipy==1.15.2
+joblib==1.4.2

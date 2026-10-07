@@ -1,11 +1,15 @@
-Flask==3.1.0
+# Runtime dependencies (Section 2). ML packages live in requirements-ml.txt until Section 5.
+alembic==1.20.0
+babel==2.18.0
+Flask==3.1.3
+flask-babel==4.0.0
+Flask-Migrate==4.1.0
 Flask-SQLAlchemy==3.1.1
-SQLAlchemy==2.0.40
-Werkzeug==3.1.3
+Flask-WTF==1.3.0
+gunicorn==26.2.0
 Jinja2==3.1.6
-numpy==2.2.5
-pandas==2.2.3
-scikit-learn==1.6.1
-scipy==1.15.2
-joblib==1.4.2
-gunicorn==23.0.0
+psycopg==3.3.6
+psycopg-binary==3.3.6
+SQLAlchemy==2.1.3
+Werkzeug==3.1.9
+WTForms==3.2.2

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Set a new PIN") }} · {{ _("AgriSense") }}{% endblock %}
+{% block content %}
+  <h1>{{ _("Set a new PIN") }}</h1>
+  {% include "profile/_error.html" %}
+  <form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label for="phone">{{ _("Mobile number") }}</label>
+    <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required>
+
+    <label for="code">{{ _("Reset code from your helper") }}</label>
+    <input id="code" name="code" inputmode="numeric" maxlength="6" autocomplete="one-time-code" required>
+
+    <label for="pin">{{ _("New 4-digit PIN") }}</label>
+    <input id="pin" name="pin" type="password" inputmode="numeric" maxlength="4" autocomplete="new-password" required>
+
+    <label for="pin_confirm">{{ _("Enter the PIN again") }}</label>
+    <input id="pin_confirm" name="pin_confirm" type="password" inputmode="numeric" maxlength="4" autocomplete="new-password" required>
+
+    <button type="submit">{{ _("Set new PIN") }}</button>
+  </form>
+{% endblock %}
