@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Style guide") }} · {{ _("AgriSense") }}{% endblock %}
+{% block content %}
+  {% set heading, intro = _("Style guide"), _("Every component in Hindi and English. Sample data only, not advice.") %}
+  {% include "_page_head.html" %}
+  {% for code, html in panels %}
+  <section lang="{{ code }}" class="mt-8 border-t-4 border-soil pt-4" aria-labelledby="sg-{{ code }}">
+    <h2 id="sg-{{ code }}" class="text-xl font-bold">{{ code }}</h2>
+    {{ html }}
+  </section>
+  {% endfor %}
+{% endblock %}

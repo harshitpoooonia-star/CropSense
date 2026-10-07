@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block title %}{{ title }} · {{ _("AgriSense") }}{% endblock %}
 {% block content %}
-  <h1>{{ title }}</h1>
-  <p>{{ _("This tool is being built (Section %(n)s). It will work without an account.", n=section) }}</p>
+  {% set heading, intro = title, None %}
+  {% include "_page_head.html" %}
+  <p class="mt-6 flex gap-3 rounded-card border border-line-soft bg-surface p-4">
+    {{ ui.icon("info", "mt-1 size-6 text-ink-muted") }}
+    <span>{{ _("This tool is being built (Section %(n)s). It will work without an account.", n=section) }}</span>
+  </p>
 {% endblock %}

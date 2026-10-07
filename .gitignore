@@ -222,3 +222,5 @@ __marimo__/
 # AgriSense 2.0
 *.db
 data/raw/
+.tools/
+tests/artifacts/

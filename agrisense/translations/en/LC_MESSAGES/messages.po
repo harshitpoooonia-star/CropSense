@@ -1,0 +1,419 @@
+# English translations for AgriSense.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the AgriSense project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: AgriSense VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-08 05:14+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#, python-format
+msgid "%(count)s bags of %(product)s"
+msgstr ""
+
+#, python-format
+msgid "%(kg)s kg per bag"
+msgstr ""
+
+msgid "AgriSense"
+msgstr ""
+
+msgid "Already saved? Log in"
+msgstr ""
+
+msgid "Answers for your own farm, with the reason and the source shown. No sign-up needed."
+msgstr ""
+
+msgid "Ask an expert"
+msgstr ""
+
+msgid "Avoid easy PINs like 1111 or 1234."
+msgstr ""
+
+msgid "Bag icons"
+msgstr ""
+
+msgid "Buttons"
+msgstr ""
+
+msgid "Call now"
+msgstr ""
+
+msgid "Careful"
+msgstr ""
+
+msgid "Check a price"
+msgstr ""
+
+msgid "Choose a 4-digit PIN"
+msgstr ""
+
+msgid "Compare crops by likely profit for your field this season."
+msgstr ""
+
+msgid "Confidence badges"
+msgstr ""
+
+msgid "Contacts for Gautam Buddh Nagar and Bulandshahr KVKs are being checked and will appear here."
+msgstr ""
+
+msgid "Crop Planner"
+msgstr ""
+
+msgid "Crop names"
+msgstr ""
+
+msgid "Daily mandi price changes arrive in Section 7."
+msgstr ""
+
+msgid "Don't"
+msgstr ""
+
+msgid "Enter a 10-digit mobile number."
+msgstr ""
+
+msgid "Enter a number, like 12 or 12.5."
+msgstr ""
+
+msgid "Enter the PIN again"
+msgstr ""
+
+#, python-format
+msgid "Estimated, not measured: %(fields)s"
+msgstr ""
+
+msgid "Every component in Hindi and English. Sample data only, not advice."
+msgstr ""
+
+msgid "Farm profile"
+msgstr ""
+
+msgid "Farmer's mobile number"
+msgstr ""
+
+msgid "Fertilizer Calculator"
+msgstr ""
+
+msgid "Fertilizer for this field"
+msgstr ""
+
+msgid "Field"
+msgstr ""
+
+msgid "Field area"
+msgstr ""
+
+msgid "Find a scheme"
+msgstr ""
+
+msgid "Forgot your PIN? Ask your KVK or FPO helper for a reset code."
+msgstr ""
+
+msgid "Free call. Answers in Hindi and other languages."
+msgstr ""
+
+msgid "From sowing to selling: the right call for your field."
+msgstr ""
+
+msgid "Get reset code"
+msgstr ""
+
+#, python-format
+msgid "Give this code to the farmer in person. It works once, for %(minutes)s minutes."
+msgstr ""
+
+msgid "Good"
+msgstr ""
+
+msgid "High confidence"
+msgstr ""
+
+msgid "I agree"
+msgstr ""
+
+msgid "I have a reset code"
+msgstr ""
+
+msgid "KVK and Kisan Call Centre"
+msgstr ""
+
+msgid "Keep your farm on this and other phones"
+msgstr ""
+
+msgid "Kisan Call Centre"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Location, area, irrigation and soil card, entered once for every tool."
+msgstr ""
+
+msgid "Log in"
+msgstr ""
+
+msgid "Log out"
+msgstr ""
+
+msgid "Low confidence"
+msgstr ""
+
+msgid "Main"
+msgstr ""
+
+msgid "Mandi Prices"
+msgstr ""
+
+msgid "Market"
+msgstr ""
+
+msgid "Medium confidence"
+msgstr ""
+
+msgid "Mobile number"
+msgstr ""
+
+msgid "More"
+msgstr ""
+
+msgid "New 4-digit PIN"
+msgstr ""
+
+msgid "Nobody pays us to recommend anything, so every answer is for you."
+msgstr ""
+
+msgid "Number with unit"
+msgstr ""
+
+msgid "Only a helper can do this."
+msgstr ""
+
+msgid "Only do this after confirming, face to face, that the farmer owns this number."
+msgstr ""
+
+msgid "PIN"
+msgstr ""
+
+msgid "Plan"
+msgstr ""
+
+msgid "Plan a crop"
+msgstr ""
+
+msgid "Please read and accept the consent text to save your farm."
+msgstr ""
+
+msgid "Prices for your crops"
+msgstr ""
+
+msgid "Product A"
+msgstr ""
+
+msgid "Product B"
+msgstr ""
+
+msgid "Quantity"
+msgstr ""
+
+msgid "Reset a farmer's PIN"
+msgstr ""
+
+msgid "Reset code from your helper"
+msgstr ""
+
+msgid "Result card"
+msgstr ""
+
+msgid "Sample reason: each one is a plain sentence."
+msgstr ""
+
+msgid "Sample reason: this is where the 2-3 factors behind an answer go."
+msgstr ""
+
+msgid "Sample result"
+msgstr ""
+
+msgid "Sample result from AgriSense. Not advice."
+msgstr ""
+
+msgid "Save my farm"
+msgstr ""
+
+msgid "Scheme Finder"
+msgstr ""
+
+msgid "Scheme deadlines"
+msgstr ""
+
+msgid "See if a trader's offer is fair against today's mandi rates."
+msgstr ""
+
+msgid "See which government schemes you may qualify for, and the papers to carry."
+msgstr ""
+
+msgid "Set a new PIN"
+msgstr ""
+
+msgid "Set new PIN"
+msgstr ""
+
+msgid "Set up in Section 4."
+msgstr ""
+
+msgid "Share on WhatsApp"
+msgstr ""
+
+msgid "Skip to content"
+msgstr ""
+
+msgid "Source:"
+msgstr ""
+
+msgid "Spray"
+msgstr ""
+
+msgid "Spray & Irrigation Advisor"
+msgstr ""
+
+msgid "Spray and irrigation"
+msgstr ""
+
+msgid "Spray or water?"
+msgstr ""
+
+msgid "Start here"
+msgstr ""
+
+msgid "Style guide"
+msgstr ""
+
+msgid "Text field"
+msgstr ""
+
+msgid "The 3-day verdict for your field arrives in Section 8."
+msgstr ""
+
+msgid "The PIN must be exactly 4 digits."
+msgstr ""
+
+msgid "The answer itself goes here: a number, bags or a verdict."
+msgstr ""
+
+msgid "The code is wrong or has expired. Ask your helper for a new one."
+msgstr ""
+
+msgid "The nearest deadline arrives in Section 9."
+msgstr ""
+
+msgid "The two PINs don't match."
+msgstr ""
+
+msgid "There is no saved farm for this number."
+msgstr ""
+
+msgid "This PIN is too easy to guess. Avoid PINs like 1111 or 1234."
+msgstr ""
+
+msgid "This number already has a saved farm. Log in instead."
+msgstr ""
+
+#, python-format
+msgid "This tool is being built (Section %(n)s). It will work without an account."
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "Too many tries. Wait 15 minutes and try again."
+msgstr ""
+
+msgid "Unit"
+msgstr ""
+
+msgid "Use the 6-digit code your helper gave you."
+msgstr ""
+
+msgid "Use your mobile number and a 4-digit PIN to open your farm on any phone."
+msgstr ""
+
+msgid "Verdict pills"
+msgstr ""
+
+msgid "Want your farm remembered on this phone and others?"
+msgstr ""
+
+msgid "We don't sell seeds or sprays."
+msgstr ""
+
+msgid ""
+"We keep a scrambled form of your mobile number (we cannot read it back), your PIN in scrambled "
+"form, and the farm details you enter. We use them only to show your farm's advice. We don't sell "
+"or share them, and we never send you messages."
+msgstr ""
+
+msgid "What needs a decision on your farm today."
+msgstr ""
+
+msgid "What we keep"
+msgstr ""
+
+msgid "When an answer here is unsure, or you want a person to check it, call a free government helpline."
+msgstr ""
+
+msgid "Why"
+msgstr ""
+
+msgid "Wrong mobile number or PIN."
+msgstr ""
+
+msgid "You can't reset your own PIN here."
+msgstr ""
+
+msgid "Your district KVK"
+msgstr ""
+
+msgid "Your farm is saved."
+msgstr ""
+
+msgid "Your field"
+msgstr ""
+
+msgid "Your new PIN is set."
+msgstr ""
+
+msgid "acre"
+msgstr ""
+
+#, python-format
+msgid "bags of %(product)s"
+msgstr ""
+
+msgid "bigha"
+msgstr ""
+
+msgid "hectare"
+msgstr ""
+
+msgid "kg"
+msgstr ""
+
+msgid "quintal"
+msgstr ""
+
+msgid "soil nitrogen"
+msgstr ""
+
+msgid "your soil card"
+msgstr ""
+

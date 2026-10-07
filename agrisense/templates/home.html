@@ -1,13 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>{{ _("Farm decisions that sell you nothing.") }}</h1>
-  <p>{{ _("We don't sell seeds or sprays.") }}</p>
-  <ul>
-    <li><a href="{{ url_for('planner.index') }}">{{ _("Plan a crop") }}</a></li>
-    <li><a href="{{ url_for('market.index') }}">{{ _("Check a price") }}</a></li>
-    <li><a href="{{ url_for('schemes.index') }}">{{ _("Find a scheme") }}</a></li>
-  </ul>
+  <section class="-mx-4 -mt-4 bg-surface px-4 pb-0 pt-6">
+    <h1 class="text-[1.75rem] font-bold leading-tight text-ink">{{ _("From sowing to selling: the right call for your field.") }}</h1>
+    <p class="mt-3 text-ink-muted">{{ _("Answers for your own farm, with the reason and the source shown. No sign-up needed.") }}</p>
+    {# Soil horizons: the one decorative element on the page. Pure CSS, no image. #}
+    <div class="-mx-4 mt-6" aria-hidden="true">
+      <div class="h-1.5 bg-accent"></div>
+      <div class="h-2 bg-soil-soft"></div>
+      <div class="h-3 bg-soil"></div>
+      <div class="h-4 bg-ink"></div>
+    </div>
+  </section>
+
+  <nav aria-label="{{ _('Start here') }}" class="mt-6">
+    <ul class="space-y-3">
+      {% for endpoint, icon_name, title, outcome in [
+        ("planner.index", "plan", _("Plan a crop"), _("Compare crops by likely profit for your field this season.")),
+        ("market.index", "market", _("Check a price"), _("See if a trader's offer is fair against today's mandi rates.")),
+        ("schemes.index", "scheme", _("Find a scheme"), _("See which government schemes you may qualify for, and the papers to carry.")),
+      ] %}
+      <li>
+        <a href="{{ url_for(endpoint) }}"
+           class="flex min-h-20 items-center gap-4 rounded-card border-2 border-line-soft bg-surface p-4 text-ink no-underline transition-colors duration-150 hover:border-accent">
+          <span class="flex size-12 shrink-0 items-center justify-center rounded-full bg-accent-soft text-accent">{{ ui.icon(icon_name, "size-7") }}</span>
+          <span>
+            <span class="block text-xl font-bold text-accent">{{ title }}</span>
+            <span class="block text-base text-ink-muted">{{ outcome }}</span>
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <p class="mt-8 flex gap-3 border-s-4 border-soil-soft ps-3 text-ink">
+    <span><strong>{{ _("We don't sell seeds or sprays.") }}</strong> {{ _("Nobody pays us to recommend anything, so every answer is for you.") }}</span>
+  </p>
+
   {% if not current_user %}
-    <p><a href="{{ url_for('profile.save_farm') }}">{{ _("Save my farm") }}</a></p>
+  <p class="mt-6 text-ink-muted">
+    {{ _("Want your farm remembered on this phone and others?") }}
+    <a href="{{ url_for('profile.save_farm') }}" class="inline-flex min-h-tap items-center font-bold">{{ _("Save my farm") }}</a>
+  </p>
   {% endif %}
 {% endblock %}
