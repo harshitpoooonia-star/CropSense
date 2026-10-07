@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} · {{ _("AgriSense") }}{% endblock %}
+{% block content %}
+  <h1>{{ title }}</h1>
+  <p>{{ _("This tool is being built (Section %(n)s). It will work without an account.", n=section) }}</p>
+{% endblock %}

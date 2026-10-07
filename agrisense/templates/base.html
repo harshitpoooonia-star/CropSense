@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ current_locale }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ _("AgriSense") }}{% endblock %}</title>
+</head>
+<body>
+  <header>
+    <a href="{{ url_for('public.home') }}">{{ _("AgriSense") }}</a>
+    <nav aria-label="{{ _('Language') }}">
+      <a href="{{ url_for('public.set_language', code='hi', next=request.path) }}" lang="hi">हिंदी</a>
+      <a href="{{ url_for('public.set_language', code='en', next=request.path) }}" lang="en">English</a>
+    </nav>
+    {% if current_user %}
+      <form method="post" action="{{ url_for('profile.logout') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit">{{ _("Log out") }}</button>
+      </form>
+    {% else %}
+      <a href="{{ url_for('profile.login') }}">{{ _("Log in") }}</a>
+    {% endif %}
+  </header>
+
+  {% with messages = get_flashed_messages() %}
+    {% for message in messages %}<p role="status">{{ message }}</p>{% endfor %}
+  {% endwith %}
+
+  <main>{% block content %}{% endblock %}</main>
+
+  <nav aria-label="{{ _('Tools') }}">
+    <a href="{{ url_for('planner.index') }}">{{ _("Plan") }}</a>
+    <a href="{{ url_for('fertilizer.index') }}">{{ _("Fertilizer") }}</a>
+    <a href="{{ url_for('market.index') }}">{{ _("Market") }}</a>
+    <a href="{{ url_for('weather.index') }}">{{ _("Spray & water") }}</a>
+    <a href="{{ url_for('schemes.index') }}">{{ _("Schemes") }}</a>
+  </nav>
+</body>
+</html>
