@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ _("Farm decisions that sell you nothing.") }}</h1>
+  <p>{{ _("We don't sell seeds or sprays.") }}</p>
+  <ul>
+    <li><a href="{{ url_for('planner.index') }}">{{ _("Plan a crop") }}</a></li>
+    <li><a href="{{ url_for('market.index') }}">{{ _("Check a price") }}</a></li>
+    <li><a href="{{ url_for('schemes.index') }}">{{ _("Find a scheme") }}</a></li>
+  </ul>
+  {% if not current_user %}
+    <p><a href="{{ url_for('profile.save_farm') }}">{{ _("Save my farm") }}</a></p>
+  {% endif %}
+{% endblock %}
