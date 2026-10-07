@@ -218,3 +218,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# AgriSense 2.0
+*.db
+.claude/settings.local.json
+data/raw/
