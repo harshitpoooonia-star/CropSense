@@ -50,18 +50,22 @@ table has `created_at` / `updated_at` (UTC). Canonical units are stored;
 the unit the farmer typed is kept for display.
 
 ```text
-user
+app_user                                       -- "user" is reserved in Postgres
   id
   phone_hmac          text, unique, not null   -- HMAC-SHA256(pepper, E.164 number)
   pin_hash            text, not null           -- werkzeug generate_password_hash
+  role                text  'farmer' | 'helper'  -- helper = KVK/FPO staff, can start PIN resets
   locale              text  'hi' | 'en'
   consent_at          datetime, not null       -- DPDP consent on first save
   consent_version     text                     -- which consent text they accepted
   pin_reset_required  bool  default false
+  pin_reset_code_hash text  nullable           -- one-time 6-digit code, hashed
+  pin_reset_expires_at datetime nullable       -- 30 min after the helper starts it
+  pin_reset_by_id     fk app_user nullable     -- which helper started it (audit)
   last_login_at       datetime
 
 login_attempt                                  -- for 5 tries / 15 min rate limit
-  id, phone_hmac, ip_hash, attempted_at, success bool
+  id, kind ('login'|'register'|'pin_reset'), phone_hmac, ip_hash, attempted_at, success bool
   (rows older than 24 h deleted by the app)
 
 farm
@@ -228,12 +232,15 @@ doesn't need the clear number, and a leak of the table exposes far less.
   numbers.
 - **Harder:**
   - **Forgotten PIN has no self-service reset** in Phase 1 (no SMS, no stored
-    number). Options for the team: staff-assisted reset by a KVK/FPO helper
-    who confirms the farmer in person, or adding SMS OTP later (cost +
-    storing the number). Open question below.
+    number). **Decided (2026-10-08): staff-assisted reset.** A `helper`
+    (KVK/FPO staff, made with `flask agrisense make-helper`) confirms the
+    farmer in person and gets a one-time 6-digit code valid for 30 minutes;
+    the farmer enters it with a new PIN. Code attempts share the PIN rate
+    limit. SMS OTP stays a later option (cost + storing the number).
   - Pepper rotation invalidates all lookups; rotate only with a re-hash plan.
-  - 4-digit PIN = 10,000 combinations; rate limiting by phone hash *and* IP
-    hash is mandatory (5 attempts / 15 min, spec Section 2).
+  - 4-digit PIN = 10,000 combinations; rate limiting is mandatory: 5 failures
+    / 15 min per phone hash (spec Section 2), plus a looser 30 / 15 min per IP
+    hash, because mobile carrier NAT puts many farmers behind one IP.
 - **Legacy data:** the live site uses SQLite on an ephemeral Render disk
   (ADR-002), so there is likely no durable legacy data to migrate. Existing
   email/password accounts cannot map to phone + PIN; they are dropped, and the
@@ -248,8 +255,8 @@ doesn't need the clear number, and a leak of the table exposes far less.
 
 ## Open questions
 
-- [ ] Forgotten PIN in Phase 1: staff-assisted reset, or accept "create a new farm"? — *team*
-- [ ] Does Pooja (KVK/FPO staff) need her own account that owns several farms in Phase 1, or is that P2? — *team*
+- [x] Forgotten PIN in Phase 1: **staff-assisted reset** (decided 2026-10-08, see Consequences).
+- [ ] Does Pooja (KVK/FPO staff) need her own account that *owns* several farms in Phase 1, or is that P2? The `helper` role only resets PINs today. — *team*
 
 ## Action Items
 

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Save my farm") }} · {{ _("AgriSense") }}{% endblock %}
+{% block content %}
+  <h1>{{ _("Save my farm") }}</h1>
+  {% include "profile/_error.html" %}
+  <form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label for="phone">{{ _("Mobile number") }}</label>
+    <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required>
+
+    <label for="pin">{{ _("Choose a 4-digit PIN") }}</label>
+    <input id="pin" name="pin" type="password" inputmode="numeric" maxlength="4" autocomplete="new-password" required>
+
+    <label for="pin_confirm">{{ _("Enter the PIN again") }}</label>
+    <input id="pin_confirm" name="pin_confirm" type="password" inputmode="numeric" maxlength="4" autocomplete="new-password" required>
+
+    {# TODO(Section 4): final consent text, reviewed against DPDP Act 2023 with faculty. #}
+    <section aria-labelledby="consent-heading">
+      <h2 id="consent-heading">{{ _("What we keep") }}</h2>
+      <p>{{ _("We keep a scrambled form of your mobile number (we cannot read it back), your PIN in scrambled form, and the farm details you enter. We use them only to show your farm's advice. We don't sell or share them, and we never send you messages.") }}</p>
+    </section>
+    <label>
+      <input type="checkbox" name="consent" value="yes" required>
+      {{ _("I agree") }}
+    </label>
+
+    <button type="submit">{{ _("Save my farm") }}</button>
+  </form>
+  <p><a href="{{ url_for('profile.login') }}">{{ _("Already saved? Log in") }}</a></p>
+{% endblock %}

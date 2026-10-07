@@ -1,93 +1,87 @@
-# 🌾 CropSense — AI-Based Crop Recommendation System
+# AgriSense 2.0
 
-CropSense helps farmers choose the right crop for their land. Enter your soil nutrients and local weather, and a machine-learning model recommends the best crop, along with alternatives, crop type, benefits and suggested fertilizers.
+A farm decision tool for smallholders in north India: crop planning, fertilizer
+bags, mandi prices, spray and irrigation timing, and scheme eligibility, in
+Hindi and English. It sells nothing and shows why it recommends what it does.
 
-**🔗 Live demo:** [cropsense.onrender.com](https://cropsense.onrender.com)
+**Status:** Phase 1 rebuild in progress. Section 2 (foundation and security)
+is in place; the tools are placeholders until Sections 5–9.
 
----
+- Spec: [docs/AgriSense-2.0-spec.md](docs/AgriSense-2.0-spec.md)
+- Roadmap: [docs/AgriSense-2.0-roadmap.md](docs/AgriSense-2.0-roadmap.md)
+- Architecture decisions: [docs/adr/](docs/adr/)
+- Deploy checklist: [docs/deploy-checklist.md](docs/deploy-checklist.md)
+- Rules for contributors and Claude: [CLAUDE.md](CLAUDE.md)
 
-## ✨ Features
+## Stack
 
-- **AI crop recommendation** from 7 inputs: Nitrogen (N), Phosphorus (P), Potassium (K), temperature, humidity, pH and rainfall
-- **Alternative crops** suggested alongside the top pick
-- **Crop insights:** type, advantages and recommended fertilizers for each crop
-- **User accounts:** sign up / log in with hashed passwords
-- **Recommendation history:** every prediction is saved per user, with optional field labels
-- **Responsive UI** built with Tailwind CSS and Lottie animations
+Flask + Jinja + HTMX + Tailwind (ADR-001), SQLAlchemy + Flask-Migrate,
+Postgres on Neon in production and SQLite locally (ADR-002), Flask-Babel for
+Hindi/English.
 
-## 🧠 How the model works
+## Run it locally
 
-```
-Soil + weather inputs ──► StandardScaler ──► PCA (95% variance) ──► Random Forest ──► Crop
-```
-
-| Step | Details |
-|---|---|
-| Dataset | `dataset/data.csv`: soil and climate readings labelled with 22 crops |
-| Preprocessing | Label encoding + standard scaling |
-| Dimensionality reduction | PCA keeping 95% of variance |
-| Classifier | scikit-learn `RandomForestClassifier` (class-balanced) |
-| Split | 80/20 stratified train-test + 5-fold cross-validation |
-
-## 🛠 Tech stack
-
-**Backend:** Python, Flask, Flask-SQLAlchemy, SQLite
-**ML:** scikit-learn, NumPy, pandas
-**Frontend:** HTML, Jinja2, Tailwind CSS, Bootstrap, Lottie
-**Deployment:** Render (gunicorn)
-
-## 📁 Project structure
-
-```
-CropSense/
-├── app.py              # Flask app: routes, auth, prediction, history
-├── train.py            # Trains scaler + PCA + Random Forest, saves to model/
-├── predict.py          # Quick command-line prediction test
-├── run_init.py         # Creates the SQLite database tables
-├── dataset/data.csv    # Training data
-├── model/              # Pre-trained .pkl files
-├── templates/          # sign.html, index.html, history.html
-├── static/             # Images and animations
-└── requirements.txt
-```
-
-## 🚀 Run it locally
+Python 3.14 (see `.python-version`).
 
 ```bash
-git clone https://github.com/harshitpoooonia-star/CropSense.git
-cd CropSense
-python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
-pip install -r requirements.txt
+python -m venv .venv
+.venv\Scripts\activate            # macOS/Linux: source .venv/bin/activate
+pip install -r requirements-dev.txt
+python -m playwright install chromium
 
-python run_init.py              # create the database
-python app.py                   # open http://localhost:10000
+set AGRISENSE_ENV=development     # PowerShell: $env:AGRISENSE_ENV="development"
+flask --app wsgi db upgrade       # creates agrisense-dev.db (SQLite)
+flask --app wsgi run              # http://127.0.0.1:5000
 ```
 
-To retrain the model:
+`AGRISENSE_ENV` defaults to `production`, which refuses to start without its
+environment variables, so local runs must set `development`.
+
+## Configuration (environment only)
+
+| Variable | Needed in | What |
+|---|---|---|
+| `AGRISENSE_ENV` | all | `production` (default), `development`, `testing` |
+| `SECRET_KEY` | production | Flask session signing; long random string |
+| `DATABASE_URL` | production | Neon Postgres URL (`postgres://` is fine) |
+| `PHONE_PEPPER` | production | Key for hashing phone numbers. **Never change it** without a re-hash plan: every saved farm's login depends on it |
+| `DATA_GOV_IN_KEY` | optional | Agmarknet API key (Section 7, Gate 0 script) |
+| `REFRESH_TOKEN` | optional | Protects the price warm-up endpoint (Section 7) |
+
+Never put real values in a file in this repo.
+
+## Tests
 
 ```bash
-python train.py
+pytest                            # unit tests; network is blocked
+python scripts/run_e2e.py         # Playwright guest smoke test at 360 px
 ```
 
-Optional: set a `SECRET_KEY` environment variable for sessions in production.
+CI (GitHub Actions) runs the unit tests on SQLite and Postgres, applies and
+checks the migrations on Postgres, and runs the browser smoke test.
 
-## ☁️ Deploy on Render
+## Admin
 
-- **Build command:** `pip install -r requirements.txt`
-- **Start command:** `gunicorn app:app`
-- **Environment variable:** `SECRET_KEY=<any long random string>`
+```bash
+flask --app wsgi agrisense make-helper   # make a KVK/FPO helper who can reset PINs
+```
 
-## 👥 Team
+A farmer who forgets their PIN asks a helper. The helper confirms the farmer
+in person, gets a one-time code at `/helper/pin-reset`, and the farmer sets a
+new PIN at `/pin/reset`.
 
-Built as a Design Thinking & Innovation (DTI) project at **Bennett University**.
+## Deploy (Render)
 
-- **Harshit Poonia**
-- Shivansh Gupta
-- Anaya Bakshi
-- Tushita
-- Anant Vaibhav
+- Build: `pip install -r requirements.txt && flask --app wsgi db upgrade`
+  (free tier; Render's separate pre-deploy command is paid)
+- Start: `gunicorn wsgi:app`
+- Follow [docs/deploy-checklist.md](docs/deploy-checklist.md) every time.
 
-## 📄 License
+## Team
 
-Released under the [MIT License](LICENSE).
+Built as a Design Thinking & Innovation (DTI) project at **Bennett University**:
+Harshit Poonia, Shivansh Gupta, Anaya Bakshi, Tushita, Anant Vaibhav.
+
+## License
+
+[MIT](LICENSE)
