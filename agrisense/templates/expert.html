@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Ask an expert") }} · {{ _("AgriSense") }}{% endblock %}
+{% block content %}
+  {% set heading, intro = _("Ask an expert"), _("When an answer here is unsure, or you want a person to check it, call a free government helpline.") %}
+  {% include "_page_head.html" %}
+
+  <section class="mt-6 rounded-card border border-line-soft bg-surface p-4">
+    <h2 class="text-xl font-bold">{{ _("Kisan Call Centre") }}</h2>
+    <p class="mt-1 text-ink-muted">{{ _("Free call. Answers in Hindi and other languages.") }}</p>
+    <p class="mt-3 text-figure font-bold tabular-nums">{{ kcc }}</p>
+    <div class="mt-3">{{ ui.link_button("tel:" ~ kcc | replace("-", ""), _("Call now"), "primary", "phone") }}</div>
+  </section>
+
+  <section class="mt-4 rounded-card border border-line-soft bg-surface p-4">
+    <h2 class="text-xl font-bold">{{ _("Your district KVK") }}</h2>
+    <p class="mt-1 text-ink-muted">{{ _("Contacts for Gautam Buddh Nagar and Bulandshahr KVKs are being checked and will appear here.") }}</p>
+  </section>
+{% endblock %}

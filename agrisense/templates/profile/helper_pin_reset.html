@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 {% block title %}{{ _("Reset a farmer's PIN") }} · {{ _("AgriSense") }}{% endblock %}
 {% block content %}
-  <h1>{{ _("Reset a farmer's PIN") }}</h1>
+  {% set heading, intro = _("Reset a farmer's PIN"), None %}
+  {% include "_page_head.html" %}
   {% if code %}
-    <p>{{ _("Give this code to the farmer in person. It works once, for %(minutes)s minutes.", minutes=minutes) }}</p>
-    <p><strong id="reset-code">{{ code }}</strong></p>
+    <section class="mt-6 rounded-card border-2 border-accent bg-surface p-4">
+      <p>{{ _("Give this code to the farmer in person. It works once, for %(minutes)s minutes.", minutes=minutes) }}</p>
+      <p class="mt-3 text-figure font-bold tracking-widest tabular-nums"><span id="reset-code">{{ code }}</span></p>
+    </section>
   {% else %}
-    <p>{{ _("Only do this after confirming, face to face, that the farmer owns this number.") }}</p>
+    <p class="mt-4 flex gap-2 rounded-lg border border-warn bg-warn-bg p-3 text-warn">{{ ui.icon("alert", "mt-1 size-5") }}<span>{{ _("Only do this after confirming, face to face, that the farmer owns this number.") }}</span></p>
     {% include "profile/_error.html" %}
-    <form method="post">
+    <form method="post" class="mt-6 space-y-5">
       <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-      <label for="phone">{{ _("Farmer's mobile number") }}</label>
-      <input id="phone" name="phone" type="tel" inputmode="numeric" required>
-      <button type="submit">{{ _("Get reset code") }}</button>
+      {{ ui.field("phone", _("Farmer's mobile number"), type="tel", inputmode="numeric") }}
+      {{ ui.button(_("Get reset code")) }}
     </form>
   {% endif %}
 {% endblock %}

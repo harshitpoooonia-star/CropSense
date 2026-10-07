@@ -1,0 +1,14 @@
+{# A list of full-width tappable rows. Set `links` to [(href, icon, title, note)]. #}
+<ul class="mt-6 divide-y divide-line-soft overflow-hidden rounded-card border border-line-soft bg-surface">
+  {% for href, icon_name, title, note in links %}
+  <li>
+    <a href="{{ href }}" class="flex min-h-16 items-center gap-3 px-4 py-3 text-ink no-underline hover:bg-surface-2">
+      {{ ui.icon(icon_name, "size-6 text-accent") }}
+      <span class="flex-1">
+        <span class="block font-bold">{{ title }}</span>
+        {% if note %}<span class="block text-base text-ink-muted">{{ note }}</span>{% endif %}
+      </span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

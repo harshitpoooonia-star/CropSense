@@ -7,7 +7,7 @@ from agrisense.extensions import db
 from agrisense.models import User
 
 TOOL_ROUTES = ["/plan", "/fertilizer", "/market", "/weather", "/schemes"]
-PUBLIC_ROUTES = ["/", *TOOL_ROUTES, "/farm/save", "/login", "/pin/reset", "/api/health"]
+PUBLIC_ROUTES = ["/", "/today", "/field", "/more", "/expert", "/styleguide", *TOOL_ROUTES, "/farm/save", "/login", "/pin/reset", "/api/health"]
 
 
 @pytest.mark.parametrize("path", PUBLIC_ROUTES)
@@ -60,7 +60,7 @@ def _save(client, phone="9876543210", pin="4826"):
 
 def test_save_farm_logs_in_and_logout_ends_session(client):
     assert _save(client).status_code == 302
-    assert "Log out" in client.get("/").get_data(as_text=True) or "लॉग आउट" in client.get("/").get_data(as_text=True)
+    assert "Log out" in client.get("/more").get_data(as_text=True) or "लॉग आउट" in client.get("/more").get_data(as_text=True)
     client.post("/logout")
     with client.session_transaction() as sess:
         assert "user_id" not in sess

@@ -1,0 +1,424 @@
+# Hindi translations for AgriSense.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the AgriSense project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: AgriSense VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-08 05:14+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: hi\n"
+"Language-Team: hi <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#, python-format
+msgid "%(count)s bags of %(product)s"
+msgstr "%(product)s की %(count)s बोरियाँ"
+
+#, python-format
+msgid "%(kg)s kg per bag"
+msgstr "एक बोरी में %(kg)s किलो"
+
+msgid "AgriSense"
+msgstr "AgriSense"
+
+msgid "Already saved? Log in"
+msgstr "पहले से सेव है? लॉग इन करें"
+
+msgid "Answers for your own farm, with the reason and the source shown. No sign-up needed."
+msgstr "आपके अपने खेत के लिए जवाब, साथ में वजह और स्रोत भी। साइन-अप की ज़रूरत नहीं।"
+
+msgid "Ask an expert"
+msgstr "विशेषज्ञ से पूछें"
+
+msgid "Avoid easy PINs like 1111 or 1234."
+msgstr "1111 या 1234 जैसा आसान पिन न रखें।"
+
+msgid "Bag icons"
+msgstr "बोरी के चित्र"
+
+msgid "Buttons"
+msgstr "बटन"
+
+msgid "Call now"
+msgstr "अभी कॉल करें"
+
+msgid "Careful"
+msgstr "सावधान"
+
+msgid "Check a price"
+msgstr "भाव जाँचें"
+
+msgid "Choose a 4-digit PIN"
+msgstr "4 अंकों का पिन चुनें"
+
+msgid "Compare crops by likely profit for your field this season."
+msgstr "इस मौसम में अपने खेत के लिए फसलों को संभावित मुनाफ़े से मिलाकर देखें।"
+
+msgid "Confidence badges"
+msgstr "भरोसे के निशान"
+
+msgid "Contacts for Gautam Buddh Nagar and Bulandshahr KVKs are being checked and will appear here."
+msgstr "गौतम बुद्ध नगर और बुलंदशहर के KVK के संपर्क जाँचे जा रहे हैं, जल्द ही यहाँ दिखेंगे।"
+
+msgid "Crop Planner"
+msgstr "फसल योजना"
+
+msgid "Crop names"
+msgstr "फसलों के नाम"
+
+msgid "Daily mandi price changes arrive in Section 7."
+msgstr "मंडी भाव में रोज़ का बदलाव सेक्शन 7 में आएगा।"
+
+msgid "Don't"
+msgstr "न करें"
+
+msgid "Enter a 10-digit mobile number."
+msgstr "10 अंकों का मोबाइल नंबर डालें।"
+
+msgid "Enter a number, like 12 or 12.5."
+msgstr "संख्या डालें, जैसे 12 या 12.5।"
+
+msgid "Enter the PIN again"
+msgstr "पिन दोबारा डालें"
+
+#, python-format
+msgid "Estimated, not measured: %(fields)s"
+msgstr "अनुमान है, नापा नहीं गया: %(fields)s"
+
+msgid "Every component in Hindi and English. Sample data only, not advice."
+msgstr "हर हिस्सा हिंदी और अंग्रेज़ी में। सिर्फ़ नमूना, सलाह नहीं।"
+
+msgid "Farm profile"
+msgstr "खेत की जानकारी"
+
+msgid "Farmer's mobile number"
+msgstr "किसान का मोबाइल नंबर"
+
+msgid "Fertilizer Calculator"
+msgstr "खाद कैलकुलेटर"
+
+msgid "Fertilizer for this field"
+msgstr "इस खेत के लिए खाद"
+
+msgid "Field"
+msgstr "खेत"
+
+msgid "Field area"
+msgstr "खेत का रकबा"
+
+msgid "Find a scheme"
+msgstr "योजना खोजें"
+
+msgid "Forgot your PIN? Ask your KVK or FPO helper for a reset code."
+msgstr "पिन भूल गए? अपने KVK या FPO सहायक से रीसेट कोड माँगें।"
+
+msgid "Free call. Answers in Hindi and other languages."
+msgstr "मुफ़्त कॉल। हिंदी और दूसरी भाषाओं में जवाब।"
+
+msgid "From sowing to selling: the right call for your field."
+msgstr "बुआई से बिक्री तक: आपके खेत के लिए सही फ़ैसला।"
+
+msgid "Get reset code"
+msgstr "रीसेट कोड लें"
+
+#, python-format
+msgid "Give this code to the farmer in person. It works once, for %(minutes)s minutes."
+msgstr "यह कोड किसान को खुद मिलकर दें। यह एक बार, %(minutes)s मिनट तक चलेगा।"
+
+msgid "Good"
+msgstr "ठीक है"
+
+msgid "High confidence"
+msgstr "भरोसा ज़्यादा"
+
+msgid "I agree"
+msgstr "मैं सहमत हूँ"
+
+msgid "I have a reset code"
+msgstr "मेरे पास रीसेट कोड है"
+
+msgid "KVK and Kisan Call Centre"
+msgstr "KVK और किसान कॉल सेंटर"
+
+msgid "Keep your farm on this and other phones"
+msgstr "अपना खेत इस फ़ोन और दूसरे फ़ोन पर रखें"
+
+msgid "Kisan Call Centre"
+msgstr "किसान कॉल सेंटर"
+
+msgid "Language"
+msgstr "भाषा"
+
+msgid "Location, area, irrigation and soil card, entered once for every tool."
+msgstr "जगह, रकबा, सिंचाई और मृदा कार्ड एक बार भरें, हर टूल में काम आएगा।"
+
+msgid "Log in"
+msgstr "लॉग इन"
+
+msgid "Log out"
+msgstr "लॉग आउट"
+
+msgid "Low confidence"
+msgstr "भरोसा कम"
+
+msgid "Main"
+msgstr "मुख्य"
+
+msgid "Mandi Prices"
+msgstr "मंडी भाव"
+
+msgid "Market"
+msgstr "मंडी"
+
+msgid "Medium confidence"
+msgstr "भरोसा मध्यम"
+
+msgid "Mobile number"
+msgstr "मोबाइल नंबर"
+
+msgid "More"
+msgstr "और"
+
+msgid "New 4-digit PIN"
+msgstr "नया 4 अंकों का पिन"
+
+msgid "Nobody pays us to recommend anything, so every answer is for you."
+msgstr "किसी चीज़ की सिफ़ारिश के लिए हमें कोई पैसे नहीं देता, इसलिए हर जवाब सिर्फ़ आपके लिए है।"
+
+msgid "Number with unit"
+msgstr "इकाई के साथ संख्या"
+
+msgid "Only a helper can do this."
+msgstr "यह सिर्फ़ सहायक कर सकते हैं।"
+
+msgid "Only do this after confirming, face to face, that the farmer owns this number."
+msgstr "यह तभी करें जब आपने आमने-सामने पक्का कर लिया हो कि यह नंबर इसी किसान का है।"
+
+msgid "PIN"
+msgstr "पिन"
+
+msgid "Plan"
+msgstr "योजना"
+
+msgid "Plan a crop"
+msgstr "फसल की योजना बनाएँ"
+
+msgid "Please read and accept the consent text to save your farm."
+msgstr "खेत सेव करने के लिए सहमति वाली बात पढ़कर स्वीकार करें।"
+
+msgid "Prices for your crops"
+msgstr "आपकी फसलों के भाव"
+
+msgid "Product A"
+msgstr "उत्पाद A"
+
+msgid "Product B"
+msgstr "उत्पाद B"
+
+msgid "Quantity"
+msgstr "मात्रा"
+
+msgid "Reset a farmer's PIN"
+msgstr "किसान का पिन रीसेट करें"
+
+msgid "Reset code from your helper"
+msgstr "सहायक से मिला रीसेट कोड"
+
+msgid "Result card"
+msgstr "नतीजे का कार्ड"
+
+msgid "Sample reason: each one is a plain sentence."
+msgstr "नमूना वजह: हर वजह एक सीधा वाक्य होती है।"
+
+msgid "Sample reason: this is where the 2-3 factors behind an answer go."
+msgstr "नमूना वजह: यहाँ जवाब के पीछे की 2-3 बातें लिखी जाती हैं।"
+
+msgid "Sample result"
+msgstr "नमूना नतीजा"
+
+msgid "Sample result from AgriSense. Not advice."
+msgstr "AgriSense का नमूना नतीजा। यह सलाह नहीं है।"
+
+msgid "Save my farm"
+msgstr "मेरा खेत सेव करें"
+
+msgid "Scheme Finder"
+msgstr "सरकारी योजनाएँ"
+
+msgid "Scheme deadlines"
+msgstr "योजनाओं की आखिरी तारीख"
+
+msgid "See if a trader's offer is fair against today's mandi rates."
+msgstr "देखें कि व्यापारी का भाव आज के मंडी भाव के मुकाबले ठीक है या नहीं।"
+
+msgid "See which government schemes you may qualify for, and the papers to carry."
+msgstr "देखें कि आप किन सरकारी योजनाओं के हकदार हो सकते हैं और कौन-से कागज़ साथ ले जाने हैं।"
+
+msgid "Set a new PIN"
+msgstr "नया पिन बनाएँ"
+
+msgid "Set new PIN"
+msgstr "नया पिन बनाएँ"
+
+msgid "Set up in Section 4."
+msgstr "सेक्शन 4 में बनेगा।"
+
+msgid "Share on WhatsApp"
+msgstr "WhatsApp पर भेजें"
+
+msgid "Skip to content"
+msgstr "सीधे मुख्य हिस्से पर जाएँ"
+
+msgid "Source:"
+msgstr "स्रोत:"
+
+msgid "Spray"
+msgstr "छिड़काव करें"
+
+msgid "Spray & Irrigation Advisor"
+msgstr "छिड़काव और सिंचाई सलाह"
+
+msgid "Spray and irrigation"
+msgstr "छिड़काव और सिंचाई"
+
+msgid "Spray or water?"
+msgstr "छिड़काव करें या पानी दें?"
+
+msgid "Start here"
+msgstr "यहाँ से शुरू करें"
+
+msgid "Style guide"
+msgstr "स्टाइल गाइड"
+
+msgid "Text field"
+msgstr "टेक्स्ट फ़ील्ड"
+
+msgid "The 3-day verdict for your field arrives in Section 8."
+msgstr "आपके खेत के लिए 3 दिन का फ़ैसला सेक्शन 8 में आएगा।"
+
+msgid "The PIN must be exactly 4 digits."
+msgstr "पिन ठीक 4 अंकों का होना चाहिए।"
+
+msgid "The answer itself goes here: a number, bags or a verdict."
+msgstr "असली जवाब यहाँ आता है: कोई संख्या, बोरियाँ या फ़ैसला।"
+
+msgid "The code is wrong or has expired. Ask your helper for a new one."
+msgstr "कोड गलत है या उसका समय खत्म हो गया। सहायक से नया कोड माँगें।"
+
+msgid "The nearest deadline arrives in Section 9."
+msgstr "सबसे नज़दीकी आखिरी तारीख सेक्शन 9 में आएगी।"
+
+msgid "The two PINs don't match."
+msgstr "दोनों पिन एक जैसे नहीं हैं।"
+
+msgid "There is no saved farm for this number."
+msgstr "इस नंबर पर कोई खेत सेव नहीं है।"
+
+msgid "This PIN is too easy to guess. Avoid PINs like 1111 or 1234."
+msgstr "इस पिन का अंदाज़ा लगाना बहुत आसान है। 1111 या 1234 जैसा पिन न रखें।"
+
+msgid "This number already has a saved farm. Log in instead."
+msgstr "इस नंबर पर पहले से खेत सेव है। लॉग इन करें।"
+
+#, python-format
+msgid "This tool is being built (Section %(n)s). It will work without an account."
+msgstr "यह टूल बन रहा है (सेक्शन %(n)s)। यह बिना खाते के भी चलेगा।"
+
+msgid "Today"
+msgstr "आज"
+
+msgid "Too many tries. Wait 15 minutes and try again."
+msgstr "बहुत बार कोशिश हो गई। 15 मिनट रुककर फिर कोशिश करें।"
+
+msgid "Unit"
+msgstr "इकाई"
+
+msgid "Use the 6-digit code your helper gave you."
+msgstr "सहायक का दिया 6 अंकों का कोड डालें।"
+
+msgid "Use your mobile number and a 4-digit PIN to open your farm on any phone."
+msgstr "मोबाइल नंबर और 4 अंकों के पिन से अपना खेत किसी भी फ़ोन पर खोलें।"
+
+msgid "Verdict pills"
+msgstr "फ़ैसले के निशान"
+
+msgid "Want your farm remembered on this phone and others?"
+msgstr "क्या आप चाहते हैं कि आपका खेत इस फ़ोन और दूसरे फ़ोन पर याद रहे?"
+
+msgid "We don't sell seeds or sprays."
+msgstr "हम बीज या दवा नहीं बेचते।"
+
+msgid ""
+"We keep a scrambled form of your mobile number (we cannot read it back), your PIN in scrambled "
+"form, and the farm details you enter. We use them only to show your farm's advice. We don't sell "
+"or share them, and we never send you messages."
+msgstr ""
+"हम आपका मोबाइल नंबर कोड के रूप में रखते हैं, जिसे हम वापस पढ़ नहीं सकते। पिन भी कोड के रूप में "
+"रखते हैं, और खेत की वह जानकारी जो आप भरते हैं। इनका इस्तेमाल सिर्फ़ आपके खेत की सलाह दिखाने के "
+"लिए होता है। हम इन्हें न बेचते हैं, न किसी को देते हैं, और आपको कभी कोई मैसेज नहीं भेजते।"
+
+msgid "What needs a decision on your farm today."
+msgstr "आज आपके खेत पर किन बातों का फ़ैसला करना है।"
+
+msgid "What we keep"
+msgstr "हम क्या रखते हैं"
+
+msgid "When an answer here is unsure, or you want a person to check it, call a free government helpline."
+msgstr ""
+"जब यहाँ का जवाब पक्का न हो, या आप किसी इंसान से जाँच करवाना चाहें, तो मुफ़्त सरकारी हेल्पलाइन पर "
+"कॉल करें।"
+
+msgid "Why"
+msgstr "क्यों"
+
+msgid "Wrong mobile number or PIN."
+msgstr "मोबाइल नंबर या पिन गलत है।"
+
+msgid "You can't reset your own PIN here."
+msgstr "आप यहाँ अपना खुद का पिन रीसेट नहीं कर सकते।"
+
+msgid "Your district KVK"
+msgstr "आपके ज़िले का KVK"
+
+msgid "Your farm is saved."
+msgstr "आपका खेत सेव हो गया।"
+
+msgid "Your field"
+msgstr "आपका खेत"
+
+msgid "Your new PIN is set."
+msgstr "आपका नया पिन बन गया।"
+
+msgid "acre"
+msgstr "एकड़"
+
+#, python-format
+msgid "bags of %(product)s"
+msgstr "%(product)s की बोरियाँ"
+
+msgid "bigha"
+msgstr "बीघा"
+
+msgid "hectare"
+msgstr "हेक्टेयर"
+
+msgid "kg"
+msgstr "किलो"
+
+msgid "quintal"
+msgstr "क्विंटल"
+
+msgid "soil nitrogen"
+msgstr "मिट्टी में नाइट्रोजन"
+
+msgid "your soil card"
+msgstr "आपका मृदा स्वास्थ्य कार्ड"
+

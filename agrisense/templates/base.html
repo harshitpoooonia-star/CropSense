@@ -3,37 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5a3b22">
   <title>{% block title %}{{ _("AgriSense") }}{% endblock %}</title>
+  {# Preload the face the first paint needs, so Hindi text doesn't reflow. #}
+  <link rel="preload" href="{{ url_for('static', filename='fonts/mukta-400-' ~ ('devanagari' if current_locale == 'hi' else 'latin') ~ '.woff2') }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  <script src="{{ url_for('static', filename='vendor/htmx-2.0.11.min.js') }}" defer></script>
 </head>
-<body>
-  <header>
-    <a href="{{ url_for('public.home') }}">{{ _("AgriSense") }}</a>
-    <nav aria-label="{{ _('Language') }}">
-      <a href="{{ url_for('public.set_language', code='hi', next=request.path) }}" lang="hi">हिंदी</a>
-      <a href="{{ url_for('public.set_language', code='en', next=request.path) }}" lang="en">English</a>
-    </nav>
-    {% if current_user %}
-      <form method="post" action="{{ url_for('profile.logout') }}">
-        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-        <button type="submit">{{ _("Log out") }}</button>
-      </form>
-    {% else %}
-      <a href="{{ url_for('profile.login') }}">{{ _("Log in") }}</a>
-    {% endif %}
+<body class="bg-bg" hx-headers='{"X-CSRFToken": "{{ csrf_token() }}"}'>
+  {% include "_icons.html" %}
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded-lg focus:bg-surface focus:p-3">{{ _("Skip to content") }}</a>
+
+  <header class="sticky top-0 z-40 bg-soil text-white">
+    <div class="mx-auto flex max-w-xl items-center justify-between gap-2 px-4 py-1">
+      <a href="{{ url_for('public.home') }}" class="flex min-h-tap items-center text-xl font-bold text-white no-underline">{{ _("AgriSense") }}</a>
+      <nav aria-label="{{ _('Language') }}" class="flex rounded-lg border border-white/60 p-0.5">
+        {% for code, name in [("hi", "हिंदी"), ("en", "English")] %}
+        <a href="{{ url_for('public.set_language', code=code, next=request.full_path.rstrip('?')) }}" lang="{{ code }}"
+           class="flex min-h-tap min-w-tap items-center justify-center rounded-md px-3 text-base no-underline {{ 'bg-white font-bold text-soil' if current_locale == code else 'text-white' }}"
+           {% if current_locale == code %}aria-current="true"{% endif %}>{{ name }}</a>
+        {% endfor %}
+      </nav>
+    </div>
   </header>
 
-  {% with messages = get_flashed_messages() %}
-    {% for message in messages %}<p role="status">{{ message }}</p>{% endfor %}
-  {% endwith %}
+  <main id="main" class="mx-auto w-full max-w-xl px-4 pb-28 pt-4">
+    {% with messages = get_flashed_messages() %}
+      {% for message in messages %}
+      <p role="status" class="mb-4 flex items-center gap-2 rounded-lg border border-good bg-good-bg p-3 text-good">{{ ui.icon("check", "size-5") }}<span>{{ message }}</span></p>
+      {% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
 
-  <main>{% block content %}{% endblock %}</main>
-
-  <nav aria-label="{{ _('Tools') }}">
-    <a href="{{ url_for('planner.index') }}">{{ _("Plan") }}</a>
-    <a href="{{ url_for('fertilizer.index') }}">{{ _("Fertilizer") }}</a>
-    <a href="{{ url_for('market.index') }}">{{ _("Market") }}</a>
-    <a href="{{ url_for('weather.index') }}">{{ _("Spray & water") }}</a>
-    <a href="{{ url_for('schemes.index') }}">{{ _("Schemes") }}</a>
+  <nav aria-label="{{ _('Main') }}" class="fixed inset-x-0 bottom-0 z-50 border-t border-line-soft bg-surface pb-[env(safe-area-inset-bottom)]">
+    <ul class="mx-auto flex max-w-xl">
+      {% for tab, endpoint, icon_name, label in nav_tabs %}
+      {% set active = tab == nav_active %}
+      <li class="flex-1">
+        <a href="{{ url_for(endpoint) }}" {% if active %}aria-current="page"{% endif %}
+           class="flex min-h-14 flex-col items-center justify-center gap-0.5 border-t-4 text-base no-underline {{ 'border-accent font-bold text-accent' if active else 'border-transparent text-ink-muted' }}">
+          {{ ui.icon(icon_name) }}<span>{{ label }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
   </nav>
 </body>
 </html>

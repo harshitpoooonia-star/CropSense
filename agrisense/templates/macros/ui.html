@@ -1,0 +1,155 @@
+{# AgriSense UI macros (Section 3). Every template gets them as `ui`
+   (context processor in agrisense/__init__.py): {{ ui.verdict_pill("good") }}
+   Status is never colour alone: every pill/badge carries an icon and a word.
+   Tap targets use min-h-tap (48px). #}
+
+{% set BTN = "inline-flex min-h-tap cursor-pointer items-center justify-center gap-2 rounded-card px-5 font-bold no-underline transition-colors duration-150" %}
+{% set BTN_KIND = {
+  "primary": "bg-accent text-white hover:bg-accent-strong",
+  "secondary": "border-2 border-accent bg-surface text-accent hover:bg-accent-soft",
+} %}
+{% set INPUT = "block min-h-tap w-full min-w-0 rounded-lg border-2 bg-surface px-3 text-body text-ink" %}
+
+{% macro icon(name, cls="size-6") -%}
+<svg class="{{ cls }} shrink-0" aria-hidden="true" focusable="false"><use href="#i-{{ name }}"></use></svg>
+{%- endmacro %}
+
+{% macro button(label, kind="primary", type="submit", icon_name=None, name=None, value=None) -%}
+<button type="{{ type }}" class="{{ BTN }} {{ BTN_KIND[kind] }}"{% if name %} name="{{ name }}"{% endif %}{% if value %} value="{{ value }}"{% endif %}>
+  {%- if icon_name %}{{ icon(icon_name) }}{% endif %}<span>{{ label }}</span>
+</button>
+{%- endmacro %}
+
+{% macro link_button(href, label, kind="primary", icon_name=None, external=False) -%}
+<a href="{{ href }}" class="{{ BTN }} {{ BTN_KIND[kind] }}"{% if external %} target="_blank" rel="noopener"{% endif %}>
+  {%- if icon_name %}{{ icon(icon_name) }}{% endif %}<span>{{ label }}</span>
+</a>
+{%- endmacro %}
+
+{# good | warning | critical. `label` overrides the default word, e.g. "Spray". #}
+{% macro verdict_pill(status, label=None) -%}
+{% set v = {
+  "good": ("check", "border-good bg-good-bg text-good", _("Good")),
+  "warning": ("alert", "border-warn bg-warn-bg text-warn", _("Careful")),
+  "critical": ("stop", "border-crit bg-crit-bg text-crit", _("Don't")),
+}[status] %}
+<span class="inline-flex items-center gap-2 rounded-full border-2 px-3 py-1 font-bold {{ v[1] }}">
+  {{- icon(v[0], "size-5") }}<span>{{ label or v[2] }}</span>
+</span>
+{%- endmacro %}
+
+{# high | medium | low #}
+{% macro confidence_badge(level) -%}
+{% set c = {
+  "high": ("check", "border-good bg-good-bg text-good", _("High confidence")),
+  "medium": ("info", "border-warn bg-warn-bg text-warn", _("Medium confidence")),
+  "low": ("help", "border-line bg-surface-2 text-ink-muted", _("Low confidence")),
+}[level] %}
+<span class="inline-flex items-center gap-2 rounded-lg border px-2 py-0.5 text-base font-bold {{ c[1] }}">
+  {{- icon(c[0], "size-5") }}<span>{{ c[2] }}</span>
+</span>
+{%- endmacro %}
+
+{# The trust layer on every answer (spec P0-8). `trust` has: reasons[],
+   sources[{name, date}], confidence, estimated_fields[] (already translated
+   labels). The value itself goes in the call body. #}
+{% macro result_card(title, trust, share_text=None) -%}
+<article class="rounded-card border border-line-soft bg-surface p-4 shadow-sm">
+  <h2 class="text-xl font-bold">{{ title }}</h2>
+  <div class="mt-3">{{ caller() }}</div>
+
+  {% if trust.reasons %}
+  <h3 class="mt-4 font-bold">{{ _("Why") }}</h3>
+  <ul class="mt-1 list-disc space-y-1 ps-6">
+    {% for reason in trust.reasons %}<li>{{ reason }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if trust.estimated_fields %}
+  <p class="mt-3 flex gap-2 text-ink-muted">
+    {{ icon("info", "mt-1 size-5") }}
+    <span>{{ _("Estimated, not measured: %(fields)s", fields=trust.estimated_fields | join(", ")) }}</span>
+  </p>
+  {% endif %}
+
+  <footer class="mt-4 space-y-3 border-t border-line-soft pt-3">
+    <p class="text-base text-ink-muted">
+      {{ _("Source:") }}
+      {% for source in trust.sources -%}
+        {{ source.name }}{% if source.date %} ({{ source.date | dateformat("medium") }}){% endif %}{% if not loop.last %}; {% endif %}
+      {%- endfor %}
+    </p>
+    {{ confidence_badge(trust.confidence) }}
+    <div class="flex flex-wrap gap-2">
+      {{ link_button(url_for("more.expert"), _("Ask an expert"), "secondary", "phone") }}
+      {% if share_text %}
+      {{ link_button("https://wa.me/?text=" ~ (share_text | urlencode), _("Share on WhatsApp"), "secondary", "share", external=True) }}
+      {% endif %}
+    </div>
+  </footer>
+</article>
+{%- endmacro %}
+
+{% macro field(name, label, type="text", value="", hint=None, error=None, inputmode=None, autocomplete=None, maxlength=None, required=True) -%}
+<div class="space-y-1">
+  <label for="{{ name }}" class="block font-bold">{{ label }}</label>
+  {% if hint %}<p id="{{ name }}-hint" class="text-base text-ink-muted">{{ hint }}</p>{% endif %}
+  <input id="{{ name }}" name="{{ name }}" type="{{ type }}" value="{{ value }}"
+    class="{{ INPUT }} {{ 'border-crit' if error else 'border-line' }}"
+    {%- if inputmode %} inputmode="{{ inputmode }}"{% endif %}
+    {%- if autocomplete %} autocomplete="{{ autocomplete }}"{% endif %}
+    {%- if maxlength %} maxlength="{{ maxlength }}"{% endif %}
+    {%- if required %} required{% endif %}
+    {%- if error %} aria-invalid="true"{% endif %}
+    {%- if hint or error %} aria-describedby="{% if hint %}{{ name }}-hint{% endif %}{% if error %} {{ name }}-error{% endif %}"{% endif %}>
+  {% if error %}<p id="{{ name }}-error" class="flex gap-2 text-crit">{{ icon("alert", "mt-1 size-5") }}<span>{{ error }}</span></p>{% endif %}
+</div>
+{%- endmacro %}
+
+{# Number with a unit switch, e.g. area in acre/bigha/hectare. `units` is a
+   list of (code, translated label). Works without JS: the unit is a form field. #}
+{% macro number_input(name, label, units, unit_name, value="", unit_value=None, hint=None, error=None) -%}
+<div class="space-y-1">
+  <label for="{{ name }}" class="block font-bold">{{ label }}</label>
+  {% if hint %}<p id="{{ name }}-hint" class="text-base text-ink-muted">{{ hint }}</p>{% endif %}
+  <div class="flex gap-2">
+    <input id="{{ name }}" name="{{ name }}" type="text" inputmode="decimal" value="{{ value }}"
+      class="{{ INPUT }} flex-1 text-2xl font-bold tabular-nums {{ 'border-crit' if error else 'border-line' }}"
+      {%- if error %} aria-invalid="true"{% endif %}
+      {%- if hint or error %} aria-describedby="{% if hint %}{{ name }}-hint{% endif %}{% if error %} {{ name }}-error{% endif %}"{% endif %}>
+    <select name="{{ unit_name }}" aria-label="{{ _('Unit') }}"
+      class="min-h-tap cursor-pointer rounded-lg border-2 border-line bg-surface-2 px-3 font-bold text-ink">
+      {% for code, unit_label in units %}
+      <option value="{{ code }}"{% if code == unit_value %} selected{% endif %}>{{ unit_label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  {% if error %}<p id="{{ name }}-error" class="flex gap-2 text-crit">{{ icon("alert", "mt-1 size-5") }}<span>{{ error }}</span></p>{% endif %}
+</div>
+{%- endmacro %}
+
+{# Bags drawn as icons (spec: "bags per field drawn as bag icons"). A part bag
+   is drawn part-filled. More than 12 whole bags collapse into "+N". #}
+{% macro bag_icons(count, product, bag_kg=None) -%}
+{% set whole = count | int %}
+{% set part = count - whole %}
+{% set shown = [whole, 12] | min %}
+<figure>
+  <div role="img" class="flex flex-wrap items-center gap-1 text-soil-soft"
+    aria-label="{{ _('%(count)s bags of %(product)s', count=count | decimalformat, product=product) }}">
+    {% for _i in range(shown) %}{{ icon("bag", "size-9") }}{% endfor %}
+    {% if whole > shown %}<span class="px-1 text-xl font-bold text-ink">+{{ whole - shown }}</span>{% endif %}
+    {% if part > 0 %}
+    <span class="relative inline-block size-9">
+      {{ icon("bag", "absolute inset-0 size-9 text-line-soft") }}
+      <span class="absolute inset-y-0 left-0 overflow-hidden" style="width: {{ (part * 100) | round(0) }}%">{{ icon("bag", "size-9") }}</span>
+    </span>
+    {% endif %}
+  </div>
+  <figcaption class="mt-2">
+    <span class="text-figure font-bold tabular-nums">{{ count | decimalformat }}</span>
+    <span class="text-xl">{{ _("bags of %(product)s", product=product) }}</span>
+    {% if bag_kg %}<span class="block text-base text-ink-muted">{{ _("%(kg)s kg per bag", kg=bag_kg | decimalformat) }}</span>{% endif %}
+  </figcaption>
+</figure>
+{%- endmacro %}

@@ -50,6 +50,23 @@ environment variables, so local runs must set `development`.
 
 Never put real values in a file in this repo.
 
+## Styles, fonts and translations
+
+The built CSS, HTMX, the Mukta fonts and the compiled `.mo` catalogues are
+committed, so Render needs no Node or build tools.
+
+```bash
+python scripts/build_css.py        # after changing templates or static/src/app.css
+pybabel extract -F babel.cfg -k _l -k lazy_gettext --no-location --sort-output -o agrisense/translations/messages.pot .
+pybabel update -i agrisense/translations/messages.pot -d agrisense/translations --no-fuzzy-matching
+pybabel compile -d agrisense/translations   # after editing hi/LC_MESSAGES/messages.po
+python scripts/get_assets.py htmx fonts     # only when bumping a pinned version
+```
+
+`/styleguide` shows every UI macro in Hindi and English (on in development;
+set `STYLEGUIDE=1` to show it in production). Design tokens and rules:
+[docs/design-system.md](docs/design-system.md).
+
 ## Tests
 
 ```bash

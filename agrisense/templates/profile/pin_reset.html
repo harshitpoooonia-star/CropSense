@@ -1,22 +1,15 @@
 {% extends "base.html" %}
 {% block title %}{{ _("Set a new PIN") }} · {{ _("AgriSense") }}{% endblock %}
 {% block content %}
-  <h1>{{ _("Set a new PIN") }}</h1>
+  {% set heading, intro = _("Set a new PIN"), _("Use the 6-digit code your helper gave you.") %}
+  {% include "_page_head.html" %}
   {% include "profile/_error.html" %}
-  <form method="post">
+  <form method="post" class="mt-6 space-y-5">
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-    <label for="phone">{{ _("Mobile number") }}</label>
-    <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required>
-
-    <label for="code">{{ _("Reset code from your helper") }}</label>
-    <input id="code" name="code" inputmode="numeric" maxlength="6" autocomplete="one-time-code" required>
-
-    <label for="pin">{{ _("New 4-digit PIN") }}</label>
-    <input id="pin" name="pin" type="password" inputmode="numeric" maxlength="4" autocomplete="new-password" required>
-
-    <label for="pin_confirm">{{ _("Enter the PIN again") }}</label>
-    <input id="pin_confirm" name="pin_confirm" type="password" inputmode="numeric" maxlength="4" autocomplete="new-password" required>
-
-    <button type="submit">{{ _("Set new PIN") }}</button>
+    {{ ui.field("phone", _("Mobile number"), type="tel", inputmode="numeric", autocomplete="tel") }}
+    {{ ui.field("code", _("Reset code from your helper"), inputmode="numeric", autocomplete="one-time-code", maxlength=6) }}
+    {{ ui.field("pin", _("New 4-digit PIN"), type="password", inputmode="numeric", autocomplete="new-password", maxlength=4) }}
+    {{ ui.field("pin_confirm", _("Enter the PIN again"), type="password", inputmode="numeric", autocomplete="new-password", maxlength=4) }}
+    {{ ui.button(_("Set new PIN")) }}
   </form>
 {% endblock %}
