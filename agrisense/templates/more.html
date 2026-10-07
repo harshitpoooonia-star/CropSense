@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}{{ _("More") }} · {{ _("AgriSense") }}{% endblock %}
+{% block content %}
+  {% set heading, intro = _("More"), None %}
+  {% include "_page_head.html" %}
+  {% set links = [
+    (url_for("schemes.index"), "scheme", _("Find a scheme"), None),
+    (url_for("more.expert"), "phone", _("Ask an expert"), _("KVK and Kisan Call Centre")),
+  ] + ([] if current_user else [
+    (url_for("profile.save_farm"), "user", _("Save my farm"), _("Keep your farm on this and other phones")),
+    (url_for("profile.login"), "user", _("Log in"), None),
+  ]) %}
+  {% include "_link_list.html" %}
+
+  {% if current_user %}
+  <form method="post" action="{{ url_for('profile.logout') }}" class="mt-6">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    {{ ui.button(_("Log out"), "secondary") }}
+  </form>
+  {% if current_user.is_helper %}
+  <p class="mt-4"><a href="{{ url_for('profile.helper_pin_reset') }}" class="inline-flex min-h-tap items-center font-bold">{{ _("Reset a farmer's PIN") }}</a></p>
+  {% endif %}
+  {% endif %}
+{% endblock %}

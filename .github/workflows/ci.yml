@@ -43,6 +43,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements-dev.txt
 
+      - name: Committed CSS matches the Tailwind source
+        run: python scripts/build_css.py --check
+
       - name: Unit tests (SQLite)
         run: pytest -q
 

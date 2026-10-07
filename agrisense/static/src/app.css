@@ -1,0 +1,76 @@
+/* AgriSense design tokens and base styles (Section 3).
+ * Build: python scripts/build_css.py  ->  agrisense/static/css/app.css
+ * Palette from the spec, not ui-ux-pro-max: off-white and soil-brown
+ * neutrals, one green accent. Status colours always ship with an icon and a
+ * word (macros/ui.html). Every text pair here passes WCAG AA; see
+ * tests/test_design_tokens.py.
+ */
+@import "./fonts.css";
+@import "tailwindcss" source(none);
+
+@source "../../templates";
+
+@theme {
+  /* Only our tokens exist: no default palette to drift into. */
+  --color-*: initial;
+  --color-white: #ffffff;
+
+  --color-bg: #faf7f2;          /* page, warm off-white */
+  --color-surface: #ffffff;     /* cards */
+  --color-surface-2: #f1ebe1;   /* muted panels, inputs' unit select */
+  --color-line: #8c7b68;        /* input borders: 3.8:1 on bg */
+  --color-line-soft: #d9cfc1;   /* dividers (decorative only) */
+  --color-ink: #2b2118;         /* body text: 14.7:1 */
+  --color-ink-muted: #5c4b3b;   /* secondary text: 7.8:1 */
+  --color-soil: #5a3b22;        /* top bar */
+  --color-soil-soft: #7a5230;
+
+  --color-accent: #2f6b3a;      /* the one green: buttons, links, focus */
+  --color-accent-strong: #245530;
+  --color-accent-soft: #e4efe3;
+
+  --color-good: #1e5a2a;
+  --color-good-bg: #e3f1e3;
+  --color-warn: #7a4a00;
+  --color-warn-bg: #fdf0d2;
+  --color-crit: #9b1c1c;
+  --color-crit-bg: #fbe5e3;
+
+  --font-sans: "Mukta", ui-sans-serif, system-ui, sans-serif;
+
+  /* Body at 18px: Devanagari reads small at 16px on low-end screens. */
+  --text-body: 1.125rem;
+  --text-body--line-height: 1.6;
+  --text-figure: 2.5rem;        /* key numbers: bags, Rs, verdicts */
+  --text-figure--line-height: 1.1;
+
+  --spacing-tap: 3rem;          /* 48px minimum tap target (spec P0-9) */
+  --radius-card: 0.75rem;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior-y: contain;
+  }
+  body {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    min-height: 100dvh;
+  }
+  a { color: var(--color-accent); text-underline-offset: 0.2em; }
+  :focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

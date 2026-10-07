@@ -31,7 +31,9 @@ def main() -> int:
             "E2E_BASE_URL": f"http://127.0.0.1:{PORT}",
         }
         subprocess.run([py, "-m", "flask", "--app", "wsgi", "db", "upgrade"], cwd=ROOT, env=env, check=True)
-        server = f'"{py}" -m flask --app wsgi run --host 127.0.0.1 --port {PORT}'
+        # with_server.py pipes the server's output but never reads it; once
+        # Flask's request log fills the pipe the server blocks. Discard it.
+        server = f'"{py}" -m flask --app wsgi run --host 127.0.0.1 --port {PORT} > "{os.devnull}" 2>&1'
         cmd = [py, str(WITH_SERVER), "--server", server, "--port", str(PORT),
                "--", py, "-m", "pytest", "tests/e2e", "-q", *sys.argv[1:]]
         try:

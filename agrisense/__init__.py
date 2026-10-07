@@ -50,6 +50,21 @@ def create_app(profile: str | None = None, overrides: dict | None = None) -> Fla
     def template_globals() -> dict:
         from flask_babel import get_locale
 
-        return {"current_user": g.get("user"), "current_locale": str(get_locale())}
+        from .crops import crop_name
+        from .navigation import TABS, active_tab
+        from .units import AREA_UNITS, WEIGHT_UNITS
+
+        locale = str(get_locale())
+        return {
+            "current_user": g.get("user"),
+            "current_locale": locale,
+            "nav_tabs": TABS,
+            "nav_active": active_tab(),
+            "crop_name": lambda code: crop_name(code, locale),
+            "area_units": AREA_UNITS,
+            "weight_units": WEIGHT_UNITS,
+            # Macros only use env globals (_, url_for), so one shared module works.
+            "ui": app.jinja_env.get_template("macros/ui.html").module,
+        }
 
     return app
