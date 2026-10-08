@@ -35,6 +35,9 @@ def _new_page(browser, **context_args):
     requests: list[str] = []
     page.on("request", lambda req: requests.append(req.url))
     page.requested = requests
+    failed: list[str] = []
+    page.on("response", lambda res: failed.append(f"{res.status} {res.url}") if res.status >= 400 else None)
+    page.failed_responses = failed
     return context, page
 
 
