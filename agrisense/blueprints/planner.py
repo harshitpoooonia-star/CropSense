@@ -9,6 +9,7 @@ from flask_babel import get_locale
 
 from .. import farm_context, farm_profile, farm_store, offline
 from ..crops import crop_name, crops
+from ..fertilizer import data as fertilizer_data
 from ..extensions import db
 from ..models import Event, utcnow
 from ..planner import data, rank
@@ -62,7 +63,8 @@ def results():
     locale = str(get_locale())
     shown = {o.crop for o in plan.top}
     others = sorted(((code, crop_name(code, locale)) for code in crops() if code not in shown), key=lambda c: c[1])
-    return render_template(template, plan=plan, ctx=ctx, profile=profile, other_crops=others, **common)
+    return render_template(template, plan=plan, ctx=ctx, profile=profile, other_crops=others,
+                           fertilizer_crops=fertilizer_data.crops_with_dose(), **common)
 
 
 @bp.post("/plan/why")
