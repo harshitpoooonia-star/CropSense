@@ -1,0 +1,206 @@
+# Scheme Finder data (spec 06). One entry per scheme.
+#
+# Every entry starts `verified: false`. A team member opens the official page,
+# checks every field, then sets `verified: true` and `last_checked`.
+# In production only verified entries are shown (ADR-004).
+#
+# rules (all optional; an unanswered question makes the result "maybe"):
+#   states:        [UP, HR] or [any]
+#   ownership:     allowed answers: owner, tenant, sharecropper
+#   max_land_ha:   upper limit on land (hectares)
+#   age:           {min, max} in years
+#   no_exclusions: true -> anyone answering "yes" to the income-tax / government job / pension question is out
+#   irrigation:    [tubewell] -> uses the saved field's water source
+#   crops:         list of our crop codes; `crops_other: maybe` when the list is partial
+#   categories:    [sc, st, obc, general] (no seeded scheme uses it yet)
+
+schemes:
+  - id: pm-kisan
+    level: central
+    name_en: PM-KISAN (PM Kisan Samman Nidhi)
+    name_hi: प्रधानमंत्री किसान सम्मान निधि (PM-KISAN)
+    benefit_en: Rs 6,000 a year, paid into your bank account in three instalments of Rs 2,000.
+    benefit_hi: साल में ₹6,000, ₹2,000 की तीन किस्तों में सीधे आपके बैंक खाते में।
+    rules:
+      states: [any]
+      ownership: [owner]
+      no_exclusions: true
+    documents:
+      - {en: Aadhaar card, hi: आधार कार्ड}
+      - {en: Bank account linked to Aadhaar, hi: आधार से जुड़ा बैंक खाता}
+      - {en: Land record in your name (khatauni), hi: आपके नाम की ज़मीन का रिकॉर्ड (खतौनी)}
+      - {en: Mobile number linked to Aadhaar, for eKYC, hi: eKYC के लिए आधार से जुड़ा मोबाइल नंबर}
+    official_url: https://pmkisan.gov.in
+    deadline: null
+    sources:
+      - PM-KISAN guidelines as summarised by Vikaspedia (comprehensive guide to PM-KISAN)
+    notes: Excludes institutional landholders, constitutional post holders, serving/retired government employees, income-tax payers, professionals and pensioners drawing Rs 10,000 a month or more. eKYC is required for instalments.
+    last_checked: null
+    verified: false
+
+  - id: pmfby
+    level: central
+    name_en: PM Fasal Bima Yojana (crop insurance)
+    name_hi: प्रधानमंत्री फसल बीमा योजना
+    benefit_en: Insurance for notified crops against loss from weather, pests and disease. You pay at most 2% of the sum insured in kharif, 1.5% in rabi, 5% for commercial and horticultural crops.
+    benefit_hi: अधिसूचित फसलों का मौसम, कीट और रोग से नुकसान का बीमा। आपका हिस्सा बीमा राशि का अधिकतम 2% (खरीफ़), 1.5% (रबी), 5% (व्यावसायिक और बागवानी फसलें)।
+    rules:
+      states: [any]
+      ownership: [owner, tenant, sharecropper]
+    documents:
+      - {en: Aadhaar card, hi: आधार कार्ड}
+      - {en: Bank passbook, hi: बैंक पासबुक}
+      - {en: Land record, or tenancy / sharecropping agreement, hi: ज़मीन का रिकॉर्ड, या किराया / बटाई का समझौता}
+      - {en: Sowing certificate, hi: बुआई प्रमाण पत्र}
+    official_url: https://pmfby.gov.in
+    deadline: null
+    deadline_note_en: The enrolment deadline is set each season by the state notification. Check pmfby.gov.in or your bank.
+    deadline_note_hi: नामांकन की आखिरी तारीख हर मौसम में राज्य की अधिसूचना से तय होती है। pmfby.gov.in या अपना बैंक देखें।
+    sources:
+      - Odisha Government PMFBY implementation order, Kharif 2023 (voluntary for loanee and non-loanee farmers)
+      - Outlook Money, PMFBY eligibility and enrolment process (tenant farmers and sharecroppers covered)
+    notes: Voluntary for all farmers since 2020. Crops and premiums are notified per district and season.
+    last_checked: null
+    verified: false
+
+  - id: kcc
+    level: central
+    name_en: Kisan Credit Card (KCC)
+    name_hi: किसान क्रेडिट कार्ड (KCC)
+    benefit_en: Crop loan up to Rs 3 lakh at 7% interest a year, 4% if you repay on time (interest subvention scheme).
+    benefit_hi: ₹3 लाख तक का फसल कर्ज़ 7% सालाना ब्याज पर, समय पर चुकाने पर 4% (ब्याज छूट योजना)।
+    rules:
+      states: [any]
+      ownership: [owner, tenant, sharecropper]
+    documents:
+      - {en: Filled KCC application form, hi: भरा हुआ KCC आवेदन पत्र}
+      - {en: Identity and address proof (Aadhaar), hi: पहचान और पते का प्रमाण (आधार)}
+      - {en: Land record, or tenancy / sharecropping proof, hi: ज़मीन का रिकॉर्ड, या किराया / बटाई का प्रमाण}
+      - {en: Passport-size photo, hi: पासपोर्ट साइज़ फ़ोटो}
+    official_url: https://www.myscheme.gov.in/schemes/kcc
+    deadline: null
+    sources:
+      - Union Cabinet continuation of the Modified Interest Subvention Scheme for 2025-26 (reported by Vision IAS, 29 May 2025)
+      - Drishti IAS, Kisan Credit Card Scheme, 14 Mar 2026 (owner cultivators, tenants, oral lessees, sharecroppers)
+    notes: "TODO: Budget 2025-26 announced raising the subsidised limit to Rs 5 lakh; reports conflict on whether it applies. Confirm on the official page before verifying."
+    last_checked: null
+    verified: false
+
+  - id: pm-kmy
+    level: central
+    name_en: PM Kisan Maandhan Yojana (pension)
+    name_hi: प्रधानमंत्री किसान मानधन योजना (पेंशन)
+    benefit_en: Rs 3,000 a month pension from age 60. You pay Rs 55 to Rs 200 a month (by age at joining) and the government pays the same.
+    benefit_hi: 60 साल की उम्र से ₹3,000 महीना पेंशन। आप ₹55 से ₹200 महीना (जुड़ने की उम्र के हिसाब से) देते हैं, उतना ही सरकार देती है।
+    rules:
+      states: [any]
+      ownership: [owner]
+      max_land_ha: 2
+      age: {min: 18, max: 40}
+      no_exclusions: true
+    documents:
+      - {en: Aadhaar card, hi: आधार कार्ड}
+      - {en: Savings bank account (or the PM-KISAN account), hi: बचत बैंक खाता (या PM-KISAN वाला खाता)}
+      - {en: Land record, hi: ज़मीन का रिकॉर्ड}
+    official_url: https://maandhan.in
+    deadline: null
+    sources:
+      - PM-KMY Operational Guidelines and FAQs (pmkisan.gov.in/Documents)
+    notes: Land must appear in state land records as on 01.08.2019. Excludes people covered by NPS, ESIC or EPFO, government employees, income-tax payers and professionals.
+    last_checked: null
+    verified: false
+
+  - id: up-kdky
+    level: UP
+    name_en: Mukhyamantri Krishak Durghatna Kalyan Yojana (farmer accident help)
+    name_hi: मुख्यमंत्री कृषक दुर्घटना कल्याण योजना
+    benefit_en: Up to Rs 5 lakh to the family if a farmer dies or is permanently disabled in an accident (fire, flood, lightning, electric shock, snake bite and others).
+    benefit_hi: किसान की दुर्घटना (आग, बाढ़, बिजली गिरना, करंट, साँप का काटना आदि) में मृत्यु या स्थायी विकलांगता पर परिवार को ₹5 लाख तक।
+    rules:
+      states: [UP]
+      ownership: [owner, tenant, sharecropper]
+      age: {min: 18, max: 70}
+    documents:
+      - {en: Land record (khatauni) or name as tenant / sharecropper in land records, hi: खतौनी, या ज़मीन के रिकॉर्ड में किरायेदार / बटाईदार के रूप में नाम}
+      - {en: Aadhaar card, hi: आधार कार्ड}
+      - {en: Proof of the accident (FIR / post-mortem / disability certificate), hi: दुर्घटना का प्रमाण (FIR / पोस्टमार्टम / विकलांगता प्रमाण पत्र)}
+    official_url: https://www.myscheme.gov.in/schemes/kdky
+    deadline: null
+    deadline_note_en: Apply soon after the accident through the tehsil (lekhpal). One source says within 45 days; check with the tehsil.
+    deadline_note_hi: दुर्घटना के बाद जल्दी तहसील (लेखपाल) से आवेदन करें। एक स्रोत 45 दिन बताता है; तहसील से पक्का करें।
+    sources:
+      - myScheme, Krishak Durghatna Kalyan Yojana (myscheme.gov.in/schemes/kdky)
+    notes: "TODO: the document list on myScheme didn't load; confirm it and the application window."
+    last_checked: null
+    verified: false
+
+  - id: up-tubewell-power
+    level: UP
+    name_en: Free electricity for private tubewells (UP)
+    name_hi: निजी नलकूप के लिए मुफ़्त बिजली (उत्तर प्रदेश)
+    benefit_en: Full rebate on the electricity bill of a private tubewell connection, from 1 April 2023.
+    benefit_hi: निजी नलकूप कनेक्शन के बिजली बिल में पूरी छूट, 1 अप्रैल 2023 से।
+    rules:
+      states: [UP]
+      irrigation: [tubewell]
+    documents:
+      - {en: Private tubewell electricity connection with a meter, hi: मीटर लगा निजी नलकूप बिजली कनेक्शन}
+      - {en: Dues up to 31 March 2023 cleared, hi: 31 मार्च 2023 तक का बकाया जमा}
+      - {en: Online registration and eKYC with the power company, hi: बिजली कंपनी में ऑनलाइन पंजीकरण और eKYC}
+    official_url: https://www.uppcl.org
+    deadline: null
+    sources:
+      - UP cabinet decision reported by The Statesman and Daily Pioneer (2024), UPPCL standard operating procedures as reported
+    notes: "TODO: confirm the scheme is still running and the current registration process (sources are from 2024)."
+    last_checked: null
+    verified: false
+
+  - id: hr-mfmb
+    level: HR
+    name_en: Meri Fasal Mera Byora (Haryana crop registration)
+    name_hi: मेरी फसल मेरा ब्यौरा (हरियाणा)
+    benefit_en: Registering your crops each season is needed to sell at MSP in Haryana mandis and to get most state farm schemes. Free at CSCs and Atal Seva Kendras.
+    benefit_hi: हरियाणा में MSP पर बेचने और ज़्यादातर राज्य योजनाओं के लिए हर मौसम फसल का पंजीकरण ज़रूरी है। CSC और अटल सेवा केंद्र पर मुफ़्त।
+    rules:
+      states: [HR]
+      ownership: [owner, tenant, sharecropper]
+    documents:
+      - {en: Aadhaar card and Aadhaar-linked mobile, hi: आधार कार्ड और आधार से जुड़ा मोबाइल}
+      - {en: Bank account details, hi: बैंक खाते का विवरण}
+      - {en: Land record (jamabandi / fard) or lease agreement, hi: ज़मीन का रिकॉर्ड (जमाबंदी / फ़र्द) या पट्टे का समझौता}
+      - {en: Family ID (Parivar Pehchan Patra), hi: परिवार पहचान पत्र}
+    official_url: https://fasal.haryana.gov.in
+    deadline: null
+    deadline_note_en: Register during the sowing period, before harvest and sale.
+    deadline_note_hi: बुआई के समय, कटाई और बिक्री से पहले पंजीकरण करें।
+    sources:
+      - Haryana government announcement on free registration at CSCs, as reported; portal fasal.haryana.gov.in
+    notes: "TODO: document list comes from secondary guides; confirm on the portal."
+    last_checked: null
+    verified: false
+
+  - id: hr-bby
+    level: HR
+    name_en: Bhavantar Bharpai Yojana (Haryana price difference)
+    name_hi: भावांतर भरपाई योजना (हरियाणा)
+    benefit_en: If you sell listed vegetables, fruits or spices below the protected price, the state pays the difference into your bank account.
+    benefit_hi: सूची वाली सब्ज़ियाँ, फल या मसाले संरक्षित भाव से कम पर बिकें तो अंतर की रकम राज्य आपके बैंक खाते में देता है।
+    rules:
+      states: [HR]
+      ownership: [owner, tenant, sharecropper]
+      crops: [potato]
+      crops_other: maybe
+    documents:
+      - {en: Meri Fasal Mera Byora registration for the crop, hi: फसल का मेरी फसल मेरा ब्यौरा पंजीकरण}
+      - {en: Aadhaar-linked bank account, hi: आधार से जुड़ा बैंक खाता}
+      - {en: Sale receipt (J-form) from the mandi, hi: मंडी की बिक्री रसीद (J-फ़ॉर्म)}
+    official_url: https://www.myscheme.gov.in/schemes/bvby
+    deadline: null
+    deadline_note_en: Register the crop on Meri Fasal Mera Byora during the sowing period.
+    deadline_note_hi: बुआई के समय मेरी फसल मेरा ब्यौरा पर फसल का पंजीकरण करें।
+    sources:
+      - myScheme, Bhavantar Bharpai Yojana (myscheme.gov.in/schemes/bvby); 21 crops incl. potato
+      - The Tribune, potato growers to receive support under Bhavantar scheme
+    notes: Covers 21 crops (14 vegetables, 5 fruits, 2 spices); only potato is in our crop list, so other crops show as "maybe".
+    last_checked: null
+    verified: false
