@@ -1,0 +1,46 @@
+{# One question per screen (spec 06). Answers so far travel in a hidden field. #}
+{% set titles = {
+  "state": _("Which state is your farm in?"),
+  "land": _("How much land do you farm?"),
+  "ownership": _("Whose land is it?"),
+  "crop": _("What is your main crop?"),
+  "age": _("How old are you?"),
+  "exclusion": _("Does anyone in your family pay income tax, or have a government job or a pension of ₹10,000 a month or more?"),
+} %}
+{% set radio = {
+  "state": [("UP", state_names["UP"]), ("HR", state_names["HR"]), ("other", _("Another state"))],
+  "ownership": [("owner", _("My own land (in my name)")), ("tenant", _("Taken on rent or lease")), ("sharecropper", _("Sharecropping (batai)"))],
+  "exclusion": [("no", _("No")), ("yes", _("Yes"))],
+} %}
+{% set target = url_for("schemes.answer", step=step) %}
+<p class="text-base font-bold text-ink-muted">{{ _("Question %(n)s of %(total)s", n=number, total=total) }}</p>
+<form {{ ui.swap_attrs(target, "#schemes-flow") }} class="mt-2 space-y-5">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <input type="hidden" name="profile" value="">
+  <input type="hidden" name="answers" value="{{ answers_json }}">
+  <fieldset>
+    <legend class="text-2xl font-bold leading-tight">{{ titles[step] }}</legend>
+    {% if error %}<p role="alert" class="mt-2 flex gap-2 text-crit">{{ ui.icon("alert", "mt-1 size-5") }}<span>{{ error }}</span></p>{% endif %}
+    <div class="mt-4 space-y-2">
+      {% if step in radio %}
+        {% for code, label in radio[step] %}
+        <label class="flex min-h-14 cursor-pointer items-center gap-3 rounded-card border-2 border-line-soft bg-surface px-4 has-[:checked]:border-accent has-[:checked]:bg-accent-soft">
+          <input type="radio" name="value" value="{{ code }}" class="size-6 accent-accent" {% if answers.get(step) == code %}checked{% endif %}>
+          <span class="font-bold">{{ label }}</span>
+        </label>
+        {% endfor %}
+      {% elif step == "land" %}
+        {{ ui.number_input("value", _("Land"), area_units, "value_unit", value=answers.get("land", ""), unit_value="hectare" if answers.get("land") else "acre",
+             hint=_("Filled from your saved field when you have one.") if answers.get("land") else None) }}
+      {% elif step == "crop" %}
+        {{ ui.select_field("value", _("Crop"), crop_choices, selected=answers.get("crop"), placeholder=_("Choose a crop")) }}
+      {% elif step == "age" %}
+        {{ ui.field("value", _("Age in years"), value=answers.get("age", ""), inputmode="numeric", required=False) }}
+      {% endif %}
+    </div>
+  </fieldset>
+  <div class="grid grid-cols-2 gap-2">
+    {{ ui.button(_("Next")) }}
+    {{ ui.button(_("Skip"), "secondary", name="skip", value="1") }}
+  </div>
+</form>

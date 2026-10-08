@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 09:32+0530\n"
+"POT-Creation-Date: 2026-10-08 09:42+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hi\n"
@@ -21,6 +21,10 @@ msgstr ""
 #, python-format
 msgid "%(count)s bags of %(product)s"
 msgstr "%(product)s की %(count)s बोरियाँ"
+
+#, python-format
+msgid "%(count)s of these schemes haven't been checked against their official page yet."
+msgstr "इनमें से %(count)s योजनाओं को अभी उनके आधिकारिक पेज से नहीं जाँचा गया है।"
 
 #, python-format
 msgid "%(crop)s at %(mandi)s: ₹%(price)s"
@@ -70,6 +74,9 @@ msgstr "आज और कल लगभग %(mm)s मिमी बारिश �
 msgid "About %(mm)s mm of rain in the 2 days before (fallen or forecast): hold irrigation."
 msgstr "उससे पहले के 2 दिनों में लगभग %(mm)s मिमी बारिश (हुई या अनुमानित): सिंचाई रोकें।"
 
+msgid "About these results"
+msgstr "इन नतीजों के बारे में"
+
 msgid "Above the mandi price"
 msgstr "मंडी भाव से ज़्यादा"
 
@@ -79,6 +86,9 @@ msgstr "हर मंडी तक फसल ले जाने के बा�
 #, python-format
 msgid "After transport (₹%(cost)s): ₹%(net)s per quintal"
 msgstr "ढुलाई (₹%(cost)s) के बाद: ₹%(net)s प्रति क्विंटल"
+
+msgid "Age in years"
+msgstr "उम्र (साल में)"
 
 msgid "Agmarknet website"
 msgstr "Agmarknet वेबसाइट"
@@ -106,6 +116,9 @@ msgstr "AgriSense फसल योजना: %(crop)s। अपने KVK से
 msgid "AgriSense fertilizer for %(what)s: %(items)s, about ₹%(cost)s. Check with your KVK."
 msgstr "AgriSense खाद, %(what)s के लिए: %(items)s, लगभग ₹%(cost)s। अपने KVK से पक्का करें।"
 
+msgid "AgriSense scheme list, from official and news sources (see each scheme)"
+msgstr "AgriSense योजना सूची, आधिकारिक और समाचार स्रोतों से (हर योजना में देखें)"
+
 msgid "AgriSense thresholds, some still proposed (see the advisor spec)"
 msgstr "AgriSense की सीमाएँ, कुछ अभी प्रस्तावित हैं (सलाहकार की विशेष जानकारी देखें)"
 
@@ -123,6 +136,9 @@ msgstr "पहले से सेव है? लॉग इन करें"
 #, python-format
 msgid "An offer within %(band)s%% of the modal price counts as fair."
 msgstr "मॉडल भाव के %(band)s%% के अंदर का भाव ठीक माना जाता है।"
+
+msgid "Another state"
+msgstr "कोई और राज्य"
 
 msgid "Answers for your own farm, with the reason and the source shown. No sign-up needed."
 msgstr "आपके अपने खेत के लिए जवाब, साथ में वजह और स्रोत भी। साइन-अप की ज़रूरत नहीं।"
@@ -154,6 +170,11 @@ msgstr "पीछे"
 msgid "Bag icons"
 msgstr "बोरी के चित्र"
 
+msgid "Based only on your answers. The scheme office decides; confirm at the official portal or a CSC."
+msgstr ""
+"सिर्फ़ आपके जवाबों के आधार पर। फ़ैसला योजना का दफ़्तर करता है; आधिकारिक पोर्टल या CSC पर पक्का "
+"करें।"
+
 msgid "Below the mandi price"
 msgstr "मंडी भाव से कम"
 
@@ -183,6 +204,12 @@ msgstr "सावधान"
 msgid "Change field details"
 msgstr "खेत की जानकारी बदलें"
 
+msgid "Change my answers"
+msgstr "मेरे जवाब बदलें"
+
+msgid "Check"
+msgstr "जाँचें"
+
 msgid "Check a price"
 msgstr "भाव जाँचें"
 
@@ -198,6 +225,10 @@ msgstr "भाव देखें"
 msgid "Check soil first"
 msgstr "पहले मिट्टी देखें"
 
+#, python-format
+msgid "Checked on %(date)s."
+msgstr "%(date)s को जाँचा गया।"
+
 msgid "Choose a 4-digit PIN"
 msgstr "4 अंकों का पिन चुनें"
 
@@ -206,6 +237,9 @@ msgstr "फसल चुनें"
 
 msgid "Choose a crop."
 msgstr "फसल चुनें।"
+
+msgid "Choose one, or tap Skip."
+msgstr "कोई एक चुनें, या छोड़ें दबाएँ।"
 
 msgid "Choose one."
 msgstr "कोई एक चुनें।"
@@ -235,6 +269,9 @@ msgstr "खर्च पूरी बोरियों का है। दा�
 msgid "Couldn't get your location. Tap the map or choose your district."
 msgstr "आपकी जगह नहीं मिल पाई। नक्शे पर छूएँ या अपना ज़िला चुनें।"
 
+msgid "Covers a list of crops; check whether yours is on it."
+msgstr "यह कुछ फसलों के लिए है; देखें कि आपकी फसल सूची में है या नहीं।"
+
 msgid "Crop"
 msgstr "फसल"
 
@@ -261,6 +298,30 @@ msgstr "सब कुछ मिटाएँ"
 msgid "Delete my farm"
 msgstr "मेरा खेत मिटाएँ"
 
+msgid "Depends on having a private tubewell."
+msgstr "निजी ट्यूबवेल होने पर निर्भर है।"
+
+msgid "Depends on how much land you have."
+msgstr "आपकी ज़मीन कितनी है, इस पर निर्भर है।"
+
+msgid "Depends on income tax, government jobs or pensions in your family."
+msgstr "आपके परिवार में आयकर, सरकारी नौकरी या पेंशन पर निर्भर है।"
+
+msgid "Depends on whose land you farm."
+msgstr "आप किसकी ज़मीन पर खेती करते हैं, इस पर निर्भर है।"
+
+msgid "Depends on your age."
+msgstr "आपकी उम्र पर निर्भर है।"
+
+msgid "Depends on your category."
+msgstr "आपकी श्रेणी पर निर्भर है।"
+
+msgid "Depends on your crop."
+msgstr "आपकी फसल पर निर्भर है।"
+
+msgid "Depends on your state."
+msgstr "आपके राज्य पर निर्भर है।"
+
 msgid "Distances are from your district's centre, because your field has no pin."
 msgstr "दूरी आपके ज़िले के बीच के हिस्से से है, क्योंकि आपके खेत पर निशान नहीं लगा है।"
 
@@ -269,6 +330,13 @@ msgstr "ज़िला"
 
 msgid "District centre (estimated)"
 msgstr "ज़िले का बीच का हिस्सा (अनुमान)"
+
+msgid ""
+"Does anyone in your family pay income tax, or have a government job or a pension of ₹10,000 a "
+"month or more?"
+msgstr ""
+"क्या आपके परिवार में कोई आयकर देता है, या उसकी सरकारी नौकरी है, या ₹10,000 महीने या ज़्यादा की "
+"पेंशन मिलती है?"
 
 msgid "Don't"
 msgstr "न करें"
@@ -310,6 +378,9 @@ msgstr "कार्ड पर छपी तारीख डालें। य�
 msgid "Enter the field size as a number, like 2 or 2.5."
 msgstr "खेत का नाप संख्या में डालें, जैसे 2 या 2.5।"
 
+msgid "Enter the land as a number, like 2 or 2.5."
+msgstr "ज़मीन संख्या में भरें, जैसे 2 या 2.5।"
+
 msgid "Enter the number as printed on the card."
 msgstr "कार्ड पर जैसा छपा है, वैसी संख्या डालें।"
 
@@ -321,6 +392,9 @@ msgstr "ढुलाई खर्च संख्या में भरें, 
 
 msgid "Enter your PIN to confirm"
 msgstr "पक्का करने के लिए अपना पिन डालें"
+
+msgid "Enter your age in years, like 35."
+msgstr "अपनी उम्र साल में भरें, जैसे 35।"
 
 msgid "Enter your field size, or set up your field first."
 msgstr "अपने खेत का नाप भरें, या पहले अपना खेत जोड़ें।"
@@ -334,6 +408,11 @@ msgstr "हर हिस्सा हिंदी और अंग्रेज�
 
 msgid "Fair offer"
 msgstr "ठीक भाव"
+
+msgid "Families with an income-tax payer, government job or large pension are excluded."
+msgstr ""
+"जिन परिवारों में कोई आयकर देता है, सरकारी नौकरी करता है या बड़ी पेंशन पाता है, वे इसमें शामिल "
+"नहीं।"
 
 msgid "Farmer's mobile number"
 msgstr "किसान का मोबाइल नंबर"
@@ -362,6 +441,9 @@ msgstr "खेत का रकबा"
 
 msgid "Field size"
 msgstr "खेत का नाप"
+
+msgid "Filled from your saved field when you have one."
+msgstr "अगर आपका खेत सेव है तो वहीं से भरा गया।"
 
 msgid "Find a scheme"
 msgstr "योजना खोजें"
@@ -415,6 +497,9 @@ msgstr "छिड़काव कर सकते हैं"
 msgid "Grown on about %(area)s hectares a year in %(district)s in %(season)s."
 msgstr "%(district)s में %(season)s में हर साल लगभग %(area)s हेक्टेयर में उगाई जाती है।"
 
+msgid "Haryana"
+msgstr "हरियाणा"
+
 msgid "High confidence"
 msgstr "भरोसा ज़्यादा"
 
@@ -435,6 +520,12 @@ msgstr "सिंचाई कैसे करते हैं?"
 
 msgid "How many bags?"
 msgstr "कितनी बोरी?"
+
+msgid "How much land do you farm?"
+msgstr "आप कितनी ज़मीन पर खेती करते हैं?"
+
+msgid "How old are you?"
+msgstr "आपकी उम्र कितनी है?"
 
 msgid "I agree"
 msgstr "मैं सहमत हूँ"
@@ -479,14 +570,31 @@ msgstr "किसान कॉल सेंटर"
 msgid "Krishi Vigyan Kendra: your district's government farm science centre."
 msgstr "कृषि विज्ञान केंद्र: आपके ज़िले का सरकारी खेती विज्ञान केंद्र।"
 
+msgid "Land"
+msgstr "ज़मीन"
+
 msgid "Language"
 msgstr "भाषा"
+
+#, python-format
+msgid "Last date: %(date)s"
+msgstr "आखिरी तारीख: %(date)s"
 
 msgid "Leave empty to just see the prices."
 msgstr "सिर्फ़ भाव देखने हैं तो खाली छोड़ें।"
 
 msgid "Leave empty to use your saved field size."
 msgstr "खाली छोड़ें तो आपके सेव खेत का नाप लिया जाएगा।"
+
+msgid "Likely"
+msgstr "मिल सकती है"
+
+msgid "Likely eligible: confirm at the official portal or a CSC before you apply."
+msgstr "शायद आप हकदार हैं: आवेदन से पहले आधिकारिक पोर्टल या CSC पर पक्का करें।"
+
+#, python-format
+msgid "Likely for you (%(n)s)"
+msgstr "आपके लिए संभावित (%(n)s)"
 
 #, python-format
 msgid "Likely profit is about ₹%(gap)s per acre lower than the number 3 crop."
@@ -554,6 +662,10 @@ msgstr "भरोसा मध्यम"
 msgid "Medium water"
 msgstr "मध्यम पानी"
 
+#, python-format
+msgid "Might fit: check these (%(n)s)"
+msgstr "शायद सही बैठें: इन्हें जाँचें (%(n)s)"
+
 msgid "Mobile number"
 msgstr "मोबाइल नंबर"
 
@@ -566,6 +678,9 @@ msgstr "और"
 
 msgid "My Soil Health Card"
 msgstr "मेरा मृदा स्वास्थ्य कार्ड"
+
+msgid "My own land (in my name)"
+msgstr "मेरी अपनी ज़मीन (मेरे नाम पर)"
 
 #, python-format
 msgid "Needs %(need)s water, and you have a %(source)s: risky in a dry year."
@@ -586,6 +701,9 @@ msgstr "अगले 3 दिन"
 
 msgid "Nitrogen (N)"
 msgstr "नाइट्रोजन (N)"
+
+msgid "No"
+msgstr "नहीं"
 
 #, python-format
 msgid "No change since %(date)s"
@@ -610,6 +728,9 @@ msgstr "काम की बारिश की उम्मीद नहीं:
 msgid "Nobody pays us to recommend anything, so every answer is for you."
 msgstr "किसी चीज़ की सिफ़ारिश के लिए हमें कोई पैसे नहीं देता, इसलिए हर जवाब सिर्फ़ आपके लिए है।"
 
+msgid "None for sure from your answers. See the ones below that might fit."
+msgstr "आपके जवाबों से कोई पक्की नहीं। नीचे वाली देखें जो शायद सही बैठें।"
+
 msgid ""
 "Not adjusted for your soil test. If your Soil Health Card gives a dose for this crop, use that "
 "instead."
@@ -620,6 +741,13 @@ msgstr ""
 msgid "Not adjusted for your soil."
 msgstr "आपकी मिट्टी के हिसाब से बदली नहीं गई।"
 
+#, python-format
+msgid "Not for you, and why (%(n)s)"
+msgstr "आपके लिए नहीं, और क्यों (%(n)s)"
+
+msgid "Not for your kind of landholding."
+msgstr "आपकी तरह की ज़मीन के लिए नहीं।"
+
 msgid "Not known"
 msgstr "पता नहीं"
 
@@ -627,8 +755,14 @@ msgstr "पता नहीं"
 msgid "Not known yet: %(fields)s. Tools will say when this limits an answer."
 msgstr "अभी पता नहीं: %(fields)s। जब इससे जवाब पर असर पड़ेगा, टूल बताएँगे।"
 
+msgid "Not yet checked against the official page."
+msgstr "अभी आधिकारिक पेज से नहीं जाँचा गया।"
+
 msgid "Number with unit"
 msgstr "इकाई के साथ संख्या"
+
+msgid "Official page"
+msgstr "आधिकारिक पेज"
 
 msgid "Old price"
 msgstr "पुराना भाव"
@@ -639,8 +773,29 @@ msgstr "यह सिर्फ़ सहायक कर सकते हैं�
 msgid "Only do this after confirming, face to face, that the farmer owns this number."
 msgstr "यह तभी करें जब आपने आमने-सामने पक्का कर लिया हो कि यह नंबर इसी किसान का है।"
 
+#, python-format
+msgid "Only for ages %(min)s to %(max)s."
+msgstr "सिर्फ़ %(min)s से %(max)s साल की उम्र के लिए।"
+
+msgid "Only for certain categories."
+msgstr "सिर्फ़ कुछ श्रेणियों के लिए।"
+
+#, python-format
+msgid "Only for farmers in %(states)s."
+msgstr "सिर्फ़ %(states)s के किसानों के लिए।"
+
+#, python-format
+msgid "Only for farmers with up to %(max)s hectares."
+msgstr "सिर्फ़ %(max)s हेक्टेयर तक ज़मीन वाले किसानों के लिए।"
+
+msgid "Only for farms with a private tubewell connection."
+msgstr "सिर्फ़ निजी ट्यूबवेल कनेक्शन वाले खेतों के लिए।"
+
 msgid "Only part of this dose has a cited source; the missing nutrients aren't shown. Ask your KVK."
 msgstr "इस मात्रा के सिर्फ़ कुछ हिस्से का स्रोत है; बाकी पोषक तत्व नहीं दिखाए गए। अपने KVK से पूछें।"
+
+msgid "Open myScheme"
+msgstr "myScheme खोलें"
 
 msgid ""
 "Optional. If you have the card, copy the numbers from it. If not, skip: answers will say what was"
@@ -658,6 +813,9 @@ msgstr "कोई और"
 
 msgid "PIN"
 msgstr "पिन"
+
+msgid "Papers to carry"
+msgstr "साथ ले जाने वाले कागज़"
 
 msgid "Phosphate from"
 msgstr "फ़ॉस्फ़ेट किससे"
@@ -708,6 +866,10 @@ msgid "Quantity"
 msgstr "मात्रा"
 
 #, python-format
+msgid "Question %(n)s of %(total)s"
+msgstr "सवाल %(n)s / %(total)s"
+
+#, python-format
 msgid "Rain %(prob)s%% likely around %(time)s."
 msgstr "%(time)s के आसपास %(prob)s%% बारिश की संभावना।"
 
@@ -755,9 +917,6 @@ msgstr "मिट्टी के नंबर सेव करें"
 msgid "Scheme Finder"
 msgstr "सरकारी योजनाएँ"
 
-msgid "Scheme deadlines"
-msgstr "योजनाओं की आखिरी तारीख"
-
 msgid "See if a trader's offer is fair against today's mandi rates."
 msgstr "देखें कि व्यापारी का भाव आज के मंडी भाव के मुकाबले ठीक है या नहीं।"
 
@@ -778,6 +937,22 @@ msgstr "अपने ज़िले का KVK देखने के लिए
 
 msgid "Share on WhatsApp"
 msgstr "WhatsApp पर भेजें"
+
+msgid "Sharecropping (batai)"
+msgstr "बटाई पर"
+
+msgid "Six questions: schemes you may claim and the papers to carry."
+msgstr "छह सवाल: कौन-सी योजनाएँ मिल सकती हैं और कौन-से कागज़ ले जाने हैं।"
+
+msgid ""
+"Six short questions. We show government schemes you are likely eligible for, what they give, and "
+"the papers to carry."
+msgstr ""
+"छह छोटे सवाल। हम दिखाएँगे कि आप किन सरकारी योजनाओं के हकदार हो सकते हैं, उनसे क्या मिलता है, और "
+"कौन-से कागज़ ले जाने हैं।"
+
+msgid "Skip"
+msgstr "छोड़ें"
 
 msgid "Skip to content"
 msgstr "सीधे मुख्य हिस्से पर जाएँ"
@@ -850,6 +1025,9 @@ msgstr "%(crop)s (%(condition)s) की सामान्य मात्रा
 msgid "Standard dose for the crop"
 msgstr "फसल की सामान्य मात्रा"
 
+msgid "Start"
+msgstr "शुरू करें"
+
 msgid "Start here"
 msgstr "यहाँ से शुरू करें"
 
@@ -859,6 +1037,9 @@ msgstr "कदम %(n)s / %(total)s"
 
 msgid "Style guide"
 msgstr "स्टाइल गाइड"
+
+msgid "Taken on rent or lease"
+msgstr "किराये या पट्टे पर ली हुई"
 
 msgid "Tap the map where your field is, or drag the pin."
 msgstr "नक्शे पर वहाँ छूएँ जहाँ आपका खेत है, या निशान खिसकाएँ।"
@@ -894,9 +1075,6 @@ msgstr "पूर्वानुमान आपके खेत की जग�
 
 msgid "The map didn't load. Use your location or choose your district below."
 msgstr "नक्शा नहीं खुला। अपनी जगह इस्तेमाल करें या नीचे से अपना ज़िला चुनें।"
-
-msgid "The nearest deadline arrives in Section 9."
-msgstr "सबसे नज़दीकी आखिरी तारीख सेक्शन 9 में आएगी।"
 
 msgid ""
 "The next 3 days for your field: when spraying won't be washed off or blown away, and whether rain"
@@ -1015,6 +1193,9 @@ msgstr "मोबाइल नंबर और 4 अंकों के पि�
 msgid "Used to show the price left after carrying the crop there. Remembered on this phone."
 msgstr "फसल वहाँ ले जाने के बाद बचा भाव दिखाने के लिए। यह इस फ़ोन पर याद रहेगा।"
 
+msgid "Uttar Pradesh"
+msgstr "उत्तर प्रदेश"
+
 msgid "Verdict pills"
 msgstr "फ़ैसले के निशान"
 
@@ -1027,6 +1208,13 @@ msgstr "पानी"
 msgid "Water bought from others"
 msgstr "दूसरों से खरीदा पानी"
 
+msgid ""
+"We are still checking our scheme list against the official pages. Until then, search on myScheme,"
+" the government's scheme portal, or ask at a CSC."
+msgstr ""
+"हम अभी अपनी योजना सूची को आधिकारिक पेजों से जाँच रहे हैं। तब तक सरकार के योजना पोर्टल myScheme पर"
+" खोजें, या CSC पर पूछें।"
+
 msgid "We are still checking this KVK's phone number. Until then, call the Kisan Call Centre above."
 msgstr "इस KVK का फ़ोन नंबर अभी जाँचा जा रहा है। तब तक ऊपर दिए किसान कॉल सेंटर पर कॉल करें।"
 
@@ -1038,6 +1226,13 @@ msgstr "अभी पूर्वानुमान नहीं मिल प�
 #, python-format
 msgid "We don't have the KVK for %(district)s district yet."
 msgstr "%(district)s ज़िले के KVK की जानकारी अभी हमारे पास नहीं है।"
+
+msgid ""
+"We don't keep your answers. Only the list of schemes that may fit is saved with your farm, on "
+"this phone or in your account."
+msgstr ""
+"हम आपके जवाब नहीं रखते। सिर्फ़ उन योजनाओं की सूची आपके खेत के साथ सेव होती है जो शायद सही बैठें, "
+"इस फ़ोन पर या आपके खाते में।"
 
 msgid "We don't know the bigha size for your district yet. Please use acre or hectare."
 msgstr "आपके ज़िले में बीघा का नाप हमें अभी नहीं पता। कृपया एकड़ या हेक्टेयर चुनें।"
@@ -1078,6 +1273,9 @@ msgstr ""
 "इनका इस्तेमाल सिर्फ़ आपके खेत की सलाह देने के लिए होता है। आपका खेत सिर्फ़ आप देखते हैं; "
 "AgriSense टीम यह जानकारी सिर्फ़ कोई गड़बड़ी ठीक करने के लिए खोलती है।"
 
+msgid "What is your main crop?"
+msgstr "आपकी मुख्य फसल कौन-सी है?"
+
 msgid "What needs a decision on your farm today."
 msgstr "आज आपके खेत पर किन बातों का फ़ैसला करना है।"
 
@@ -1109,6 +1307,15 @@ msgstr "आपका खेत कहाँ है?"
 msgid "Which crop this season?"
 msgstr "इस मौसम में कौन-सी फसल?"
 
+msgid "Which schemes can you claim?"
+msgstr "आप किन योजनाओं का लाभ ले सकते हैं?"
+
+msgid "Which state is your farm in?"
+msgstr "आपका खेत किस राज्य में है?"
+
+msgid "Whose land is it?"
+msgstr "ज़मीन किसकी है?"
+
 msgid "Why"
 msgstr "क्यों"
 
@@ -1133,6 +1340,9 @@ msgstr "बोरियाँ निकालें"
 
 msgid "Wrong mobile number or PIN."
 msgstr "मोबाइल नंबर या पिन गलत है।"
+
+msgid "Yes"
+msgstr "हाँ"
 
 msgid "Yes, next"
 msgstr "हाँ, आगे"

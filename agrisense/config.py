@@ -66,6 +66,8 @@ def build_config(profile: str | None = None, environ: Mapping[str, str] | None =
         "PRICE_STALE_DAYS": 3,  # spec P0-4: say so when the price is older than 3 days
         "PRICE_WINDOW_DAYS": 30,
         "NEAREST_MANDIS": 5,
+        # ADR-004: production shows only schemes a person has checked (verified: true).
+        "SCHEMES_SHOW_UNVERIFIED": profile != "production" or get("SCHEMES_SHOW_UNVERIFIED") == "1",
         # /styleguide shows unverified samples; off in production unless asked.
         "STYLEGUIDE_ENABLED": profile != "production" or get("STYLEGUIDE") == "1",
         **{name: get(name) or None for name in OPTIONAL},
