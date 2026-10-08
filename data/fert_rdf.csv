@@ -1,0 +1,7 @@
+crop,condition,n_low,n_high,p2o5_low,p2o5_high,k2o_low,k2o_high,split,source,verified,notes
+wheat,irrigated,120,120,60,60,40,40,,"UP Agriculture Department, wheat crop page (upagripardarshi.gov.in/staticpages/rabi4.aspx), dwarf wheat after kharif crop",false,"Read via search excerpt: the page's TLS certificate had expired. TODO: confirm on the page and add the cited N split"
+wheat,late,80,80,40,40,30,30,,"UP Agriculture Department, wheat crop page (upagripardarshi.gov.in/staticpages/rabi4.aspx), late sowing",false,"Read via search excerpt; TODO: confirm on the page"
+wheat,rainfed,40,40,30,30,30,30,,"UP Agriculture Department, wheat crop page (upagripardarshi.gov.in/staticpages/rabi4.aspx), rain-fed wheat",false,"Read via search excerpt; TODO: confirm on the page"
+paddy,transplanted,120,120,60,60,40,40,,"SVPUAT Meerut field trial, kharif 2022-23: recommended-dose treatment NPK 120:60:40",false,"A trial's RDF treatment, not the package of practices. TODO: confirm with SVPUAT package of practices and add the N split"
+potato,default,180,240,60,90,85,130,"basal:N=0.667,P=1,K=1;earthing_up:N=0.333","NHB potato manual (nhb.gov.in/pdf/vegetable/potato/pot007.pdf): alluvial soils of the Indo-Gangetic plains; two-thirds N and all P and K at planting, rest of N at earthing up",false,"Source gives a range; results show both ends"
+sugarcane,plant,180,180,,,,,,"ICAR-IISR AICRP Sugarcane annual report, Seorahi centre 2014-15: 100% recommended N = 180 kg/ha",false,"TODO: P2O5 and K2O dose and N split for subtropical UP (IISR package of practices)"

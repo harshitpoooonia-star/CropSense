@@ -19,10 +19,10 @@ GUEST_ROUTES = [
     "/schemes", "/expert", "/farm/save", "/login", "/pin/reset", "/styleguide", "/field/setup",
 ]
 
-# Every visible control, measured at 360 px. The checkbox itself is small on
-# purpose: its whole label row is the 48 px target.
+# Every visible control, measured at 360 px. Checkboxes and radios are small on
+# purpose: their whole label row is the 48 px target, and the label is measured.
 TAP_TARGETS_JS = """
-() => [...document.querySelectorAll('a, button, select, input:not([type=hidden]):not([type=checkbox]), label:has(input[type=checkbox])')]
+() => [...document.querySelectorAll('a, button, select, input:not([type=hidden]):not([type=checkbox]):not([type=radio]), label:has(input[type=checkbox]), label:has(input[type=radio])')]
   .filter(el => !el.closest('.leaflet-control-attribution'))  // map credit line, required by OSM
   .filter(el => { const r = el.getBoundingClientRect(); return r.width > 1 && r.height > 1; })
   .map(el => { const r = el.getBoundingClientRect();

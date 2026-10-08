@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 06:03+0530\n"
+"POT-Creation-Date: 2026-10-08 06:39+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -31,6 +31,18 @@ msgid "%(kg)s kg per bag"
 msgstr ""
 
 #, python-format
+msgid "%(kg)s kg. Buy %(bags)s bags: ₹%(cost)s"
+msgstr ""
+
+#, python-format
+msgid "%(product)s %(bags)s bags"
+msgstr ""
+
+#, python-format
+msgid "%(product)s: %(kg)s kg"
+msgstr ""
+
+#, python-format
 msgid "%(rank)s. %(crop)s"
 msgstr ""
 
@@ -47,6 +59,10 @@ msgstr ""
 msgid "AgriSense crop plan: %(crop)s. Check with your KVK."
 msgstr ""
 
+#, python-format
+msgid "AgriSense fertilizer for %(what)s: %(items)s, about ₹%(cost)s. Check with your KVK."
+msgstr ""
+
 msgid "Already saved? Log in"
 msgstr ""
 
@@ -56,10 +72,19 @@ msgstr ""
 msgid "Area"
 msgstr ""
 
+msgid "As usual for the crop"
+msgstr ""
+
 msgid "Ask an expert"
 msgstr ""
 
 msgid "Ask why"
+msgstr ""
+
+msgid "At earthing up"
+msgstr ""
+
+msgid "At sowing or planting"
 msgstr ""
 
 msgid "Avoid easy PINs like 1111 or 1234."
@@ -69,6 +94,9 @@ msgid "Back"
 msgstr ""
 
 msgid "Bag icons"
+msgstr ""
+
+msgid "Best: it was worked out for your field."
 msgstr ""
 
 msgid "Bigha size differs by district and isn't known for yours yet, so use acre or hectare."
@@ -95,6 +123,12 @@ msgstr ""
 msgid "Choose a 4-digit PIN"
 msgstr ""
 
+msgid "Choose a crop"
+msgstr ""
+
+msgid "Choose a crop."
+msgstr ""
+
 msgid "Choose one."
 msgstr ""
 
@@ -110,6 +144,12 @@ msgstr ""
 msgid "Confidence badges"
 msgstr ""
 
+msgid "Copy the fertilizer amounts printed on your card for this crop, in kg."
+msgstr ""
+
+msgid "Cost is for whole bags. Prices change: check the MRP printed on each bag."
+msgstr ""
+
 msgid "Couldn't get your location. Tap the map or choose your district."
 msgstr ""
 
@@ -123,6 +163,9 @@ msgid "Crop names"
 msgstr ""
 
 msgid "Crops your district grows, ranked for your field by likely profit and water. Pick a season."
+msgstr ""
+
+msgid "DAP"
 msgstr ""
 
 msgid "Daily mandi price changes arrive in Section 7."
@@ -146,6 +189,12 @@ msgstr ""
 msgid "Don't"
 msgstr ""
 
+msgid "Dose copied from your Soil Health Card, scaled to your field."
+msgstr ""
+
+msgid "Dose from my Soil Health Card"
+msgstr ""
+
 msgid "Drop the pin on your field, or choose your district."
 msgstr ""
 
@@ -155,7 +204,13 @@ msgstr ""
 msgid "Enter a number, like 12 or 12.5."
 msgstr ""
 
+msgid "Enter at least one amount from your Soil Health Card."
+msgstr ""
+
 msgid "Enter the PIN again"
+msgstr ""
+
+msgid "Enter the amounts as numbers, as printed on the card."
 msgstr ""
 
 msgid "Enter the date printed on the card. It can't be in the future."
@@ -168,6 +223,9 @@ msgid "Enter the number as printed on the card."
 msgstr ""
 
 msgid "Enter your PIN to confirm"
+msgstr ""
+
+msgid "Enter your field size, or set up your field first."
 msgstr ""
 
 #, python-format
@@ -183,10 +241,17 @@ msgstr ""
 msgid "Fertilizer Calculator"
 msgstr ""
 
+#, python-format
+msgid "Fertilizer for %(crop)s"
+msgstr ""
+
 msgid "Fertilizer for this crop"
 msgstr ""
 
 msgid "Fertilizer for this field"
+msgstr ""
+
+msgid "Fertilizer from your card"
 msgstr ""
 
 msgid "Field"
@@ -251,6 +316,9 @@ msgstr ""
 msgid "How do you water it?"
 msgstr ""
 
+msgid "How many bags?"
+msgstr ""
+
 msgid "I agree"
 msgstr ""
 
@@ -289,6 +357,9 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
+msgid "Leave empty to use your saved field size."
+msgstr ""
+
 #, python-format
 msgid "Likely profit is about ₹%(gap)s per acre lower than the number 3 crop."
 msgstr ""
@@ -324,6 +395,12 @@ msgstr ""
 msgid "Low water"
 msgstr ""
 
+msgid "Lower end of the dose"
+msgstr ""
+
+msgid "MOP (potash)"
+msgstr ""
+
 #, python-format
 msgid "MSP of ₹%(price)s per quintal (not a mandi price)"
 msgstr ""
@@ -352,6 +429,9 @@ msgstr ""
 msgid "More"
 msgstr ""
 
+msgid "My Soil Health Card"
+msgstr ""
+
 #, python-format
 msgid "Needs %(need)s water, and you have a %(source)s: risky in a dry year."
 msgstr ""
@@ -369,10 +449,21 @@ msgstr ""
 msgid "Nitrogen (N)"
 msgstr ""
 
+msgid "No cited schedule for when to apply this crop's doses yet. Ask your KVK."
+msgstr ""
+
 msgid "No prices yet for these crops, so they aren't ranked by profit."
 msgstr ""
 
 msgid "Nobody pays us to recommend anything, so every answer is for you."
+msgstr ""
+
+msgid ""
+"Not adjusted for your soil test. If your Soil Health Card gives a dose for this crop, use that "
+"instead."
+msgstr ""
+
+msgid "Not adjusted for your soil."
 msgstr ""
 
 msgid "Not known"
@@ -391,6 +482,9 @@ msgstr ""
 msgid "Only do this after confirming, face to face, that the farmer owns this number."
 msgstr ""
 
+msgid "Only part of this dose has a cited source; the missing nutrients aren't shown. Ask your KVK."
+msgstr ""
+
 msgid ""
 "Optional. If you have the card, copy the numbers from it. If not, skip: answers will say what was"
 " estimated."
@@ -406,6 +500,15 @@ msgid "Other"
 msgstr ""
 
 msgid "PIN"
+msgstr ""
+
+msgid "Phosphate from"
+msgstr ""
+
+msgid "Phosphate from DAP, which also gives some nitrogen; the rest of the nitrogen from urea."
+msgstr ""
+
+msgid "Phosphate from SSP; all nitrogen from urea."
 msgstr ""
 
 msgid "Phosphorus (P)"
@@ -457,6 +560,9 @@ msgid "Reset code from your helper"
 msgstr ""
 
 msgid "Result card"
+msgstr ""
+
+msgid "SSP"
 msgstr ""
 
 msgid "Sample reason: each one is a plain sentence."
@@ -530,6 +636,9 @@ msgstr ""
 msgid "Source:"
 msgstr ""
 
+msgid "Sowing and water"
+msgstr ""
+
 msgid "Spray"
 msgstr ""
 
@@ -540,6 +649,16 @@ msgid "Spray and irrigation"
 msgstr ""
 
 msgid "Spray or water?"
+msgstr ""
+
+msgid "Standard dose"
+msgstr ""
+
+#, python-format
+msgid "Standard dose for %(crop)s (%(condition)s): N %(n)s, P2O5 %(p)s, K2O %(k)s kg per hectare."
+msgstr ""
+
+msgid "Standard dose for the crop"
 msgstr ""
 
 msgid "Start here"
@@ -568,6 +687,9 @@ msgid "The PIN must be exactly 4 digits."
 msgstr ""
 
 msgid "The answer itself goes here: a number, bags or a verdict."
+msgstr ""
+
+msgid "The card's amounts are per"
 msgstr ""
 
 msgid "The code is wrong or has expired. Ask your helper for a new one."
@@ -619,10 +741,23 @@ msgstr ""
 msgid "Top crops for %(season)s"
 msgstr ""
 
+#, python-format
+msgid "Total: ₹%(cost)s"
+msgstr ""
+
 msgid "Tubewell or borewell"
 msgstr ""
 
+msgid "Turn a fertilizer dose into bags of urea, DAP or SSP, and potash for your field."
+msgstr ""
+
 msgid "Unit"
+msgstr ""
+
+msgid "Upper end of the dose"
+msgstr ""
+
+msgid "Urea"
 msgstr ""
 
 msgid "Use my location"
@@ -673,6 +808,12 @@ msgid ""
 "district isn't covered yet."
 msgstr ""
 
+#, python-format
+msgid ""
+"We have no cited standard dose for %(crop)s yet. Use the dose on your Soil Health Card, or ask "
+"your KVK."
+msgstr ""
+
 msgid "We have no price or cost for it, so its profit couldn't be compared."
 msgstr ""
 
@@ -693,7 +834,13 @@ msgstr ""
 msgid "When an answer here is unsure, or you want a person to check it, call a free government helpline."
 msgstr ""
 
+msgid "When to apply"
+msgstr ""
+
 msgid "When you use the map, OpenStreetMap sees which area of the map you are looking at."
+msgstr ""
+
+msgid "Where does the dose come from?"
 msgstr ""
 
 msgid "Where is your field?"
@@ -713,6 +860,9 @@ msgid "Why not another crop?"
 msgstr ""
 
 msgid "Without a pin, tools use the district's centre, so weather and nearest mandis are less exact."
+msgstr ""
+
+msgid "Work out the bags"
 msgstr ""
 
 msgid "Wrong mobile number or PIN."
@@ -808,6 +958,9 @@ msgstr ""
 msgid "high"
 msgstr ""
 
+msgid "irrigated, sown on time"
+msgstr ""
+
 msgid "kg"
 msgstr ""
 
@@ -817,10 +970,16 @@ msgstr ""
 msgid "kharif"
 msgstr ""
 
+msgid "late sown"
+msgstr ""
+
 msgid "low"
 msgstr ""
 
 msgid "medium"
+msgstr ""
+
+msgid "my field"
 msgstr ""
 
 msgid "organic carbon"
@@ -832,10 +991,16 @@ msgstr ""
 msgid "percent, as on the card"
 msgstr ""
 
+msgid "plant crop"
+msgstr ""
+
 msgid "quintal"
 msgstr ""
 
 msgid "rabi"
+msgstr ""
+
+msgid "rain-fed"
 msgstr ""
 
 msgid "rain-fed field"
@@ -866,6 +1031,12 @@ msgstr ""
 msgid "soil potassium"
 msgstr ""
 
+msgid "standard"
+msgstr ""
+
+msgid "transplanted"
+msgstr ""
+
 msgid "tubewell"
 msgstr ""
 
@@ -873,6 +1044,9 @@ msgid "water source"
 msgstr ""
 
 msgid "what you entered"
+msgstr ""
+
+msgid "your Soil Health Card"
 msgstr ""
 
 msgid "your soil card"
