@@ -3,6 +3,7 @@ versioned static URLs with cache headers, compression, keepable answers."""
 
 import json
 import re
+import struct
 from pathlib import Path
 
 import pytest
@@ -47,12 +48,22 @@ def test_manifest_description_follows_the_language(client):
 
 
 def test_icon_pngs_have_the_right_sizes():
-    import struct
 
     for name, size in {"icon-192.png": 192, "icon-512.png": 512, "apple-touch-icon.png": 180}.items():
         head = (STATIC / "icons" / name).read_bytes()[:24]
         assert head[:8] == b"\x89PNG\r\n\x1a\n"
         assert struct.unpack(">II", head[16:24]) == (size, size)
+
+
+def test_favicon_ico_is_served(client):
+    r = client.get("/favicon.ico")
+    assert r.status_code == 200 and r.mimetype == "image/vnd.microsoft.icon"
+    assert "max-age=2592000" in r.headers["Cache-Control"]
+    head = r.data[:6]
+    assert head == b"\x00\x00\x01\x00\x02\x00"            # ICO, 2 images
+    for entry in range(2):
+        size, offset = struct.unpack("<II", r.data[6 + 16 * entry + 8:6 + 16 * entry + 16])
+        assert r.data[offset:offset + 8] == b"\x89PNG\r\n\x1a\n" and offset + size <= len(r.data)
 
 
 def test_every_page_links_manifest_icons_and_pwa_script(client):

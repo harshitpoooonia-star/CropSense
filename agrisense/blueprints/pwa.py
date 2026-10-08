@@ -13,7 +13,7 @@ import os
 from functools import lru_cache
 from pathlib import Path
 
-from flask import Blueprint, Response, current_app, render_template, request, url_for
+from flask import Blueprint, Response, current_app, render_template, request, send_from_directory, url_for
 from flask_babel import force_locale
 from flask_babel import gettext as _
 
@@ -28,6 +28,7 @@ BACKGROUND_COLOR = "#faf7f2"  # --color-bg
 # The app shell: enough to open any page the farmer visited before, offline.
 SHELL_STATIC = ("css/app.css", "vendor/htmx-2.0.11.min.js", "js/profile.js", "js/pwa.js", "js/wizard.js",
                 "icons/icon.svg", "icons/icon-192.png")
+FAVICON_MAX_AGE = 30 * 24 * 3600  # fixed URL, so not the year-long cache of ?v= files
 FONTS = ("mukta-400-devanagari", "mukta-400-latin", "mukta-700-devanagari", "mukta-700-latin")
 
 
@@ -71,6 +72,13 @@ def service_worker():
     # Browsers check for a new worker on every visit; never let a cache hide one.
     response.headers["Cache-Control"] = "no-cache"
     return response
+
+
+@bp.get("/favicon.ico")
+def favicon():
+    """Browsers ask for /favicon.ico even when the page links an SVG icon."""
+    return send_from_directory(Path(current_app.static_folder) / "icons", "favicon.ico",
+                               mimetype="image/vnd.microsoft.icon", max_age=FAVICON_MAX_AGE)
 
 
 @bp.get("/manifest.webmanifest")

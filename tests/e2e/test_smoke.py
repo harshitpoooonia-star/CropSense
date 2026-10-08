@@ -39,6 +39,7 @@ def test_guest_page_works_on_a_360px_phone(page, path):
     page.wait_for_load_state("networkidle")
     assert response.status == 200
     assert page.console_errors == []
+    assert page.failed_responses == []  # e.g. the browser's own /favicon.ico request
     assert page.locator("html").get_attribute("lang") == "hi"
     assert page.evaluate("document.documentElement.scrollWidth") <= 360, "horizontal scroll"
     assert page.evaluate(TAP_TARGETS_JS) == [], "tap targets under 48 px"
