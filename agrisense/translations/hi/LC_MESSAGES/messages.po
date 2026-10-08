@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 06:03+0530\n"
+"POT-Creation-Date: 2026-10-08 06:39+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hi\n"
@@ -31,6 +31,18 @@ msgid "%(kg)s kg per bag"
 msgstr "एक बोरी में %(kg)s किलो"
 
 #, python-format
+msgid "%(kg)s kg. Buy %(bags)s bags: ₹%(cost)s"
+msgstr "%(kg)s किलो। %(bags)s बोरी खरीदें: ₹%(cost)s"
+
+#, python-format
+msgid "%(product)s %(bags)s bags"
+msgstr "%(product)s %(bags)s बोरी"
+
+#, python-format
+msgid "%(product)s: %(kg)s kg"
+msgstr "%(product)s: %(kg)s किलो"
+
+#, python-format
 msgid "%(rank)s. %(crop)s"
 msgstr "%(rank)s. %(crop)s"
 
@@ -49,6 +61,10 @@ msgstr ""
 msgid "AgriSense crop plan: %(crop)s. Check with your KVK."
 msgstr "AgriSense फसल योजना: %(crop)s। अपने KVK से पक्का करें।"
 
+#, python-format
+msgid "AgriSense fertilizer for %(what)s: %(items)s, about ₹%(cost)s. Check with your KVK."
+msgstr "AgriSense खाद, %(what)s के लिए: %(items)s, लगभग ₹%(cost)s। अपने KVK से पक्का करें।"
+
 msgid "Already saved? Log in"
 msgstr "पहले से सेव है? लॉग इन करें"
 
@@ -58,11 +74,20 @@ msgstr "आपके अपने खेत के लिए जवाब, स�
 msgid "Area"
 msgstr "रकबा"
 
+msgid "As usual for the crop"
+msgstr "फसल के लिए सामान्य"
+
 msgid "Ask an expert"
 msgstr "विशेषज्ञ से पूछें"
 
 msgid "Ask why"
 msgstr "वजह पूछें"
+
+msgid "At earthing up"
+msgstr "मिट्टी चढ़ाते समय"
+
+msgid "At sowing or planting"
+msgstr "बुआई या रोपाई के समय"
 
 msgid "Avoid easy PINs like 1111 or 1234."
 msgstr "1111 या 1234 जैसा आसान पिन न रखें।"
@@ -72,6 +97,9 @@ msgstr "पीछे"
 
 msgid "Bag icons"
 msgstr "बोरी के चित्र"
+
+msgid "Best: it was worked out for your field."
+msgstr "सबसे अच्छा: यह आपके खेत के लिए ही निकाला गया है।"
 
 msgid "Bigha size differs by district and isn't known for yours yet, so use acre or hectare."
 msgstr ""
@@ -99,6 +127,12 @@ msgstr "भाव जाँचें"
 msgid "Choose a 4-digit PIN"
 msgstr "4 अंकों का पिन चुनें"
 
+msgid "Choose a crop"
+msgstr "फसल चुनें"
+
+msgid "Choose a crop."
+msgstr "फसल चुनें।"
+
 msgid "Choose one."
 msgstr "कोई एक चुनें।"
 
@@ -113,6 +147,12 @@ msgstr "इस मौसम में अपने खेत के लिए �
 
 msgid "Confidence badges"
 msgstr "भरोसे के निशान"
+
+msgid "Copy the fertilizer amounts printed on your card for this crop, in kg."
+msgstr "इस फसल के लिए अपने कार्ड पर छपी खाद की मात्रा किलो में भरें।"
+
+msgid "Cost is for whole bags. Prices change: check the MRP printed on each bag."
+msgstr "खर्च पूरी बोरियों का है। दाम बदलते हैं: हर बोरी पर छपा MRP देखें।"
 
 msgid "Couldn't get your location. Tap the map or choose your district."
 msgstr "आपकी जगह नहीं मिल पाई। नक्शे पर छूएँ या अपना ज़िला चुनें।"
@@ -130,6 +170,9 @@ msgid "Crops your district grows, ranked for your field by likely profit and wat
 msgstr ""
 "आपके ज़िले में उगने वाली फसलें, आपके खेत के लिए संभावित मुनाफ़े और पानी के हिसाब से क्रम में। "
 "मौसम चुनें।"
+
+msgid "DAP"
+msgstr "डीएपी (DAP)"
 
 msgid "Daily mandi price changes arrive in Section 7."
 msgstr "मंडी भाव में रोज़ का बदलाव सेक्शन 7 में आएगा।"
@@ -152,6 +195,12 @@ msgstr "ज़िले का बीच का हिस्सा (अनुम
 msgid "Don't"
 msgstr "न करें"
 
+msgid "Dose copied from your Soil Health Card, scaled to your field."
+msgstr "मात्रा आपके मृदा स्वास्थ्य कार्ड से ली गई है, आपके खेत के नाप के हिसाब से।"
+
+msgid "Dose from my Soil Health Card"
+msgstr "मेरे मृदा स्वास्थ्य कार्ड की मात्रा"
+
 msgid "Drop the pin on your field, or choose your district."
 msgstr "अपने खेत पर निशान लगाएँ, या अपना ज़िला चुनें।"
 
@@ -161,8 +210,14 @@ msgstr "10 अंकों का मोबाइल नंबर डाले�
 msgid "Enter a number, like 12 or 12.5."
 msgstr "संख्या डालें, जैसे 12 या 12.5।"
 
+msgid "Enter at least one amount from your Soil Health Card."
+msgstr "अपने मृदा स्वास्थ्य कार्ड से कम से कम एक मात्रा भरें।"
+
 msgid "Enter the PIN again"
 msgstr "पिन दोबारा डालें"
+
+msgid "Enter the amounts as numbers, as printed on the card."
+msgstr "मात्रा संख्या में भरें, जैसी कार्ड पर छपी है।"
 
 msgid "Enter the date printed on the card. It can't be in the future."
 msgstr "कार्ड पर छपी तारीख डालें। यह आगे की तारीख नहीं हो सकती।"
@@ -175,6 +230,9 @@ msgstr "कार्ड पर जैसा छपा है, वैसी स�
 
 msgid "Enter your PIN to confirm"
 msgstr "पक्का करने के लिए अपना पिन डालें"
+
+msgid "Enter your field size, or set up your field first."
+msgstr "अपने खेत का नाप भरें, या पहले अपना खेत जोड़ें।"
 
 #, python-format
 msgid "Estimated, not measured: %(fields)s"
@@ -189,11 +247,18 @@ msgstr "किसान का मोबाइल नंबर"
 msgid "Fertilizer Calculator"
 msgstr "खाद कैलकुलेटर"
 
+#, python-format
+msgid "Fertilizer for %(crop)s"
+msgstr "%(crop)s के लिए खाद"
+
 msgid "Fertilizer for this crop"
 msgstr "इस फसल के लिए खाद"
 
 msgid "Fertilizer for this field"
 msgstr "इस खेत के लिए खाद"
+
+msgid "Fertilizer from your card"
+msgstr "आपके कार्ड के हिसाब से खाद"
 
 msgid "Field"
 msgstr "खेत"
@@ -259,6 +324,9 @@ msgstr "खेत कितना बड़ा है?"
 msgid "How do you water it?"
 msgstr "सिंचाई कैसे करते हैं?"
 
+msgid "How many bags?"
+msgstr "कितनी बोरी?"
+
 msgid "I agree"
 msgstr "मैं सहमत हूँ"
 
@@ -297,6 +365,9 @@ msgstr "कृषि विज्ञान केंद्र: आपके ज�
 msgid "Language"
 msgstr "भाषा"
 
+msgid "Leave empty to use your saved field size."
+msgstr "खाली छोड़ें तो आपके सेव खेत का नाप लिया जाएगा।"
+
 #, python-format
 msgid "Likely profit is about ₹%(gap)s per acre lower than the number 3 crop."
 msgstr "इसका संभावित मुनाफ़ा 3 नंबर की फसल से लगभग ₹%(gap)s प्रति एकड़ कम है।"
@@ -332,6 +403,12 @@ msgstr "कम जोखिम"
 msgid "Low water"
 msgstr "कम पानी"
 
+msgid "Lower end of the dose"
+msgstr "मात्रा का कम वाला सिरा"
+
+msgid "MOP (potash)"
+msgstr "एमओपी (पोटाश)"
+
 #, python-format
 msgid "MSP of ₹%(price)s per quintal (not a mandi price)"
 msgstr "₹%(price)s प्रति क्विंटल के MSP (मंडी भाव नहीं)"
@@ -360,6 +437,9 @@ msgstr "मोबाइल नंबर"
 msgid "More"
 msgstr "और"
 
+msgid "My Soil Health Card"
+msgstr "मेरा मृदा स्वास्थ्य कार्ड"
+
 #, python-format
 msgid "Needs %(need)s water, and you have a %(source)s: risky in a dry year."
 msgstr "इसे %(need)s पानी चाहिए और आपके पास %(source)s है: सूखे साल में जोखिम।"
@@ -377,11 +457,24 @@ msgstr "आगे"
 msgid "Nitrogen (N)"
 msgstr "नाइट्रोजन (N)"
 
+msgid "No cited schedule for when to apply this crop's doses yet. Ask your KVK."
+msgstr "इस फसल में खाद कब डालें, इसका स्रोत वाला समय-क्रम अभी हमारे पास नहीं है। अपने KVK से पूछें।"
+
 msgid "No prices yet for these crops, so they aren't ranked by profit."
 msgstr "इन फसलों के भाव अभी नहीं हैं, इसलिए इन्हें मुनाफ़े के हिसाब से क्रम में नहीं रखा गया।"
 
 msgid "Nobody pays us to recommend anything, so every answer is for you."
 msgstr "किसी चीज़ की सिफ़ारिश के लिए हमें कोई पैसे नहीं देता, इसलिए हर जवाब सिर्फ़ आपके लिए है।"
+
+msgid ""
+"Not adjusted for your soil test. If your Soil Health Card gives a dose for this crop, use that "
+"instead."
+msgstr ""
+"यह आपकी मिट्टी की जाँच के हिसाब से बदली नहीं गई है। अगर आपके मृदा स्वास्थ्य कार्ड पर इस फसल की "
+"मात्रा दी है, तो वही इस्तेमाल करें।"
+
+msgid "Not adjusted for your soil."
+msgstr "आपकी मिट्टी के हिसाब से बदली नहीं गई।"
 
 msgid "Not known"
 msgstr "पता नहीं"
@@ -399,6 +492,9 @@ msgstr "यह सिर्फ़ सहायक कर सकते हैं�
 msgid "Only do this after confirming, face to face, that the farmer owns this number."
 msgstr "यह तभी करें जब आपने आमने-सामने पक्का कर लिया हो कि यह नंबर इसी किसान का है।"
 
+msgid "Only part of this dose has a cited source; the missing nutrients aren't shown. Ask your KVK."
+msgstr "इस मात्रा के सिर्फ़ कुछ हिस्से का स्रोत है; बाकी पोषक तत्व नहीं दिखाए गए। अपने KVK से पूछें।"
+
 msgid ""
 "Optional. If you have the card, copy the numbers from it. If not, skip: answers will say what was"
 " estimated."
@@ -415,6 +511,15 @@ msgstr "कोई और"
 
 msgid "PIN"
 msgstr "पिन"
+
+msgid "Phosphate from"
+msgstr "फ़ॉस्फ़ेट किससे"
+
+msgid "Phosphate from DAP, which also gives some nitrogen; the rest of the nitrogen from urea."
+msgstr "फ़ॉस्फ़ेट डीएपी से, जिससे कुछ नाइट्रोजन भी मिलती है; बाकी नाइट्रोजन यूरिया से।"
+
+msgid "Phosphate from SSP; all nitrogen from urea."
+msgstr "फ़ॉस्फ़ेट एसएसपी से; पूरी नाइट्रोजन यूरिया से।"
 
 msgid "Phosphorus (P)"
 msgstr "फ़ॉस्फ़ोरस (P)"
@@ -466,6 +571,9 @@ msgstr "सहायक से मिला रीसेट कोड"
 
 msgid "Result card"
 msgstr "नतीजे का कार्ड"
+
+msgid "SSP"
+msgstr "एसएसपी (SSP)"
 
 msgid "Sample reason: each one is a plain sentence."
 msgstr "नमूना वजह: हर वजह एक सीधा वाक्य होती है।"
@@ -540,6 +648,9 @@ msgstr "कुछ जोखिम"
 msgid "Source:"
 msgstr "स्रोत:"
 
+msgid "Sowing and water"
+msgstr "बुआई और पानी"
+
 msgid "Spray"
 msgstr "छिड़काव करें"
 
@@ -551,6 +662,16 @@ msgstr "छिड़काव और सिंचाई"
 
 msgid "Spray or water?"
 msgstr "छिड़काव करें या पानी दें?"
+
+msgid "Standard dose"
+msgstr "सामान्य मात्रा"
+
+#, python-format
+msgid "Standard dose for %(crop)s (%(condition)s): N %(n)s, P2O5 %(p)s, K2O %(k)s kg per hectare."
+msgstr "%(crop)s (%(condition)s) की सामान्य मात्रा: N %(n)s, P2O5 %(p)s, K2O %(k)s किलो प्रति हेक्टेयर।"
+
+msgid "Standard dose for the crop"
+msgstr "फसल की सामान्य मात्रा"
 
 msgid "Start here"
 msgstr "यहाँ से शुरू करें"
@@ -579,6 +700,9 @@ msgstr "पिन ठीक 4 अंकों का होना चाहि�
 
 msgid "The answer itself goes here: a number, bags or a verdict."
 msgstr "असली जवाब यहाँ आता है: कोई संख्या, बोरियाँ या फ़ैसला।"
+
+msgid "The card's amounts are per"
+msgstr "कार्ड की मात्रा प्रति"
 
 msgid "The code is wrong or has expired. Ask your helper for a new one."
 msgstr "कोड गलत है या उसका समय खत्म हो गया। सहायक से नया कोड माँगें।"
@@ -631,11 +755,24 @@ msgstr "बहुत बार कोशिश हो गई। 15 मिनट 
 msgid "Top crops for %(season)s"
 msgstr "%(season)s के लिए सबसे अच्छी फसलें"
 
+#, python-format
+msgid "Total: ₹%(cost)s"
+msgstr "कुल: ₹%(cost)s"
+
 msgid "Tubewell or borewell"
 msgstr "ट्यूबवेल या बोरवेल"
 
+msgid "Turn a fertilizer dose into bags of urea, DAP or SSP, and potash for your field."
+msgstr "खाद की मात्रा को अपने खेत के लिए यूरिया, डीएपी या एसएसपी, और पोटाश की बोरियों में बदलें।"
+
 msgid "Unit"
 msgstr "इकाई"
+
+msgid "Upper end of the dose"
+msgstr "मात्रा का ज़्यादा वाला सिरा"
+
+msgid "Urea"
+msgstr "यूरिया"
 
 msgid "Use my location"
 msgstr "मेरी जगह इस्तेमाल करें"
@@ -689,6 +826,14 @@ msgstr ""
 "अभी हमारे पास गौतम बुद्ध नगर, बुलंदशहर, गाज़ियाबाद, हापुड़ और अलीगढ़ का फसल डेटा है। आपका ज़िला "
 "अभी शामिल नहीं है।"
 
+#, python-format
+msgid ""
+"We have no cited standard dose for %(crop)s yet. Use the dose on your Soil Health Card, or ask "
+"your KVK."
+msgstr ""
+"%(crop)s की स्रोत वाली सामान्य मात्रा अभी हमारे पास नहीं है। अपने मृदा स्वास्थ्य कार्ड की मात्रा "
+"इस्तेमाल करें, या अपने KVK से पूछें।"
+
 msgid "We have no price or cost for it, so its profit couldn't be compared."
 msgstr "इसका भाव या खर्च हमारे पास नहीं है, इसलिए इसके मुनाफ़े की तुलना नहीं हो सकी।"
 
@@ -713,10 +858,16 @@ msgstr ""
 "जब यहाँ का जवाब पक्का न हो, या आप किसी इंसान से जाँच करवाना चाहें, तो मुफ़्त सरकारी हेल्पलाइन पर "
 "कॉल करें।"
 
+msgid "When to apply"
+msgstr "कब डालें"
+
 msgid "When you use the map, OpenStreetMap sees which area of the map you are looking at."
 msgstr ""
 "जब आप नक्शा इस्तेमाल करते हैं, तो OpenStreetMap देख सकता है कि आप नक्शे का कौन-सा इलाका देख रहे "
 "हैं।"
+
+msgid "Where does the dose come from?"
+msgstr "मात्रा कहाँ से लें?"
 
 msgid "Where is your field?"
 msgstr "आपका खेत कहाँ है?"
@@ -738,6 +889,9 @@ msgid "Without a pin, tools use the district's centre, so weather and nearest ma
 msgstr ""
 "निशान के बिना टूल ज़िले के बीच के हिस्से को मानेंगे, इसलिए मौसम और नज़दीकी मंडियों की जानकारी कम "
 "सटीक होगी।"
+
+msgid "Work out the bags"
+msgstr "बोरियाँ निकालें"
 
 msgid "Wrong mobile number or PIN."
 msgstr "मोबाइल नंबर या पिन गलत है।"
@@ -836,6 +990,9 @@ msgstr "हेक्टेयर"
 msgid "high"
 msgstr "ज़्यादा"
 
+msgid "irrigated, sown on time"
+msgstr "सिंचित, समय पर बुआई"
+
 msgid "kg"
 msgstr "किलो"
 
@@ -845,11 +1002,17 @@ msgstr "किलो प्रति हेक्टेयर, जैसा क�
 msgid "kharif"
 msgstr "खरीफ़"
 
+msgid "late sown"
+msgstr "देर से बुआई"
+
 msgid "low"
 msgstr "कम"
 
 msgid "medium"
 msgstr "मध्यम"
+
+msgid "my field"
+msgstr "मेरा खेत"
 
 msgid "organic carbon"
 msgstr "जैविक कार्बन"
@@ -860,11 +1023,17 @@ msgstr "pH"
 msgid "percent, as on the card"
 msgstr "प्रतिशत, जैसा कार्ड पर है"
 
+msgid "plant crop"
+msgstr "बावग (नई बोई गन्ना फसल)"
+
 msgid "quintal"
 msgstr "क्विंटल"
 
 msgid "rabi"
 msgstr "रबी"
+
+msgid "rain-fed"
+msgstr "बारिश पर निर्भर"
 
 msgid "rain-fed field"
 msgstr "बारिश पर निर्भर खेत"
@@ -894,6 +1063,12 @@ msgstr "मिट्टी में फ़ॉस्फ़ोरस"
 msgid "soil potassium"
 msgstr "मिट्टी में पोटाश"
 
+msgid "standard"
+msgstr "सामान्य"
+
+msgid "transplanted"
+msgstr "रोपाई वाली"
+
 msgid "tubewell"
 msgstr "ट्यूबवेल"
 
@@ -902,6 +1077,9 @@ msgstr "पानी का साधन"
 
 msgid "what you entered"
 msgstr "आपकी भरी जानकारी"
+
+msgid "your Soil Health Card"
+msgstr "आपका मृदा स्वास्थ्य कार्ड"
 
 msgid "your soil card"
 msgstr "आपका मृदा स्वास्थ्य कार्ड"

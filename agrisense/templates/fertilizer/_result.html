@@ -1,0 +1,46 @@
+{% if outcome.no_dose %}
+  <p class="flex gap-2 rounded-card border border-warn bg-warn-bg p-4 text-warn">
+    {{ ui.icon("info", "mt-1 size-5") }}
+    <span>{{ _("We have no cited standard dose for %(crop)s yet. Use the dose on your Soil Health Card, or ask your KVK.", crop=crop_name(outcome.crop)) }}</span>
+  </p>
+  <div class="mt-3">{{ ui.link_button(url_for("more.expert"), _("Ask an expert"), "secondary", "phone") }}</div>
+{% elif outcome.errors %}
+  <p role="alert" class="flex gap-2 rounded-card border border-crit bg-crit-bg p-4 text-crit">
+    {{ ui.icon("alert", "mt-1 size-5") }}<span>{{ outcome.errors.values() | first }}</span>
+  </p>
+{% elif outcome.trust %}
+  <script type="application/json" data-profile-update>{{ profile | tojson }}</script>
+  {% set title = _("Fertilizer for %(crop)s", crop=crop_name(outcome.crop)) if outcome.crop else _("Fertilizer from your card") %}
+  {% call ui.result_card(title, outcome.trust, share_text=outcome.share_text) %}
+    {% for label, plan in outcome.plans %}
+      {% if label %}
+      <h3 class="mt-2 font-bold">{{ _("Lower end of the dose") if label == "low" else _("Upper end of the dose") }}</h3>
+      {% endif %}
+      <ul class="mt-3 space-y-5">
+        {% for line in plan.lines %}
+        <li>
+          {{ ui.bag_icons(line.bags | float, product_labels[line.product]) }}
+          <p class="mt-1 text-base text-ink-muted">
+            {{ _("%(kg)s kg. Buy %(bags)s bags: ₹%(cost)s", kg=line.kg | int | decimalformat, bags=line.bags_to_buy, cost=line.cost | int | decimalformat) }}
+          </p>
+        </li>
+        {% endfor %}
+      </ul>
+      <p class="mt-4 text-xl font-bold">{{ _("Total: ₹%(cost)s", cost=plan.total_cost | int | decimalformat) }}</p>
+
+      {% if plan.stages %}
+      <h3 class="mt-4 font-bold">{{ _("When to apply") }}</h3>
+      <dl class="mt-2 space-y-2">
+        {% for stage, items in plan.stages.items() %}
+        <div>
+          <dt class="font-bold">{{ stage_labels.get(stage, stage) }}</dt>
+          <dd>{% for code, kg in items.items() %}{{ _("%(product)s: %(kg)s kg", product=product_labels[code], kg=kg | int | decimalformat) }}{% if not loop.last %}; {% endif %}{% endfor %}</dd>
+        </div>
+        {% endfor %}
+      </dl>
+      {% elif outcome.mode == "standard" %}
+      <p class="mt-4 text-base text-ink-muted">{{ _("No cited schedule for when to apply this crop's doses yet. Ask your KVK.") }}</p>
+      {% endif %}
+    {% endfor %}
+  {% endcall %}
+{% endif %}

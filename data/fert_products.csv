@@ -1,0 +1,5 @@
+product,n_pct,p2o5_pct,k2o_pct,bag_kg,price_inr_bag,price_as_of,price_source,composition_source,verified
+urea,46,0,0,45,242,2026-02,"Govt of India subsidised MRP for neem-coated urea, Rs 242 per 45 kg bag excluding neem-coating charges and taxes (Department of Fertilizers reply in Parliament; also reported 2026)","Fertiliser (Control) Order, 1985, Schedule I",false
+dap,18,46,0,50,1350,2026-02,"DAP MRP Rs 1,350 per 50 kg bag, held by companies under the Nutrient Based Subsidy terms (reported 2026)","Fertiliser (Control) Order, 1985, Schedule I",false
+mop,0,0,60,50,1699.35,2023-24,"Average MRP 2023-24, Department of Fertilizers reply, Rajya Sabha (PQ 267, 11 Mar 2025). MRP is open: check the bag","Fertiliser (Control) Order, 1985, Schedule I",false
+ssp,0,16,0,50,526.80,2023-24,"Average MRP 2023-24, Department of Fertilizers reply, Rajya Sabha (PQ 267, 11 Mar 2025). MRP is open: check the bag","Fertiliser (Control) Order, 1985, Schedule I (water-soluble P2O5)",false

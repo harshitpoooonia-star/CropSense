@@ -1,0 +1,4 @@
+rating,dose_factor,active,source,notes
+low,1.25,false,"TNAU soil-testing course notes: +25% in low, -25% in high status, described there as arbitrary","Inactive: rating cut-offs differ between ICAR, TNAU and other sources. TODO: a UP (SVPUAT / state soil-testing lab) source before switching on"
+medium,1.00,false,same,
+high,0.75,false,same,
