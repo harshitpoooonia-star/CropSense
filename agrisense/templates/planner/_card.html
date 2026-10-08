@@ -23,7 +23,12 @@
     {% endif %}
     {% if v.risk %}{{ ui.verdict_pill(risk_status[v.risk], risk_words[v.risk]) }}{% endif %}
   </div>
+  {# Only link to fertilizer when it has a cited dose for this crop; otherwise the farmer lands on a dead end. #}
+  {% if option.crop in fertilizer_crops %}
   <div class="mt-4">
     {{ ui.link_button(url_for("fertilizer.index", crop=option.crop, season=option.season), _("Fertilizer for this crop"), "primary", "bag") }}
   </div>
+  {% else %}
+  <p class="mt-4 text-base text-ink-muted">{{ _("We don't have a sourced fertilizer dose for this crop yet, so we can't count bags for it. Ask your KVK.") }}</p>
+  {% endif %}
 {% endcall %}

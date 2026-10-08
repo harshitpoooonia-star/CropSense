@@ -218,6 +218,20 @@ def test_plan_results_show_three_cards_with_trust_layer(client, english):
     assert len(saved["last_results"]["planner"]["value"]["top"]) == 3
 
 
+def test_fertilizer_link_only_for_crops_with_a_cited_dose(client, english):
+    """Found in the Section 11 task rehearsal: mustard topped a rabi plan, and its
+    fertilizer link led to a page that can't count bags for mustard."""
+    from agrisense.fertilizer import data as fertilizer_data
+
+    html = client.post("/plan/results", data={"season": "rabi", "profile": json.dumps(profile())},
+                       headers=HX).get_data(as_text=True)
+    top = json.loads(html.split("data-profile-update>")[1].split("</script>")[0])["last_results"]["planner"]["value"]["top"]
+    with_dose = set(fertilizer_data.crops_with_dose())
+    for crop in top:
+        assert (f"/fertilizer?crop={crop}&" in html) == (crop in with_dose), crop
+    assert html.count("so we can't count bags for it") == len([c for c in top if c not in with_dose])
+
+
 def test_district_without_crop_data(client, english):
     p = profile(district="HR-ambala")
     html = client.post("/plan/results", data={"season": "rabi", "profile": json.dumps(p)}, headers=HX).get_data(as_text=True)

@@ -42,7 +42,7 @@
         {{ ui.icon("field") }}<span>{{ _("Use my location") }}</span>
       </button>
       <button type="submit" data-pin-submit {% if not has_pin %}disabled{% endif %}
-        class="inline-flex min-h-tap cursor-pointer items-center justify-center gap-2 rounded-card bg-accent px-5 font-bold text-white transition-colors duration-150 hover:bg-accent-strong disabled:cursor-not-allowed disabled:bg-line">
+        class="inline-flex min-h-tap cursor-pointer items-center justify-center gap-2 rounded-card bg-accent px-5 font-bold text-white transition-colors duration-150 hover:bg-accent-strong disabled:cursor-not-allowed disabled:bg-line-soft disabled:text-ink-muted">
         <span>{{ _("Use this spot") }}</span>
       </button>
     </div>

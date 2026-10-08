@@ -69,6 +69,12 @@
   font-size: 1.5rem;
 }
 
+/* The focus ring appears at once. Otherwise `transition-colors` (and the
+   reduced-motion catch-all below) fade outline-color in from the text colour,
+   which left primary buttons with a white ring on the off-white page.
+   Unlayered so it beats the utilities layer. */
+:focus-visible { transition: none; }
+
 @layer base {
   html {
     background-color: var(--color-bg);
@@ -87,6 +93,8 @@
     outline: 3px solid var(--color-accent);
     outline-offset: 2px;
   }
+  /* Green on the soil-brown top bar is 1.6:1; white is clearly visible (WCAG 1.4.11). */
+  header :focus-visible { outline-color: var(--color-white); }
   @media (prefers-reduced-motion: reduce) {
     *, ::before, ::after {
       animation-duration: 0.01ms !important;
