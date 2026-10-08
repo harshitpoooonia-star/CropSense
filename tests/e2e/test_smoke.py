@@ -16,42 +16,20 @@ pytestmark = pytest.mark.skipif(not BASE_URL, reason="E2E_BASE_URL not set; use 
 ARTIFACTS = Path(__file__).resolve().parent.parent / "artifacts"
 GUEST_ROUTES = [
     "/", "/today", "/plan", "/fertilizer", "/field", "/weather", "/market", "/more",
-    "/schemes", "/expert", "/farm/save", "/login", "/pin/reset", "/styleguide",
+    "/schemes", "/expert", "/farm/save", "/login", "/pin/reset", "/styleguide", "/field/setup",
 ]
 
 # Every visible control, measured at 360 px. The checkbox itself is small on
 # purpose: its whole label row is the 48 px target.
 TAP_TARGETS_JS = """
 () => [...document.querySelectorAll('a, button, select, input:not([type=hidden]):not([type=checkbox]), label:has(input[type=checkbox])')]
+  .filter(el => !el.closest('.leaflet-control-attribution'))  // map credit line, required by OSM
   .filter(el => { const r = el.getBoundingClientRect(); return r.width > 1 && r.height > 1; })
   .map(el => { const r = el.getBoundingClientRect();
                return {tag: el.tagName, text: (el.innerText || el.name || '').trim().slice(0, 30),
                        w: Math.round(r.width), h: Math.round(r.height)}; })
   .filter(t => t.w < 48 || t.h < 48)
 """
-
-
-@pytest.fixture(scope="module")
-def browser():
-    from playwright.sync_api import sync_playwright
-
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        yield browser
-        browser.close()
-
-
-@pytest.fixture
-def page(browser):
-    # 360x740 is the spec's baseline phone.
-    context = browser.new_context(viewport={"width": 360, "height": 740}, locale="hi-IN")
-    page = context.new_page()
-    errors: list[str] = []
-    page.on("console", lambda msg: errors.append(msg.text) if msg.type == "error" else None)
-    page.on("pageerror", lambda exc: errors.append(str(exc)))
-    page.console_errors = errors
-    yield page
-    context.close()
 
 
 @pytest.mark.parametrize("path", GUEST_ROUTES)

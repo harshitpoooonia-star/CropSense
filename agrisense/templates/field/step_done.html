@@ -1,0 +1,21 @@
+{% extends "field/_wizard_bare.html" if partial else "field/_wizard_page.html" %}
+{% block wizard %}
+<script type="application/json" data-profile-update>{{ profile | tojson }}</script>
+<p role="status" class="flex items-center gap-2 font-bold text-good">{{ ui.icon("check") }}<span>{{ _("Your field is set up. Every tool will use it.") }}</span></p>
+<div class="mt-4">{% include "field/_summary_card.html" %}</div>
+
+<h2 class="mt-8 text-xl font-bold">{{ _("What next?") }}</h2>
+{% set links = [
+  (url_for("planner.index"), "plan", _("Plan a crop"), None),
+  (url_for("fertilizer.index"), "bag", _("Fertilizer for this field"), None),
+  (url_for("market.index"), "market", _("Check a price"), None),
+] %}
+{% include "_link_list.html" %}
+
+{% if not current_user %}
+<p class="mt-6">
+  {{ _("This field is saved on this phone only.") }}
+  <a href="{{ url_for('profile.save_farm') }}" class="inline-flex min-h-tap items-center font-bold">{{ _("Save my farm") }}</a>
+</p>
+{% endif %}
+{% endblock %}

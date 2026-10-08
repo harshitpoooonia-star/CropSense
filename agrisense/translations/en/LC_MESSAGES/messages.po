@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 05:14+0530\n"
+"POT-Creation-Date: 2026-10-08 05:38+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -35,13 +35,22 @@ msgstr ""
 msgid "Answers for your own farm, with the reason and the source shown. No sign-up needed."
 msgstr ""
 
+msgid "Area"
+msgstr ""
+
 msgid "Ask an expert"
 msgstr ""
 
 msgid "Avoid easy PINs like 1111 or 1234."
 msgstr ""
 
+msgid "Back"
+msgstr ""
+
 msgid "Bag icons"
+msgstr ""
+
+msgid "Bigha size differs by district and isn't known for yours yet, so use acre or hectare."
 msgstr ""
 
 msgid "Buttons"
@@ -50,7 +59,13 @@ msgstr ""
 msgid "Call now"
 msgstr ""
 
+msgid "Canal"
+msgstr ""
+
 msgid "Careful"
+msgstr ""
+
+msgid "Change field details"
 msgstr ""
 
 msgid "Check a price"
@@ -59,13 +74,22 @@ msgstr ""
 msgid "Choose a 4-digit PIN"
 msgstr ""
 
+msgid "Choose one."
+msgstr ""
+
+msgid "Choose your district"
+msgstr ""
+
+msgid "Choose your district from the list."
+msgstr ""
+
 msgid "Compare crops by likely profit for your field this season."
 msgstr ""
 
 msgid "Confidence badges"
 msgstr ""
 
-msgid "Contacts for Gautam Buddh Nagar and Bulandshahr KVKs are being checked and will appear here."
+msgid "Couldn't get your location. Tap the map or choose your district."
 msgstr ""
 
 msgid "Crop Planner"
@@ -77,7 +101,25 @@ msgstr ""
 msgid "Daily mandi price changes arrive in Section 7."
 msgstr ""
 
+msgid "Date on the card"
+msgstr ""
+
+msgid "Delete everything"
+msgstr ""
+
+msgid "Delete my farm"
+msgstr ""
+
+msgid "District"
+msgstr ""
+
+msgid "District centre (estimated)"
+msgstr ""
+
 msgid "Don't"
+msgstr ""
+
+msgid "Drop the pin on your field, or choose your district."
 msgstr ""
 
 msgid "Enter a 10-digit mobile number."
@@ -89,14 +131,23 @@ msgstr ""
 msgid "Enter the PIN again"
 msgstr ""
 
+msgid "Enter the date printed on the card. It can't be in the future."
+msgstr ""
+
+msgid "Enter the field size as a number, like 2 or 2.5."
+msgstr ""
+
+msgid "Enter the number as printed on the card."
+msgstr ""
+
+msgid "Enter your PIN to confirm"
+msgstr ""
+
 #, python-format
 msgid "Estimated, not measured: %(fields)s"
 msgstr ""
 
 msgid "Every component in Hindi and English. Sample data only, not advice."
-msgstr ""
-
-msgid "Farm profile"
 msgstr ""
 
 msgid "Farmer's mobile number"
@@ -114,10 +165,22 @@ msgstr ""
 msgid "Field area"
 msgstr ""
 
+msgid "Field size"
+msgstr ""
+
 msgid "Find a scheme"
 msgstr ""
 
+#, python-format
+msgid "For %(district)s district:"
+msgstr ""
+
 msgid "Forgot your PIN? Ask your KVK or FPO helper for a reset code."
+msgstr ""
+
+msgid ""
+"Four short steps: where, how big, how it's watered, and your soil card if you have it. No account"
+" needed."
 msgstr ""
 
 msgid "Free call. Answers in Hindi and other languages."
@@ -139,6 +202,12 @@ msgstr ""
 msgid "High confidence"
 msgstr ""
 
+msgid "How big is it?"
+msgstr ""
+
+msgid "How do you water it?"
+msgstr ""
+
 msgid "I agree"
 msgstr ""
 
@@ -148,13 +217,28 @@ msgstr ""
 msgid "KVK and Kisan Call Centre"
 msgstr ""
 
+msgid "KVKs we have so far:"
+msgstr ""
+
+msgid "Keep my farm"
+msgstr ""
+
 msgid "Keep your farm on this and other phones"
 msgstr ""
 
 msgid "Kisan Call Centre"
 msgstr ""
 
+msgid "Krishi Vigyan Kendra: your district's government farm science centre."
+msgstr ""
+
 msgid "Language"
+msgstr ""
+
+msgid "Loading your field…"
+msgstr ""
+
+msgid "Location"
 msgstr ""
 
 msgid "Location, area, irrigation and soil card, entered once for every tool."
@@ -175,6 +259,9 @@ msgstr ""
 msgid "Mandi Prices"
 msgstr ""
 
+msgid "Map of your area"
+msgstr ""
+
 msgid "Market"
 msgstr ""
 
@@ -190,7 +277,20 @@ msgstr ""
 msgid "New 4-digit PIN"
 msgstr ""
 
+msgid "Next"
+msgstr ""
+
+msgid "Nitrogen (N)"
+msgstr ""
+
 msgid "Nobody pays us to recommend anything, so every answer is for you."
+msgstr ""
+
+msgid "Not known"
+msgstr ""
+
+#, python-format
+msgid "Not known yet: %(fields)s. Tools will say when this limits an answer."
 msgstr ""
 
 msgid "Number with unit"
@@ -202,7 +302,27 @@ msgstr ""
 msgid "Only do this after confirming, face to face, that the farmer owns this number."
 msgstr ""
 
+msgid ""
+"Optional. If you have the card, copy the numbers from it. If not, skip: answers will say what was"
+" estimated."
+msgstr ""
+
+msgid "Or choose your district"
+msgstr ""
+
+msgid "Organic carbon (OC)"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
 msgid "PIN"
+msgstr ""
+
+msgid "Phosphorus (P)"
+msgstr ""
+
+msgid "Pick another district if this is wrong."
 msgstr ""
 
 msgid "Plan"
@@ -212,6 +332,9 @@ msgid "Plan a crop"
 msgstr ""
 
 msgid "Please read and accept the consent text to save your farm."
+msgstr ""
+
+msgid "Potassium (K)"
 msgstr ""
 
 msgid "Prices for your crops"
@@ -224,6 +347,9 @@ msgid "Product B"
 msgstr ""
 
 msgid "Quantity"
+msgstr ""
+
+msgid "Rain only"
 msgstr ""
 
 msgid "Reset a farmer's PIN"
@@ -250,6 +376,9 @@ msgstr ""
 msgid "Save my farm"
 msgstr ""
 
+msgid "Save soil values"
+msgstr ""
+
 msgid "Scheme Finder"
 msgstr ""
 
@@ -268,13 +397,22 @@ msgstr ""
 msgid "Set new PIN"
 msgstr ""
 
-msgid "Set up in Section 4."
+msgid "Set up your field"
+msgstr ""
+
+msgid "Set up your field to see your district's KVK."
 msgstr ""
 
 msgid "Share on WhatsApp"
 msgstr ""
 
 msgid "Skip to content"
+msgstr ""
+
+msgid "Skip, I don't have the card"
+msgstr ""
+
+msgid "Soil Health Card"
 msgstr ""
 
 msgid "Source:"
@@ -295,7 +433,17 @@ msgstr ""
 msgid "Start here"
 msgstr ""
 
+#, python-format
+msgid "Step %(n)s of %(total)s"
+msgstr ""
+
 msgid "Style guide"
+msgstr ""
+
+msgid "Tap the map where your field is, or drag the pin."
+msgstr ""
+
+msgid "Tell us about your field once"
 msgstr ""
 
 msgid "Text field"
@@ -313,6 +461,9 @@ msgstr ""
 msgid "The code is wrong or has expired. Ask your helper for a new one."
 msgstr ""
 
+msgid "The map didn't load. Use your location or choose your district below."
+msgstr ""
+
 msgid "The nearest deadline arrives in Section 9."
 msgstr ""
 
@@ -325,7 +476,18 @@ msgstr ""
 msgid "This PIN is too easy to guess. Avoid PINs like 1111 or 1234."
 msgstr ""
 
+msgid "This field is saved on this phone only."
+msgstr ""
+
 msgid "This number already has a saved farm. Log in instead."
+msgstr ""
+
+msgid "This phone can't remember your field (private browsing?). It will work for this visit only."
+msgstr ""
+
+msgid ""
+"This removes your account, your field, soil card values and saved answers for good. It can't be "
+"undone."
 msgstr ""
 
 #, python-format
@@ -338,10 +500,22 @@ msgstr ""
 msgid "Too many tries. Wait 15 minutes and try again."
 msgstr ""
 
+msgid "Tubewell or borewell"
+msgstr ""
+
 msgid "Unit"
 msgstr ""
 
+msgid "Use my location"
+msgstr ""
+
 msgid "Use the 6-digit code your helper gave you."
+msgstr ""
+
+msgid "Use this district"
+msgstr ""
+
+msgid "Use this spot"
 msgstr ""
 
 msgid "Use your mobile number and a 4-digit PIN to open your farm on any phone."
@@ -353,34 +527,76 @@ msgstr ""
 msgid "Want your farm remembered on this phone and others?"
 msgstr ""
 
+msgid "Water"
+msgstr ""
+
+msgid "Water bought from others"
+msgstr ""
+
+msgid "We are still checking this KVK's phone number. Until then, call the Kisan Call Centre above."
+msgstr ""
+
+#, python-format
+msgid "We don't have the KVK for %(district)s district yet."
+msgstr ""
+
+msgid "We don't know the bigha size for your district yet. Please use acre or hectare."
+msgstr ""
+
+msgid "We don't sell or share it, show no ads, and never send you messages."
+msgstr ""
+
 msgid "We don't sell seeds or sprays."
 msgstr ""
 
 msgid ""
-"We keep a scrambled form of your mobile number (we cannot read it back), your PIN in scrambled "
-"form, and the farm details you enter. We use them only to show your farm's advice. We don't sell "
-"or share them, and we never send you messages."
+"We use these only to give advice for your field. Only you see your farm; the AgriSense team opens"
+" the data only to fix problems."
 msgstr ""
 
 msgid "What needs a decision on your farm today."
 msgstr ""
 
-msgid "What we keep"
+msgid "What next?"
+msgstr ""
+
+msgid "What we keep, and why"
 msgstr ""
 
 msgid "When an answer here is unsure, or you want a person to check it, call a free government helpline."
 msgstr ""
 
+msgid "When you use the map, OpenStreetMap sees which area of the map you are looking at."
+msgstr ""
+
+msgid "Where is your field?"
+msgstr ""
+
 msgid "Why"
+msgstr ""
+
+msgid "Without a pin, tools use the district's centre, so weather and nearest mandis are less exact."
 msgstr ""
 
 msgid "Wrong mobile number or PIN."
 msgstr ""
 
+msgid "Yes, next"
+msgstr ""
+
+msgid "You can delete your farm and account at any time from More."
+msgstr ""
+
 msgid "You can't reset your own PIN here."
 msgstr ""
 
+msgid "Your account is ready. Now tell us about your field."
+msgstr ""
+
 msgid "Your district KVK"
+msgstr ""
+
+msgid "Your farm and account are deleted."
 msgstr ""
 
 msgid "Your farm is saved."
@@ -389,7 +605,25 @@ msgstr ""
 msgid "Your field"
 msgstr ""
 
+msgid "Your field is set up. Every tool will use it."
+msgstr ""
+
+msgid ""
+"Your field: the pin or district, its size, how it's watered, soil card values, and the answers "
+"tools gave you."
+msgstr ""
+
+msgid "Your mobile number and PIN, scrambled so that even we can't read them back."
+msgstr ""
+
 msgid "Your new PIN is set."
+msgstr ""
+
+msgid "Your pin"
+msgstr ""
+
+#, python-format
+msgid "Your pin looks like it is in %(district)s district."
 msgstr ""
 
 msgid "acre"
@@ -402,16 +636,54 @@ msgstr ""
 msgid "bigha"
 msgstr ""
 
+msgid "district average"
+msgstr ""
+
+#, python-format
+msgid "district average, %(source)s"
+msgstr ""
+
+#, python-format
+msgid "district centre, %(source)s"
+msgstr ""
+
+msgid "field location"
+msgstr ""
+
 msgid "hectare"
 msgstr ""
 
 msgid "kg"
 msgstr ""
 
+msgid "kg per hectare, as on the card"
+msgstr ""
+
+msgid "organic carbon"
+msgstr ""
+
+msgid "pH"
+msgstr ""
+
+msgid "percent, as on the card"
+msgstr ""
+
 msgid "quintal"
 msgstr ""
 
 msgid "soil nitrogen"
+msgstr ""
+
+msgid "soil pH"
+msgstr ""
+
+msgid "soil phosphorus"
+msgstr ""
+
+msgid "soil potassium"
+msgstr ""
+
+msgid "what you entered"
 msgstr ""
 
 msgid "your soil card"

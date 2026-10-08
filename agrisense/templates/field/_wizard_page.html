@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Set up your field") }} · {{ _("AgriSense") }}{% endblock %}
+{% block content %}
+  <p data-storage-warning hidden class="mb-4 flex gap-2 rounded-lg border border-warn bg-warn-bg p-3 text-warn">
+    {{ ui.icon("alert", "mt-1 size-5") }}<span>{{ _("This phone can't remember your field (private browsing?). It will work for this visit only.") }}</span>
+  </p>
+  <div id="wizard">
+    {# A guest's saved values live in this phone's storage: fetch this step
+       again with them. A sibling, not a parent, so forms don't inherit hx-vals. #}
+    {% if load_saved %}<div hidden hx-post="{{ url_for('field.show') }}" hx-trigger="load" hx-target="#wizard" hx-vals='{"step": "{{ step }}"}'></div>{% endif %}
+    {% block wizard %}{% endblock %}
+  </div>
+  <script src="{{ url_for('static', filename='js/wizard.js') }}" defer></script>
+{% endblock %}

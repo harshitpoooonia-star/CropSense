@@ -10,6 +10,7 @@ with a new ADR that supersedes it; don't edit the old one.
 | [002](ADR-002-database.md) | Database: Neon Postgres in prod, SQLite locally, Flask-Migrate; Neon branches for migration rehearsal/backup | Proposed |
 | [003](ADR-003-data-model.md) | Data model: user → farm → plot (+ soil_card), append-only per-plot `event` log, shared caches; guest profile in localStorage; phone stored only as keyed hash | Proposed |
 | [004](ADR-004-external-data.md) | External data: adapter per source, read-through DB cache, daily price warm-up via GitHub Actions, staleness always shown, offline fixtures | Proposed |
+| [005](ADR-005-map-pin.md) | Farm pin: Leaflet 1.9.4 vendored, OSM tiles, loaded only on the wizard's map step; GPS and district list as fallbacks | Proposed |
 
 ## Decisions the team must make before Section 2
 

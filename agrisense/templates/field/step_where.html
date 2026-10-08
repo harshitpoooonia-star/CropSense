@@ -1,0 +1,64 @@
+{% extends "field/_wizard_bare.html" if partial else "field/_wizard_page.html" %}
+{% block wizard %}
+{% include "field/_step_head.html" %}
+{% set farm = profile.farm %}
+{% set target = url_for("field.submit", step="where") %}
+
+{% if confirm %}
+  <form {{ ui.swap_attrs(target) }} class="mt-6 space-y-5">
+    {% include "field/_hidden.html" %}
+    <input type="hidden" name="stage" value="confirm">
+    <input type="hidden" name="location_source" value="{{ farm.location_source or '' }}">
+    <input type="hidden" name="lat" value="{{ farm.lat if farm.lat is not none else '' }}">
+    <input type="hidden" name="lon" value="{{ farm.lon if farm.lon is not none else '' }}">
+    {% if district %}
+    <p class="text-xl">{{ _("Your pin looks like it is in %(district)s district.", district=district.name(current_locale)) }}</p>
+    <p class="text-ink-muted">{{ _("Pick another district if this is wrong.") }}</p>
+    {% endif %}
+    {{ ui.select_field("district_code", _("District"), district_choices, selected=farm.district_code,
+         error=errors.get("district_code"), placeholder=_("Choose your district")) }}
+    {{ ui.button(_("Yes, next")) }}
+  </form>
+{% else %}
+  <form {{ ui.swap_attrs(target) }} class="mt-6 space-y-4">
+    {% include "field/_hidden.html" %}
+    <input type="hidden" name="stage" value="pin">
+    {% set has_pin = farm.location_source in ("map", "gps") %}
+    <input type="hidden" name="location_source" value="{{ farm.location_source if has_pin else '' }}">
+    <input type="hidden" name="lat" value="{{ farm.lat if has_pin else '' }}">
+    <input type="hidden" name="lon" value="{{ farm.lon if has_pin else '' }}">
+    <p>{{ _("Tap the map where your field is, or drag the pin.") }}</p>
+    <div data-map role="application" aria-label="{{ _('Map of your area') }}"
+      class="h-72 w-full overflow-hidden rounded-card border-2 border-line bg-surface-2"
+      data-lat="{{ farm.lat if has_pin else '' }}" data-lon="{{ farm.lon if has_pin else '' }}"
+      data-center-lat="{{ map_center[0] }}" data-center-lon="{{ map_center[1] }}"
+      data-tiles="{{ map_tiles }}" data-attribution="{{ map_attribution }}"
+      data-leaflet-js="{{ url_for('static', filename='vendor/leaflet-1.9.4/leaflet.js') }}"
+      data-leaflet-css="{{ url_for('static', filename='vendor/leaflet-1.9.4/leaflet.css') }}"></div>
+    <p data-map-error hidden class="text-crit">{{ _("The map didn't load. Use your location or choose your district below.") }}</p>
+    {% if errors.get("lat") %}<p role="alert" class="flex gap-2 text-crit">{{ ui.icon("alert", "mt-1 size-5") }}<span>{{ errors.lat }}</span></p>{% endif %}
+    <div class="flex flex-wrap gap-2">
+      <button type="button" data-gps class="inline-flex min-h-tap cursor-pointer items-center justify-center gap-2 rounded-card border-2 border-accent bg-surface px-5 font-bold text-accent transition-colors duration-150 hover:bg-accent-soft">
+        {{ ui.icon("field") }}<span>{{ _("Use my location") }}</span>
+      </button>
+      <button type="submit" data-pin-submit {% if not has_pin %}disabled{% endif %}
+        class="inline-flex min-h-tap cursor-pointer items-center justify-center gap-2 rounded-card bg-accent px-5 font-bold text-white transition-colors duration-150 hover:bg-accent-strong disabled:cursor-not-allowed disabled:bg-line">
+        <span>{{ _("Use this spot") }}</span>
+      </button>
+    </div>
+    <p data-gps-error hidden class="text-crit">{{ _("Couldn't get your location. Tap the map or choose your district.") }}</p>
+  </form>
+
+  <form {{ ui.swap_attrs(target) }} class="mt-8 space-y-4 border-t border-line-soft pt-6">
+    {% include "field/_hidden.html" %}
+    <input type="hidden" name="stage" value="district">
+    <input type="hidden" name="location_source" value="district">
+    <h2 class="text-xl font-bold">{{ _("Or choose your district") }}</h2>
+    <p class="text-base text-ink-muted">{{ _("Without a pin, tools use the district's centre, so weather and nearest mandis are less exact.") }}</p>
+    {{ ui.select_field("district_code", _("District"), district_choices,
+         selected=farm.district_code if farm.location_source == "district" else None,
+         error=errors.get("district_code"), placeholder=_("Choose your district")) }}
+    {{ ui.button(_("Use this district"), "secondary") }}
+  </form>
+{% endif %}
+{% endblock %}

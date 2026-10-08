@@ -86,6 +86,8 @@ class Farm(Timestamps, db.Model):
     # The pin is personal data: never log it, never copy it into caches.
     lat: Mapped[Decimal | None] = mapped_column(Numeric(8, 5))
     lon: Mapped[Decimal | None] = mapped_column(Numeric(8, 5))
+    # map | gps | district. "district" means lat/lon is the district's point: estimated.
+    location_source: Mapped[str | None] = mapped_column(String(8))
 
     user: Mapped[User] = relationship(back_populates="farms")
     plots: Mapped[list[Plot]] = relationship(back_populates="farm")

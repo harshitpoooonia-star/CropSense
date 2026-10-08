@@ -20,5 +20,6 @@
   {% if current_user.is_helper %}
   <p class="mt-4"><a href="{{ url_for('profile.helper_pin_reset') }}" class="inline-flex min-h-tap items-center font-bold">{{ _("Reset a farmer's PIN") }}</a></p>
   {% endif %}
+  <p class="mt-4"><a href="{{ url_for('profile.delete_farm') }}" class="inline-flex min-h-tap items-center font-bold text-crit">{{ _("Delete my farm") }}</a></p>
   {% endif %}
 {% endblock %}
