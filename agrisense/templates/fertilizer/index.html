@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Fertilizer Calculator") }} · {{ _("AgriSense") }}{% endblock %}
+{% block content %}
+  {% set heading, intro = _("How many bags?"), _("Turn a fertilizer dose into bags of urea, DAP or SSP, and potash for your field.") %}
+  {% include "_page_head.html" %}
+
+  {% if unknown_crop %}
+  <p class="mt-4 flex gap-2 rounded-lg border border-warn bg-warn-bg p-3 text-warn">
+    {{ ui.icon("info", "mt-1 size-5") }}
+    <span>{{ _("We have no cited standard dose for %(crop)s yet. Use the dose on your Soil Health Card, or ask your KVK.", crop=crop_name(unknown_crop)) }}</span>
+  </p>
+  {% endif %}
+
+  <form method="post" action="{{ url_for('fertilizer.result') }}"
+        hx-post="{{ url_for('fertilizer.result') }}" hx-target="#fert-result" hx-swap="innerHTML"
+        class="mt-6 space-y-6">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="profile" value="">
+
+    <fieldset class="space-y-2">
+      <legend class="font-bold">{{ _("Where does the dose come from?") }}</legend>
+      {% for code, label, note in [
+        ("card", _("My Soil Health Card"), _("Best: it was worked out for your field.")),
+        ("standard", _("Standard dose for the crop"), _("Not adjusted for your soil.")),
+      ] %}
+      <label class="flex min-h-14 cursor-pointer items-center gap-3 rounded-card border-2 border-line-soft bg-surface px-4 py-2 has-[:checked]:border-accent has-[:checked]:bg-accent-soft">
+        <input type="radio" name="mode" value="{{ code }}" class="size-6 accent-accent" {% if form.get('mode', 'standard') == code %}checked{% endif %}>
+        <span><span class="block font-bold">{{ label }}</span><span class="block text-base text-ink-muted">{{ note }}</span></span>
+      </label>
+      {% endfor %}
+    </fieldset>
+
+    {{ ui.number_input("area", _("Field size"), area_units, "area_unit", value=form.get("area", ""),
+         unit_value=form.get("area_unit", "acre"), hint=_("Leave empty to use your saved field size."),
+         error=outcome.errors.get("area") if outcome else None) }}
+
+    <section class="space-y-4 rounded-card border border-line-soft bg-surface p-4" aria-labelledby="std-heading">
+      <h2 id="std-heading" class="font-bold">{{ _("Standard dose") }}</h2>
+      {{ ui.select_field("crop", _("Crop"), crop_choices, selected=form.get("crop"),
+           error=outcome.errors.get("crop") if outcome else None, placeholder=_("Choose a crop")) }}
+      {% set all_conditions = [] %}
+      {% for crop_code, items in conditions.items() if items | length > 1 %}
+        {% for cond, label in items %}{% if all_conditions.append((cond, crop_name(crop_code) ~ ": " ~ label)) %}{% endif %}{% endfor %}
+      {% endfor %}
+      {% if all_conditions %}
+      {{ ui.select_field("condition", _("Sowing and water"), all_conditions, selected=form.get("condition"),
+           placeholder=_("As usual for the crop")) }}
+      {% endif %}
+      <fieldset>
+        <legend class="font-bold">{{ _("Phosphate from") }}</legend>
+        <div class="mt-2 grid grid-cols-2 gap-2">
+          {% for code in ("dap", "ssp") %}
+          <label class="flex min-h-tap cursor-pointer items-center gap-3 rounded-card border-2 border-line-soft bg-surface px-3 has-[:checked]:border-accent has-[:checked]:bg-accent-soft">
+            <input type="radio" name="phosphate" value="{{ code }}" class="size-6 accent-accent" {% if form.get('phosphate', 'dap') == code %}checked{% endif %}>
+            <span class="font-bold">{{ product_labels[code] }}</span>
+          </label>
+          {% endfor %}
+        </div>
+      </fieldset>
+    </section>
+
+    <section class="space-y-4 rounded-card border border-line-soft bg-surface p-4" aria-labelledby="card-heading">
+      <h2 id="card-heading" class="font-bold">{{ _("Dose from my Soil Health Card") }}</h2>
+      <p class="text-base text-ink-muted">{{ _("Copy the fertilizer amounts printed on your card for this crop, in kg.") }}</p>
+      {% if outcome and outcome.errors.get("card") %}<p role="alert" class="flex gap-2 text-crit">{{ ui.icon("alert", "mt-1 size-5") }}<span>{{ outcome.errors.card }}</span></p>{% endif %}
+      <div class="grid grid-cols-2 gap-3">
+        {% for code in ("urea", "dap", "mop", "ssp") %}
+          {{ ui.field("card_" ~ code, product_labels[code], value=form.get("card_" ~ code, ""), inputmode="decimal", required=False) }}
+        {% endfor %}
+      </div>
+      {{ ui.select_field("card_unit", _("The card's amounts are per"), [("hectare", _("hectare")), ("acre", _("acre"))],
+           selected=form.get("card_unit", "hectare")) }}
+    </section>
+
+    {{ ui.button(_("Work out the bags")) }}
+  </form>
+
+  <div id="fert-result" class="mt-8" aria-live="polite">
+    {% if outcome %}{% include "fertilizer/_result.html" %}{% endif %}
+  </div>
+{% endblock %}

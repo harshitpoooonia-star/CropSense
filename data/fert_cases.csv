@@ -1,0 +1,11 @@
+case_id,mode,crop,condition,dose_end,area_value,area_unit,phosphate,card_urea,card_dap,card_mop,card_ssp,card_unit,expected_urea_bags,expected_dap_bags,expected_ssp_bags,expected_mop_bags,dose_source,worked_by,hand_checked
+W1,standard,wheat,irrigated,low,1,hectare,dap,,,,,,4.66,2.61,,1.33,fert_rdf.csv wheat/irrigated (UP Agriculture Department),independent arithmetic outside the app,false
+W2,standard,wheat,irrigated,low,1,acre,dap,,,,,,1.89,1.06,,0.54,fert_rdf.csv wheat/irrigated (UP Agriculture Department),independent arithmetic outside the app,false
+W3,standard,wheat,irrigated,low,1,hectare,ssp,,,,,,5.80,,7.50,1.33,fert_rdf.csv wheat/irrigated (UP Agriculture Department),independent arithmetic outside the app,false
+W4,standard,wheat,late,low,1,hectare,dap,,,,,,3.11,1.74,,1.00,fert_rdf.csv wheat/late (UP Agriculture Department),independent arithmetic outside the app,false
+W5,standard,wheat,rainfed,low,2,hectare,dap,,,,,,2.73,2.61,,2.00,fert_rdf.csv wheat/rainfed (UP Agriculture Department),independent arithmetic outside the app,false
+P1,standard,paddy,transplanted,low,1,hectare,dap,,,,,,4.66,2.61,,1.33,fert_rdf.csv paddy/transplanted (SVPUAT trial RDF),independent arithmetic outside the app,false
+P2,standard,paddy,transplanted,low,2.5,acre,dap,,,,,,4.72,2.64,,1.35,fert_rdf.csv paddy/transplanted (SVPUAT trial RDF),independent arithmetic outside the app,false
+T1,standard,potato,default,low,1,hectare,dap,,,,,,7.56,2.61,,2.83,fert_rdf.csv potato (NHB manual, low end),independent arithmetic outside the app,false
+T2,standard,potato,default,high,1,hectare,dap,,,,,,9.89,3.91,,4.33,fert_rdf.csv potato (NHB manual, high end),independent arithmetic outside the app,false
+C1,card,,,,1,acre,,260,130,67,,hectare,2.34,1.05,,0.54,synthetic card dose (test data only),independent arithmetic outside the app,false
