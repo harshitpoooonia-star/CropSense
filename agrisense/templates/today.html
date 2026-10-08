@@ -3,9 +3,11 @@
 {% block content %}
   {% set heading, intro = _("Today"), _("What needs a decision on your farm today.") %}
   {% include "_page_head.html" %}
+  {# Price change for the farmer's crop; empty until there's a plan and a cached price. #}
+  <div class="mt-6" hx-post="{{ url_for('market.today_prices') }}" hx-trigger="load" hx-swap="innerHTML"></div>
   {% set links = [
     (url_for("weather.index"), "today", _("Spray or water?"), _("The 3-day verdict for your field arrives in Section 8.")),
-    (url_for("market.index"), "market", _("Prices for your crops"), _("Daily mandi price changes arrive in Section 7.")),
+    (url_for("market.index"), "market", _("Prices for your crops"), _("Check a trader's offer against nearby mandis.")),
     (url_for("schemes.index"), "scheme", _("Scheme deadlines"), _("The nearest deadline arrives in Section 9.")),
   ] %}
   {% include "_link_list.html" %}

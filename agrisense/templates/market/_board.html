@@ -1,0 +1,80 @@
+{% if problem == "no_field" %}
+  <section class="rounded-card border border-line-soft bg-surface p-4">
+    <h2 class="text-xl font-bold">{{ _("First, tell us where your field is") }}</h2>
+    <p class="mt-1 text-ink-muted">{{ _("We need it to find the mandis nearest you.") }}</p>
+    <div class="mt-4">{{ ui.link_button(url_for("field.setup"), _("Set up your field")) }}</div>
+  </section>
+{% elif errors %}
+  <p role="alert" class="flex gap-2 rounded-card border border-crit bg-crit-bg p-4 text-crit">
+    {{ ui.icon("alert", "mt-1 size-5") }}<span>{{ errors.values() | first }}</span>
+  </p>
+{% elif board %}
+  <script type="application/json" data-profile-update>{{ profile | tojson }}</script>
+
+  {% if verdict %}
+    {% set words = {"below": _("Below the mandi price"), "fair": _("Fair offer"), "above": _("Above the mandi price")} %}
+    {% set status = {"below": "critical", "fair": "good", "above": "good"} %}
+    {% set share = _("AgriSense: an offer of ₹%(offer)s per quintal for %(crop)s is %(verdict)s (%(mandi)s modal ₹%(modal)s on %(date)s).",
+                     offer=offer | int | decimalformat, crop=crop_name(crop), verdict=words[verdict.status],
+                     mandi=board.reference.mandi.market, modal=board.reference.modal_price | int | decimalformat,
+                     date=board.reference.arrival_date | dateformat("medium")) %}
+    {% call ui.result_card(_("Trader's offer: ₹%(offer)s", offer=offer | int | decimalformat), trust, share_text=share) %}
+      <div class="flex flex-wrap items-center gap-3">
+        {{ ui.verdict_pill(status[verdict.status], words[verdict.status]) }}
+      </div>
+      <p class="mt-3 text-figure font-bold tabular-nums">
+        {% if verdict.gap < 0 %}−₹{{ (-verdict.gap) | int | decimalformat }}{% else %}+₹{{ verdict.gap | int | decimalformat }}{% endif %}
+        <span class="text-xl">({{ verdict.gap_pct | float | decimalformat }}%)</span>
+      </p>
+      <p class="text-base text-ink-muted">{{ _("Compared with the modal price at %(mandi)s.", mandi=board.reference.mandi.market) }}</p>
+    {% endcall %}
+  {% endif %}
+
+  <h2 class="mt-8 text-xl font-bold">{{ _("%(crop)s at the nearest mandis", crop=crop_name(crop)) }}</h2>
+  {% if location_estimated %}
+  <p class="mt-1 text-base text-ink-muted">{{ _("Distances are from your district's centre, because your field has no pin.") }}</p>
+  {% endif %}
+
+  {% if board.quotes %}
+  <ul class="mt-4 space-y-3">
+    {% for q in board.quotes %}
+    <li class="rounded-card border border-line-soft bg-surface p-4">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <p class="text-lg font-bold">{{ q.mandi.market }}</p>
+          <p class="text-base text-ink-muted">{{ _("About %(km)s km away in a straight line", km=q.km | round | int) }}</p>
+        </div>
+        {% if q.stale %}{{ ui.verdict_pill("warning", _("%(days)s days old", days=q.days_old)) }}{% endif %}
+      </div>
+      <p class="mt-2 text-2xl font-bold tabular-nums">₹{{ q.modal_price | int | decimalformat }}
+        <span class="text-base font-normal text-ink-muted">{{ _("modal, per quintal") }}</span></p>
+      {% if q.min_price and q.max_price %}
+      <p class="text-base">{{ _("Range ₹%(low)s to ₹%(high)s", low=q.min_price | int | decimalformat, high=q.max_price | int | decimalformat) }}</p>
+      {% endif %}
+      {% if q.net is not none %}
+      <p class="mt-1 text-base">{{ _("After transport (₹%(cost)s): ₹%(net)s per quintal", cost=q.transport | int | decimalformat, net=q.net | int | decimalformat) }}</p>
+      {% endif %}
+      <p class="mt-1 text-sm text-ink-muted">{{ _("Agmarknet, %(date)s", date=q.arrival_date | dateformat("medium")) }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <section class="mt-4 rounded-card border border-warn bg-warn-bg p-4 text-warn">
+    <p class="flex gap-2">{{ ui.icon("info", "mt-1 size-5") }}<span>{{ _("No mandi prices for this crop near you in the last 30 days.") }}</span></p>
+    <p class="mt-2 text-ink">{{ _("You can look up prices on the Agmarknet website, or ask the Kisan Call Centre.") }}</p>
+    <div class="mt-3 flex flex-wrap gap-2">
+      {{ ui.link_button("https://agmarknet.gov.in", _("Agmarknet website"), "secondary", external=True) }}
+      {{ ui.link_button(url_for("more.expert"), _("Ask an expert"), "secondary", "phone") }}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if board.without_data %}
+  <p class="mt-4 text-base text-ink-muted">
+    {{ _("No recent price for this crop at: %(mandis)s.", mandis=board.without_data | map(attribute="0.market") | join(", ")) }}
+  </p>
+  {% endif %}
+  {% if not rate %}
+  <p class="mt-2 text-base text-ink-muted">{{ _("Add your transport cost to see what's left after carrying the crop to each mandi.") }}</p>
+  {% endif %}
+{% endif %}

@@ -28,6 +28,8 @@ def save_profile(session: Session, user: User, profile: dict, *, source: str = "
     results from the guest profile are imported as events.
     """
     farm_data, p = profile["farm"], plot(profile)
+    if any(profile.get("prefs", {}).values()):
+        user.prefs = dict(profile["prefs"])
     if not farm_data["district_code"]:
         return None
     existing = current_plot(session, user)
@@ -84,6 +86,8 @@ def _update_soil(session: Session, row: Plot, p: dict) -> None:
 def profile_for(session: Session, user: User) -> dict:
     """The saved farm in the guest-profile shape, for the browser's copy."""
     profile = farm_profile.empty()
+    if user.prefs:
+        profile["prefs"]["transport_rate"] = farm_profile.transport_rate(user.prefs.get("transport_rate"))
     row = current_plot(session, user)
     if row is None:
         return profile

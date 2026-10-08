@@ -168,6 +168,16 @@ uniform across tools rather than re-implemented in each.
   (consider eNAM or state mandi board feeds), Bhashini/Sentinel-2 arrive in
   Phase 2 (each gets its own adapter + ADR), or the pilot outgrows free limits.
 
+## Implementation notes
+
+- **Section 7 (2026-10-08):** the Agmarknet adapter, cache upsert, the
+  `/internal/refresh/prices` warm-up (bearer token; 404 when no token is set)
+  and `flask agrisense refresh-prices` are built. **On-read refresh is
+  deferred:** a full Uttar Pradesh pull is several pages per day, too slow to
+  run inside a farmer's request even with a 4 s timeout. Pages read the cache
+  and label old prices; the daily warm-up fills it. Revisit after the Gate 0
+  run shows the real data volume.
+
 ## Open items (filled from the Gate 0 Agmarknet run)
 
 - [ ] Confirm resource id, field names, `Arrival_Date` format, max page size.

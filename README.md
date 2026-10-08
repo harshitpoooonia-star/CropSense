@@ -82,6 +82,23 @@ python scripts/validate_planner.py             # top-3 hit rate on data/farm_rec
 MSPs live in `data/msp.csv` and are updated by hand when the Cabinet announces them.
 Spec: [docs/specs/02-crop-planner.md](docs/specs/02-crop-planner.md).
 
+## Mandi prices
+
+Prices come from Agmarknet (data.gov.in) into a cache table; pages read the
+cache and label anything older than 3 days.
+
+```bash
+flask --app wsgi agrisense refresh-prices --days 3   # needs DATA_GOV_IN_KEY
+python scripts/build_mandis.py                       # mandi towns + coordinates (Wikidata)
+```
+
+In production a scheduled GitHub Actions workflow (`refresh-prices.yml`) calls
+`POST /internal/refresh/prices` daily. Set the repository secrets
+`REFRESH_URL` (the Render URL) and `REFRESH_TOKEN` (same value as the app's
+`REFRESH_TOKEN` env var); without them the workflow skips. The "fair offer"
+band is `FAIR_BAND_PCT` (default 5, for team review).
+Spec: [docs/specs/04-mandi.md](docs/specs/04-mandi.md).
+
 ## Tests
 
 ```bash

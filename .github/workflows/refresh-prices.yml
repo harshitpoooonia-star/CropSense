@@ -1,0 +1,31 @@
+name: Refresh mandi prices
+
+# ADR-004: a daily warm-up that fills the price cache and wakes the free
+# Render service and Neon before morning use.
+# TODO: set the time once the Gate 0 run shows when Agmarknet publishes the
+# target mandis' prices. 01:30 UTC = 07:00 IST is a placeholder.
+on:
+  schedule:
+    - cron: "30 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Call the refresh endpoint
+        env:
+          REFRESH_URL: ${{ secrets.REFRESH_URL }}      # e.g. https://<service>.onrender.com
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+        run: |
+          if [ -z "$REFRESH_URL" ] || [ -z "$REFRESH_TOKEN" ]; then
+            echo "REFRESH_URL or REFRESH_TOKEN secret not set; skipping."
+            exit 0
+          fi
+          # The free service may need a minute to wake up.
+          curl --fail-with-body --silent --show-error --retry 3 --retry-delay 30 --max-time 300 \
+            -X POST -H "Authorization: Bearer $REFRESH_TOKEN" "$REFRESH_URL/internal/refresh/prices?days=3"
