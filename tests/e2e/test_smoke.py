@@ -7,6 +7,7 @@ Screenshots go to tests/artifacts/ (gitignored).
 
 import os
 from pathlib import Path
+from urllib.parse import urlparse
 
 import pytest
 
@@ -41,6 +42,20 @@ def test_guest_page_works_on_a_360px_phone(page, path):
     assert page.locator("html").get_attribute("lang") == "hi"
     assert page.evaluate("document.documentElement.scrollWidth") <= 360, "horizontal scroll"
     assert page.evaluate(TAP_TARGETS_JS) == [], "tap targets under 48 px"
+    # Privacy (Section 11): no analytics, ads, CDNs or fonts from elsewhere. Only the
+    # map step talks to another site, for OpenStreetMap tiles (ADR-005).
+    allowed = {urlparse(BASE_URL).netloc} | ({"tile.openstreetmap.org"} if path == "/field/setup" else set())
+    assert {urlparse(u).netloc for u in page.requested if u.startswith("http")} <= allowed
+
+
+@pytest.mark.parametrize("width", [768, 1024, 1440])
+def test_wider_screens_have_no_sideways_scroll(page, width):
+    """ui-ux-pro-max pre-delivery checklist: responsive beyond the 360 px baseline."""
+    page.set_viewport_size({"width": width, "height": 900})
+    for path in ("/", "/plan", "/market", "/field/setup"):
+        page.goto(BASE_URL + path)
+        page.wait_for_load_state("networkidle")
+        assert page.evaluate("document.documentElement.scrollWidth") <= width, path
 
 
 def test_fonts_and_styles_load(page):

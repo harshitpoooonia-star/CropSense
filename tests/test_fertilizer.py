@@ -198,7 +198,7 @@ def test_page_prefills_crop_from_the_planner_link(client):
     html = client.get("/fertilizer?crop=wheat&season=rabi").get_data(as_text=True)
     assert '<option value="wheat" selected>' in html
     html = client.get("/fertilizer?crop=mustard").get_data(as_text=True)
-    assert "no cited standard dose for Mustard" in html
+    assert "no cited dose for Mustard yet, so we can't count bags" in html
 
 
 def test_result_partial(client):

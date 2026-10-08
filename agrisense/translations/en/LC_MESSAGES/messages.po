@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 09:58+0530\n"
+"POT-Creation-Date: 2026-10-08 10:21+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -1220,6 +1220,11 @@ msgid ""
 "app."
 msgstr ""
 
+msgid ""
+"We don't have a sourced fertilizer dose for this crop yet, so we can't count bags for it. Ask "
+"your KVK."
+msgstr ""
+
 #, python-format
 msgid "We don't have the KVK for %(district)s district yet."
 msgstr ""
@@ -1241,6 +1246,10 @@ msgstr ""
 msgid ""
 "We have crop data for Gautam Buddh Nagar, Bulandshahr, Ghaziabad, Hapur and Aligarh so far. Your "
 "district isn't covered yet."
+msgstr ""
+
+#, python-format
+msgid "We have no cited dose for %(crop)s yet, so we can't count bags for it. Ask your KVK."
 msgstr ""
 
 #, python-format
