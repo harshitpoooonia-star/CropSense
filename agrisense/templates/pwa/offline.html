@@ -12,13 +12,13 @@
 <body class="bg-bg">
   {% include "_icons.html" %}
   <header class="bg-soil text-white">
-    <div class="mx-auto flex min-h-tap max-w-xl items-center px-4 py-1 text-xl font-bold">{{ _("AgriSense") }}</div>
+    <h1 class="mx-auto flex min-h-tap max-w-xl items-center px-4 py-1 text-xl font-bold">{{ _("AgriSense") }}</h1>
   </header>
   <main id="main" class="mx-auto w-full max-w-xl space-y-8 px-4 py-6">
     {% for code in ("hi", "en") %}
     {% set t = copy[code] %}
     <section lang="{{ code }}" aria-labelledby="offline-{{ code }}">
-      <h1 id="offline-{{ code }}" class="flex items-center gap-2 text-2xl font-bold text-ink">{{ ui.icon("alert", "size-7 text-warn") }}<span>{{ t.title }}</span></h1>
+      <h2 id="offline-{{ code }}" class="flex items-center gap-2 text-2xl font-bold text-ink">{{ ui.icon("alert", "size-7 text-warn") }}<span>{{ t.title }}</span></h2>
       <p class="mt-2 text-ink-muted">{{ t.body }}</p>
       <div class="mt-4 flex flex-wrap gap-3">
         {# An empty href reloads the address the farmer asked for. #}

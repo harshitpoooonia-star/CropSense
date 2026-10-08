@@ -1,7 +1,7 @@
 {% extends "field/_wizard_bare.html" if partial else "field/_wizard_page.html" %}
 {% block wizard %}
 <script type="application/json" data-profile-update>{{ profile | tojson }}</script>
-<p role="status" class="flex items-center gap-2 font-bold text-good">{{ ui.icon("check") }}<span>{{ _("Your field is set up. Every tool will use it.") }}</span></p>
+<div role="status"><h1 class="flex items-center gap-2 text-2xl font-bold leading-tight text-good">{{ ui.icon("check", "size-7") }}<span>{{ _("Your field is set up. Every tool will use it.") }}</span></h1></div>
 <div class="mt-4">{% include "field/_summary_card.html" %}</div>
 
 <h2 class="mt-8 text-xl font-bold">{{ _("What next?") }}</h2>

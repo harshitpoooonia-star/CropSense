@@ -50,7 +50,10 @@ def test_rabi_plan_with_reasons_and_why_not(page):
     first = cards.first
     assert first.locator("text=स्रोत:").count() == 1
     assert first.locator("text=भरोसा मध्यम").count() + first.locator("text=भरोसा कम").count() == 1
-    assert first.locator("a[href*='/fertilizer?crop=']").count() == 1
+    # Only crops with a cited fertilizer dose link on; the others say to ask the KVK.
+    fert_links = page.locator("#plan-results article a[href*='/fertilizer?crop=']")
+    assert fert_links.count() >= 1
+    assert fert_links.count() + page.locator("text=इसकी बोरियाँ नहीं गिन सकते").count() == 3
     assert page.evaluate(TAP_TARGETS_JS) == 0
     assert page.evaluate("document.documentElement.scrollWidth") <= 360
     ARTIFACTS.mkdir(exist_ok=True)
@@ -61,7 +64,7 @@ def test_rabi_plan_with_reasons_and_why_not(page):
     page.wait_for_selector("#why-answer li")
     assert "नहीं दिखती" in page.inner_text("#why-answer")
 
-    href = first.locator("a[href*='/fertilizer?crop=']").get_attribute("href")
+    href = fert_links.first.get_attribute("href")
     page.goto(BASE_URL + href)
     assert page.url.startswith(BASE_URL + "/fertilizer?crop=")
     assert page.console_errors == []
