@@ -1,0 +1,15 @@
+{
+  "_note": "Shape of a data.gov.in Agmarknet response (field names as used by the Gate 0 script). All prices are synthetic test data, not market prices. Replace with a recorded, trimmed real response after the first live run.",
+  "status": "ok",
+  "total": 7,
+  "count": 7,
+  "records": [
+    {"State": "Uttar Pradesh", "District": "Bulandshahar", "Market": "Khurja", "Commodity": "Wheat", "Variety": "Dara", "Grade": "FAQ", "Arrival_Date": "07/10/2026", "Min_Price": "2300", "Max_Price": "2500", "Modal_Price": "2400"},
+    {"State": "Uttar Pradesh", "District": "Bulandshahar", "Market": "Khurja", "Commodity": "Wheat", "Variety": "Other", "Grade": "FAQ", "Arrival_Date": "07/10/2026", "Min_Price": "2350", "Max_Price": "2550", "Modal_Price": "2450"},
+    {"State": "Uttar Pradesh", "District": "Bulandshahar", "Market": "Bulandshahar", "Commodity": "Wheat", "Variety": "Other", "Grade": "FAQ", "Arrival_Date": "07/10/2026", "Min_Price": "2320", "Max_Price": "2480", "Modal_Price": "2410"},
+    {"State": "Uttar Pradesh", "District": "Bulandshahar", "Market": "Khurja", "Commodity": "Mustard Oil", "Variety": "Other", "Grade": "FAQ", "Arrival_Date": "07/10/2026", "Min_Price": "13000", "Max_Price": "14000", "Modal_Price": "13500"},
+    {"State": "Uttar Pradesh", "District": "Gautam Buddh Nagar", "Market": "Dadri", "Commodity": "Paddy(Dhan)(Common)", "Variety": "Other", "Grade": "FAQ", "Arrival_Date": "07/10/2026", "Min_Price": "2200", "Max_Price": "2400", "Modal_Price": "2300"},
+    {"State": "Uttar Pradesh", "District": "Meerut", "Market": "Meerut", "Commodity": "Wheat", "Variety": "Other", "Grade": "FAQ", "Arrival_Date": "07/10/2026", "Min_Price": "2300", "Max_Price": "2500", "Modal_Price": "2400"},
+    {"State": "Uttar Pradesh", "District": "Bulandshahar", "Market": "Sikandrabad", "Commodity": "Wheat", "Variety": "Other", "Grade": "FAQ", "Arrival_Date": "07/10/2026", "Min_Price": "", "Max_Price": "", "Modal_Price": "0"}
+  ]
+}

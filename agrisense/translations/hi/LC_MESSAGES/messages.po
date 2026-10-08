@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 06:39+0530\n"
+"POT-Creation-Date: 2026-10-08 07:01+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hi\n"
@@ -21,6 +21,18 @@ msgstr ""
 #, python-format
 msgid "%(count)s bags of %(product)s"
 msgstr "%(product)s की %(count)s बोरियाँ"
+
+#, python-format
+msgid "%(crop)s at %(mandi)s: ₹%(price)s"
+msgstr "%(mandi)s में %(crop)s: ₹%(price)s"
+
+#, python-format
+msgid "%(crop)s at the nearest mandis"
+msgstr "नज़दीकी मंडियों में %(crop)s"
+
+#, python-format
+msgid "%(days)s days old"
+msgstr "%(days)s दिन पुराना"
 
 #, python-format
 msgid "%(district)s's crop statistics don't show this crop in %(season)s, so it isn't suggested."
@@ -46,6 +58,27 @@ msgstr "%(product)s: %(kg)s किलो"
 msgid "%(rank)s. %(crop)s"
 msgstr "%(rank)s. %(crop)s"
 
+#, python-format
+msgid "About %(km)s km away in a straight line"
+msgstr "सीधी रेखा में लगभग %(km)s किमी दूर"
+
+msgid "Above the mandi price"
+msgstr "मंडी भाव से ज़्यादा"
+
+msgid "Add your transport cost to see what's left after carrying the crop to each mandi."
+msgstr "हर मंडी तक फसल ले जाने के बाद कितना बचेगा, यह देखने के लिए अपना ढुलाई खर्च भरें।"
+
+#, python-format
+msgid "After transport (₹%(cost)s): ₹%(net)s per quintal"
+msgstr "ढुलाई (₹%(cost)s) के बाद: ₹%(net)s प्रति क्विंटल"
+
+msgid "Agmarknet website"
+msgstr "Agmarknet वेबसाइट"
+
+#, python-format
+msgid "Agmarknet, %(date)s"
+msgstr "Agmarknet, %(date)s"
+
 msgid "AgriSense"
 msgstr "AgriSense"
 
@@ -65,8 +98,20 @@ msgstr "AgriSense फसल योजना: %(crop)s। अपने KVK से
 msgid "AgriSense fertilizer for %(what)s: %(items)s, about ₹%(cost)s. Check with your KVK."
 msgstr "AgriSense खाद, %(what)s के लिए: %(items)s, लगभग ₹%(cost)s। अपने KVK से पक्का करें।"
 
+#, python-format
+msgid ""
+"AgriSense: an offer of ₹%(offer)s per quintal for %(crop)s is %(verdict)s (%(mandi)s modal "
+"₹%(modal)s on %(date)s)."
+msgstr ""
+"AgriSense: %(crop)s के लिए ₹%(offer)s प्रति क्विंटल का भाव — %(verdict)s (%(date)s को %(mandi)s "
+"में मॉडल भाव ₹%(modal)s)।"
+
 msgid "Already saved? Log in"
 msgstr "पहले से सेव है? लॉग इन करें"
+
+#, python-format
+msgid "An offer within %(band)s%% of the modal price counts as fair."
+msgstr "मॉडल भाव के %(band)s%% के अंदर का भाव ठीक माना जाता है।"
 
 msgid "Answers for your own farm, with the reason and the source shown. No sign-up needed."
 msgstr "आपके अपने खेत के लिए जवाब, साथ में वजह और स्रोत भी। साइन-अप की ज़रूरत नहीं।"
@@ -98,6 +143,9 @@ msgstr "पीछे"
 msgid "Bag icons"
 msgstr "बोरी के चित्र"
 
+msgid "Below the mandi price"
+msgstr "मंडी भाव से कम"
+
 msgid "Best: it was worked out for your field."
 msgstr "सबसे अच्छा: यह आपके खेत के लिए ही निकाला गया है।"
 
@@ -124,6 +172,15 @@ msgstr "खेत की जानकारी बदलें"
 msgid "Check a price"
 msgstr "भाव जाँचें"
 
+msgid "Check a trader's offer against nearby mandis."
+msgstr "व्यापारी का भाव नज़दीकी मंडियों से मिलाकर देखें।"
+
+msgid "Check a trader's offer against today's prices at the mandis nearest your field."
+msgstr "व्यापारी के भाव को अपने खेत की नज़दीकी मंडियों के आज के भाव से मिलाकर देखें।"
+
+msgid "Check prices"
+msgstr "भाव देखें"
+
 msgid "Choose a 4-digit PIN"
 msgstr "4 अंकों का पिन चुनें"
 
@@ -144,6 +201,10 @@ msgstr "सूची से अपना ज़िला चुनें।"
 
 msgid "Compare crops by likely profit for your field this season."
 msgstr "इस मौसम में अपने खेत के लिए फसलों को संभावित मुनाफ़े से मिलाकर देखें।"
+
+#, python-format
+msgid "Compared with the modal price at %(mandi)s."
+msgstr "%(mandi)s के मॉडल भाव से तुलना।"
 
 msgid "Confidence badges"
 msgstr "भरोसे के निशान"
@@ -174,9 +235,6 @@ msgstr ""
 msgid "DAP"
 msgstr "डीएपी (DAP)"
 
-msgid "Daily mandi price changes arrive in Section 7."
-msgstr "मंडी भाव में रोज़ का बदलाव सेक्शन 7 में आएगा।"
-
 msgid "Date on the card"
 msgstr "कार्ड पर लिखी तारीख"
 
@@ -185,6 +243,9 @@ msgstr "सब कुछ मिटाएँ"
 
 msgid "Delete my farm"
 msgstr "मेरा खेत मिटाएँ"
+
+msgid "Distances are from your district's centre, because your field has no pin."
+msgstr "दूरी आपके ज़िले के बीच के हिस्से से है, क्योंकि आपके खेत पर निशान नहीं लगा है।"
 
 msgid "District"
 msgstr "ज़िला"
@@ -200,6 +261,10 @@ msgstr "मात्रा आपके मृदा स्वास्थ्य
 
 msgid "Dose from my Soil Health Card"
 msgstr "मेरे मृदा स्वास्थ्य कार्ड की मात्रा"
+
+#, python-format
+msgid "Down ₹%(diff)s since %(date)s"
+msgstr "%(date)s से ₹%(diff)s कम"
 
 msgid "Drop the pin on your field, or choose your district."
 msgstr "अपने खेत पर निशान लगाएँ, या अपना ज़िला चुनें।"
@@ -228,6 +293,12 @@ msgstr "खेत का नाप संख्या में डालें,
 msgid "Enter the number as printed on the card."
 msgstr "कार्ड पर जैसा छपा है, वैसी संख्या डालें।"
 
+msgid "Enter the offer as a number of rupees per quintal, like 2400."
+msgstr "भाव रुपये प्रति क्विंटल में संख्या के रूप में भरें, जैसे 2400।"
+
+msgid "Enter the transport cost as a number, like 1.5."
+msgstr "ढुलाई खर्च संख्या में भरें, जैसे 1.5।"
+
 msgid "Enter your PIN to confirm"
 msgstr "पक्का करने के लिए अपना पिन डालें"
 
@@ -240,6 +311,9 @@ msgstr "अनुमान है, नापा नहीं गया: %(fields
 
 msgid "Every component in Hindi and English. Sample data only, not advice."
 msgstr "हर हिस्सा हिंदी और अंग्रेज़ी में। सिर्फ़ नमूना, सलाह नहीं।"
+
+msgid "Fair offer"
+msgstr "ठीक भाव"
 
 msgid "Farmer's mobile number"
 msgstr "किसान का मोबाइल नंबर"
@@ -274,6 +348,9 @@ msgstr "योजना खोजें"
 
 msgid "First, tell us about your field"
 msgstr "पहले अपने खेत के बारे में बताएँ"
+
+msgid "First, tell us where your field is"
+msgstr "पहले बताएँ कि आपका खेत कहाँ है"
 
 #, python-format
 msgid "For %(district)s district:"
@@ -333,6 +410,9 @@ msgstr "मैं सहमत हूँ"
 msgid "I have a reset code"
 msgstr "मेरे पास रीसेट कोड है"
 
+msgid "Is the offer fair?"
+msgstr "क्या भाव ठीक है?"
+
 #, python-format
 msgid "It is already in the top 3, at number %(rank)s."
 msgstr "यह पहले से ऊपर की 3 फसलों में है, %(rank)s नंबर पर।"
@@ -364,6 +444,9 @@ msgstr "कृषि विज्ञान केंद्र: आपके ज�
 
 msgid "Language"
 msgstr "भाषा"
+
+msgid "Leave empty to just see the prices."
+msgstr "सिर्फ़ भाव देखने हैं तो खाली छोड़ें।"
 
 msgid "Leave empty to use your saved field size."
 msgstr "खाली छोड़ें तो आपके सेव खेत का नाप लिया जाएगा।"
@@ -434,6 +517,10 @@ msgstr "मध्यम पानी"
 msgid "Mobile number"
 msgstr "मोबाइल नंबर"
 
+#, python-format
+msgid "Modal price at %(mandi)s on %(date)s: ₹%(modal)s per quintal."
+msgstr "%(date)s को %(mandi)s में मॉडल भाव: ₹%(modal)s प्रति क्विंटल।"
+
 msgid "More"
 msgstr "और"
 
@@ -457,11 +544,22 @@ msgstr "आगे"
 msgid "Nitrogen (N)"
 msgstr "नाइट्रोजन (N)"
 
+#, python-format
+msgid "No change since %(date)s"
+msgstr "%(date)s से कोई बदलाव नहीं"
+
 msgid "No cited schedule for when to apply this crop's doses yet. Ask your KVK."
 msgstr "इस फसल में खाद कब डालें, इसका स्रोत वाला समय-क्रम अभी हमारे पास नहीं है। अपने KVK से पूछें।"
 
+msgid "No mandi prices for this crop near you in the last 30 days."
+msgstr "पिछले 30 दिनों में आपके पास की मंडियों में इस फसल का भाव नहीं मिला।"
+
 msgid "No prices yet for these crops, so they aren't ranked by profit."
 msgstr "इन फसलों के भाव अभी नहीं हैं, इसलिए इन्हें मुनाफ़े के हिसाब से क्रम में नहीं रखा गया।"
+
+#, python-format
+msgid "No recent price for this crop at: %(mandis)s."
+msgstr "इन मंडियों में इस फसल का हाल का भाव नहीं है: %(mandis)s।"
 
 msgid "Nobody pays us to recommend anything, so every answer is for you."
 msgstr "किसी चीज़ की सिफ़ारिश के लिए हमें कोई पैसे नहीं देता, इसलिए हर जवाब सिर्फ़ आपके लिए है।"
@@ -485,6 +583,9 @@ msgstr "अभी पता नहीं: %(fields)s। जब इससे ज�
 
 msgid "Number with unit"
 msgstr "इकाई के साथ संख्या"
+
+msgid "Old price"
+msgstr "पुराना भाव"
 
 msgid "Only a helper can do this."
 msgstr "यह सिर्फ़ सहायक कर सकते हैं।"
@@ -562,6 +663,10 @@ msgstr "मात्रा"
 
 msgid "Rain only"
 msgstr "सिर्फ़ बारिश"
+
+#, python-format
+msgid "Range ₹%(low)s to ₹%(high)s"
+msgstr "₹%(low)s से ₹%(high)s तक"
 
 msgid "Reset a farmer's PIN"
 msgstr "किसान का पिन रीसेट करें"
@@ -734,6 +839,10 @@ msgstr "इस नंबर पर पहले से खेत सेव ह�
 msgid "This phone can't remember your field (private browsing?). It will work for this visit only."
 msgstr "यह फ़ोन आपका खेत याद नहीं रख सकता (प्राइवेट ब्राउज़िंग?)। यह सिर्फ़ इस बार काम करेगा।"
 
+#, python-format
+msgid "This price is %(days)s days old, so today's may differ."
+msgstr "यह भाव %(days)s दिन पुराना है, आज का भाव अलग हो सकता है।"
+
 msgid ""
 "This removes your account, your field, soil card values and saved answers for good. It can't be "
 "undone."
@@ -759,6 +868,17 @@ msgstr "%(season)s के लिए सबसे अच्छी फसलें
 msgid "Total: ₹%(cost)s"
 msgstr "कुल: ₹%(cost)s"
 
+msgid "Trader's offer, ₹ per quintal"
+msgstr "व्यापारी का भाव, ₹ प्रति क्विंटल"
+
+#, python-format
+msgid "Trader's offer: ₹%(offer)s"
+msgstr "व्यापारी का भाव: ₹%(offer)s"
+
+#, python-format
+msgid "Traders paid ₹%(low)s to ₹%(high)s there that day."
+msgstr "उस दिन वहाँ व्यापारियों ने ₹%(low)s से ₹%(high)s तक दिए।"
+
 msgid "Tubewell or borewell"
 msgstr "ट्यूबवेल या बोरवेल"
 
@@ -767,6 +887,10 @@ msgstr "खाद की मात्रा को अपने खेत के
 
 msgid "Unit"
 msgstr "इकाई"
+
+#, python-format
+msgid "Up ₹%(diff)s since %(date)s"
+msgstr "%(date)s से ₹%(diff)s ज़्यादा"
 
 msgid "Upper end of the dose"
 msgstr "मात्रा का ज़्यादा वाला सिरा"
@@ -788,6 +912,9 @@ msgstr "यही जगह"
 
 msgid "Use your mobile number and a 4-digit PIN to open your farm on any phone."
 msgstr "मोबाइल नंबर और 4 अंकों के पिन से अपना खेत किसी भी फ़ोन पर खोलें।"
+
+msgid "Used to show the price left after carrying the crop there. Remembered on this phone."
+msgstr "फसल वहाँ ले जाने के बाद बचा भाव दिखाने के लिए। यह इस फ़ोन पर याद रहेगा।"
 
 msgid "Verdict pills"
 msgstr "फ़ैसले के निशान"
@@ -836,6 +963,9 @@ msgstr ""
 
 msgid "We have no price or cost for it, so its profit couldn't be compared."
 msgstr "इसका भाव या खर्च हमारे पास नहीं है, इसलिए इसके मुनाफ़े की तुलना नहीं हो सकी।"
+
+msgid "We need it to find the mandis nearest you."
+msgstr "इससे आपके पास की मंडियाँ ढूँढी जाती हैं।"
 
 msgid ""
 "We use these only to give advice for your field. Only you see your farm; the AgriSense team opens"
@@ -902,6 +1032,9 @@ msgstr "हाँ, आगे"
 msgid "You can delete your farm and account at any time from More."
 msgstr "आप कभी भी 'और' में जाकर अपना खेत और खाता मिटा सकते हैं।"
 
+msgid "You can look up prices on the Agmarknet website, or ask the Kisan Call Centre."
+msgstr "आप Agmarknet वेबसाइट पर भाव देख सकते हैं, या किसान कॉल सेंटर से पूछ सकते हैं।"
+
 msgid "You can't reset your own PIN here."
 msgstr "आप यहाँ अपना खुद का पिन रीसेट नहीं कर सकते।"
 
@@ -953,6 +1086,9 @@ msgid ""
 msgstr ""
 "एक सार्वजनिक डेटा में आपकी मिट्टी और मौसम उन खेतों जैसे हैं जहाँ यह फसल उगती है (खासकर "
 "%(inputs)s)।"
+
+msgid "Your transport cost, ₹ per quintal per km (optional)"
+msgstr "आपका ढुलाई खर्च, ₹ प्रति क्विंटल प्रति किमी (ज़रूरी नहीं)"
 
 msgid "acre"
 msgstr "एकड़"
@@ -1010,6 +1146,9 @@ msgstr "कम"
 
 msgid "medium"
 msgstr "मध्यम"
+
+msgid "modal, per quintal"
+msgstr "मॉडल भाव, प्रति क्विंटल"
 
 msgid "my field"
 msgstr "मेरा खेत"
