@@ -51,6 +51,7 @@ def empty() -> dict:
         "farm": {"lat": None, "lon": None, "district_code": None, "location_source": None},
         "plots": [_empty_plot()],
         "last_results": {},
+        "prefs": {"transport_rate": None},  # Rs per quintal per km, the farmer's own figure
     }
 
 
@@ -112,6 +113,9 @@ def parse(raw: str | None) -> dict:
     plots = data.get("plots") if isinstance(data.get("plots"), list) else []
     if plots and isinstance(plots[0], dict):
         _parse_plot(plots[0], profile)
+
+    prefs = data.get("prefs") if isinstance(data.get("prefs"), dict) else {}
+    profile["prefs"]["transport_rate"] = transport_rate(prefs.get("transport_rate"))
 
     results = data.get("last_results") if isinstance(data.get("last_results"), dict) else {}
     for tool, envelope in results.items():
@@ -256,6 +260,16 @@ def _soil_value(key: str, raw) -> str | None:
     if number < low or (high is not None and number > high):
         raise ValueError(key)
     return _dec(number)
+
+
+def transport_rate(raw) -> str | None:
+    """The farmer's transport cost, Rs per quintal per km; None if blank or not a number."""
+    if raw is None or str(raw).strip() == "":
+        return None
+    try:
+        return _dec(units.parse_decimal(raw))
+    except ValueError:
+        return None
 
 
 def _past_date(raw) -> str | None:

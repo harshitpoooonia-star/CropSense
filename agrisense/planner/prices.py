@@ -19,29 +19,12 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from ..districts import District
+from ..market.commodities import matches
 from ..models import CachedPrice
 from .data import msp_table
 
 WINDOW_DAYS = 30
 MIN_ROWS = 3
-
-# Agmarknet commodity names vary; match on keywords (include, exclude).
-COMMODITY_KEYWORDS = {
-    "wheat": (("wheat",), ("atta", "flour")),
-    "paddy": (("paddy",), ()),
-    "mustard": (("mustard",), ("oil",)),
-    "potato": (("potato",), ("sweet",)),
-    "maize": (("maize",), ()),
-    "barley": (("barley",), ()),
-    "bajra": (("bajra", "pearl millet"), ()),
-    "chickpea": (("bengal gram", "gram"), ("green gram", "black gram", "flour", "dal")),
-    "blackgram": (("black gram", "urad"), ("dal",)),
-    "mungbean": (("green gram", "moong"), ("dal",)),
-    "pigeonpeas": (("arhar", "tur"), ("dal",)),
-    "lentil": (("lentil", "masur", "masoor"), ("dal",)),
-    "sugarcane": (("sugarcane",), ()),
-}
-
 
 @dataclass(frozen=True)
 class PriceInfo:
@@ -51,12 +34,6 @@ class PriceInfo:
     as_of: date
     source: str
     verified: bool = True
-
-
-def matches(crop: str, commodity: str) -> bool:
-    include, exclude = COMMODITY_KEYWORDS.get(crop, ((), ()))
-    name = " ".join(commodity.lower().split())
-    return any(k in name for k in include) and not any(k in name for k in exclude)
 
 
 def recent_mandi(session: Session, district: District, crop: str, today: date) -> PriceInfo | None:

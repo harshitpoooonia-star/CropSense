@@ -47,6 +47,7 @@ class User(Timestamps, db.Model):
     consent_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     consent_version: Mapped[str] = mapped_column(String(32))
     last_login_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    prefs: Mapped[dict | None] = mapped_column(JSON)  # e.g. transport rate for net mandi prices
 
     # Staff-assisted PIN reset: a helper confirms the farmer in person and gets
     # a one-time code; the farmer enters it with a new PIN before it expires.
