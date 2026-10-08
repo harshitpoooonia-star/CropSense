@@ -1,0 +1,29 @@
+{# One ranked crop (spec 02, R4). `option` is a planner.rank.Option. #}
+{% set v = option.trust.value %}
+{% set name = crop_name(option.crop) %}
+{% set water_words = {"low": _("Low water"), "medium": _("Medium water"), "high": _("High water")} %}
+{% set risk_status = {"low": "good", "medium": "warning", "high": "critical"} %}
+{% set risk_words = {"low": _("Low risk"), "medium": _("Some risk"), "high": _("High risk")} %}
+{% if v.profit_low is not none %}
+  {% set share = _("AgriSense crop plan: %(crop)s, about ₹%(low)s to ₹%(high)s per acre after costs. Check with your KVK.",
+                   crop=name, low=v.profit_low | decimalformat, high=v.profit_high | decimalformat) %}
+{% else %}
+  {% set share = _("AgriSense crop plan: %(crop)s. Check with your KVK.", crop=name) %}
+{% endif %}
+{% call ui.result_card(_("%(rank)s. %(crop)s", rank=option.rank, crop=name), option.trust, share_text=share) %}
+  {% if v.profit_low is not none %}
+    <p class="text-base text-ink-muted">{{ _("Likely profit per acre, after costs") }}</p>
+    <p class="text-figure font-bold tabular-nums">₹{{ v.profit_low | decimalformat }}–₹{{ v.profit_high | decimalformat }}</p>
+  {% else %}
+    <p class="text-xl font-bold">{{ _("Profit not known") }}</p>
+  {% endif %}
+  <div class="mt-3 flex flex-wrap gap-2">
+    {% if v.water_need %}
+      <span class="inline-flex items-center gap-2 rounded-full border-2 border-line px-3 py-1 font-bold">{{ water_words[v.water_need] }}</span>
+    {% endif %}
+    {% if v.risk %}{{ ui.verdict_pill(risk_status[v.risk], risk_words[v.risk]) }}{% endif %}
+  </div>
+  <div class="mt-4">
+    {{ ui.link_button(url_for("fertilizer.index", crop=option.crop, season=option.season), _("Fertilizer for this crop"), "primary", "bag") }}
+  </div>
+{% endcall %}

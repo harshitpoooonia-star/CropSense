@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 05:38+0530\n"
+"POT-Creation-Date: 2026-10-08 06:03+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -23,10 +23,28 @@ msgid "%(count)s bags of %(product)s"
 msgstr ""
 
 #, python-format
+msgid "%(district)s's crop statistics don't show this crop in %(season)s, so it isn't suggested."
+msgstr ""
+
+#, python-format
 msgid "%(kg)s kg per bag"
 msgstr ""
 
+#, python-format
+msgid "%(rank)s. %(crop)s"
+msgstr ""
+
 msgid "AgriSense"
+msgstr ""
+
+#, python-format
+msgid ""
+"AgriSense crop plan: %(crop)s, about ₹%(low)s to ₹%(high)s per acre after costs. Check with your "
+"KVK."
+msgstr ""
+
+#, python-format
+msgid "AgriSense crop plan: %(crop)s. Check with your KVK."
 msgstr ""
 
 msgid "Already saved? Log in"
@@ -39,6 +57,9 @@ msgid "Area"
 msgstr ""
 
 msgid "Ask an expert"
+msgstr ""
+
+msgid "Ask why"
 msgstr ""
 
 msgid "Avoid easy PINs like 1111 or 1234."
@@ -92,10 +113,16 @@ msgstr ""
 msgid "Couldn't get your location. Tap the map or choose your district."
 msgstr ""
 
+msgid "Crop"
+msgstr ""
+
 msgid "Crop Planner"
 msgstr ""
 
 msgid "Crop names"
+msgstr ""
+
+msgid "Crops your district grows, ranked for your field by likely profit and water. Pick a season."
 msgstr ""
 
 msgid "Daily mandi price changes arrive in Section 7."
@@ -156,6 +183,9 @@ msgstr ""
 msgid "Fertilizer Calculator"
 msgstr ""
 
+msgid "Fertilizer for this crop"
+msgstr ""
+
 msgid "Fertilizer for this field"
 msgstr ""
 
@@ -169,6 +199,9 @@ msgid "Field size"
 msgstr ""
 
 msgid "Find a scheme"
+msgstr ""
+
+msgid "First, tell us about your field"
 msgstr ""
 
 #, python-format
@@ -199,7 +232,17 @@ msgstr ""
 msgid "Good"
 msgstr ""
 
+#, python-format
+msgid "Grown on about %(area)s hectares a year in %(district)s in %(season)s."
+msgstr ""
+
 msgid "High confidence"
+msgstr ""
+
+msgid "High risk"
+msgstr ""
+
+msgid "High water"
 msgstr ""
 
 msgid "How big is it?"
@@ -212,6 +255,17 @@ msgid "I agree"
 msgstr ""
 
 msgid "I have a reset code"
+msgstr ""
+
+#, python-format
+msgid "It is already in the top 3, at number %(rank)s."
+msgstr ""
+
+msgid "It needs more water than your field's source reliably gives."
+msgstr ""
+
+#, python-format
+msgid "It scored a little lower overall: number %(rank)s of %(total)s."
 msgstr ""
 
 msgid "KVK and Kisan Call Centre"
@@ -235,6 +289,17 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
+#, python-format
+msgid "Likely profit is about ₹%(gap)s per acre lower than the number 3 crop."
+msgstr ""
+
+msgid "Likely profit per acre, after costs"
+msgstr ""
+
+#, python-format
+msgid "Likely profit ₹%(low)s to ₹%(high)s per acre after costs, at %(price)s."
+msgstr ""
+
 msgid "Loading your field…"
 msgstr ""
 
@@ -253,6 +318,16 @@ msgstr ""
 msgid "Low confidence"
 msgstr ""
 
+msgid "Low risk"
+msgstr ""
+
+msgid "Low water"
+msgstr ""
+
+#, python-format
+msgid "MSP of ₹%(price)s per quintal (not a mandi price)"
+msgstr ""
+
 msgid "Main"
 msgstr ""
 
@@ -268,10 +343,21 @@ msgstr ""
 msgid "Medium confidence"
 msgstr ""
 
+msgid "Medium water"
+msgstr ""
+
 msgid "Mobile number"
 msgstr ""
 
 msgid "More"
+msgstr ""
+
+#, python-format
+msgid "Needs %(need)s water, and you have a %(source)s: risky in a dry year."
+msgstr ""
+
+#, python-format
+msgid "Needs %(need)s water; your %(source)s can supply it."
 msgstr ""
 
 msgid "New 4-digit PIN"
@@ -281,6 +367,9 @@ msgid "Next"
 msgstr ""
 
 msgid "Nitrogen (N)"
+msgstr ""
+
+msgid "No prices yet for these crops, so they aren't ranked by profit."
 msgstr ""
 
 msgid "Nobody pays us to recommend anything, so every answer is for you."
@@ -344,6 +433,15 @@ msgid "Product A"
 msgstr ""
 
 msgid "Product B"
+msgstr ""
+
+msgid "Profit not known"
+msgstr ""
+
+msgid "Profit not known: no cost-of-cultivation figure for this crop."
+msgstr ""
+
+msgid "Profit not known: no price for this crop yet."
 msgstr ""
 
 msgid "Quantity"
@@ -415,6 +513,20 @@ msgstr ""
 msgid "Soil Health Card"
 msgstr ""
 
+#, python-format
+msgid "Soil-climate match not used: %(inputs)s is outside the public dataset it learned from."
+msgstr ""
+
+msgid "Soil-climate match not used: it needs your soil card's N, P, K and pH."
+msgstr ""
+
+#, python-format
+msgid "Soil-climate model %(version)s (public dataset, not local farms)"
+msgstr ""
+
+msgid "Some risk"
+msgstr ""
+
 msgid "Source:"
 msgstr ""
 
@@ -467,6 +579,9 @@ msgstr ""
 msgid "The nearest deadline arrives in Section 9."
 msgstr ""
 
+msgid "The planner needs your district, field size and water source. It takes four short steps."
+msgstr ""
+
 msgid "The two PINs don't match."
 msgstr ""
 
@@ -498,6 +613,10 @@ msgid "Today"
 msgstr ""
 
 msgid "Too many tries. Wait 15 minutes and try again."
+msgstr ""
+
+#, python-format
+msgid "Top crops for %(season)s"
 msgstr ""
 
 msgid "Tubewell or borewell"
@@ -550,6 +669,14 @@ msgid "We don't sell seeds or sprays."
 msgstr ""
 
 msgid ""
+"We have crop data for Gautam Buddh Nagar, Bulandshahr, Ghaziabad, Hapur and Aligarh so far. Your "
+"district isn't covered yet."
+msgstr ""
+
+msgid "We have no price or cost for it, so its profit couldn't be compared."
+msgstr ""
+
+msgid ""
 "We use these only to give advice for your field. Only you see your farm; the AgriSense team opens"
 " the data only to fix problems."
 msgstr ""
@@ -572,7 +699,17 @@ msgstr ""
 msgid "Where is your field?"
 msgstr ""
 
+msgid "Which crop this season?"
+msgstr ""
+
 msgid "Why"
+msgstr ""
+
+#, python-format
+msgid "Why not %(crop)s?"
+msgstr ""
+
+msgid "Why not another crop?"
 msgstr ""
 
 msgid "Without a pin, tools use the district's centre, so weather and nearest mandis are less exact."
@@ -626,6 +763,15 @@ msgstr ""
 msgid "Your pin looks like it is in %(district)s district."
 msgstr ""
 
+msgid "Your soil and season match it less well in the public dataset."
+msgstr ""
+
+#, python-format
+msgid ""
+"Your soil and season resemble fields where this crop grows in a public dataset (mostly "
+"%(inputs)s)."
+msgstr ""
+
 msgid "acre"
 msgstr ""
 
@@ -634,6 +780,12 @@ msgid "bags of %(product)s"
 msgstr ""
 
 msgid "bigha"
+msgstr ""
+
+msgid "bought water"
+msgstr ""
+
+msgid "canal"
 msgstr ""
 
 msgid "district average"
@@ -653,10 +805,22 @@ msgstr ""
 msgid "hectare"
 msgstr ""
 
+msgid "high"
+msgstr ""
+
 msgid "kg"
 msgstr ""
 
 msgid "kg per hectare, as on the card"
+msgstr ""
+
+msgid "kharif"
+msgstr ""
+
+msgid "low"
+msgstr ""
+
+msgid "medium"
 msgstr ""
 
 msgid "organic carbon"
@@ -671,6 +835,25 @@ msgstr ""
 msgid "quintal"
 msgstr ""
 
+msgid "rabi"
+msgstr ""
+
+msgid "rain-fed field"
+msgstr ""
+
+#, python-format
+msgid "recent mandi prices of ₹%(low)s-%(high)s per quintal"
+msgstr ""
+
+msgid "season humidity"
+msgstr ""
+
+msgid "season rainfall"
+msgstr ""
+
+msgid "season temperature"
+msgstr ""
+
 msgid "soil nitrogen"
 msgstr ""
 
@@ -683,9 +866,18 @@ msgstr ""
 msgid "soil potassium"
 msgstr ""
 
+msgid "tubewell"
+msgstr ""
+
+msgid "water source"
+msgstr ""
+
 msgid "what you entered"
 msgstr ""
 
 msgid "your soil card"
+msgstr ""
+
+msgid "zaid"
 msgstr ""
 

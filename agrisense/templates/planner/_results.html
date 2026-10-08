@@ -1,0 +1,38 @@
+{% if problem == "no_field" %}
+  <section class="rounded-card border border-line-soft bg-surface p-4">
+    <h2 class="text-xl font-bold">{{ _("First, tell us about your field") }}</h2>
+    <p class="mt-1 text-ink-muted">{{ _("The planner needs your district, field size and water source. It takes four short steps.") }}</p>
+    <div class="mt-4">{{ ui.link_button(url_for("field.setup"), _("Set up your field")) }}</div>
+  </section>
+{% elif problem == "no_district_data" %}
+  <p class="flex gap-2 rounded-card border border-warn bg-warn-bg p-4 text-warn">
+    {{ ui.icon("info", "mt-1 size-5") }}
+    <span>{{ _("We have crop data for Gautam Buddh Nagar, Bulandshahr, Ghaziabad, Hapur and Aligarh so far. Your district isn't covered yet.") }}</span>
+  </p>
+{% elif plan %}
+  <script type="application/json" data-profile-update>{{ profile | tojson }}</script>
+  <h2 class="text-xl font-bold">{{ _("Top crops for %(season)s", season=season_labels[season]) }}</h2>
+  {% if not plan.profit_ranked %}
+  <p class="mt-2 flex gap-2 text-ink-muted">{{ ui.icon("info", "mt-1 size-5") }}<span>{{ _("No prices yet for these crops, so they aren't ranked by profit.") }}</span></p>
+  {% endif %}
+  {% if plan.model_note %}<p class="mt-2 text-base text-ink-muted">{{ plan.model_note }}</p>{% endif %}
+
+  <ol class="mt-4 space-y-4">
+    {% for option in plan.top %}<li>{% include "planner/_card.html" %}</li>{% endfor %}
+  </ol>
+
+  {% if other_crops %}
+  <section class="mt-8 rounded-card border border-line-soft bg-surface p-4">
+    <h2 class="text-xl font-bold">{{ _("Why not another crop?") }}</h2>
+    <form method="post" action="{{ url_for('planner.why') }}"
+          hx-post="{{ url_for('planner.why') }}" hx-target="#why-answer" hx-swap="innerHTML" class="mt-3 space-y-3">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="profile" value="">
+      <input type="hidden" name="season" value="{{ season }}">
+      {{ ui.select_field("crop", _("Crop"), other_crops) }}
+      {{ ui.button(_("Ask why"), "secondary") }}
+    </form>
+    <div id="why-answer" class="mt-3" aria-live="polite"></div>
+  </section>
+  {% endif %}
+{% endif %}
