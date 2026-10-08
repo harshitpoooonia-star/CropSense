@@ -1,0 +1,71 @@
+{% if nothing_shown %}
+  <section class="rounded-card border border-warn bg-warn-bg p-4 text-warn">
+    <p class="flex gap-2">{{ ui.icon("info", "mt-1 size-5") }}<span>{{ _("We are still checking our scheme list against the official pages. Until then, search on myScheme, the government's scheme portal, or ask at a CSC.") }}</span></p>
+    <div class="mt-3">{{ ui.link_button("https://www.myscheme.gov.in", _("Open myScheme"), "secondary", external=True) }}</div>
+  </section>
+{% else %}
+  <script type="application/json" data-profile-update>{{ profile | tojson }}</script>
+  <p class="flex gap-2 rounded-lg border border-warn bg-warn-bg p-3 font-bold text-warn">
+    {{ ui.icon("info", "mt-1 size-5") }}<span>{{ _("Likely eligible: confirm at the official portal or a CSC before you apply.") }}</span>
+  </p>
+
+  {% macro scheme_card(match, label_status, label_word) %}
+  {% set s = match.scheme %}
+  <article class="rounded-card border border-line-soft bg-surface p-4">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <h3 class="text-xl font-bold">{{ s.name(locale) }}</h3>
+      {{ ui.verdict_pill(label_status, label_word) }}
+    </div>
+    <p class="mt-2">{{ s.benefit(locale) }}</p>
+    {% if match.reasons %}
+    <ul class="mt-2 list-disc ps-5 text-base text-ink-muted">
+      {% for code, params in match.reasons %}<li>{{ reasons[code] | format_reason(params) }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    <h4 class="mt-3 font-bold">{{ _("Papers to carry") }}</h4>
+    <ul class="mt-1 space-y-1">
+      {% for doc in s.document_names(locale) %}
+      <li class="flex gap-2">{{ ui.icon("scheme", "mt-1 size-5 text-accent") }}<span>{{ doc }}</span></li>
+      {% endfor %}
+    </ul>
+    {% if s.deadline %}<p class="mt-3 font-bold">{{ _("Last date: %(date)s", date=s.deadline) }}</p>
+    {% elif s.deadline_note(locale) %}<p class="mt-3 text-base">{{ s.deadline_note(locale) }}</p>{% endif %}
+    <div class="mt-3">{{ ui.link_button(s.official_url, _("Official page"), "secondary", external=True) }}</div>
+    <p class="mt-2 text-sm text-ink-muted">
+      {{ _("Source:") }} {{ s.sources | join("; ") }}.
+      {% if s.verified %}{{ _("Checked on %(date)s.", date=s.last_checked) }}{% else %}{{ _("Not yet checked against the official page.") }}{% endif %}
+    </p>
+  </article>
+  {% endmacro %}
+
+  <h2 class="mt-6 text-xl font-bold">{{ _("Likely for you (%(n)s)", n=found.likely | length) }}</h2>
+  {% if found.likely %}
+  <div class="mt-3 space-y-4">{% for m in found.likely %}{{ scheme_card(m, "good", _("Likely")) }}{% endfor %}</div>
+  {% else %}<p class="mt-2 text-ink-muted">{{ _("None for sure from your answers. See the ones below that might fit.") }}</p>{% endif %}
+
+  {% if found.maybe %}
+  <h2 class="mt-8 text-xl font-bold">{{ _("Might fit: check these (%(n)s)", n=found.maybe | length) }}</h2>
+  <div class="mt-3 space-y-4">{% for m in found.maybe %}{{ scheme_card(m, "warning", _("Check")) }}{% endfor %}</div>
+  {% endif %}
+
+  {% if found.no %}
+  <details class="mt-8 rounded-card border border-line-soft bg-surface p-4">
+    <summary class="flex min-h-tap cursor-pointer items-center font-bold">{{ _("Not for you, and why (%(n)s)", n=found.no | length) }}</summary>
+    <ul class="mt-2 space-y-2">
+      {% for m in found.no %}
+      <li><span class="font-bold">{{ m.scheme.name(locale) }}</span>: {{ reasons[m.reasons[0][0]] | format_reason(m.reasons[0][1]) }}</li>
+      {% endfor %}
+    </ul>
+  </details>
+  {% endif %}
+
+  {% if trust %}<div class="mt-8">{% call ui.result_card(_("About these results"), trust) %}{% endcall %}</div>{% endif %}
+
+  <form {{ ui.swap_attrs(url_for("schemes.show_step"), "#schemes-flow") }} class="mt-6">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="profile" value="">
+    <input type="hidden" name="answers" value="{{ answers_json }}">
+    <input type="hidden" name="step" value="state">
+    {{ ui.button(_("Change my answers"), "secondary") }}
+  </form>
+{% endif %}

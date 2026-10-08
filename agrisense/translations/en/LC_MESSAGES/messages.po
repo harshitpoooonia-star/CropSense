@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 09:32+0530\n"
+"POT-Creation-Date: 2026-10-08 09:42+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -20,6 +20,10 @@ msgstr ""
 
 #, python-format
 msgid "%(count)s bags of %(product)s"
+msgstr ""
+
+#, python-format
+msgid "%(count)s of these schemes haven't been checked against their official page yet."
 msgstr ""
 
 #, python-format
@@ -70,6 +74,9 @@ msgstr ""
 msgid "About %(mm)s mm of rain in the 2 days before (fallen or forecast): hold irrigation."
 msgstr ""
 
+msgid "About these results"
+msgstr ""
+
 msgid "Above the mandi price"
 msgstr ""
 
@@ -78,6 +85,9 @@ msgstr ""
 
 #, python-format
 msgid "After transport (₹%(cost)s): ₹%(net)s per quintal"
+msgstr ""
+
+msgid "Age in years"
 msgstr ""
 
 msgid "Agmarknet website"
@@ -104,6 +114,9 @@ msgstr ""
 msgid "AgriSense fertilizer for %(what)s: %(items)s, about ₹%(cost)s. Check with your KVK."
 msgstr ""
 
+msgid "AgriSense scheme list, from official and news sources (see each scheme)"
+msgstr ""
+
 msgid "AgriSense thresholds, some still proposed (see the advisor spec)"
 msgstr ""
 
@@ -118,6 +131,9 @@ msgstr ""
 
 #, python-format
 msgid "An offer within %(band)s%% of the modal price counts as fair."
+msgstr ""
+
+msgid "Another state"
 msgstr ""
 
 msgid "Answers for your own farm, with the reason and the source shown. No sign-up needed."
@@ -150,6 +166,9 @@ msgstr ""
 msgid "Bag icons"
 msgstr ""
 
+msgid "Based only on your answers. The scheme office decides; confirm at the official portal or a CSC."
+msgstr ""
+
 msgid "Below the mandi price"
 msgstr ""
 
@@ -177,6 +196,12 @@ msgstr ""
 msgid "Change field details"
 msgstr ""
 
+msgid "Change my answers"
+msgstr ""
+
+msgid "Check"
+msgstr ""
+
 msgid "Check a price"
 msgstr ""
 
@@ -192,6 +217,10 @@ msgstr ""
 msgid "Check soil first"
 msgstr ""
 
+#, python-format
+msgid "Checked on %(date)s."
+msgstr ""
+
 msgid "Choose a 4-digit PIN"
 msgstr ""
 
@@ -199,6 +228,9 @@ msgid "Choose a crop"
 msgstr ""
 
 msgid "Choose a crop."
+msgstr ""
+
+msgid "Choose one, or tap Skip."
 msgstr ""
 
 msgid "Choose one."
@@ -229,6 +261,9 @@ msgstr ""
 msgid "Couldn't get your location. Tap the map or choose your district."
 msgstr ""
 
+msgid "Covers a list of crops; check whether yours is on it."
+msgstr ""
+
 msgid "Crop"
 msgstr ""
 
@@ -253,6 +288,30 @@ msgstr ""
 msgid "Delete my farm"
 msgstr ""
 
+msgid "Depends on having a private tubewell."
+msgstr ""
+
+msgid "Depends on how much land you have."
+msgstr ""
+
+msgid "Depends on income tax, government jobs or pensions in your family."
+msgstr ""
+
+msgid "Depends on whose land you farm."
+msgstr ""
+
+msgid "Depends on your age."
+msgstr ""
+
+msgid "Depends on your category."
+msgstr ""
+
+msgid "Depends on your crop."
+msgstr ""
+
+msgid "Depends on your state."
+msgstr ""
+
 msgid "Distances are from your district's centre, because your field has no pin."
 msgstr ""
 
@@ -260,6 +319,11 @@ msgid "District"
 msgstr ""
 
 msgid "District centre (estimated)"
+msgstr ""
+
+msgid ""
+"Does anyone in your family pay income tax, or have a government job or a pension of ₹10,000 a "
+"month or more?"
 msgstr ""
 
 msgid "Don't"
@@ -302,6 +366,9 @@ msgstr ""
 msgid "Enter the field size as a number, like 2 or 2.5."
 msgstr ""
 
+msgid "Enter the land as a number, like 2 or 2.5."
+msgstr ""
+
 msgid "Enter the number as printed on the card."
 msgstr ""
 
@@ -312,6 +379,9 @@ msgid "Enter the transport cost as a number, like 1.5."
 msgstr ""
 
 msgid "Enter your PIN to confirm"
+msgstr ""
+
+msgid "Enter your age in years, like 35."
 msgstr ""
 
 msgid "Enter your field size, or set up your field first."
@@ -325,6 +395,9 @@ msgid "Every component in Hindi and English. Sample data only, not advice."
 msgstr ""
 
 msgid "Fair offer"
+msgstr ""
+
+msgid "Families with an income-tax payer, government job or large pension are excluded."
 msgstr ""
 
 msgid "Farmer's mobile number"
@@ -353,6 +426,9 @@ msgid "Field area"
 msgstr ""
 
 msgid "Field size"
+msgstr ""
+
+msgid "Filled from your saved field when you have one."
 msgstr ""
 
 msgid "Find a scheme"
@@ -403,6 +479,9 @@ msgstr ""
 msgid "Grown on about %(area)s hectares a year in %(district)s in %(season)s."
 msgstr ""
 
+msgid "Haryana"
+msgstr ""
+
 msgid "High confidence"
 msgstr ""
 
@@ -422,6 +501,12 @@ msgid "How do you water it?"
 msgstr ""
 
 msgid "How many bags?"
+msgstr ""
+
+msgid "How much land do you farm?"
+msgstr ""
+
+msgid "How old are you?"
 msgstr ""
 
 msgid "I agree"
@@ -465,13 +550,30 @@ msgstr ""
 msgid "Krishi Vigyan Kendra: your district's government farm science centre."
 msgstr ""
 
+msgid "Land"
+msgstr ""
+
 msgid "Language"
+msgstr ""
+
+#, python-format
+msgid "Last date: %(date)s"
 msgstr ""
 
 msgid "Leave empty to just see the prices."
 msgstr ""
 
 msgid "Leave empty to use your saved field size."
+msgstr ""
+
+msgid "Likely"
+msgstr ""
+
+msgid "Likely eligible: confirm at the official portal or a CSC before you apply."
+msgstr ""
+
+#, python-format
+msgid "Likely for you (%(n)s)"
 msgstr ""
 
 #, python-format
@@ -540,6 +642,10 @@ msgstr ""
 msgid "Medium water"
 msgstr ""
 
+#, python-format
+msgid "Might fit: check these (%(n)s)"
+msgstr ""
+
 msgid "Mobile number"
 msgstr ""
 
@@ -551,6 +657,9 @@ msgid "More"
 msgstr ""
 
 msgid "My Soil Health Card"
+msgstr ""
+
+msgid "My own land (in my name)"
 msgstr ""
 
 #, python-format
@@ -571,6 +680,9 @@ msgid "Next 3 days"
 msgstr ""
 
 msgid "Nitrogen (N)"
+msgstr ""
+
+msgid "No"
 msgstr ""
 
 #, python-format
@@ -596,12 +708,22 @@ msgstr ""
 msgid "Nobody pays us to recommend anything, so every answer is for you."
 msgstr ""
 
+msgid "None for sure from your answers. See the ones below that might fit."
+msgstr ""
+
 msgid ""
 "Not adjusted for your soil test. If your Soil Health Card gives a dose for this crop, use that "
 "instead."
 msgstr ""
 
 msgid "Not adjusted for your soil."
+msgstr ""
+
+#, python-format
+msgid "Not for you, and why (%(n)s)"
+msgstr ""
+
+msgid "Not for your kind of landholding."
 msgstr ""
 
 msgid "Not known"
@@ -611,7 +733,13 @@ msgstr ""
 msgid "Not known yet: %(fields)s. Tools will say when this limits an answer."
 msgstr ""
 
+msgid "Not yet checked against the official page."
+msgstr ""
+
 msgid "Number with unit"
+msgstr ""
+
+msgid "Official page"
 msgstr ""
 
 msgid "Old price"
@@ -623,7 +751,28 @@ msgstr ""
 msgid "Only do this after confirming, face to face, that the farmer owns this number."
 msgstr ""
 
+#, python-format
+msgid "Only for ages %(min)s to %(max)s."
+msgstr ""
+
+msgid "Only for certain categories."
+msgstr ""
+
+#, python-format
+msgid "Only for farmers in %(states)s."
+msgstr ""
+
+#, python-format
+msgid "Only for farmers with up to %(max)s hectares."
+msgstr ""
+
+msgid "Only for farms with a private tubewell connection."
+msgstr ""
+
 msgid "Only part of this dose has a cited source; the missing nutrients aren't shown. Ask your KVK."
+msgstr ""
+
+msgid "Open myScheme"
 msgstr ""
 
 msgid ""
@@ -641,6 +790,9 @@ msgid "Other"
 msgstr ""
 
 msgid "PIN"
+msgstr ""
+
+msgid "Papers to carry"
 msgstr ""
 
 msgid "Phosphate from"
@@ -692,6 +844,10 @@ msgid "Quantity"
 msgstr ""
 
 #, python-format
+msgid "Question %(n)s of %(total)s"
+msgstr ""
+
+#, python-format
 msgid "Rain %(prob)s%% likely around %(time)s."
 msgstr ""
 
@@ -739,9 +895,6 @@ msgstr ""
 msgid "Scheme Finder"
 msgstr ""
 
-msgid "Scheme deadlines"
-msgstr ""
-
 msgid "See if a trader's offer is fair against today's mandi rates."
 msgstr ""
 
@@ -761,6 +914,20 @@ msgid "Set up your field to see your district's KVK."
 msgstr ""
 
 msgid "Share on WhatsApp"
+msgstr ""
+
+msgid "Sharecropping (batai)"
+msgstr ""
+
+msgid "Six questions: schemes you may claim and the papers to carry."
+msgstr ""
+
+msgid ""
+"Six short questions. We show government schemes you are likely eligible for, what they give, and "
+"the papers to carry."
+msgstr ""
+
+msgid "Skip"
 msgstr ""
 
 msgid "Skip to content"
@@ -830,6 +997,9 @@ msgstr ""
 msgid "Standard dose for the crop"
 msgstr ""
 
+msgid "Start"
+msgstr ""
+
 msgid "Start here"
 msgstr ""
 
@@ -838,6 +1008,9 @@ msgid "Step %(n)s of %(total)s"
 msgstr ""
 
 msgid "Style guide"
+msgstr ""
+
+msgid "Taken on rent or lease"
 msgstr ""
 
 msgid "Tap the map where your field is, or drag the pin."
@@ -871,9 +1044,6 @@ msgid "The forecast is for your field's location."
 msgstr ""
 
 msgid "The map didn't load. Use your location or choose your district below."
-msgstr ""
-
-msgid "The nearest deadline arrives in Section 9."
 msgstr ""
 
 msgid ""
@@ -989,6 +1159,9 @@ msgstr ""
 msgid "Used to show the price left after carrying the crop there. Remembered on this phone."
 msgstr ""
 
+msgid "Uttar Pradesh"
+msgstr ""
+
 msgid "Verdict pills"
 msgstr ""
 
@@ -1001,6 +1174,11 @@ msgstr ""
 msgid "Water bought from others"
 msgstr ""
 
+msgid ""
+"We are still checking our scheme list against the official pages. Until then, search on myScheme,"
+" the government's scheme portal, or ask at a CSC."
+msgstr ""
+
 msgid "We are still checking this KVK's phone number. Until then, call the Kisan Call Centre above."
 msgstr ""
 
@@ -1011,6 +1189,11 @@ msgstr ""
 
 #, python-format
 msgid "We don't have the KVK for %(district)s district yet."
+msgstr ""
+
+msgid ""
+"We don't keep your answers. Only the list of schemes that may fit is saved with your farm, on "
+"this phone or in your account."
 msgstr ""
 
 msgid "We don't know the bigha size for your district yet. Please use acre or hectare."
@@ -1044,6 +1227,9 @@ msgid ""
 " the data only to fix problems."
 msgstr ""
 
+msgid "What is your main crop?"
+msgstr ""
+
 msgid "What needs a decision on your farm today."
 msgstr ""
 
@@ -1071,6 +1257,15 @@ msgstr ""
 msgid "Which crop this season?"
 msgstr ""
 
+msgid "Which schemes can you claim?"
+msgstr ""
+
+msgid "Which state is your farm in?"
+msgstr ""
+
+msgid "Whose land is it?"
+msgstr ""
+
 msgid "Why"
 msgstr ""
 
@@ -1092,6 +1287,9 @@ msgid "Work out the bags"
 msgstr ""
 
 msgid "Wrong mobile number or PIN."
+msgstr ""
+
+msgid "Yes"
 msgstr ""
 
 msgid "Yes, next"
