@@ -1,7 +1,8 @@
-"""Save my farm (account), log in/out, and the staff-assisted PIN reset.
+"""Save my farm (account), log in/out, delete my farm, and the staff-assisted
+PIN reset.
 
-Section 4 adds the farm wizard and migrates the guest profile on save; here
-"Save my farm" only creates the account.
+"Save my farm" creates the account and, in the same transaction, the farm and
+plot from the guest profile the browser sends (spec 01, R6).
 """
 
 from __future__ import annotations
@@ -13,9 +14,10 @@ from flask import url_for
 from flask_babel import get_locale
 from flask_babel import lazy_gettext as _l
 
-from .. import auth
+from .. import auth, farm_profile, farm_store
 from ..auth import AuthError, AuthSettings
 from ..extensions import db
+from ..profile_io import request_clear, request_sync
 
 bp = Blueprint("profile", __name__)
 
@@ -61,11 +63,26 @@ def helper_required(view):
     return wrapped
 
 
+def login_required(view):
+    @wraps(view)
+    def wrapped(*args, **kwargs):
+        if g.get("user") is None:
+            return redirect(url_for("profile.login"))
+        return view(*args, **kwargs)
+
+    return wrapped
+
+
 @bp.route("/farm/save", methods=["GET", "POST"])
 def save_farm():
     if request.method == "GET":
-        return render_template("profile/save.html")
+        return render_template("profile/save.html", consent_version=auth.CONSENT_VERSION)
     form = request.form
+    profile = farm_profile.parse(form.get("profile"))
+
+    def create_farm(session, user):
+        farm_store.save_profile(session, user, profile, source="import")
+
     try:
         user = auth.register(
             db.session,
@@ -76,12 +93,17 @@ def save_farm():
             consent=form.get("consent") == "yes",
             locale=str(get_locale()),
             ip=request.remote_addr,
+            before_commit=create_farm,
         )
     except AuthError as err:
-        return _error_page("profile/save.html", err)
+        return _error_page("profile/save.html", err, consent_version=auth.CONSENT_VERSION)
     _log_in(user)
-    flash(_l("Your farm is saved."))
-    return redirect(url_for("public.home"))
+    request_sync()
+    if farm_profile.is_complete(profile):
+        flash(_l("Your farm is saved."))
+        return redirect(url_for("field.index"))
+    flash(_l("Your account is ready. Now tell us about your field."))
+    return redirect(url_for("field.setup"))
 
 
 @bp.route("/login", methods=["GET", "POST"])
@@ -99,12 +121,30 @@ def login():
     except AuthError as err:
         return _error_page("profile/login.html", err)
     _log_in(user)
+    request_sync()
     return redirect(url_for("public.home"))
 
 
 @bp.post("/logout")
 def logout():
     session.clear()
+    request_clear()  # the phone may be shared: don't leave this farm on it
+    return redirect(url_for("public.home"))
+
+
+@bp.route("/farm/delete", methods=["GET", "POST"])
+@login_required
+def delete_farm():
+    if request.method == "GET":
+        return render_template("profile/delete.html")
+    try:
+        auth.verify_pin(db.session, _settings(), user=g.user, pin=request.form.get("pin", ""), ip=request.remote_addr)
+    except AuthError as err:
+        return _error_page("profile/delete.html", err)
+    farm_store.delete_account(db.session, g.user)
+    session.clear()
+    request_clear()
+    flash(_l("Your farm and account are deleted."))
     return redirect(url_for("public.home"))
 
 
@@ -126,6 +166,7 @@ def pin_reset():
     except AuthError as err:
         return _error_page("profile/pin_reset.html", err)
     _log_in(user)
+    request_sync()
     flash(_l("Your new PIN is set."))
     return redirect(url_for("public.home"))
 

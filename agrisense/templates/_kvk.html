@@ -1,0 +1,27 @@
+{# District KVK block for /expert. Only sourced rows; a phone only when verified. #}
+{% macro kvk_block(entry) %}
+<div class="mt-2">
+  <p class="font-bold">{{ entry.name(current_locale) }}</p>
+  <p class="text-base">{{ entry.address_en }}</p>
+  {% if entry.phone %}
+  <div class="mt-2">{{ ui.link_button("tel:" ~ entry.phone | replace("-", "") | replace(" ", ""), entry.phone, "secondary", "phone") }}</div>
+  {% else %}
+  <p class="mt-1 text-base text-ink-muted">{{ _("We are still checking this KVK's phone number. Until then, call the Kisan Call Centre above.") }}</p>
+  {% endif %}
+  <p class="mt-1 text-sm text-ink-muted">{{ _("Source:") }} {{ entry.source }} ({{ entry.as_of }})</p>
+</div>
+{% endmacro %}
+
+{% if entry %}
+  <p class="text-ink-muted">{{ _("For %(district)s district:", district=district.name(current_locale)) }}</p>
+  {{ kvk_block(entry) }}
+{% else %}
+  <p class="text-ink-muted">
+    {% if district %}{{ _("We don't have the KVK for %(district)s district yet.", district=district.name(current_locale)) }}
+    {% else %}{{ _("Set up your field to see your district's KVK.") }}{% endif %}
+  </p>
+  {% if known %}
+  <p class="mt-3 text-base text-ink-muted">{{ _("KVKs we have so far:") }}</p>
+  {% for item in known %}{{ kvk_block(item) }}{% endfor %}
+  {% endif %}
+{% endif %}

@@ -9,9 +9,11 @@
   <link rel="preload" href="{{ url_for('static', filename='fonts/mukta-400-' ~ ('devanagari' if current_locale == 'hi' else 'latin') ~ '.woff2') }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
   <script src="{{ url_for('static', filename='vendor/htmx-2.0.11.min.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/profile.js') }}" defer></script>
 </head>
 <body class="bg-bg" hx-headers='{"X-CSRFToken": "{{ csrf_token() }}"}'>
   {% include "_icons.html" %}
+  {% if profile_sync %}<script type="application/json" data-profile-update>{{ profile_sync.value | tojson }}</script>{% endif %}
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded-lg focus:bg-surface focus:p-3">{{ _("Skip to content") }}</a>
 
   <header class="sticky top-0 z-40 bg-soil text-white">

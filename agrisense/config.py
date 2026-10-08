@@ -56,6 +56,10 @@ def build_config(profile: str | None = None, environ: Mapping[str, str] | None =
         # one carrier-NAT address, so a tight per-IP limit would lock them out.
         "LOGIN_IP_MAX_ATTEMPTS": 30,
         "PIN_RESET_CODE_TTL_SECONDS": 30 * 60,
+        # ADR-005: OSM's public tiles are for light use; switch the URL by env if usage grows.
+        "MAP_TILE_URL": get("MAP_TILE_URL") or "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "MAP_ATTRIBUTION": get("MAP_ATTRIBUTION")
+        or '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         # /styleguide shows unverified samples; off in production unless asked.
         "STYLEGUIDE_ENABLED": profile != "production" or get("STYLEGUIDE") == "1",
         **{name: get(name) or None for name in OPTIONAL},

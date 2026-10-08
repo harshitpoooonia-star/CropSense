@@ -21,6 +21,7 @@ TRANSLATIONS = ROOT / "agrisense" / "translations"
 JINJA = re.compile(r"{#.*?#}|{%.*?%}|{{.*?}}", re.S)
 HUMAN_ATTRS = re.compile(r'\b(?:aria-label|placeholder|title|alt)="([^"]*)"')
 PLACEHOLDER = re.compile(r"%\((\w+)\)s")
+ATTR_SYNTAX = re.compile(r'^[\w:.\-\[\]@]+="[^"\s]*"?$')
 
 
 def visible_words(source: str) -> list[str]:
@@ -31,6 +32,9 @@ def visible_words(source: str) -> list[str]:
     attr_text = " ".join(HUMAN_ATTRS.findall(text))
     text = re.sub(r"<[^>]*>", " ", text)
     tokens = (text + " " + attr_text).split()
+    # Attribute syntax emitted outside a tag (e.g. a macro that returns
+    # `method="post" action="..."`) is markup, not words.
+    tokens = [t for t in tokens if not ATTR_SYNTAX.match(t)]
     return [t for t in tokens if re.search(r"[^\W\d_]", t)]  # has a letter
 
 
@@ -43,6 +47,8 @@ def test_no_raw_text_in_templates(template):
 def test_checker_catches_raw_text():
     assert visible_words('<p>Hello {{ _("ok") }}</p><img alt="A photo">') == ["Hello", "A", "photo"]
     assert visible_words('<p>{{ _("ok") }} · 2.5 ₹</p>') == []
+    assert visible_words('method="post" action="{{ t }}" hx-swap="innerHTML"') == []
+    assert visible_words('<p>Save="later" now</p>') == ["now"]  # only attr-shaped tokens skipped
 
 
 def _extracted_ids() -> set[str]:

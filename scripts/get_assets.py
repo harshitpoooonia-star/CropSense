@@ -32,6 +32,10 @@ HTMX_VERSION = "2.0.11"
 HTMX_TARBALL = f"https://registry.npmjs.org/htmx.org/-/htmx.org-{HTMX_VERSION}.tgz"
 HTMX_INTEGRITY = "sha512-Thx/WtpeOQqSrqBCw/A1cwGJGg4UrVa3+sW0GmrM3p4gJgO89ecH4qtbnyzDDWFvBTqjnIMCgELTNt636dtamA=="
 
+LEAFLET_VERSION = "1.9.4"  # ADR-005; loaded only on the wizard's map step
+LEAFLET_TARBALL = f"https://registry.npmjs.org/leaflet/-/leaflet-{LEAFLET_VERSION}.tgz"
+LEAFLET_INTEGRITY = "sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA=="
+
 # Mukta (Ek Type, SIL OFL 1.1) covers Devanagari and Latin in one family.
 FONT_CSS = "https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap"
 FONT_LICENSE = "https://raw.githubusercontent.com/google/fonts/main/ofl/mukta/OFL.txt"
@@ -79,11 +83,28 @@ def get_tailwind() -> Path:
     return target
 
 
-def get_htmx() -> None:
-    data = fetch(HTMX_TARBALL)
-    algo, b64 = HTMX_INTEGRITY.split("-", 1)
+def _verified_tarball(url: str, integrity: str, name: str) -> bytes:
+    data = fetch(url)
+    algo, b64 = integrity.split("-", 1)
     if base64.b64encode(hashlib.new(algo, data).digest()).decode() != b64:
-        sys.exit("htmx: integrity mismatch")
+        sys.exit(f"{name}: integrity mismatch")
+    return data
+
+
+def get_leaflet() -> None:
+    data = _verified_tarball(LEAFLET_TARBALL, LEAFLET_INTEGRITY, "leaflet")
+    out = STATIC / "vendor" / f"leaflet-{LEAFLET_VERSION}"
+    out.mkdir(parents=True, exist_ok=True)
+    with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as tar:
+        for member, target in [("package/dist/leaflet.js", "leaflet.js"),
+                               ("package/dist/leaflet.css", "leaflet.css"),
+                               ("package/LICENSE", "LICENSE.txt")]:
+            (out / target).write_bytes(tar.extractfile(member).read())
+    print(f"leaflet: {LEAFLET_VERSION} verified -> agrisense/static/vendor/leaflet-{LEAFLET_VERSION}/")
+
+
+def get_htmx() -> None:
+    data = _verified_tarball(HTMX_TARBALL, HTMX_INTEGRITY, "htmx")
     with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as tar:
         js = tar.extractfile("package/dist/htmx.min.js").read()
         license_text = tar.extractfile("package/LICENSE").read()
@@ -125,7 +146,7 @@ def get_fonts() -> None:
 
 
 if __name__ == "__main__":
-    actions = {"tailwind": get_tailwind, "htmx": get_htmx, "fonts": get_fonts}
+    actions = {"tailwind": get_tailwind, "htmx": get_htmx, "leaflet": get_leaflet, "fonts": get_fonts}
     wanted = sys.argv[1:] or list(actions)
     for name in wanted:
         actions[name]()

@@ -17,6 +17,7 @@ import hashlib
 import hmac
 import re
 import secrets
+from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 
@@ -26,7 +27,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from .models import LoginAttempt, User, aware, utcnow
 
-CONSENT_VERSION = "2026-10-v1"
+CONSENT_VERSION = "2026-10-v2"  # bump when the consent text changes
 
 _INDIAN_MOBILE = re.compile(r"[6-9]\d{9}")
 _PIN = re.compile(r"\d{4}")
@@ -150,7 +151,9 @@ def register(
     consent: bool,
     locale: str,
     ip: str | None,
+    before_commit: Callable[[Session, User], None] | None = None,
 ) -> User:
+    """Create the account. `before_commit` adds rows (the farm) in the same transaction."""
     phone = normalize_phone(raw_phone)
     if phone is None:
         raise AuthError("phone_invalid")
@@ -175,6 +178,9 @@ def register(
         last_login_at=now,
     )
     session.add(user)
+    session.flush()
+    if before_commit is not None:
+        before_commit(session, user)
     _record(session, "register", phone_h, ip_h, success=True)
     session.commit()
     return user
@@ -200,6 +206,15 @@ def authenticate(session: Session, s: AuthSettings, *, raw_phone: str, pin: str,
     _record(session, "login", phone_h, ip_h, success=True)
     session.commit()
     return user
+
+
+def verify_pin(session: Session, s: AuthSettings, *, user: User, pin: str, ip: str | None) -> None:
+    """Re-check a logged-in user's PIN before a destructive action. Rate-limited."""
+    ip_h = ip_hash(ip, s.pepper)
+    if is_locked(session, s, user.phone_hmac, ip_h):
+        raise AuthError("locked")
+    if not check_password_hash(user.pin_hash, pin or ""):
+        raise _fail(session, "confirm", user.phone_hmac, ip_h, "invalid")
 
 
 def start_pin_reset(session: Session, s: AuthSettings, *, helper: User, raw_farmer_phone: str) -> str:
