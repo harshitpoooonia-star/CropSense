@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Crop Planner") }} · {{ _("AgriSense") }}{% endblock %}
+{% block content %}
+  {% set heading, intro = _("Which crop this season?"), _("Crops your district grows, ranked for your field by likely profit and water. Pick a season.") %}
+  {% include "_page_head.html" %}
+
+  <form method="post" action="{{ url_for('planner.results') }}"
+        hx-post="{{ url_for('planner.results') }}" hx-target="#plan-results" hx-swap="innerHTML"
+        class="mt-6 grid grid-cols-3 gap-2">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="profile" value="">
+    {% for code in seasons %}
+    <button type="submit" name="season" value="{{ code }}"
+      class="flex min-h-14 cursor-pointer items-center justify-center rounded-card border-2 px-2 text-lg font-bold transition-colors duration-150 {{ 'border-accent bg-accent text-white' if season == code else 'border-line-soft bg-surface text-ink hover:border-accent' }}"
+      {% if season == code %}aria-pressed="true"{% endif %}>{{ season_labels[code] }}</button>
+    {% endfor %}
+  </form>
+
+  <div id="plan-results" class="mt-6" aria-live="polite">
+    {% if season %}{% include "planner/_results.html" %}{% endif %}
+  </div>
+{% endblock %}

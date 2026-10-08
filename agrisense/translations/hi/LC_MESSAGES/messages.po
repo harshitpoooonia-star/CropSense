@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 05:38+0530\n"
+"POT-Creation-Date: 2026-10-08 06:03+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hi\n"
@@ -23,11 +23,31 @@ msgid "%(count)s bags of %(product)s"
 msgstr "%(product)s की %(count)s बोरियाँ"
 
 #, python-format
+msgid "%(district)s's crop statistics don't show this crop in %(season)s, so it isn't suggested."
+msgstr "%(district)s के फसल आँकड़ों में %(season)s में यह फसल नहीं दिखती, इसलिए इसका सुझाव नहीं दिया गया।"
+
+#, python-format
 msgid "%(kg)s kg per bag"
 msgstr "एक बोरी में %(kg)s किलो"
 
+#, python-format
+msgid "%(rank)s. %(crop)s"
+msgstr "%(rank)s. %(crop)s"
+
 msgid "AgriSense"
 msgstr "AgriSense"
+
+#, python-format
+msgid ""
+"AgriSense crop plan: %(crop)s, about ₹%(low)s to ₹%(high)s per acre after costs. Check with your "
+"KVK."
+msgstr ""
+"AgriSense फसल योजना: %(crop)s, खर्च के बाद लगभग ₹%(low)s से ₹%(high)s प्रति एकड़। अपने KVK से "
+"पक्का करें।"
+
+#, python-format
+msgid "AgriSense crop plan: %(crop)s. Check with your KVK."
+msgstr "AgriSense फसल योजना: %(crop)s। अपने KVK से पक्का करें।"
 
 msgid "Already saved? Log in"
 msgstr "पहले से सेव है? लॉग इन करें"
@@ -40,6 +60,9 @@ msgstr "रकबा"
 
 msgid "Ask an expert"
 msgstr "विशेषज्ञ से पूछें"
+
+msgid "Ask why"
+msgstr "वजह पूछें"
 
 msgid "Avoid easy PINs like 1111 or 1234."
 msgstr "1111 या 1234 जैसा आसान पिन न रखें।"
@@ -94,11 +117,19 @@ msgstr "भरोसे के निशान"
 msgid "Couldn't get your location. Tap the map or choose your district."
 msgstr "आपकी जगह नहीं मिल पाई। नक्शे पर छूएँ या अपना ज़िला चुनें।"
 
+msgid "Crop"
+msgstr "फसल"
+
 msgid "Crop Planner"
 msgstr "फसल योजना"
 
 msgid "Crop names"
 msgstr "फसलों के नाम"
+
+msgid "Crops your district grows, ranked for your field by likely profit and water. Pick a season."
+msgstr ""
+"आपके ज़िले में उगने वाली फसलें, आपके खेत के लिए संभावित मुनाफ़े और पानी के हिसाब से क्रम में। "
+"मौसम चुनें।"
 
 msgid "Daily mandi price changes arrive in Section 7."
 msgstr "मंडी भाव में रोज़ का बदलाव सेक्शन 7 में आएगा।"
@@ -158,6 +189,9 @@ msgstr "किसान का मोबाइल नंबर"
 msgid "Fertilizer Calculator"
 msgstr "खाद कैलकुलेटर"
 
+msgid "Fertilizer for this crop"
+msgstr "इस फसल के लिए खाद"
+
 msgid "Fertilizer for this field"
 msgstr "इस खेत के लिए खाद"
 
@@ -172,6 +206,9 @@ msgstr "खेत का नाप"
 
 msgid "Find a scheme"
 msgstr "योजना खोजें"
+
+msgid "First, tell us about your field"
+msgstr "पहले अपने खेत के बारे में बताएँ"
 
 #, python-format
 msgid "For %(district)s district:"
@@ -203,8 +240,18 @@ msgstr "यह कोड किसान को खुद मिलकर दे
 msgid "Good"
 msgstr "ठीक है"
 
+#, python-format
+msgid "Grown on about %(area)s hectares a year in %(district)s in %(season)s."
+msgstr "%(district)s में %(season)s में हर साल लगभग %(area)s हेक्टेयर में उगाई जाती है।"
+
 msgid "High confidence"
 msgstr "भरोसा ज़्यादा"
+
+msgid "High risk"
+msgstr "ज़्यादा जोखिम"
+
+msgid "High water"
+msgstr "ज़्यादा पानी"
 
 msgid "How big is it?"
 msgstr "खेत कितना बड़ा है?"
@@ -217,6 +264,17 @@ msgstr "मैं सहमत हूँ"
 
 msgid "I have a reset code"
 msgstr "मेरे पास रीसेट कोड है"
+
+#, python-format
+msgid "It is already in the top 3, at number %(rank)s."
+msgstr "यह पहले से ऊपर की 3 फसलों में है, %(rank)s नंबर पर।"
+
+msgid "It needs more water than your field's source reliably gives."
+msgstr "इसे जितना पानी चाहिए, उतना आपके खेत का पानी का साधन भरोसे से नहीं दे पाता।"
+
+#, python-format
+msgid "It scored a little lower overall: number %(rank)s of %(total)s."
+msgstr "कुल मिलाकर इसके अंक थोड़े कम आए: %(total)s में से %(rank)s नंबर।"
 
 msgid "KVK and Kisan Call Centre"
 msgstr "KVK और किसान कॉल सेंटर"
@@ -239,6 +297,17 @@ msgstr "कृषि विज्ञान केंद्र: आपके ज�
 msgid "Language"
 msgstr "भाषा"
 
+#, python-format
+msgid "Likely profit is about ₹%(gap)s per acre lower than the number 3 crop."
+msgstr "इसका संभावित मुनाफ़ा 3 नंबर की फसल से लगभग ₹%(gap)s प्रति एकड़ कम है।"
+
+msgid "Likely profit per acre, after costs"
+msgstr "खर्च के बाद प्रति एकड़ संभावित मुनाफ़ा"
+
+#, python-format
+msgid "Likely profit ₹%(low)s to ₹%(high)s per acre after costs, at %(price)s."
+msgstr "खर्च के बाद संभावित मुनाफ़ा ₹%(low)s से ₹%(high)s प्रति एकड़, %(price)s पर।"
+
 msgid "Loading your field…"
 msgstr "आपके खेत की जानकारी आ रही है…"
 
@@ -257,6 +326,16 @@ msgstr "लॉग आउट"
 msgid "Low confidence"
 msgstr "भरोसा कम"
 
+msgid "Low risk"
+msgstr "कम जोखिम"
+
+msgid "Low water"
+msgstr "कम पानी"
+
+#, python-format
+msgid "MSP of ₹%(price)s per quintal (not a mandi price)"
+msgstr "₹%(price)s प्रति क्विंटल के MSP (मंडी भाव नहीं)"
+
 msgid "Main"
 msgstr "मुख्य"
 
@@ -272,11 +351,22 @@ msgstr "मंडी"
 msgid "Medium confidence"
 msgstr "भरोसा मध्यम"
 
+msgid "Medium water"
+msgstr "मध्यम पानी"
+
 msgid "Mobile number"
 msgstr "मोबाइल नंबर"
 
 msgid "More"
 msgstr "और"
+
+#, python-format
+msgid "Needs %(need)s water, and you have a %(source)s: risky in a dry year."
+msgstr "इसे %(need)s पानी चाहिए और आपके पास %(source)s है: सूखे साल में जोखिम।"
+
+#, python-format
+msgid "Needs %(need)s water; your %(source)s can supply it."
+msgstr "इसे %(need)s पानी चाहिए; आपका %(source)s इसे दे सकता है।"
 
 msgid "New 4-digit PIN"
 msgstr "नया 4 अंकों का पिन"
@@ -286,6 +376,9 @@ msgstr "आगे"
 
 msgid "Nitrogen (N)"
 msgstr "नाइट्रोजन (N)"
+
+msgid "No prices yet for these crops, so they aren't ranked by profit."
+msgstr "इन फसलों के भाव अभी नहीं हैं, इसलिए इन्हें मुनाफ़े के हिसाब से क्रम में नहीं रखा गया।"
 
 msgid "Nobody pays us to recommend anything, so every answer is for you."
 msgstr "किसी चीज़ की सिफ़ारिश के लिए हमें कोई पैसे नहीं देता, इसलिए हर जवाब सिर्फ़ आपके लिए है।"
@@ -349,6 +442,15 @@ msgstr "उत्पाद A"
 
 msgid "Product B"
 msgstr "उत्पाद B"
+
+msgid "Profit not known"
+msgstr "मुनाफ़ा पता नहीं"
+
+msgid "Profit not known: no cost-of-cultivation figure for this crop."
+msgstr "मुनाफ़ा पता नहीं: इस फसल की खेती के खर्च का आँकड़ा नहीं है।"
+
+msgid "Profit not known: no price for this crop yet."
+msgstr "मुनाफ़ा पता नहीं: इस फसल का भाव अभी नहीं है।"
 
 msgid "Quantity"
 msgstr "मात्रा"
@@ -419,6 +521,22 @@ msgstr "छोड़ें, मेरे पास कार्ड नहीं 
 msgid "Soil Health Card"
 msgstr "मृदा स्वास्थ्य कार्ड"
 
+#, python-format
+msgid "Soil-climate match not used: %(inputs)s is outside the public dataset it learned from."
+msgstr ""
+"मिट्टी-मौसम मिलान इस्तेमाल नहीं हुआ: %(inputs)s उस सार्वजनिक डेटा की सीमा से बाहर है जिससे यह "
+"सीखा गया।"
+
+msgid "Soil-climate match not used: it needs your soil card's N, P, K and pH."
+msgstr "मिट्टी-मौसम मिलान इस्तेमाल नहीं हुआ: इसके लिए आपके मृदा कार्ड के N, P, K और pH चाहिए।"
+
+#, python-format
+msgid "Soil-climate model %(version)s (public dataset, not local farms)"
+msgstr "मिट्टी-मौसम मॉडल %(version)s (सार्वजनिक डेटा, स्थानीय खेतों का नहीं)"
+
+msgid "Some risk"
+msgstr "कुछ जोखिम"
+
 msgid "Source:"
 msgstr "स्रोत:"
 
@@ -471,6 +589,9 @@ msgstr "नक्शा नहीं खुला। अपनी जगह इ�
 msgid "The nearest deadline arrives in Section 9."
 msgstr "सबसे नज़दीकी आखिरी तारीख सेक्शन 9 में आएगी।"
 
+msgid "The planner needs your district, field size and water source. It takes four short steps."
+msgstr "फसल योजना के लिए आपका ज़िला, खेत का नाप और पानी का साधन चाहिए। इसमें चार छोटे कदम लगते हैं।"
+
 msgid "The two PINs don't match."
 msgstr "दोनों पिन एक जैसे नहीं हैं।"
 
@@ -505,6 +626,10 @@ msgstr "आज"
 
 msgid "Too many tries. Wait 15 minutes and try again."
 msgstr "बहुत बार कोशिश हो गई। 15 मिनट रुककर फिर कोशिश करें।"
+
+#, python-format
+msgid "Top crops for %(season)s"
+msgstr "%(season)s के लिए सबसे अच्छी फसलें"
 
 msgid "Tubewell or borewell"
 msgstr "ट्यूबवेल या बोरवेल"
@@ -558,6 +683,16 @@ msgid "We don't sell seeds or sprays."
 msgstr "हम बीज या दवा नहीं बेचते।"
 
 msgid ""
+"We have crop data for Gautam Buddh Nagar, Bulandshahr, Ghaziabad, Hapur and Aligarh so far. Your "
+"district isn't covered yet."
+msgstr ""
+"अभी हमारे पास गौतम बुद्ध नगर, बुलंदशहर, गाज़ियाबाद, हापुड़ और अलीगढ़ का फसल डेटा है। आपका ज़िला "
+"अभी शामिल नहीं है।"
+
+msgid "We have no price or cost for it, so its profit couldn't be compared."
+msgstr "इसका भाव या खर्च हमारे पास नहीं है, इसलिए इसके मुनाफ़े की तुलना नहीं हो सकी।"
+
+msgid ""
 "We use these only to give advice for your field. Only you see your farm; the AgriSense team opens"
 " the data only to fix problems."
 msgstr ""
@@ -586,8 +721,18 @@ msgstr ""
 msgid "Where is your field?"
 msgstr "आपका खेत कहाँ है?"
 
+msgid "Which crop this season?"
+msgstr "इस मौसम में कौन-सी फसल?"
+
 msgid "Why"
 msgstr "क्यों"
+
+#, python-format
+msgid "Why not %(crop)s?"
+msgstr "%(crop)s क्यों नहीं?"
+
+msgid "Why not another crop?"
+msgstr "कोई और फसल क्यों नहीं?"
 
 msgid "Without a pin, tools use the district's centre, so weather and nearest mandis are less exact."
 msgstr ""
@@ -644,6 +789,17 @@ msgstr "आपका लगाया निशान"
 msgid "Your pin looks like it is in %(district)s district."
 msgstr "आपका निशान %(district)s ज़िले में लगता है।"
 
+msgid "Your soil and season match it less well in the public dataset."
+msgstr "सार्वजनिक डेटा में आपकी मिट्टी और मौसम इस फसल से कम मेल खाते हैं।"
+
+#, python-format
+msgid ""
+"Your soil and season resemble fields where this crop grows in a public dataset (mostly "
+"%(inputs)s)."
+msgstr ""
+"एक सार्वजनिक डेटा में आपकी मिट्टी और मौसम उन खेतों जैसे हैं जहाँ यह फसल उगती है (खासकर "
+"%(inputs)s)।"
+
 msgid "acre"
 msgstr "एकड़"
 
@@ -653,6 +809,12 @@ msgstr "%(product)s की बोरियाँ"
 
 msgid "bigha"
 msgstr "बीघा"
+
+msgid "bought water"
+msgstr "खरीदा हुआ पानी"
+
+msgid "canal"
+msgstr "नहर"
 
 msgid "district average"
 msgstr "ज़िले का औसत"
@@ -671,11 +833,23 @@ msgstr "खेत की जगह"
 msgid "hectare"
 msgstr "हेक्टेयर"
 
+msgid "high"
+msgstr "ज़्यादा"
+
 msgid "kg"
 msgstr "किलो"
 
 msgid "kg per hectare, as on the card"
 msgstr "किलो प्रति हेक्टेयर, जैसा कार्ड पर है"
+
+msgid "kharif"
+msgstr "खरीफ़"
+
+msgid "low"
+msgstr "कम"
+
+msgid "medium"
+msgstr "मध्यम"
 
 msgid "organic carbon"
 msgstr "जैविक कार्बन"
@@ -689,6 +863,25 @@ msgstr "प्रतिशत, जैसा कार्ड पर है"
 msgid "quintal"
 msgstr "क्विंटल"
 
+msgid "rabi"
+msgstr "रबी"
+
+msgid "rain-fed field"
+msgstr "बारिश पर निर्भर खेत"
+
+#, python-format
+msgid "recent mandi prices of ₹%(low)s-%(high)s per quintal"
+msgstr "हाल के ₹%(low)s-%(high)s प्रति क्विंटल के मंडी भाव"
+
+msgid "season humidity"
+msgstr "मौसम की नमी"
+
+msgid "season rainfall"
+msgstr "मौसम की बारिश"
+
+msgid "season temperature"
+msgstr "मौसम का तापमान"
+
 msgid "soil nitrogen"
 msgstr "मिट्टी में नाइट्रोजन"
 
@@ -701,9 +894,18 @@ msgstr "मिट्टी में फ़ॉस्फ़ोरस"
 msgid "soil potassium"
 msgstr "मिट्टी में पोटाश"
 
+msgid "tubewell"
+msgstr "ट्यूबवेल"
+
+msgid "water source"
+msgstr "पानी का साधन"
+
 msgid "what you entered"
 msgstr "आपकी भरी जानकारी"
 
 msgid "your soil card"
 msgstr "आपका मृदा स्वास्थ्य कार्ड"
+
+msgid "zaid"
+msgstr "ज़ायद"
 
