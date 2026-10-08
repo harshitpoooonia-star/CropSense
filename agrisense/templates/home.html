@@ -37,6 +37,8 @@
     <span><strong>{{ _("We don't sell seeds or sprays.") }}</strong> {{ _("Nobody pays us to recommend anything, so every answer is for you.") }}</span>
   </p>
 
+  {% include "_install.html" %}
+
   {% if not current_user %}
   <p class="mt-6 text-ink-muted">
     {{ _("Want your farm remembered on this phone and others?") }}

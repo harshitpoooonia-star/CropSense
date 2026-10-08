@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- AgriSense: a sprout over the soil horizons from the home page. Full bleed;
+       the sprout stays inside the maskable safe zone (centre 80%). -->
+  <rect width="512" height="512" fill="#faf7f2"/>
+  <rect y="318" width="512" height="18" fill="#2f6b3a"/>
+  <rect y="336" width="512" height="40" fill="#7a5230"/>
+  <rect y="376" width="512" height="56" fill="#5a3b22"/>
+  <rect y="432" width="512" height="80" fill="#2b2118"/>
+  <path d="M256 318V196" stroke="#2f6b3a" stroke-width="20" stroke-linecap="round" fill="none"/>
+  <path d="M252 262C196 264 152 232 140 170C200 162 246 196 252 262Z" fill="#2f6b3a"/>
+  <path d="M260 214C270 152 318 114 380 116C378 182 330 220 260 214Z" fill="#2f6b3a"/>
+</svg>

@@ -1,0 +1,8 @@
+{# Install card (Section 10). Hidden until pwa.js knows the phone can install:
+   Android Chrome gets a button, iPhone Safari gets the Share-menu steps. #}
+<section data-install hidden aria-labelledby="install-title" class="mt-6 rounded-card border-2 border-line-soft bg-surface p-4">
+  <h2 id="install-title" class="text-xl font-bold text-ink">{{ _("Keep AgriSense on your home screen") }}</h2>
+  <p class="mt-1 text-ink-muted">{{ _("It opens like an app, and pages you opened before work without internet.") }}</p>
+  <div data-install-android hidden class="mt-3">{{ ui.button(_("Add to home screen"), "secondary", type="button") }}</div>
+  <p data-install-ios hidden class="mt-3 text-ink">{{ _("In Safari, tap Share, then \"Add to Home Screen\".") }}</p>
+</section>

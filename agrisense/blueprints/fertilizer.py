@@ -5,7 +5,7 @@ from __future__ import annotations
 from flask import Blueprint, g, render_template, request
 from flask_babel import get_locale
 
-from .. import farm_store
+from .. import farm_store, offline
 from ..crops import crop_name
 from ..extensions import db
 from ..fertilizer import data, service
@@ -40,6 +40,7 @@ def result():
     profile = current_profile()
     outcome = service.calculate(request.form, profile, locale)
     if outcome.trust is not None:
+        offline.keep()
         profile["last_results"]["fertilizer"] = outcome.trust.to_dict()
         if g.get("user") is not None:
             row = farm_store.current_plot(db.session, g.user)

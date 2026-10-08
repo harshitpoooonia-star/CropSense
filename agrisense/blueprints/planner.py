@@ -7,7 +7,7 @@ from datetime import date
 from flask import Blueprint, abort, g, render_template, request
 from flask_babel import get_locale
 
-from .. import farm_context, farm_profile, farm_store
+from .. import farm_context, farm_profile, farm_store, offline
 from ..crops import crop_name, crops
 from ..extensions import db
 from ..models import Event, utcnow
@@ -48,6 +48,7 @@ def results():
         return render_template(template, problem=problem, **common)
 
     ctx, plan = _plan_for(profile, season)
+    offline.keep()
     if plan.top:
         best = plan.top[0].trust.to_dict()
         best["value"] = {**best["value"], "top": [o.crop for o in plan.top]}
