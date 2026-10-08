@@ -1,0 +1,43 @@
+{% if verdicts is none %}
+  <section class="rounded-card border border-line-soft bg-surface p-4">
+    <h2 class="text-xl font-bold">{{ _("First, tell us where your field is") }}</h2>
+    <p class="mt-1 text-ink-muted">{{ _("The forecast is for your field's location.") }}</p>
+    <div class="mt-4">{{ ui.link_button(url_for("field.setup"), _("Set up your field")) }}</div>
+  </section>
+{% elif not verdicts %}
+  <section class="rounded-card border border-warn bg-warn-bg p-4 text-warn">
+    <p class="flex gap-2">{{ ui.icon("info", "mt-1 size-5") }}<span>{{ _("We couldn't get the forecast right now. Try again in a little while, or check the IMD Meghdoot app.") }}</span></p>
+    <div class="mt-3">{{ ui.link_button(url_for("more.expert"), _("Ask an expert"), "secondary", "phone") }}</div>
+  </section>
+{% else %}
+  <script type="application/json" data-profile-update>{{ profile | tojson }}</script>
+  {% call ui.result_card(_("Next 3 days"), trust) %}
+  <ol class="space-y-5">
+    {% for d in verdicts %}
+    <li class="border-b border-line-soft pb-4 last:border-0 last:pb-0">
+      <h3 class="text-lg font-bold">
+        {% if d.day == today %}{{ _("Today") }}{% elif (d.day - today).days == 1 %}{{ _("Tomorrow") }}{% else %}{{ d.day | dateformat("EEEE d MMM") }}{% endif %}
+      </h3>
+      <p class="text-base text-ink-muted">
+        {{ _("Rain chance up to %(prob)s%%, %(mm)s mm · wind up to %(wind)s km/h · %(low)s to %(high)s °C",
+             prob=d.max_rain_prob | int, mm=d.rain_mm, wind=d.max_wind | round | int, low=d.temp_min | round | int, high=d.temp_max | round | int) }}
+      </p>
+      <div class="mt-2 space-y-2">
+        <div>
+          {% if d.spray.status == "past" %}
+            <p class="font-bold text-ink-muted">{{ reason_text(d.spray.reason) }}</p>
+          {% else %}
+            {{ ui.verdict_pill(d.spray.status, spray_words[d.spray.status]) }}
+            <p class="mt-1">{{ reason_text(d.spray.reason) }}</p>
+          {% endif %}
+        </div>
+        <div>
+          {{ ui.verdict_pill(d.irrigate.status, irrigate_words[d.irrigate.status]) }}
+          <p class="mt-1">{{ reason_text(d.irrigate.reason) }}</p>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+  {% endcall %}
+{% endif %}

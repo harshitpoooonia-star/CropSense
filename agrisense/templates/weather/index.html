@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Spray & Irrigation Advisor") }} · {{ _("AgriSense") }}{% endblock %}
+{% block content %}
+  {% set heading, intro = _("Spray or water?"), _("The next 3 days for your field: when spraying won't be washed off or blown away, and whether rain will do the watering.") %}
+  {% include "_page_head.html" %}
+  {# The farm's location lives on the phone, so the advice is fetched with it. #}
+  <div id="weather-advice" class="mt-6" aria-live="polite"
+    {%- if not loaded %} hx-post="{{ url_for('weather.advice') }}" hx-trigger="load" hx-swap="innerHTML"{% endif %}>
+    {% if loaded %}{% include "weather/_advice.html" %}{% else %}<p class="text-ink-muted">{{ _("Loading the forecast…") }}</p>{% endif %}
+  </div>
+{% endblock %}

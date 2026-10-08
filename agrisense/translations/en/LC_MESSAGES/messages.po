@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 07:01+0530\n"
+"POT-Creation-Date: 2026-10-08 09:32+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -62,6 +62,14 @@ msgstr ""
 msgid "About %(km)s km away in a straight line"
 msgstr ""
 
+#, python-format
+msgid "About %(mm)s mm of rain expected today and tomorrow: hold irrigation."
+msgstr ""
+
+#, python-format
+msgid "About %(mm)s mm of rain in the 2 days before (fallen or forecast): hold irrigation."
+msgstr ""
+
 msgid "Above the mandi price"
 msgstr ""
 
@@ -94,6 +102,9 @@ msgstr ""
 
 #, python-format
 msgid "AgriSense fertilizer for %(what)s: %(items)s, about ₹%(cost)s. Check with your KVK."
+msgstr ""
+
+msgid "AgriSense thresholds, some still proposed (see the advisor spec)"
 msgstr ""
 
 #, python-format
@@ -154,6 +165,9 @@ msgstr ""
 msgid "Call now"
 msgstr ""
 
+msgid "Can irrigate"
+msgstr ""
+
 msgid "Canal"
 msgstr ""
 
@@ -173,6 +187,9 @@ msgid "Check a trader's offer against today's prices at the mandis nearest your 
 msgstr ""
 
 msgid "Check prices"
+msgstr ""
+
+msgid "Check soil first"
 msgstr ""
 
 msgid "Choose a 4-digit PIN"
@@ -246,6 +263,9 @@ msgid "District centre (estimated)"
 msgstr ""
 
 msgid "Don't"
+msgstr ""
+
+msgid "Don't spray"
 msgstr ""
 
 msgid "Dose copied from your Soil Health Card, scaled to your field."
@@ -373,6 +393,13 @@ msgid "Good"
 msgstr ""
 
 #, python-format
+msgid "Good time %(start)s to %(end)s: wind about %(wind)s km/h and no rain for %(hours)s hours after."
+msgstr ""
+
+msgid "Good to spray"
+msgstr ""
+
+#, python-format
 msgid "Grown on about %(area)s hectares a year in %(district)s in %(season)s."
 msgstr ""
 
@@ -383,6 +410,9 @@ msgid "High risk"
 msgstr ""
 
 msgid "High water"
+msgstr ""
+
+msgid "Hold irrigation"
 msgstr ""
 
 msgid "How big is it?"
@@ -398,6 +428,9 @@ msgid "I agree"
 msgstr ""
 
 msgid "I have a reset code"
+msgstr ""
+
+msgid "Irrigation advice uses rain only, not your crop's stage or soil moisture yet. Check the soil."
 msgstr ""
 
 msgid "Is the offer fair?"
@@ -450,6 +483,9 @@ msgstr ""
 
 #, python-format
 msgid "Likely profit ₹%(low)s to ₹%(high)s per acre after costs, at %(price)s."
+msgstr ""
+
+msgid "Loading the forecast…"
 msgstr ""
 
 msgid "Loading your field…"
@@ -531,6 +567,9 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
+msgid "Next 3 days"
+msgstr ""
+
 msgid "Nitrogen (N)"
 msgstr ""
 
@@ -549,6 +588,9 @@ msgstr ""
 
 #, python-format
 msgid "No recent price for this crop at: %(mandis)s."
+msgstr ""
+
+msgid "No useful rain expected: irrigate if your crop needs it."
 msgstr ""
 
 msgid "Nobody pays us to recommend anything, so every answer is for you."
@@ -649,6 +691,14 @@ msgstr ""
 msgid "Quantity"
 msgstr ""
 
+#, python-format
+msgid "Rain %(prob)s%% likely around %(time)s."
+msgstr ""
+
+#, python-format
+msgid "Rain chance up to %(prob)s%%, %(mm)s mm · wind up to %(wind)s km/h · %(low)s to %(high)s °C"
+msgstr ""
+
 msgid "Rain only"
 msgstr ""
 
@@ -733,6 +783,10 @@ msgstr ""
 msgid "Soil-climate model %(version)s (public dataset, not local farms)"
 msgstr ""
 
+#, python-format
+msgid "Some rain expected (about %(mm)s mm): check the soil before irrigating."
+msgstr ""
+
 msgid "Some risk"
 msgstr ""
 
@@ -751,7 +805,19 @@ msgstr ""
 msgid "Spray and irrigation"
 msgstr ""
 
+msgid "Spray or water today?"
+msgstr ""
+
 msgid "Spray or water?"
+msgstr ""
+
+#, python-format
+msgid ""
+"Spray windows follow cited guidance: wind %(low)s to %(high)s km/h, no rain for %(hours)s hours "
+"after spraying."
+msgstr ""
+
+msgid "Spray with care"
 msgstr ""
 
 msgid "Standard dose"
@@ -783,10 +849,13 @@ msgstr ""
 msgid "Text field"
 msgstr ""
 
-msgid "The 3-day verdict for your field arrives in Section 8."
+msgid "The PIN must be exactly 4 digits."
 msgstr ""
 
-msgid "The PIN must be exactly 4 digits."
+#, python-format
+msgid ""
+"The air is almost still (%(start)s to %(end)s), so spray can drift. Spray with care or wait for a"
+" light breeze."
 msgstr ""
 
 msgid "The answer itself goes here: a number, bags or a verdict."
@@ -798,10 +867,18 @@ msgstr ""
 msgid "The code is wrong or has expired. Ask your helper for a new one."
 msgstr ""
 
+msgid "The forecast is for your field's location."
+msgstr ""
+
 msgid "The map didn't load. Use your location or choose your district below."
 msgstr ""
 
 msgid "The nearest deadline arrives in Section 9."
+msgstr ""
+
+msgid ""
+"The next 3 days for your field: when spraying won't be washed off or blown away, and whether rain"
+" will do the watering."
 msgstr ""
 
 msgid "The planner needs your district, field size and water source. It takes four short steps."
@@ -817,6 +894,9 @@ msgid "This PIN is too easy to guess. Avoid PINs like 1111 or 1234."
 msgstr ""
 
 msgid "This field is saved on this phone only."
+msgstr ""
+
+msgid "This forecast is old: we couldn't refresh it."
 msgstr ""
 
 msgid "This number already has a saved farm. Log in instead."
@@ -838,7 +918,16 @@ msgstr ""
 msgid "This tool is being built (Section %(n)s). It will work without an account."
 msgstr ""
 
+msgid "Three days ahead, for your field."
+msgstr ""
+
 msgid "Today"
+msgstr ""
+
+msgid "Today's spraying hours are over."
+msgstr ""
+
+msgid "Tomorrow"
 msgstr ""
 
 msgid "Too many tries. Wait 15 minutes and try again."
@@ -915,6 +1004,11 @@ msgstr ""
 msgid "We are still checking this KVK's phone number. Until then, call the Kisan Call Centre above."
 msgstr ""
 
+msgid ""
+"We couldn't get the forecast right now. Try again in a little while, or check the IMD Meghdoot "
+"app."
+msgstr ""
+
 #, python-format
 msgid "We don't have the KVK for %(district)s district yet."
 msgstr ""
@@ -985,6 +1079,10 @@ msgid "Why not %(crop)s?"
 msgstr ""
 
 msgid "Why not another crop?"
+msgstr ""
+
+#, python-format
+msgid "Wind up to %(wind)s km/h: the spray will blow away."
 msgstr ""
 
 msgid "Without a pin, tools use the district's centre, so weather and nearest mandis are less exact."
