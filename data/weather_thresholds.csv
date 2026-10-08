@@ -1,0 +1,14 @@
+key,value,unit,status,source,notes
+spray_wind_min_kmh,6,km/h,cited,"Victoria Department of Health, Beaufort wind scale for pesticide spraying: ideal 6-19 km/h (read via search excerpt)",Below this: calm air; drift can hang. Verdict 'careful'
+spray_wind_max_kmh,19,km/h,cited,"Victoria Department of Health, Beaufort wind scale for pesticide spraying: ideal 6-19 km/h; do not apply at 20-28 km/h (read via search excerpt)",Above this: don't spray
+spray_rain_free_hours,3,hours,cited,"KIRAN agromet advisory, Manipur, 13 Sep 2013: spray only when the sky is clear for at least 2-3 hours (upper end used)",No rain expected in the spray hour and this many hours after it
+spray_rain_prob_pct,50,%,proposed,"No cited figure. IMD/KVK bulletins say avoid spraying when rain is expected, without a probability cut-off",FOR REVIEW: an hour counts as rainy at or above this chance of rain
+spray_rain_mm,0.5,mm per hour,proposed,"No cited figure. Open-Meteo precipitation is mm in the preceding hour",FOR REVIEW: an hour counts as rainy at or above this forecast amount
+spray_morning_start,6,hour,cited,"Kerala Agricultural University agromet bulletins: spray before 9 am or after 3 pm (to protect pollination); BCKV bulletins advise afternoon spraying",Morning window starts (local time); start hour is our choice of first light
+spray_morning_end,9,hour,cited,"Kerala Agricultural University agromet bulletins: spray before 9 am",Morning window ends
+spray_evening_start,15,hour,cited,"Kerala Agricultural University agromet bulletins: spray after 3 pm",Evening window starts
+spray_evening_end,18,hour,proposed,"No cited figure; dusk",FOR REVIEW: evening window ends
+irrigate_hold_rain_mm,10,mm,proposed,"No cited mm figure. IMD/ICAR-CRIDA agromet bulletins (e.g. Western UP, March 2024) advise postponing irrigation when rain is forecast",FOR REVIEW: rain forecast today+tomorrow at or above this -> hold irrigation
+irrigate_check_rain_mm,2,mm,proposed,"No cited mm figure; same bulletins",FOR REVIEW: between this and the hold figure -> check the soil before irrigating
+irrigate_recent_rain_mm,10,mm,proposed,"No cited mm figure; same bulletins",FOR REVIEW: rain in the past 2 days at or above this -> hold irrigation
+weather_stale_hours,3,hours,proposed,"ADR-004 proposal",FOR REVIEW: a cached forecast older than this is labelled old and confidence drops
