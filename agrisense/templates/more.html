@@ -11,6 +11,7 @@
     (url_for("profile.login"), "user", _("Log in"), None),
   ]) %}
   {% include "_link_list.html" %}
+  {% include "_install.html" %}
 
   {% if current_user %}
   <form method="post" action="{{ url_for('profile.logout') }}" class="mt-6">

@@ -16,7 +16,7 @@ pytestmark = pytest.mark.skipif(not BASE_URL, reason="E2E_BASE_URL not set; use 
 ARTIFACTS = Path(__file__).resolve().parent.parent / "artifacts"
 GUEST_ROUTES = [
     "/", "/today", "/plan", "/fertilizer", "/field", "/weather", "/market", "/more",
-    "/schemes", "/expert", "/farm/save", "/login", "/pin/reset", "/styleguide", "/field/setup",
+    "/schemes", "/expert", "/farm/save", "/login", "/pin/reset", "/styleguide", "/field/setup", "/offline",
 ]
 
 # Every visible control, measured at 360 px. Checkboxes and radios are small on

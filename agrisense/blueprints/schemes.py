@@ -9,7 +9,7 @@ from flask import Blueprint, abort, current_app, g, render_template, request
 from flask_babel import get_locale
 from flask_babel import lazy_gettext as _l
 
-from .. import districts, farm_store, units
+from .. import districts, farm_store, offline, units
 from ..crops import crop_name, crops
 from ..extensions import db
 from ..models import Event, utcnow
@@ -154,6 +154,7 @@ def _results(answers: dict, profile: dict):
     shown = catalog.visible(current_app.config["SCHEMES_SHOW_UNVERIFIED"])
     found = engine.find(shown, _to_engine(answers, profile))
     unverified = [s for s in shown if not s.verified]
+    offline.keep()
     trust = None
     if shown:
         trust = TrustResult(

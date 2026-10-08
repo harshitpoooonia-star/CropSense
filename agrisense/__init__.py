@@ -5,8 +5,9 @@ from __future__ import annotations
 from flask import Flask, current_app, g, request, session
 from werkzeug.middleware.proxy_fix import ProxyFix
 
+from . import assets, offline
 from .config import build_config
-from .extensions import babel, csrf, db, migrate
+from .extensions import babel, compress, csrf, db, migrate
 
 
 def select_locale() -> str:
@@ -33,6 +34,9 @@ def create_app(profile: str | None = None, overrides: dict | None = None) -> Fla
     migrate.init_app(app, db)
     babel.init_app(app, locale_selector=select_locale)
     csrf.init_app(app)
+    compress.init_app(app)
+    assets.init_app(app)
+    offline.init_app(app)
 
     from . import models  # noqa: F401  (register tables with SQLAlchemy/Alembic)
     from .blueprints import register_blueprints
@@ -66,8 +70,9 @@ def create_app(profile: str | None = None, overrides: dict | None = None) -> Fla
             "weight_units": WEIGHT_UNITS,
             # Macros only use env globals (_, url_for), so one shared module works.
             "ui": app.jinja_env.get_template("macros/ui.html").module,
-            # Only full pages pick this up, so a partial can't swallow it.
-            "profile_sync": None if request.headers.get("HX-Request") else pending_sync(),
+            # Only full pages pick this up, so a partial can't swallow it. Nor can the
+            # offline page or service worker, which the browser fetches in the background.
+            "profile_sync": None if request.headers.get("HX-Request") or request.blueprint == "pwa" else pending_sync(),
         }
 
     return app

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 09:42+0530\n"
+"POT-Creation-Date: 2026-10-08 09:58+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -78,6 +78,9 @@ msgid "About these results"
 msgstr ""
 
 msgid "Above the mandi price"
+msgstr ""
+
+msgid "Add to home screen"
 msgstr ""
 
 msgid "Add your transport cost to see what's left after carrying the crop to each mandi."
@@ -515,6 +518,9 @@ msgstr ""
 msgid "I have a reset code"
 msgstr ""
 
+msgid "In Safari, tap Share, then \"Add to Home Screen\"."
+msgstr ""
+
 msgid "Irrigation advice uses rain only, not your crop's stage or soil moisture yet. Check the soil."
 msgstr ""
 
@@ -528,6 +534,9 @@ msgstr ""
 msgid "It needs more water than your field's source reliably gives."
 msgstr ""
 
+msgid "It opens like an app, and pages you opened before work without internet."
+msgstr ""
+
 #, python-format
 msgid "It scored a little lower overall: number %(rank)s of %(total)s."
 msgstr ""
@@ -536,6 +545,9 @@ msgid "KVK and Kisan Call Centre"
 msgstr ""
 
 msgid "KVKs we have so far:"
+msgstr ""
+
+msgid "Keep AgriSense on your home screen"
 msgstr ""
 
 msgid "Keep my farm"
@@ -692,6 +704,16 @@ msgstr ""
 msgid "No cited schedule for when to apply this crop's doses yet. Ask your KVK."
 msgstr ""
 
+msgid "No internet"
+msgstr ""
+
+msgid "No internet, and no saved answer here yet. Connect and try again."
+msgstr ""
+
+#, python-format
+msgid "No internet. This is your last answer, from %(time)s."
+msgstr ""
+
 msgid "No mandi prices for this crop near you in the last 30 days."
 msgstr ""
 
@@ -770,6 +792,9 @@ msgid "Only for farms with a private tubewell connection."
 msgstr ""
 
 msgid "Only part of this dose has a cited source; the missing nutrients aren't shown. Ask your KVK."
+msgstr ""
+
+msgid "Open Today"
 msgstr ""
 
 msgid "Open myScheme"
@@ -1072,6 +1097,11 @@ msgstr ""
 msgid "This number already has a saved farm. Log in instead."
 msgstr ""
 
+msgid ""
+"This page isn't saved on your phone yet. Pages you opened before still work, with your last "
+"answers."
+msgstr ""
+
 msgid "This phone can't remember your field (private browsing?). It will work for this visit only."
 msgstr ""
 
@@ -1120,6 +1150,9 @@ msgstr ""
 
 #, python-format
 msgid "Traders paid ₹%(low)s to ₹%(high)s there that day."
+msgstr ""
+
+msgid "Try again"
 msgstr ""
 
 msgid "Tubewell or borewell"
