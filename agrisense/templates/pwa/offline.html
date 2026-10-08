@@ -1,0 +1,32 @@
+<!doctype html>
+{# Cached once by the service worker, so both languages are on the page. #}
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5a3b22">
+  <title>{{ copy.hi.title }} · {{ copy.en.title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='icons/icon.svg') }}" type="image/svg+xml">
+</head>
+<body class="bg-bg">
+  {% include "_icons.html" %}
+  <header class="bg-soil text-white">
+    <div class="mx-auto flex min-h-tap max-w-xl items-center px-4 py-1 text-xl font-bold">{{ _("AgriSense") }}</div>
+  </header>
+  <main id="main" class="mx-auto w-full max-w-xl space-y-8 px-4 py-6">
+    {% for code in ("hi", "en") %}
+    {% set t = copy[code] %}
+    <section lang="{{ code }}" aria-labelledby="offline-{{ code }}">
+      <h1 id="offline-{{ code }}" class="flex items-center gap-2 text-2xl font-bold text-ink">{{ ui.icon("alert", "size-7 text-warn") }}<span>{{ t.title }}</span></h1>
+      <p class="mt-2 text-ink-muted">{{ t.body }}</p>
+      <div class="mt-4 flex flex-wrap gap-3">
+        {# An empty href reloads the address the farmer asked for. #}
+        {{ ui.link_button("", t.retry) }}
+        {{ ui.link_button(url_for("today.index"), t.today, "secondary") }}
+      </div>
+    </section>
+    {% endfor %}
+  </main>
+</body>
+</html>

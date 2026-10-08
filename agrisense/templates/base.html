@@ -4,12 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#5a3b22">
+  <link rel="manifest" href="{{ url_for('pwa.manifest', lang=current_locale) }}">
+  <link rel="icon" href="{{ url_for('static', filename='icons/icon.svg') }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='icons/apple-touch-icon.png') }}">
   <title>{% block title %}{{ _("AgriSense") }}{% endblock %}</title>
   {# Preload the face the first paint needs, so Hindi text doesn't reflow. #}
   <link rel="preload" href="{{ url_for('static', filename='fonts/mukta-400-' ~ ('devanagari' if current_locale == 'hi' else 'latin') ~ '.woff2') }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
   <script src="{{ url_for('static', filename='vendor/htmx-2.0.11.min.js') }}" defer></script>
   <script src="{{ url_for('static', filename='js/profile.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/pwa.js') }}" data-sw="{{ url_for('pwa.service_worker') }}" defer></script>
 </head>
 <body class="bg-bg" hx-headers='{"X-CSRFToken": "{{ csrf_token() }}"}'>
   {% include "_icons.html" %}
@@ -51,5 +55,13 @@
       {% endfor %}
     </ul>
   </nav>
+
+  {# pwa.js copies these into a tool's answer area when the network is gone. #}
+  <template id="offline-saved">
+    <p role="status" class="mb-4 flex items-start gap-2 rounded-lg border border-warn bg-warn-bg p-3 text-warn">{{ ui.icon("alert", "size-5 mt-1") }}<span data-saved-text>{{ _("No internet. This is your last answer, from %(time)s.", time="{time}") }}</span></p>
+  </template>
+  <template id="offline-none">
+    <p role="alert" class="flex items-start gap-2 rounded-lg border border-warn bg-warn-bg p-3 text-warn">{{ ui.icon("alert", "size-5 mt-1") }}<span>{{ _("No internet, and no saved answer here yet. Connect and try again.") }}</span></p>
+  </template>
 </body>
 </html>

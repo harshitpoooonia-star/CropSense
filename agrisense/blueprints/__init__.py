@@ -10,6 +10,7 @@ from . import (
     planner,
     profile,
     public,
+    pwa,
     schemes,
     styleguide,
     today,
@@ -18,7 +19,7 @@ from . import (
 
 
 def register_blueprints(app: Flask) -> None:
-    modules = [public, today, planner, fertilizer, field, weather, market, more, schemes, profile, api, internal]
+    modules = [public, today, planner, fertilizer, field, weather, market, more, schemes, profile, api, internal, pwa]
     if app.config.get("STYLEGUIDE_ENABLED"):
         modules.append(styleguide)
     for module in modules:

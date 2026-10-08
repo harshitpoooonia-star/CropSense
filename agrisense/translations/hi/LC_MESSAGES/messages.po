@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 09:42+0530\n"
+"POT-Creation-Date: 2026-10-08 09:58+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hi\n"
@@ -79,6 +79,9 @@ msgstr "इन नतीजों के बारे में"
 
 msgid "Above the mandi price"
 msgstr "मंडी भाव से ज़्यादा"
+
+msgid "Add to home screen"
+msgstr "होम स्क्रीन पर लगाएँ"
 
 msgid "Add your transport cost to see what's left after carrying the crop to each mandi."
 msgstr "हर मंडी तक फसल ले जाने के बाद कितना बचेगा, यह देखने के लिए अपना ढुलाई खर्च भरें।"
@@ -533,6 +536,9 @@ msgstr "मैं सहमत हूँ"
 msgid "I have a reset code"
 msgstr "मेरे पास रीसेट कोड है"
 
+msgid "In Safari, tap Share, then \"Add to Home Screen\"."
+msgstr "Safari में शेयर बटन दबाएँ, फिर \"Add to Home Screen\" (होम स्क्रीन में जोड़ें) चुनें।"
+
 msgid "Irrigation advice uses rain only, not your crop's stage or soil moisture yet. Check the soil."
 msgstr ""
 "सिंचाई की सलाह अभी सिर्फ़ बारिश पर आधारित है, फसल की अवस्था या मिट्टी की नमी पर नहीं। मिट्टी देख "
@@ -548,6 +554,9 @@ msgstr "यह पहले से ऊपर की 3 फसलों में 
 msgid "It needs more water than your field's source reliably gives."
 msgstr "इसे जितना पानी चाहिए, उतना आपके खेत का पानी का साधन भरोसे से नहीं दे पाता।"
 
+msgid "It opens like an app, and pages you opened before work without internet."
+msgstr "यह ऐप की तरह खुलता है, और पहले खोले गए पन्ने बिना इंटरनेट के भी चलते हैं।"
+
 #, python-format
 msgid "It scored a little lower overall: number %(rank)s of %(total)s."
 msgstr "कुल मिलाकर इसके अंक थोड़े कम आए: %(total)s में से %(rank)s नंबर।"
@@ -557,6 +566,9 @@ msgstr "KVK और किसान कॉल सेंटर"
 
 msgid "KVKs we have so far:"
 msgstr "अभी तक हमारे पास इन KVK की जानकारी है:"
+
+msgid "Keep AgriSense on your home screen"
+msgstr "AgriSense को अपनी होम स्क्रीन पर रखें"
 
 msgid "Keep my farm"
 msgstr "मेरा खेत रहने दें"
@@ -712,6 +724,16 @@ msgstr "%(date)s से कोई बदलाव नहीं"
 msgid "No cited schedule for when to apply this crop's doses yet. Ask your KVK."
 msgstr "इस फसल में खाद कब डालें, इसका स्रोत वाला समय-क्रम अभी हमारे पास नहीं है। अपने KVK से पूछें।"
 
+msgid "No internet"
+msgstr "इंटरनेट नहीं है"
+
+msgid "No internet, and no saved answer here yet. Connect and try again."
+msgstr "इंटरनेट नहीं है, और यहाँ अभी कोई सहेजा हुआ जवाब नहीं है। इंटरनेट जोड़कर फिर कोशिश करें।"
+
+#, python-format
+msgid "No internet. This is your last answer, from %(time)s."
+msgstr "इंटरनेट नहीं है। यह आपका पिछला जवाब है, %(time)s का।"
+
 msgid "No mandi prices for this crop near you in the last 30 days."
 msgstr "पिछले 30 दिनों में आपके पास की मंडियों में इस फसल का भाव नहीं मिला।"
 
@@ -793,6 +815,9 @@ msgstr "सिर्फ़ निजी ट्यूबवेल कनेक्
 
 msgid "Only part of this dose has a cited source; the missing nutrients aren't shown. Ask your KVK."
 msgstr "इस मात्रा के सिर्फ़ कुछ हिस्से का स्रोत है; बाकी पोषक तत्व नहीं दिखाए गए। अपने KVK से पूछें।"
+
+msgid "Open Today"
+msgstr "आज खोलें"
 
 msgid "Open myScheme"
 msgstr "myScheme खोलें"
@@ -1104,6 +1129,13 @@ msgstr "यह पूर्वानुमान पुराना है: इ�
 msgid "This number already has a saved farm. Log in instead."
 msgstr "इस नंबर पर पहले से खेत सेव है। लॉग इन करें।"
 
+msgid ""
+"This page isn't saved on your phone yet. Pages you opened before still work, with your last "
+"answers."
+msgstr ""
+"यह पन्ना अभी आपके फ़ोन में सहेजा नहीं है। पहले खोले गए पन्ने आपके पिछले जवाबों के साथ अब भी चलते "
+"हैं।"
+
 msgid "This phone can't remember your field (private browsing?). It will work for this visit only."
 msgstr "यह फ़ोन आपका खेत याद नहीं रख सकता (प्राइवेट ब्राउज़िंग?)। यह सिर्फ़ इस बार काम करेगा।"
 
@@ -1155,6 +1187,9 @@ msgstr "व्यापारी का भाव: ₹%(offer)s"
 #, python-format
 msgid "Traders paid ₹%(low)s to ₹%(high)s there that day."
 msgstr "उस दिन वहाँ व्यापारियों ने ₹%(low)s से ₹%(high)s तक दिए।"
+
+msgid "Try again"
+msgstr "फिर कोशिश करें"
 
 msgid "Tubewell or borewell"
 msgstr "ट्यूबवेल या बोरवेल"
