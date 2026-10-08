@@ -67,6 +67,21 @@ python scripts/get_assets.py htmx fonts     # only when bumping a pinned version
 set `STYLEGUIDE=1` to show it in production). Design tokens and rules:
 [docs/design-system.md](docs/design-system.md).
 
+## Crop Planner data
+
+Every figure the planner shows comes from a cited row in `data/`; rows stay
+`verified=false` until a team member checks them against the source.
+
+```bash
+python scripts/build_crop_data.py --download   # DES yields (APY/UPAG) + UP cost of cultivation -> economics, seasons
+python scripts/build_climate.py                # Open-Meteo history -> district season climate
+python scripts/train_suitability.py            # legacy suitability model, no PCA, calibrated
+python scripts/validate_planner.py             # top-3 hit rate on data/farm_records.csv
+```
+
+MSPs live in `data/msp.csv` and are updated by hand when the Cabinet announces them.
+Spec: [docs/specs/02-crop-planner.md](docs/specs/02-crop-planner.md).
+
 ## Tests
 
 ```bash
