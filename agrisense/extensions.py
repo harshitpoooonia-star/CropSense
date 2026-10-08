@@ -1,4 +1,5 @@
 from flask_babel import Babel
+from flask_compress import Compress
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
@@ -23,3 +24,10 @@ db = SQLAlchemy(model_class=Base)
 migrate = Migrate(render_as_batch=True)  # batch mode lets SQLite ALTER tables
 babel = Babel()
 csrf = CSRFProtect()
+# gzip/brotli/zstd for HTML, CSS, JS and JSON (Section 10). HTML pages carry a
+# CSRF token next to reflected input (the language links echo the path), the
+# BREACH pattern. The session cookie is SameSite=Lax, so another site can only
+# send it with top-level page loads, which makes the thousands of requests that
+# attack needs slow and visible. Revisit if a page ever echoes input on a
+# cross-site POST.
+compress = Compress()

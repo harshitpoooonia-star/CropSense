@@ -68,8 +68,12 @@ not as silent insecure behaviour.
 
 ### 4. Service worker (from Section 10 on)
 
-- [ ] `CACHE_VERSION` in `sw.js` changes for this build (injected from the git
-      SHA at build time). Without it, phones keep showing the old app shell.
+- [ ] The worker's version changes for this build. `/sw.js` computes it from the
+      content hashes of the precached files, the worker and offline-page
+      templates, and `RENDER_GIT_COMMIT` (Render sets it), so nothing is bumped
+      by hand. Check after the deploy: `curl -s <live-url>/sw.js | grep "var VERSION"`
+      differs from the previous release. Same version = phones keep the old shell.
+- [ ] `python scripts/perf_budget.py` passes on the release commit (CI runs it too).
 
 ### 5. Deploy
 

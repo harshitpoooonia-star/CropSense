@@ -9,7 +9,7 @@ from flask import Blueprint, current_app, g, render_template, request
 from flask_babel import format_date, format_decimal, get_locale
 from flask_babel import lazy_gettext as _l
 
-from .. import farm_profile, farm_store, units
+from .. import farm_profile, farm_store, offline, units
 from ..crops import crop_name
 from ..extensions import db
 from ..market import board as market_board
@@ -102,6 +102,8 @@ def show_board():
         db.session, farm["lat"], farm["lon"], crop, today, window_days=cfg["PRICE_WINDOW_DAYS"],
         stale_days=cfg["PRICE_STALE_DAYS"], transport_rate=Decimal(rate) if rate else None, n=cfg["NEAREST_MANDIS"])
 
+    if not context["errors"]:
+        offline.keep()
     verdict = trust = None
     band = Decimal(cfg["FAIR_BAND_PCT"])
     reference = result.reference
@@ -135,6 +137,7 @@ def today_prices():
     for mandi, km in mandis.nearest(farm["lat"], farm["lon"], cfg["NEAREST_MANDIS"]):
         change = market_board.price_change(db.session, mandi, crop, today, cfg["PRICE_WINDOW_DAYS"])
         if change:
+            offline.keep()
             return render_template("market/_today.html", change=change, mandi=mandi, crop=crop,
                                    stale=(today - change[0]).days > cfg["PRICE_STALE_DAYS"])
     return render_template("market/_today.html", change=None, crop=crop)

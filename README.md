@@ -61,6 +61,18 @@ pybabel extract -F babel.cfg -k _l -k lazy_gettext --no-location --sort-output -
 pybabel update -i agrisense/translations/messages.pot -d agrisense/translations --no-fuzzy-matching
 pybabel compile -d agrisense/translations   # after editing hi/LC_MESSAGES/messages.po
 python scripts/get_assets.py htmx fonts     # only when bumping a pinned version
+python scripts/build_icons.py               # after editing static/icons/icon.svg
+```
+
+## Offline and performance
+
+The app installs to the home screen and keeps pages and each tool's last
+answer for offline use ([ADR-006](docs/adr/ADR-006-offline.md)). Static URLs
+carry a content hash (`?v=`) and are cached for a year; responses are
+compressed (Flask-Compress).
+
+```bash
+python scripts/perf_budget.py   # JS+CSS < 300 KB and LCP < 3 s at 360 px, slow 4G, 4x CPU
 ```
 
 `/styleguide` shows every UI macro in Hindi and English (on in development;

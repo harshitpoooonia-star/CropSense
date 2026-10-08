@@ -68,3 +68,6 @@ jobs:
 
       - name: Browser smoke test (guest routes at 360 px)
         run: python scripts/run_e2e.py
+
+      - name: Performance budgets (JS+CSS < 300 KB, LCP < 3 s on slow 4G)
+        run: python scripts/perf_budget.py

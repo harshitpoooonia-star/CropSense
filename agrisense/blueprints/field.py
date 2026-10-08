@@ -13,7 +13,7 @@ from flask import Blueprint, abort, current_app, g, render_template, request
 from flask_babel import get_locale
 from flask_babel import lazy_gettext as _l
 
-from .. import districts, farm_context, farm_profile, farm_store, units
+from .. import districts, farm_context, farm_profile, farm_store, offline, units
 from ..extensions import db
 from ..profile_io import current_profile, render_with_profile
 from ..trust import Source, TrustResult, apply_input_rule
@@ -106,6 +106,7 @@ def summary():
     profile = current_profile()
     if not farm_profile.is_complete(profile):
         return render_with_profile("field/_summary_empty.html", profile)
+    offline.keep()
     return render_with_profile(
         "field/_summary.html",
         profile,

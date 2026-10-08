@@ -1,7 +1,8 @@
 // Guest farm profile on this device (ADR-003, spec 01 R2).
 // Sends it as the `profile` field with every HTMX request and form post, and
 // saves whatever profile the server hands back in a
-// <script type="application/json" data-profile-update> block ("null" clears it).
+// <script type="application/json" data-profile-update> block ("null" clears it,
+// and also the pages and answers the service worker saved: the phone may be shared).
 (function () {
   "use strict";
   var KEY = "agrisense.profile";
@@ -18,10 +19,15 @@
     } catch (e) { return false; }
   }
 
+  function forgetOfflineCopies() {
+    if (window.caches) { window.caches.delete("agrisense-pages").catch(function () {}); }
+  }
+
   function absorb(root) {
     var nodes = (root || document).querySelectorAll('script[type="application/json"][data-profile-update]');
     Array.prototype.forEach.call(nodes, function (node) {
       var text = node.textContent.trim();
+      if (text === "null") { forgetOfflineCopies(); }
       var saved = write(text === "null" ? null : text);
       if (!saved) {
         Array.prototype.forEach.call(document.querySelectorAll("[data-storage-warning]"), function (el) {

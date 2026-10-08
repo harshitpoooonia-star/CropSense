@@ -95,6 +95,7 @@ def test_choose_district_without_gps(page):
 def test_save_my_farm_then_logout_clears_the_phone(gps_page):
     page = gps_page
     run_wizard(page)
+    page.wait_for_function("navigator.serviceWorker.controller !== null")  # so /field gets saved offline
     page.goto(BASE_URL + "/farm/save")
     page.fill('input[name="phone"]', "9876500011")
     page.fill('input[name="pin"]', "4826")
@@ -111,3 +112,5 @@ def test_save_my_farm_then_logout_clears_the_phone(gps_page):
     page.locator("form[action='/logout'] button").click()
     page.wait_for_load_state("networkidle")
     assert stored(page) is None
+    # The logged-in farm's pages, saved for offline use, are gone too (shared phones).
+    assert page.evaluate("caches.match('/field').then(Boolean)") is False

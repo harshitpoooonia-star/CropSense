@@ -8,7 +8,7 @@ from flask import Blueprint, g, render_template
 from flask_babel import format_time
 from flask_babel import lazy_gettext as _l
 
-from .. import farm_store
+from .. import farm_store, offline
 from ..extensions import db
 from ..models import Event, utcnow
 from ..profile_io import current_profile, is_htmx
@@ -96,6 +96,7 @@ def advice():
     profile = current_profile()
     verdicts, source, trust = _advice(profile)
     if trust is not None:
+        offline.keep()
         profile["last_results"]["weather"] = trust.to_dict()
         if g.get("user") is not None:
             row = farm_store.current_plot(db.session, g.user)
@@ -112,6 +113,8 @@ def advice():
 @bp.post("/weather/today")
 def today_card():
     verdicts, source, trust = _advice(current_profile())
+    if verdicts:
+        offline.keep()
     return render_template("weather/_today.html", day=(verdicts or [None])[0], source=source,
                            reason_text=reason_text, spray_words=SPRAY_WORDS, irrigate_words=IRRIGATE_WORDS,
                            no_field=verdicts is None)
