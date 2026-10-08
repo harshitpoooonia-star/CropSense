@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 06:39+0530\n"
+"POT-Creation-Date: 2026-10-08 07:01+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -20,6 +20,18 @@ msgstr ""
 
 #, python-format
 msgid "%(count)s bags of %(product)s"
+msgstr ""
+
+#, python-format
+msgid "%(crop)s at %(mandi)s: ₹%(price)s"
+msgstr ""
+
+#, python-format
+msgid "%(crop)s at the nearest mandis"
+msgstr ""
+
+#, python-format
+msgid "%(days)s days old"
 msgstr ""
 
 #, python-format
@@ -46,6 +58,27 @@ msgstr ""
 msgid "%(rank)s. %(crop)s"
 msgstr ""
 
+#, python-format
+msgid "About %(km)s km away in a straight line"
+msgstr ""
+
+msgid "Above the mandi price"
+msgstr ""
+
+msgid "Add your transport cost to see what's left after carrying the crop to each mandi."
+msgstr ""
+
+#, python-format
+msgid "After transport (₹%(cost)s): ₹%(net)s per quintal"
+msgstr ""
+
+msgid "Agmarknet website"
+msgstr ""
+
+#, python-format
+msgid "Agmarknet, %(date)s"
+msgstr ""
+
 msgid "AgriSense"
 msgstr ""
 
@@ -63,7 +96,17 @@ msgstr ""
 msgid "AgriSense fertilizer for %(what)s: %(items)s, about ₹%(cost)s. Check with your KVK."
 msgstr ""
 
+#, python-format
+msgid ""
+"AgriSense: an offer of ₹%(offer)s per quintal for %(crop)s is %(verdict)s (%(mandi)s modal "
+"₹%(modal)s on %(date)s)."
+msgstr ""
+
 msgid "Already saved? Log in"
+msgstr ""
+
+#, python-format
+msgid "An offer within %(band)s%% of the modal price counts as fair."
 msgstr ""
 
 msgid "Answers for your own farm, with the reason and the source shown. No sign-up needed."
@@ -96,6 +139,9 @@ msgstr ""
 msgid "Bag icons"
 msgstr ""
 
+msgid "Below the mandi price"
+msgstr ""
+
 msgid "Best: it was worked out for your field."
 msgstr ""
 
@@ -120,6 +166,15 @@ msgstr ""
 msgid "Check a price"
 msgstr ""
 
+msgid "Check a trader's offer against nearby mandis."
+msgstr ""
+
+msgid "Check a trader's offer against today's prices at the mandis nearest your field."
+msgstr ""
+
+msgid "Check prices"
+msgstr ""
+
 msgid "Choose a 4-digit PIN"
 msgstr ""
 
@@ -139,6 +194,10 @@ msgid "Choose your district from the list."
 msgstr ""
 
 msgid "Compare crops by likely profit for your field this season."
+msgstr ""
+
+#, python-format
+msgid "Compared with the modal price at %(mandi)s."
 msgstr ""
 
 msgid "Confidence badges"
@@ -168,9 +227,6 @@ msgstr ""
 msgid "DAP"
 msgstr ""
 
-msgid "Daily mandi price changes arrive in Section 7."
-msgstr ""
-
 msgid "Date on the card"
 msgstr ""
 
@@ -178,6 +234,9 @@ msgid "Delete everything"
 msgstr ""
 
 msgid "Delete my farm"
+msgstr ""
+
+msgid "Distances are from your district's centre, because your field has no pin."
 msgstr ""
 
 msgid "District"
@@ -193,6 +252,10 @@ msgid "Dose copied from your Soil Health Card, scaled to your field."
 msgstr ""
 
 msgid "Dose from my Soil Health Card"
+msgstr ""
+
+#, python-format
+msgid "Down ₹%(diff)s since %(date)s"
 msgstr ""
 
 msgid "Drop the pin on your field, or choose your district."
@@ -222,6 +285,12 @@ msgstr ""
 msgid "Enter the number as printed on the card."
 msgstr ""
 
+msgid "Enter the offer as a number of rupees per quintal, like 2400."
+msgstr ""
+
+msgid "Enter the transport cost as a number, like 1.5."
+msgstr ""
+
 msgid "Enter your PIN to confirm"
 msgstr ""
 
@@ -233,6 +302,9 @@ msgid "Estimated, not measured: %(fields)s"
 msgstr ""
 
 msgid "Every component in Hindi and English. Sample data only, not advice."
+msgstr ""
+
+msgid "Fair offer"
 msgstr ""
 
 msgid "Farmer's mobile number"
@@ -267,6 +339,9 @@ msgid "Find a scheme"
 msgstr ""
 
 msgid "First, tell us about your field"
+msgstr ""
+
+msgid "First, tell us where your field is"
 msgstr ""
 
 #, python-format
@@ -325,6 +400,9 @@ msgstr ""
 msgid "I have a reset code"
 msgstr ""
 
+msgid "Is the offer fair?"
+msgstr ""
+
 #, python-format
 msgid "It is already in the top 3, at number %(rank)s."
 msgstr ""
@@ -355,6 +433,9 @@ msgid "Krishi Vigyan Kendra: your district's government farm science centre."
 msgstr ""
 
 msgid "Language"
+msgstr ""
+
+msgid "Leave empty to just see the prices."
 msgstr ""
 
 msgid "Leave empty to use your saved field size."
@@ -426,6 +507,10 @@ msgstr ""
 msgid "Mobile number"
 msgstr ""
 
+#, python-format
+msgid "Modal price at %(mandi)s on %(date)s: ₹%(modal)s per quintal."
+msgstr ""
+
 msgid "More"
 msgstr ""
 
@@ -449,10 +534,21 @@ msgstr ""
 msgid "Nitrogen (N)"
 msgstr ""
 
+#, python-format
+msgid "No change since %(date)s"
+msgstr ""
+
 msgid "No cited schedule for when to apply this crop's doses yet. Ask your KVK."
 msgstr ""
 
+msgid "No mandi prices for this crop near you in the last 30 days."
+msgstr ""
+
 msgid "No prices yet for these crops, so they aren't ranked by profit."
+msgstr ""
+
+#, python-format
+msgid "No recent price for this crop at: %(mandis)s."
 msgstr ""
 
 msgid "Nobody pays us to recommend anything, so every answer is for you."
@@ -474,6 +570,9 @@ msgid "Not known yet: %(fields)s. Tools will say when this limits an answer."
 msgstr ""
 
 msgid "Number with unit"
+msgstr ""
+
+msgid "Old price"
 msgstr ""
 
 msgid "Only a helper can do this."
@@ -551,6 +650,10 @@ msgid "Quantity"
 msgstr ""
 
 msgid "Rain only"
+msgstr ""
+
+#, python-format
+msgid "Range ₹%(low)s to ₹%(high)s"
 msgstr ""
 
 msgid "Reset a farmer's PIN"
@@ -722,6 +825,10 @@ msgstr ""
 msgid "This phone can't remember your field (private browsing?). It will work for this visit only."
 msgstr ""
 
+#, python-format
+msgid "This price is %(days)s days old, so today's may differ."
+msgstr ""
+
 msgid ""
 "This removes your account, your field, soil card values and saved answers for good. It can't be "
 "undone."
@@ -745,6 +852,17 @@ msgstr ""
 msgid "Total: ₹%(cost)s"
 msgstr ""
 
+msgid "Trader's offer, ₹ per quintal"
+msgstr ""
+
+#, python-format
+msgid "Trader's offer: ₹%(offer)s"
+msgstr ""
+
+#, python-format
+msgid "Traders paid ₹%(low)s to ₹%(high)s there that day."
+msgstr ""
+
 msgid "Tubewell or borewell"
 msgstr ""
 
@@ -752,6 +870,10 @@ msgid "Turn a fertilizer dose into bags of urea, DAP or SSP, and potash for your
 msgstr ""
 
 msgid "Unit"
+msgstr ""
+
+#, python-format
+msgid "Up ₹%(diff)s since %(date)s"
 msgstr ""
 
 msgid "Upper end of the dose"
@@ -773,6 +895,9 @@ msgid "Use this spot"
 msgstr ""
 
 msgid "Use your mobile number and a 4-digit PIN to open your farm on any phone."
+msgstr ""
+
+msgid "Used to show the price left after carrying the crop there. Remembered on this phone."
 msgstr ""
 
 msgid "Verdict pills"
@@ -815,6 +940,9 @@ msgid ""
 msgstr ""
 
 msgid "We have no price or cost for it, so its profit couldn't be compared."
+msgstr ""
+
+msgid "We need it to find the mandis nearest you."
 msgstr ""
 
 msgid ""
@@ -874,6 +1002,9 @@ msgstr ""
 msgid "You can delete your farm and account at any time from More."
 msgstr ""
 
+msgid "You can look up prices on the Agmarknet website, or ask the Kisan Call Centre."
+msgstr ""
+
 msgid "You can't reset your own PIN here."
 msgstr ""
 
@@ -920,6 +1051,9 @@ msgstr ""
 msgid ""
 "Your soil and season resemble fields where this crop grows in a public dataset (mostly "
 "%(inputs)s)."
+msgstr ""
+
+msgid "Your transport cost, ₹ per quintal per km (optional)"
 msgstr ""
 
 msgid "acre"
@@ -977,6 +1111,9 @@ msgid "low"
 msgstr ""
 
 msgid "medium"
+msgstr ""
+
+msgid "modal, per quintal"
 msgstr ""
 
 msgid "my field"

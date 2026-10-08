@@ -1,0 +1,16 @@
+{% if change %}
+  {% set latest_date, latest, previous_date, previous = change %}
+  {% set diff = latest - previous %}
+  <a href="{{ url_for('market.index', crop=crop) }}" class="flex min-h-16 items-center gap-3 rounded-card border border-line-soft bg-surface px-4 py-3 text-ink no-underline">
+    {{ ui.icon("market", "size-6 text-accent") }}
+    <span class="flex-1">
+      <span class="block font-bold">{{ _("%(crop)s at %(mandi)s: ₹%(price)s", crop=crop_name(crop), mandi=mandi.market, price=latest | int | decimalformat) }}</span>
+      <span class="block text-base text-ink-muted">
+        {% if diff > 0 %}{{ _("Up ₹%(diff)s since %(date)s", diff=diff | int | decimalformat, date=previous_date | dateformat("medium")) }}
+        {% elif diff < 0 %}{{ _("Down ₹%(diff)s since %(date)s", diff=(-diff) | int | decimalformat, date=previous_date | dateformat("medium")) }}
+        {% else %}{{ _("No change since %(date)s", date=previous_date | dateformat("medium")) }}{% endif %}
+      </span>
+    </span>
+    {% if stale %}{{ ui.verdict_pill("warning", _("Old price")) }}{% endif %}
+  </a>
+{% endif %}

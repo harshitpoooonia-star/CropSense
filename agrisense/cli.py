@@ -17,6 +17,18 @@ def register_cli(app: Flask) -> None:
     def agrisense() -> None:
         """AgriSense admin commands."""
 
+    @agrisense.command("refresh-prices")
+    @click.option("--days", default=3, show_default=True, help="How many past days to fetch.")
+    def refresh_prices(days: int) -> None:
+        """Fetch recent Agmarknet prices into the cache (needs DATA_GOV_IN_KEY)."""
+        from .market import agmarknet
+
+        report = agmarknet.refresh(db.session, current_app.config.get("DATA_GOV_IN_KEY"), days=days)
+        if report.error == "no_key":
+            raise click.ClickException("DATA_GOV_IN_KEY is not set.")
+        click.echo(f"days {report.days}, rows seen {report.rows_seen}, stored {report.rows_stored}, "
+                   f"failed days {len(report.failed_days)}" + (f", error: {report.error}" if report.error else ""))
+
     @agrisense.command("make-helper")
     def make_helper() -> None:
         """Give a KVK/FPO helper the role that can start PIN resets.
