@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Scheme Finder") }} · {{ _("AgriSense") }}{% endblock %}
+{% block content %}
+  {% set heading, intro = _("Which schemes can you claim?"), _("Six short questions. We show government schemes you are likely eligible for, what they give, and the papers to carry.") %}
+  {% include "_page_head.html" %}
+  <div id="schemes-flow" class="mt-6" aria-live="polite">
+    {% if step is none %}
+      <form method="post" action="{{ url_for('schemes.show_step') }}"
+            hx-post="{{ url_for('schemes.show_step') }}" hx-target="#schemes-flow" hx-swap="innerHTML">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="profile" value="">
+        <input type="hidden" name="step" value="state">
+        {{ ui.button(_("Start")) }}
+      </form>
+      <p class="mt-4 text-base text-ink-muted">{{ _("We don't keep your answers. Only the list of schemes that may fit is saved with your farm, on this phone or in your account.") }}</p>
+    {% elif step == "done" %}
+      {% include "schemes/_results.html" %}
+    {% else %}
+      {% include "schemes/_step.html" %}
+    {% endif %}
+  </div>
+{% endblock %}
