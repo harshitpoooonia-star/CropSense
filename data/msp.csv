@@ -1,0 +1,12 @@
+crop,marketing_season,msp_inr_qtl,announced,source,verified,notes
+paddy,kharif 2026-27,2441,2026-05-13,"CCEA decision, as reported by DT Next / Global Agriculture (paddy common)",false,TODO: confirm against the PIB release
+maize,kharif 2026-27,2410,2026-05-13,"CCEA decision, as reported by DT Next / Global Agriculture",false,TODO: confirm against the PIB release
+bajra,kharif 2026-27,2900,2026-05-13,"CCEA decision, as reported by DT Next / Global Agriculture",false,TODO: confirm against the PIB release
+pigeonpeas,kharif 2026-27,8450,2026-05-13,"CCEA decision, as reported by DT Next / Global Agriculture (tur/arhar)",false,TODO: confirm against the PIB release
+mungbean,kharif 2026-27,8780,2026-05-13,"CCEA decision, as reported by DT Next / Global Agriculture (moong)",false,TODO: confirm against the PIB release
+blackgram,kharif 2026-27,8200,2026-05-13,"CCEA decision, as reported by DT Next / Global Agriculture (urad)",false,TODO: confirm against the PIB release
+wheat,rabi 2027-28,2610,2026-09-30,"Union Cabinet decision, All India Radio (newsonair.gov.in), 1 Oct 2026",false,TODO: confirm against the PIB release
+barley,rabi 2027-28,2286,2026-09-30,"Union Cabinet decision, All India Radio (newsonair.gov.in), 1 Oct 2026",false,TODO: confirm against the PIB release
+chickpea,rabi 2027-28,5958,2026-09-30,"Union Cabinet decision, All India Radio (newsonair.gov.in), 1 Oct 2026 (gram)",false,TODO: confirm against the PIB release
+lentil,rabi 2027-28,7390,2026-09-30,"Union Cabinet decision, All India Radio (newsonair.gov.in), 1 Oct 2026 (masur)",false,TODO: confirm against the PIB release
+mustard,rabi 2027-28,6613,2026-09-30,"Union Cabinet decision, All India Radio (newsonair.gov.in), 1 Oct 2026 (rapeseed & mustard)",false,TODO: confirm against the PIB release
