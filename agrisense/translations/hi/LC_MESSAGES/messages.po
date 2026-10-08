@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 07:01+0530\n"
+"POT-Creation-Date: 2026-10-08 09:32+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hi\n"
@@ -62,6 +62,14 @@ msgstr "%(rank)s. %(crop)s"
 msgid "About %(km)s km away in a straight line"
 msgstr "सीधी रेखा में लगभग %(km)s किमी दूर"
 
+#, python-format
+msgid "About %(mm)s mm of rain expected today and tomorrow: hold irrigation."
+msgstr "आज और कल लगभग %(mm)s मिमी बारिश की उम्मीद है: सिंचाई रोकें।"
+
+#, python-format
+msgid "About %(mm)s mm of rain in the 2 days before (fallen or forecast): hold irrigation."
+msgstr "उससे पहले के 2 दिनों में लगभग %(mm)s मिमी बारिश (हुई या अनुमानित): सिंचाई रोकें।"
+
 msgid "Above the mandi price"
 msgstr "मंडी भाव से ज़्यादा"
 
@@ -97,6 +105,9 @@ msgstr "AgriSense फसल योजना: %(crop)s। अपने KVK से
 #, python-format
 msgid "AgriSense fertilizer for %(what)s: %(items)s, about ₹%(cost)s. Check with your KVK."
 msgstr "AgriSense खाद, %(what)s के लिए: %(items)s, लगभग ₹%(cost)s। अपने KVK से पक्का करें।"
+
+msgid "AgriSense thresholds, some still proposed (see the advisor spec)"
+msgstr "AgriSense की सीमाएँ, कुछ अभी प्रस्तावित हैं (सलाहकार की विशेष जानकारी देखें)"
 
 #, python-format
 msgid ""
@@ -160,6 +171,9 @@ msgstr "बटन"
 msgid "Call now"
 msgstr "अभी कॉल करें"
 
+msgid "Can irrigate"
+msgstr "सिंचाई कर सकते हैं"
+
 msgid "Canal"
 msgstr "नहर"
 
@@ -180,6 +194,9 @@ msgstr "व्यापारी के भाव को अपने खेत 
 
 msgid "Check prices"
 msgstr "भाव देखें"
+
+msgid "Check soil first"
+msgstr "पहले मिट्टी देखें"
 
 msgid "Choose a 4-digit PIN"
 msgstr "4 अंकों का पिन चुनें"
@@ -255,6 +272,9 @@ msgstr "ज़िले का बीच का हिस्सा (अनुम
 
 msgid "Don't"
 msgstr "न करें"
+
+msgid "Don't spray"
+msgstr "छिड़काव न करें"
 
 msgid "Dose copied from your Soil Health Card, scaled to your field."
 msgstr "मात्रा आपके मृदा स्वास्थ्य कार्ड से ली गई है, आपके खेत के नाप के हिसाब से।"
@@ -383,6 +403,15 @@ msgid "Good"
 msgstr "ठीक है"
 
 #, python-format
+msgid "Good time %(start)s to %(end)s: wind about %(wind)s km/h and no rain for %(hours)s hours after."
+msgstr ""
+"%(start)s से %(end)s तक अच्छा समय: हवा लगभग %(wind)s किमी/घंटा और उसके बाद %(hours)s घंटे बारिश "
+"नहीं।"
+
+msgid "Good to spray"
+msgstr "छिड़काव कर सकते हैं"
+
+#, python-format
 msgid "Grown on about %(area)s hectares a year in %(district)s in %(season)s."
 msgstr "%(district)s में %(season)s में हर साल लगभग %(area)s हेक्टेयर में उगाई जाती है।"
 
@@ -394,6 +423,9 @@ msgstr "ज़्यादा जोखिम"
 
 msgid "High water"
 msgstr "ज़्यादा पानी"
+
+msgid "Hold irrigation"
+msgstr "सिंचाई रोकें"
 
 msgid "How big is it?"
 msgstr "खेत कितना बड़ा है?"
@@ -409,6 +441,11 @@ msgstr "मैं सहमत हूँ"
 
 msgid "I have a reset code"
 msgstr "मेरे पास रीसेट कोड है"
+
+msgid "Irrigation advice uses rain only, not your crop's stage or soil moisture yet. Check the soil."
+msgstr ""
+"सिंचाई की सलाह अभी सिर्फ़ बारिश पर आधारित है, फसल की अवस्था या मिट्टी की नमी पर नहीं। मिट्टी देख "
+"लें।"
 
 msgid "Is the offer fair?"
 msgstr "क्या भाव ठीक है?"
@@ -461,6 +498,9 @@ msgstr "खर्च के बाद प्रति एकड़ संभा�
 #, python-format
 msgid "Likely profit ₹%(low)s to ₹%(high)s per acre after costs, at %(price)s."
 msgstr "खर्च के बाद संभावित मुनाफ़ा ₹%(low)s से ₹%(high)s प्रति एकड़, %(price)s पर।"
+
+msgid "Loading the forecast…"
+msgstr "मौसम का पूर्वानुमान आ रहा है…"
 
 msgid "Loading your field…"
 msgstr "आपके खेत की जानकारी आ रही है…"
@@ -541,6 +581,9 @@ msgstr "नया 4 अंकों का पिन"
 msgid "Next"
 msgstr "आगे"
 
+msgid "Next 3 days"
+msgstr "अगले 3 दिन"
+
 msgid "Nitrogen (N)"
 msgstr "नाइट्रोजन (N)"
 
@@ -560,6 +603,9 @@ msgstr "इन फसलों के भाव अभी नहीं हैं
 #, python-format
 msgid "No recent price for this crop at: %(mandis)s."
 msgstr "इन मंडियों में इस फसल का हाल का भाव नहीं है: %(mandis)s।"
+
+msgid "No useful rain expected: irrigate if your crop needs it."
+msgstr "काम की बारिश की उम्मीद नहीं: फसल को ज़रूरत हो तो सिंचाई करें।"
 
 msgid "Nobody pays us to recommend anything, so every answer is for you."
 msgstr "किसी चीज़ की सिफ़ारिश के लिए हमें कोई पैसे नहीं देता, इसलिए हर जवाब सिर्फ़ आपके लिए है।"
@@ -661,6 +707,14 @@ msgstr "मुनाफ़ा पता नहीं: इस फसल का �
 msgid "Quantity"
 msgstr "मात्रा"
 
+#, python-format
+msgid "Rain %(prob)s%% likely around %(time)s."
+msgstr "%(time)s के आसपास %(prob)s%% बारिश की संभावना।"
+
+#, python-format
+msgid "Rain chance up to %(prob)s%%, %(mm)s mm · wind up to %(wind)s km/h · %(low)s to %(high)s °C"
+msgstr "बारिश की संभावना %(prob)s%% तक, %(mm)s मिमी · हवा %(wind)s किमी/घंटा तक · %(low)s से %(high)s °C"
+
 msgid "Rain only"
 msgstr "सिर्फ़ बारिश"
 
@@ -747,6 +801,10 @@ msgstr "मिट्टी-मौसम मिलान इस्तेमाल
 msgid "Soil-climate model %(version)s (public dataset, not local farms)"
 msgstr "मिट्टी-मौसम मॉडल %(version)s (सार्वजनिक डेटा, स्थानीय खेतों का नहीं)"
 
+#, python-format
+msgid "Some rain expected (about %(mm)s mm): check the soil before irrigating."
+msgstr "थोड़ी बारिश की उम्मीद (लगभग %(mm)s मिमी): सिंचाई से पहले मिट्टी देखें।"
+
 msgid "Some risk"
 msgstr "कुछ जोखिम"
 
@@ -765,8 +823,22 @@ msgstr "छिड़काव और सिंचाई सलाह"
 msgid "Spray and irrigation"
 msgstr "छिड़काव और सिंचाई"
 
+msgid "Spray or water today?"
+msgstr "आज छिड़काव या सिंचाई?"
+
 msgid "Spray or water?"
 msgstr "छिड़काव करें या पानी दें?"
+
+#, python-format
+msgid ""
+"Spray windows follow cited guidance: wind %(low)s to %(high)s km/h, no rain for %(hours)s hours "
+"after spraying."
+msgstr ""
+"छिड़काव का समय स्रोत वाले दिशानिर्देशों पर है: हवा %(low)s से %(high)s किमी/घंटा, और छिड़काव के "
+"बाद %(hours)s घंटे बारिश नहीं।"
+
+msgid "Spray with care"
+msgstr "सावधानी से छिड़काव करें"
 
 msgid "Standard dose"
 msgstr "सामान्य मात्रा"
@@ -797,11 +869,16 @@ msgstr "अपने खेत के बारे में एक बार �
 msgid "Text field"
 msgstr "टेक्स्ट फ़ील्ड"
 
-msgid "The 3-day verdict for your field arrives in Section 8."
-msgstr "आपके खेत के लिए 3 दिन का फ़ैसला सेक्शन 8 में आएगा।"
-
 msgid "The PIN must be exactly 4 digits."
 msgstr "पिन ठीक 4 अंकों का होना चाहिए।"
+
+#, python-format
+msgid ""
+"The air is almost still (%(start)s to %(end)s), so spray can drift. Spray with care or wait for a"
+" light breeze."
+msgstr ""
+"%(start)s से %(end)s तक हवा लगभग रुकी हुई है, इसलिए दवा भटक सकती है। सावधानी से छिड़काव करें या "
+"हल्की हवा का इंतज़ार करें।"
 
 msgid "The answer itself goes here: a number, bags or a verdict."
 msgstr "असली जवाब यहाँ आता है: कोई संख्या, बोरियाँ या फ़ैसला।"
@@ -812,11 +889,21 @@ msgstr "कार्ड की मात्रा प्रति"
 msgid "The code is wrong or has expired. Ask your helper for a new one."
 msgstr "कोड गलत है या उसका समय खत्म हो गया। सहायक से नया कोड माँगें।"
 
+msgid "The forecast is for your field's location."
+msgstr "पूर्वानुमान आपके खेत की जगह के लिए है।"
+
 msgid "The map didn't load. Use your location or choose your district below."
 msgstr "नक्शा नहीं खुला। अपनी जगह इस्तेमाल करें या नीचे से अपना ज़िला चुनें।"
 
 msgid "The nearest deadline arrives in Section 9."
 msgstr "सबसे नज़दीकी आखिरी तारीख सेक्शन 9 में आएगी।"
+
+msgid ""
+"The next 3 days for your field: when spraying won't be washed off or blown away, and whether rain"
+" will do the watering."
+msgstr ""
+"आपके खेत के अगले 3 दिन: कब छिड़काव बारिश में धुलेगा नहीं या हवा में उड़ेगा नहीं, और क्या बारिश "
+"सिंचाई का काम कर देगी।"
 
 msgid "The planner needs your district, field size and water source. It takes four short steps."
 msgstr "फसल योजना के लिए आपका ज़िला, खेत का नाप और पानी का साधन चाहिए। इसमें चार छोटे कदम लगते हैं।"
@@ -832,6 +919,9 @@ msgstr "इस पिन का अंदाज़ा लगाना बहु�
 
 msgid "This field is saved on this phone only."
 msgstr "यह खेत सिर्फ़ इसी फ़ोन पर सेव है।"
+
+msgid "This forecast is old: we couldn't refresh it."
+msgstr "यह पूर्वानुमान पुराना है: इसे नया नहीं कर पाए।"
 
 msgid "This number already has a saved farm. Log in instead."
 msgstr "इस नंबर पर पहले से खेत सेव है। लॉग इन करें।"
@@ -854,8 +944,17 @@ msgstr ""
 msgid "This tool is being built (Section %(n)s). It will work without an account."
 msgstr "यह टूल बन रहा है (सेक्शन %(n)s)। यह बिना खाते के भी चलेगा।"
 
+msgid "Three days ahead, for your field."
+msgstr "आपके खेत के लिए तीन दिन आगे का हाल।"
+
 msgid "Today"
 msgstr "आज"
+
+msgid "Today's spraying hours are over."
+msgstr "आज छिड़काव का समय निकल गया।"
+
+msgid "Tomorrow"
+msgstr "कल"
 
 msgid "Too many tries. Wait 15 minutes and try again."
 msgstr "बहुत बार कोशिश हो गई। 15 मिनट रुककर फिर कोशिश करें।"
@@ -930,6 +1029,11 @@ msgstr "दूसरों से खरीदा पानी"
 
 msgid "We are still checking this KVK's phone number. Until then, call the Kisan Call Centre above."
 msgstr "इस KVK का फ़ोन नंबर अभी जाँचा जा रहा है। तब तक ऊपर दिए किसान कॉल सेंटर पर कॉल करें।"
+
+msgid ""
+"We couldn't get the forecast right now. Try again in a little while, or check the IMD Meghdoot "
+"app."
+msgstr "अभी पूर्वानुमान नहीं मिल पाया। थोड़ी देर बाद फिर कोशिश करें, या IMD का मेघदूत ऐप देखें।"
 
 #, python-format
 msgid "We don't have the KVK for %(district)s district yet."
@@ -1014,6 +1118,10 @@ msgstr "%(crop)s क्यों नहीं?"
 
 msgid "Why not another crop?"
 msgstr "कोई और फसल क्यों नहीं?"
+
+#, python-format
+msgid "Wind up to %(wind)s km/h: the spray will blow away."
+msgstr "हवा %(wind)s किमी/घंटा तक: दवा उड़ जाएगी।"
 
 msgid "Without a pin, tools use the district's centre, so weather and nearest mandis are less exact."
 msgstr ""

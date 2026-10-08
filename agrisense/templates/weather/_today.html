@@ -1,0 +1,12 @@
+{# Today's lead card (spec 05). Says nothing when there's no field or forecast. #}
+{% if day %}
+<a href="{{ url_for('weather.index') }}" class="block rounded-card border-2 border-line-soft bg-surface p-4 text-ink no-underline hover:border-accent">
+  <span class="block text-lg font-bold">{{ _("Spray or water today?") }}</span>
+  <span class="mt-2 flex flex-wrap gap-2">
+    {% if day.spray.status != "past" %}{{ ui.verdict_pill(day.spray.status, spray_words[day.spray.status]) }}{% endif %}
+    {{ ui.verdict_pill(day.irrigate.status, irrigate_words[day.irrigate.status]) }}
+  </span>
+  <span class="mt-2 block text-base">{{ reason_text(day.spray.reason) }}</span>
+  {% if source and source.stale %}<span class="mt-1 block text-base text-warn">{{ _("This forecast is old: we couldn't refresh it.") }}</span>{% endif %}
+</a>
+{% endif %}
