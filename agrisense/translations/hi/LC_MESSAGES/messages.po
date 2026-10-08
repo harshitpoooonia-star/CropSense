@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AgriSense VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-08 05:14+0530\n"
+"POT-Creation-Date: 2026-10-08 05:38+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: hi\n"
@@ -35,14 +35,25 @@ msgstr "पहले से सेव है? लॉग इन करें"
 msgid "Answers for your own farm, with the reason and the source shown. No sign-up needed."
 msgstr "आपके अपने खेत के लिए जवाब, साथ में वजह और स्रोत भी। साइन-अप की ज़रूरत नहीं।"
 
+msgid "Area"
+msgstr "रकबा"
+
 msgid "Ask an expert"
 msgstr "विशेषज्ञ से पूछें"
 
 msgid "Avoid easy PINs like 1111 or 1234."
 msgstr "1111 या 1234 जैसा आसान पिन न रखें।"
 
+msgid "Back"
+msgstr "पीछे"
+
 msgid "Bag icons"
 msgstr "बोरी के चित्र"
+
+msgid "Bigha size differs by district and isn't known for yours yet, so use acre or hectare."
+msgstr ""
+"बीघा का नाप हर ज़िले में अलग होता है और आपके ज़िले का अभी पता नहीं है, इसलिए एकड़ या हेक्टेयर "
+"चुनें।"
 
 msgid "Buttons"
 msgstr "बटन"
@@ -50,8 +61,14 @@ msgstr "बटन"
 msgid "Call now"
 msgstr "अभी कॉल करें"
 
+msgid "Canal"
+msgstr "नहर"
+
 msgid "Careful"
 msgstr "सावधान"
+
+msgid "Change field details"
+msgstr "खेत की जानकारी बदलें"
 
 msgid "Check a price"
 msgstr "भाव जाँचें"
@@ -59,14 +76,23 @@ msgstr "भाव जाँचें"
 msgid "Choose a 4-digit PIN"
 msgstr "4 अंकों का पिन चुनें"
 
+msgid "Choose one."
+msgstr "कोई एक चुनें।"
+
+msgid "Choose your district"
+msgstr "अपना ज़िला चुनें"
+
+msgid "Choose your district from the list."
+msgstr "सूची से अपना ज़िला चुनें।"
+
 msgid "Compare crops by likely profit for your field this season."
 msgstr "इस मौसम में अपने खेत के लिए फसलों को संभावित मुनाफ़े से मिलाकर देखें।"
 
 msgid "Confidence badges"
 msgstr "भरोसे के निशान"
 
-msgid "Contacts for Gautam Buddh Nagar and Bulandshahr KVKs are being checked and will appear here."
-msgstr "गौतम बुद्ध नगर और बुलंदशहर के KVK के संपर्क जाँचे जा रहे हैं, जल्द ही यहाँ दिखेंगे।"
+msgid "Couldn't get your location. Tap the map or choose your district."
+msgstr "आपकी जगह नहीं मिल पाई। नक्शे पर छूएँ या अपना ज़िला चुनें।"
 
 msgid "Crop Planner"
 msgstr "फसल योजना"
@@ -77,8 +103,26 @@ msgstr "फसलों के नाम"
 msgid "Daily mandi price changes arrive in Section 7."
 msgstr "मंडी भाव में रोज़ का बदलाव सेक्शन 7 में आएगा।"
 
+msgid "Date on the card"
+msgstr "कार्ड पर लिखी तारीख"
+
+msgid "Delete everything"
+msgstr "सब कुछ मिटाएँ"
+
+msgid "Delete my farm"
+msgstr "मेरा खेत मिटाएँ"
+
+msgid "District"
+msgstr "ज़िला"
+
+msgid "District centre (estimated)"
+msgstr "ज़िले का बीच का हिस्सा (अनुमान)"
+
 msgid "Don't"
 msgstr "न करें"
+
+msgid "Drop the pin on your field, or choose your district."
+msgstr "अपने खेत पर निशान लगाएँ, या अपना ज़िला चुनें।"
 
 msgid "Enter a 10-digit mobile number."
 msgstr "10 अंकों का मोबाइल नंबर डालें।"
@@ -89,15 +133,24 @@ msgstr "संख्या डालें, जैसे 12 या 12.5।"
 msgid "Enter the PIN again"
 msgstr "पिन दोबारा डालें"
 
+msgid "Enter the date printed on the card. It can't be in the future."
+msgstr "कार्ड पर छपी तारीख डालें। यह आगे की तारीख नहीं हो सकती।"
+
+msgid "Enter the field size as a number, like 2 or 2.5."
+msgstr "खेत का नाप संख्या में डालें, जैसे 2 या 2.5।"
+
+msgid "Enter the number as printed on the card."
+msgstr "कार्ड पर जैसा छपा है, वैसी संख्या डालें।"
+
+msgid "Enter your PIN to confirm"
+msgstr "पक्का करने के लिए अपना पिन डालें"
+
 #, python-format
 msgid "Estimated, not measured: %(fields)s"
 msgstr "अनुमान है, नापा नहीं गया: %(fields)s"
 
 msgid "Every component in Hindi and English. Sample data only, not advice."
 msgstr "हर हिस्सा हिंदी और अंग्रेज़ी में। सिर्फ़ नमूना, सलाह नहीं।"
-
-msgid "Farm profile"
-msgstr "खेत की जानकारी"
 
 msgid "Farmer's mobile number"
 msgstr "किसान का मोबाइल नंबर"
@@ -114,11 +167,25 @@ msgstr "खेत"
 msgid "Field area"
 msgstr "खेत का रकबा"
 
+msgid "Field size"
+msgstr "खेत का नाप"
+
 msgid "Find a scheme"
 msgstr "योजना खोजें"
 
+#, python-format
+msgid "For %(district)s district:"
+msgstr "%(district)s ज़िले के लिए:"
+
 msgid "Forgot your PIN? Ask your KVK or FPO helper for a reset code."
 msgstr "पिन भूल गए? अपने KVK या FPO सहायक से रीसेट कोड माँगें।"
+
+msgid ""
+"Four short steps: where, how big, how it's watered, and your soil card if you have it. No account"
+" needed."
+msgstr ""
+"चार छोटे कदम: खेत कहाँ है, कितना बड़ा है, सिंचाई कैसे होती है, और मृदा कार्ड हो तो उसके नंबर। "
+"खाते की ज़रूरत नहीं।"
 
 msgid "Free call. Answers in Hindi and other languages."
 msgstr "मुफ़्त कॉल। हिंदी और दूसरी भाषाओं में जवाब।"
@@ -139,6 +206,12 @@ msgstr "ठीक है"
 msgid "High confidence"
 msgstr "भरोसा ज़्यादा"
 
+msgid "How big is it?"
+msgstr "खेत कितना बड़ा है?"
+
+msgid "How do you water it?"
+msgstr "सिंचाई कैसे करते हैं?"
+
 msgid "I agree"
 msgstr "मैं सहमत हूँ"
 
@@ -148,14 +221,29 @@ msgstr "मेरे पास रीसेट कोड है"
 msgid "KVK and Kisan Call Centre"
 msgstr "KVK और किसान कॉल सेंटर"
 
+msgid "KVKs we have so far:"
+msgstr "अभी तक हमारे पास इन KVK की जानकारी है:"
+
+msgid "Keep my farm"
+msgstr "मेरा खेत रहने दें"
+
 msgid "Keep your farm on this and other phones"
 msgstr "अपना खेत इस फ़ोन और दूसरे फ़ोन पर रखें"
 
 msgid "Kisan Call Centre"
 msgstr "किसान कॉल सेंटर"
 
+msgid "Krishi Vigyan Kendra: your district's government farm science centre."
+msgstr "कृषि विज्ञान केंद्र: आपके ज़िले का सरकारी खेती विज्ञान केंद्र।"
+
 msgid "Language"
 msgstr "भाषा"
+
+msgid "Loading your field…"
+msgstr "आपके खेत की जानकारी आ रही है…"
+
+msgid "Location"
+msgstr "जगह"
 
 msgid "Location, area, irrigation and soil card, entered once for every tool."
 msgstr "जगह, रकबा, सिंचाई और मृदा कार्ड एक बार भरें, हर टूल में काम आएगा।"
@@ -175,6 +263,9 @@ msgstr "मुख्य"
 msgid "Mandi Prices"
 msgstr "मंडी भाव"
 
+msgid "Map of your area"
+msgstr "आपके इलाके का नक्शा"
+
 msgid "Market"
 msgstr "मंडी"
 
@@ -190,8 +281,21 @@ msgstr "और"
 msgid "New 4-digit PIN"
 msgstr "नया 4 अंकों का पिन"
 
+msgid "Next"
+msgstr "आगे"
+
+msgid "Nitrogen (N)"
+msgstr "नाइट्रोजन (N)"
+
 msgid "Nobody pays us to recommend anything, so every answer is for you."
 msgstr "किसी चीज़ की सिफ़ारिश के लिए हमें कोई पैसे नहीं देता, इसलिए हर जवाब सिर्फ़ आपके लिए है।"
+
+msgid "Not known"
+msgstr "पता नहीं"
+
+#, python-format
+msgid "Not known yet: %(fields)s. Tools will say when this limits an answer."
+msgstr "अभी पता नहीं: %(fields)s। जब इससे जवाब पर असर पड़ेगा, टूल बताएँगे।"
 
 msgid "Number with unit"
 msgstr "इकाई के साथ संख्या"
@@ -202,8 +306,28 @@ msgstr "यह सिर्फ़ सहायक कर सकते हैं�
 msgid "Only do this after confirming, face to face, that the farmer owns this number."
 msgstr "यह तभी करें जब आपने आमने-सामने पक्का कर लिया हो कि यह नंबर इसी किसान का है।"
 
+msgid ""
+"Optional. If you have the card, copy the numbers from it. If not, skip: answers will say what was"
+" estimated."
+msgstr "ज़रूरी नहीं। कार्ड हो तो उससे नंबर भरें। न हो तो छोड़ दें: जवाब में बताया जाएगा कि क्या अनुमान है।"
+
+msgid "Or choose your district"
+msgstr "या अपना ज़िला चुनें"
+
+msgid "Organic carbon (OC)"
+msgstr "जैविक कार्बन (OC)"
+
+msgid "Other"
+msgstr "कोई और"
+
 msgid "PIN"
 msgstr "पिन"
+
+msgid "Phosphorus (P)"
+msgstr "फ़ॉस्फ़ोरस (P)"
+
+msgid "Pick another district if this is wrong."
+msgstr "अगर यह गलत है तो दूसरा ज़िला चुनें।"
 
 msgid "Plan"
 msgstr "योजना"
@@ -213,6 +337,9 @@ msgstr "फसल की योजना बनाएँ"
 
 msgid "Please read and accept the consent text to save your farm."
 msgstr "खेत सेव करने के लिए सहमति वाली बात पढ़कर स्वीकार करें।"
+
+msgid "Potassium (K)"
+msgstr "पोटाश (K)"
 
 msgid "Prices for your crops"
 msgstr "आपकी फसलों के भाव"
@@ -225,6 +352,9 @@ msgstr "उत्पाद B"
 
 msgid "Quantity"
 msgstr "मात्रा"
+
+msgid "Rain only"
+msgstr "सिर्फ़ बारिश"
 
 msgid "Reset a farmer's PIN"
 msgstr "किसान का पिन रीसेट करें"
@@ -250,6 +380,9 @@ msgstr "AgriSense का नमूना नतीजा। यह सलाह 
 msgid "Save my farm"
 msgstr "मेरा खेत सेव करें"
 
+msgid "Save soil values"
+msgstr "मिट्टी के नंबर सेव करें"
+
 msgid "Scheme Finder"
 msgstr "सरकारी योजनाएँ"
 
@@ -268,14 +401,23 @@ msgstr "नया पिन बनाएँ"
 msgid "Set new PIN"
 msgstr "नया पिन बनाएँ"
 
-msgid "Set up in Section 4."
-msgstr "सेक्शन 4 में बनेगा।"
+msgid "Set up your field"
+msgstr "अपना खेत जोड़ें"
+
+msgid "Set up your field to see your district's KVK."
+msgstr "अपने ज़िले का KVK देखने के लिए अपना खेत जोड़ें।"
 
 msgid "Share on WhatsApp"
 msgstr "WhatsApp पर भेजें"
 
 msgid "Skip to content"
 msgstr "सीधे मुख्य हिस्से पर जाएँ"
+
+msgid "Skip, I don't have the card"
+msgstr "छोड़ें, मेरे पास कार्ड नहीं है"
+
+msgid "Soil Health Card"
+msgstr "मृदा स्वास्थ्य कार्ड"
 
 msgid "Source:"
 msgstr "स्रोत:"
@@ -295,8 +437,18 @@ msgstr "छिड़काव करें या पानी दें?"
 msgid "Start here"
 msgstr "यहाँ से शुरू करें"
 
+#, python-format
+msgid "Step %(n)s of %(total)s"
+msgstr "कदम %(n)s / %(total)s"
+
 msgid "Style guide"
 msgstr "स्टाइल गाइड"
+
+msgid "Tap the map where your field is, or drag the pin."
+msgstr "नक्शे पर वहाँ छूएँ जहाँ आपका खेत है, या निशान खिसकाएँ।"
+
+msgid "Tell us about your field once"
+msgstr "अपने खेत के बारे में एक बार बताएँ"
 
 msgid "Text field"
 msgstr "टेक्स्ट फ़ील्ड"
@@ -313,6 +465,9 @@ msgstr "असली जवाब यहाँ आता है: कोई स�
 msgid "The code is wrong or has expired. Ask your helper for a new one."
 msgstr "कोड गलत है या उसका समय खत्म हो गया। सहायक से नया कोड माँगें।"
 
+msgid "The map didn't load. Use your location or choose your district below."
+msgstr "नक्शा नहीं खुला। अपनी जगह इस्तेमाल करें या नीचे से अपना ज़िला चुनें।"
+
 msgid "The nearest deadline arrives in Section 9."
 msgstr "सबसे नज़दीकी आखिरी तारीख सेक्शन 9 में आएगी।"
 
@@ -325,8 +480,21 @@ msgstr "इस नंबर पर कोई खेत सेव नहीं �
 msgid "This PIN is too easy to guess. Avoid PINs like 1111 or 1234."
 msgstr "इस पिन का अंदाज़ा लगाना बहुत आसान है। 1111 या 1234 जैसा पिन न रखें।"
 
+msgid "This field is saved on this phone only."
+msgstr "यह खेत सिर्फ़ इसी फ़ोन पर सेव है।"
+
 msgid "This number already has a saved farm. Log in instead."
 msgstr "इस नंबर पर पहले से खेत सेव है। लॉग इन करें।"
+
+msgid "This phone can't remember your field (private browsing?). It will work for this visit only."
+msgstr "यह फ़ोन आपका खेत याद नहीं रख सकता (प्राइवेट ब्राउज़िंग?)। यह सिर्फ़ इस बार काम करेगा।"
+
+msgid ""
+"This removes your account, your field, soil card values and saved answers for good. It can't be "
+"undone."
+msgstr ""
+"इससे आपका खाता, खेत, मृदा कार्ड के नंबर और सेव जवाब हमेशा के लिए मिट जाएँगे। इसे वापस नहीं किया "
+"जा सकता।"
 
 #, python-format
 msgid "This tool is being built (Section %(n)s). It will work without an account."
@@ -338,11 +506,23 @@ msgstr "आज"
 msgid "Too many tries. Wait 15 minutes and try again."
 msgstr "बहुत बार कोशिश हो गई। 15 मिनट रुककर फिर कोशिश करें।"
 
+msgid "Tubewell or borewell"
+msgstr "ट्यूबवेल या बोरवेल"
+
 msgid "Unit"
 msgstr "इकाई"
 
+msgid "Use my location"
+msgstr "मेरी जगह इस्तेमाल करें"
+
 msgid "Use the 6-digit code your helper gave you."
 msgstr "सहायक का दिया 6 अंकों का कोड डालें।"
+
+msgid "Use this district"
+msgstr "यह ज़िला चुनें"
+
+msgid "Use this spot"
+msgstr "यही जगह"
 
 msgid "Use your mobile number and a 4-digit PIN to open your farm on any phone."
 msgstr "मोबाइल नंबर और 4 अंकों के पिन से अपना खेत किसी भी फ़ोन पर खोलें।"
@@ -353,40 +533,87 @@ msgstr "फ़ैसले के निशान"
 msgid "Want your farm remembered on this phone and others?"
 msgstr "क्या आप चाहते हैं कि आपका खेत इस फ़ोन और दूसरे फ़ोन पर याद रहे?"
 
+msgid "Water"
+msgstr "पानी"
+
+msgid "Water bought from others"
+msgstr "दूसरों से खरीदा पानी"
+
+msgid "We are still checking this KVK's phone number. Until then, call the Kisan Call Centre above."
+msgstr "इस KVK का फ़ोन नंबर अभी जाँचा जा रहा है। तब तक ऊपर दिए किसान कॉल सेंटर पर कॉल करें।"
+
+#, python-format
+msgid "We don't have the KVK for %(district)s district yet."
+msgstr "%(district)s ज़िले के KVK की जानकारी अभी हमारे पास नहीं है।"
+
+msgid "We don't know the bigha size for your district yet. Please use acre or hectare."
+msgstr "आपके ज़िले में बीघा का नाप हमें अभी नहीं पता। कृपया एकड़ या हेक्टेयर चुनें।"
+
+msgid "We don't sell or share it, show no ads, and never send you messages."
+msgstr ""
+"हम यह जानकारी न बेचते हैं, न किसी को देते हैं, कोई विज्ञापन नहीं दिखाते, और आपको कभी मैसेज नहीं "
+"भेजते।"
+
 msgid "We don't sell seeds or sprays."
 msgstr "हम बीज या दवा नहीं बेचते।"
 
 msgid ""
-"We keep a scrambled form of your mobile number (we cannot read it back), your PIN in scrambled "
-"form, and the farm details you enter. We use them only to show your farm's advice. We don't sell "
-"or share them, and we never send you messages."
+"We use these only to give advice for your field. Only you see your farm; the AgriSense team opens"
+" the data only to fix problems."
 msgstr ""
-"हम आपका मोबाइल नंबर कोड के रूप में रखते हैं, जिसे हम वापस पढ़ नहीं सकते। पिन भी कोड के रूप में "
-"रखते हैं, और खेत की वह जानकारी जो आप भरते हैं। इनका इस्तेमाल सिर्फ़ आपके खेत की सलाह दिखाने के "
-"लिए होता है। हम इन्हें न बेचते हैं, न किसी को देते हैं, और आपको कभी कोई मैसेज नहीं भेजते।"
+"इनका इस्तेमाल सिर्फ़ आपके खेत की सलाह देने के लिए होता है। आपका खेत सिर्फ़ आप देखते हैं; "
+"AgriSense टीम यह जानकारी सिर्फ़ कोई गड़बड़ी ठीक करने के लिए खोलती है।"
 
 msgid "What needs a decision on your farm today."
 msgstr "आज आपके खेत पर किन बातों का फ़ैसला करना है।"
 
-msgid "What we keep"
-msgstr "हम क्या रखते हैं"
+msgid "What next?"
+msgstr "अब आगे क्या?"
+
+msgid "What we keep, and why"
+msgstr "हम क्या रखते हैं, और क्यों"
 
 msgid "When an answer here is unsure, or you want a person to check it, call a free government helpline."
 msgstr ""
 "जब यहाँ का जवाब पक्का न हो, या आप किसी इंसान से जाँच करवाना चाहें, तो मुफ़्त सरकारी हेल्पलाइन पर "
 "कॉल करें।"
 
+msgid "When you use the map, OpenStreetMap sees which area of the map you are looking at."
+msgstr ""
+"जब आप नक्शा इस्तेमाल करते हैं, तो OpenStreetMap देख सकता है कि आप नक्शे का कौन-सा इलाका देख रहे "
+"हैं।"
+
+msgid "Where is your field?"
+msgstr "आपका खेत कहाँ है?"
+
 msgid "Why"
 msgstr "क्यों"
+
+msgid "Without a pin, tools use the district's centre, so weather and nearest mandis are less exact."
+msgstr ""
+"निशान के बिना टूल ज़िले के बीच के हिस्से को मानेंगे, इसलिए मौसम और नज़दीकी मंडियों की जानकारी कम "
+"सटीक होगी।"
 
 msgid "Wrong mobile number or PIN."
 msgstr "मोबाइल नंबर या पिन गलत है।"
 
+msgid "Yes, next"
+msgstr "हाँ, आगे"
+
+msgid "You can delete your farm and account at any time from More."
+msgstr "आप कभी भी 'और' में जाकर अपना खेत और खाता मिटा सकते हैं।"
+
 msgid "You can't reset your own PIN here."
 msgstr "आप यहाँ अपना खुद का पिन रीसेट नहीं कर सकते।"
 
+msgid "Your account is ready. Now tell us about your field."
+msgstr "आपका खाता बन गया। अब अपने खेत के बारे में बताएँ।"
+
 msgid "Your district KVK"
 msgstr "आपके ज़िले का KVK"
+
+msgid "Your farm and account are deleted."
+msgstr "आपका खेत और खाता मिटा दिए गए।"
 
 msgid "Your farm is saved."
 msgstr "आपका खेत सेव हो गया।"
@@ -394,8 +621,28 @@ msgstr "आपका खेत सेव हो गया।"
 msgid "Your field"
 msgstr "आपका खेत"
 
+msgid "Your field is set up. Every tool will use it."
+msgstr "आपका खेत जुड़ गया। हर टूल इसी का इस्तेमाल करेगा।"
+
+msgid ""
+"Your field: the pin or district, its size, how it's watered, soil card values, and the answers "
+"tools gave you."
+msgstr ""
+"आपका खेत: नक्शे पर लगाया निशान या ज़िला, उसका नाप, सिंचाई कैसे होती है, मृदा कार्ड के नंबर, और "
+"टूल के दिए जवाब।"
+
+msgid "Your mobile number and PIN, scrambled so that even we can't read them back."
+msgstr "आपका मोबाइल नंबर और पिन, कोड के रूप में, ताकि हम भी उन्हें वापस पढ़ न सकें।"
+
 msgid "Your new PIN is set."
 msgstr "आपका नया पिन बन गया।"
+
+msgid "Your pin"
+msgstr "आपका लगाया निशान"
+
+#, python-format
+msgid "Your pin looks like it is in %(district)s district."
+msgstr "आपका निशान %(district)s ज़िले में लगता है।"
 
 msgid "acre"
 msgstr "एकड़"
@@ -407,17 +654,55 @@ msgstr "%(product)s की बोरियाँ"
 msgid "bigha"
 msgstr "बीघा"
 
+msgid "district average"
+msgstr "ज़िले का औसत"
+
+#, python-format
+msgid "district average, %(source)s"
+msgstr "ज़िले का औसत, %(source)s"
+
+#, python-format
+msgid "district centre, %(source)s"
+msgstr "ज़िले का बीच का हिस्सा, %(source)s"
+
+msgid "field location"
+msgstr "खेत की जगह"
+
 msgid "hectare"
 msgstr "हेक्टेयर"
 
 msgid "kg"
 msgstr "किलो"
 
+msgid "kg per hectare, as on the card"
+msgstr "किलो प्रति हेक्टेयर, जैसा कार्ड पर है"
+
+msgid "organic carbon"
+msgstr "जैविक कार्बन"
+
+msgid "pH"
+msgstr "pH"
+
+msgid "percent, as on the card"
+msgstr "प्रतिशत, जैसा कार्ड पर है"
+
 msgid "quintal"
 msgstr "क्विंटल"
 
 msgid "soil nitrogen"
 msgstr "मिट्टी में नाइट्रोजन"
+
+msgid "soil pH"
+msgstr "मिट्टी का pH"
+
+msgid "soil phosphorus"
+msgstr "मिट्टी में फ़ॉस्फ़ोरस"
+
+msgid "soil potassium"
+msgstr "मिट्टी में पोटाश"
+
+msgid "what you entered"
+msgstr "आपकी भरी जानकारी"
 
 msgid "your soil card"
 msgstr "आपका मृदा स्वास्थ्य कार्ड"

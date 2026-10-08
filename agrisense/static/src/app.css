@@ -48,6 +48,27 @@
   --radius-card: 0.75rem;
 }
 
+@layer components {
+  /* Wizard map pin (Leaflet divIcon, ADR-005): a drop shape, no image file. */
+  .farm-pin {
+    background: var(--color-accent);
+    border: 3px solid var(--color-white);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    box-shadow: 0 1px 4px rgb(0 0 0 / 0.4);
+  }
+}
+
+/* Leaflet's zoom buttons are 30px; ours are 48px (spec P0-9). Unlayered and
+   more specific, because Leaflet's own unlayered CSS loads after this file. */
+.leaflet-container.leaflet-touch .leaflet-bar a,
+.leaflet-container .leaflet-bar a {
+  width: var(--spacing-tap);
+  height: var(--spacing-tap);
+  line-height: var(--spacing-tap);
+  font-size: 1.5rem;
+}
+
 @layer base {
   html {
     background-color: var(--color-bg);

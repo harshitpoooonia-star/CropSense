@@ -106,6 +106,27 @@
 </div>
 {%- endmacro %}
 
+{# Form attributes for a form that posts normally and, with HTMX, swaps `into`. #}
+{% macro swap_attrs(target, into="#wizard") -%}
+method="post" action="{{ target }}" hx-post="{{ target }}" hx-target="{{ into }}" hx-swap="innerHTML"
+{%- endmacro %}
+
+{# A labelled <select>. `choices` is a list of (value, translated label). #}
+{% macro select_field(name, label, choices, selected=None, error=None, placeholder=None) -%}
+<div class="space-y-1">
+  <label for="{{ name }}" class="block font-bold">{{ label }}</label>
+  <select id="{{ name }}" name="{{ name }}"
+    class="{{ INPUT }} cursor-pointer {{ 'border-crit' if error else 'border-line' }}"
+    {%- if error %} aria-invalid="true" aria-describedby="{{ name }}-error"{% endif %}>
+    {% if placeholder %}<option value="">{{ placeholder }}</option>{% endif %}
+    {% for value, option_label in choices %}
+    <option value="{{ value }}"{% if value == selected %} selected{% endif %}>{{ option_label }}</option>
+    {% endfor %}
+  </select>
+  {% if error %}<p id="{{ name }}-error" class="flex gap-2 text-crit">{{ icon("alert", "mt-1 size-5") }}<span>{{ error }}</span></p>{% endif %}
+</div>
+{%- endmacro %}
+
 {# Number with a unit switch, e.g. area in acre/bigha/hectare. `units` is a
    list of (code, translated label). Works without JS: the unit is a form field. #}
 {% macro number_input(name, label, units, unit_name, value="", unit_value=None, hint=None, error=None) -%}

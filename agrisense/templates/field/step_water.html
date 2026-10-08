@@ -1,0 +1,24 @@
+{% extends "field/_wizard_bare.html" if partial else "field/_wizard_page.html" %}
+{% block wizard %}
+{% include "field/_step_head.html" %}
+{% set chosen = profile.plots[0].irrigation_source %}
+{% set target = url_for("field.submit", step="water") %}
+<form {{ ui.swap_attrs(target) }} class="mt-6">
+  {% include "field/_hidden.html" %}
+  <fieldset {% if errors.get("irrigation_source") %}aria-describedby="irrigation_source-error"{% endif %}>
+    <legend class="sr-only">{{ _("How do you water it?") }}</legend>
+    <div class="space-y-2">
+      {% for code, label in irrigation_labels.items() %}
+      <label class="flex min-h-14 cursor-pointer items-center gap-3 rounded-card border-2 border-line-soft bg-surface px-4 has-[:checked]:border-accent has-[:checked]:bg-accent-soft">
+        <input type="radio" name="irrigation_source" value="{{ code }}" class="size-6 accent-accent" {% if code == chosen %}checked{% endif %} required>
+        <span class="font-bold">{{ label }}</span>
+      </label>
+      {% endfor %}
+    </div>
+  </fieldset>
+  {% if errors.get("irrigation_source") %}<p id="irrigation_source-error" class="mt-2 flex gap-2 text-crit">{{ ui.icon("alert", "mt-1 size-5") }}<span>{{ errors.irrigation_source }}</span></p>{% endif %}
+  <div class="mt-5">{{ ui.button(_("Next")) }}</div>
+</form>
+{% set back_step = "area" %}
+{% include "field/_back.html" %}
+{% endblock %}

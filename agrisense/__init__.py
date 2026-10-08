@@ -52,6 +52,7 @@ def create_app(profile: str | None = None, overrides: dict | None = None) -> Fla
 
         from .crops import crop_name
         from .navigation import TABS, active_tab
+        from .profile_io import pending_sync
         from .units import AREA_UNITS, WEIGHT_UNITS
 
         locale = str(get_locale())
@@ -65,6 +66,8 @@ def create_app(profile: str | None = None, overrides: dict | None = None) -> Fla
             "weight_units": WEIGHT_UNITS,
             # Macros only use env globals (_, url_for), so one shared module works.
             "ui": app.jinja_env.get_template("macros/ui.html").module,
+            # Only full pages pick this up, so a partial can't swallow it.
+            "profile_sync": None if request.headers.get("HX-Request") else pending_sync(),
         }
 
     return app
