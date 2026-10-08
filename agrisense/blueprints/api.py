@@ -1,6 +1,7 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, g, jsonify
 from sqlalchemy import text
 
+from .. import farm_store
 from ..extensions import db
 
 bp = Blueprint("api", __name__, url_prefix="/api")
@@ -15,3 +16,13 @@ def health():
         db.session.rollback()
         return jsonify(status="degraded", db="unreachable"), 503
     return jsonify(status="ok", db="ok")
+
+
+@bp.get("/profile")
+def profile():
+    """A saved farm in the guest-profile shape (spec 01, R7). Never cached."""
+    if g.get("user") is None:
+        return jsonify(error="not_logged_in"), 401
+    response = jsonify(farm_store.profile_for(db.session, g.user))
+    response.headers["Cache-Control"] = "no-store"
+    return response

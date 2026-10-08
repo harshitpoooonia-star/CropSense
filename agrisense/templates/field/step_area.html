@@ -1,0 +1,16 @@
+{% extends "field/_wizard_bare.html" if partial else "field/_wizard_page.html" %}
+{% block wizard %}
+{% include "field/_step_head.html" %}
+{% set area = profile.plots[0].area %}
+{% set target = url_for("field.submit", step="area") %}
+<form {{ ui.swap_attrs(target) }} class="mt-6 space-y-5">
+  {% include "field/_hidden.html" %}
+  {{ ui.number_input("area", _("Field size"), area_units, "area_unit",
+       value=area.value or "", unit_value=area.unit or "acre",
+       hint=None if bigha_known else _("Bigha size differs by district and isn't known for yours yet, so use acre or hectare."),
+       error=errors.get("area")) }}
+  {{ ui.button(_("Next")) }}
+</form>
+{% set back_step = "where" %}
+{% include "field/_back.html" %}
+{% endblock %}

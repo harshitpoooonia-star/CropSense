@@ -3,8 +3,12 @@
 {% block content %}
   {% set heading, intro = _("Your field"), _("Location, area, irrigation and soil card, entered once for every tool.") %}
   {% include "_page_head.html" %}
+  {# The profile lives on the phone, so the summary is fetched with it. #}
+  <div class="mt-6" hx-post="{{ url_for('field.summary') }}" hx-trigger="load" hx-swap="innerHTML">
+    <p class="text-ink-muted">{{ _("Loading your field…") }}</p>
+    <noscript>{{ ui.link_button(url_for("field.setup"), _("Set up your field")) }}</noscript>
+  </div>
   {% set links = [
-    (url_for("field.index"), "field", _("Farm profile"), _("Set up in Section 4.")),
     (url_for("weather.index"), "today", _("Spray and irrigation"), None),
     (url_for("fertilizer.index"), "bag", _("Fertilizer for this field"), None),
   ] %}

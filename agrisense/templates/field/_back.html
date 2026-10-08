@@ -1,0 +1,7 @@
+{# Back to `back_step`, keeping what was entered. #}
+{% set target = url_for("field.show") %}
+<form {{ ui.swap_attrs(target) }} class="mt-3">
+  {% include "field/_hidden.html" %}
+  <input type="hidden" name="step" value="{{ back_step }}">
+  {{ ui.button(_("Back"), "secondary") }}
+</form>

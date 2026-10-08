@@ -1,0 +1,28 @@
+{# The profile as a result card: what each tool will use, with the trust layer. #}
+{% set p = profile.plots[0] %}
+{% call ui.result_card(_("Your field"), trust) %}
+<dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
+  <dt class="text-ink-muted">{{ _("District") }}</dt>
+  <dd class="font-bold">{{ ctx.district.name(current_locale) if ctx.district else _("Not known") }}</dd>
+
+  <dt class="text-ink-muted">{{ _("Location") }}</dt>
+  <dd>{{ _("District centre (estimated)") if ctx.is_estimated("location") else _("Your pin") }}</dd>
+
+  <dt class="text-ink-muted">{{ _("Area") }}</dt>
+  <dd class="font-bold tabular-nums">
+    {% for code, unit_label in area_units if code == p.area.unit %}{{ p.area.value | float | decimalformat }} {{ unit_label }}{% endfor %}
+  </dd>
+
+  <dt class="text-ink-muted">{{ _("Water") }}</dt>
+  <dd>{{ irrigation_labels[ctx.irrigation_source] }}</dd>
+
+  {% for key, (label, _hint) in soil_labels.items() %}
+  <dt class="text-ink-muted">{{ label }}</dt>
+  <dd class="tabular-nums">
+    {% if ctx.soil[key] is none %}{{ _("Not known") }}
+    {% elif ctx.is_estimated("soil." ~ key) %}{{ ctx.soil[key] | decimalformat }} <span class="text-ink-muted">({{ _("district average") }})</span>
+    {% else %}{{ ctx.soil[key] | decimalformat }}{% endif %}
+  </dd>
+  {% endfor %}
+</dl>
+{% endcall %}
