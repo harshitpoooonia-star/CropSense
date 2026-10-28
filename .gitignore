@@ -52,8 +52,9 @@ coverage.xml
 .pytest_cache/
 cover/
 
-# Translations
+# Translations (AgriSense's compiled catalogues are committed so Render needs no build step)
 *.mo
+!agrisense/translations/*/LC_MESSAGES/messages.mo
 *.pot
 
 # Django stuff:
