@@ -1,0 +1,31 @@
+name: Bug report
+description: Something shows the wrong answer, breaks, or doesn't work in Hindi or English.
+labels: [bug]
+body:
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Which part?
+      options: [Today, Crop Planner, Fertilizer, Mandi Prices, Spray & Irrigate, Scheme Finder, My Farm / login, Offline / install, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+      description: If a number looks wrong, say which one and the source you are comparing it with.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Set up a field in Bulandshahr, 2 acres, tubewell\n2. Open Plan, tap Rabi\n3. ..."
+  - type: input
+    id: device
+    attributes:
+      label: Phone / browser and language
+      placeholder: "Android 13, Chrome, Hindi"
+  - type: markdown
+    attributes:
+      value: "Please don't paste phone numbers, PINs or other personal details."
