@@ -1,0 +1,18 @@
+name: Data correction
+description: A yield, price, dose, threshold or scheme rule doesn't match its source.
+labels: [data]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: Data file and row
+      placeholder: "data/fert_rdf.csv, wheat irrigated timely"
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: What the source says
+      description: Link the official source (ICAR, DES, Agmarknet, scheme page) and quote the figure with its date.
+    validations:
+      required: true

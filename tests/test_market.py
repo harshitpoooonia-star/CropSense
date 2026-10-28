@@ -36,6 +36,16 @@ def load(session, today=DAY + timedelta(days=1)):
     return agmarknet.refresh(session, "test-key", days=3, today=today, get=fake_get())
 
 
+def load_today(session):
+    """Load the fixture re-dated to today, for tests that go through routes reading date.today()."""
+    today = date.today()
+    stamp = today.strftime(agmarknet.API_DATE_FORMAT)
+    fixture = {**FIXTURE, "records": [{**r, "Arrival_Date": stamp} for r in FIXTURE["records"]]}
+    return agmarknet.refresh(session, "test-key", days=1, today=today,
+                             get=lambda url, params, timeout: fixture if agmarknet._date(params["filters[Arrival_Date]"]) == today
+                             else {"total": 0, "records": []})
+
+
 # ---------------------------------------------------------------- adapter
 
 
@@ -169,9 +179,8 @@ def test_market_needs_a_field(client, en):
 
 
 def test_offer_verdict_over_http(client, en, session):
-    load(session, today=date.today() - timedelta(days=0))
+    load_today(session)
     html = post_board(client, offer="2000")
-    # Fixture rows are dated 7 Oct 2026; relative to today they may be old, which the page must say.
     assert "Below the mandi price" in html and "Trader's offer: ₹2,000" in htmllib.unescape(html)
     assert "Bulandshahr" in html and "Agmarknet" in html
     saved = json.loads(html.split("data-profile-update>")[1].split("</script>")[0])
@@ -184,7 +193,7 @@ def test_no_prices_gives_an_empty_state(client, en):
 
 
 def test_transport_rate_is_remembered(client, en, session):
-    load(session, today=date.today())
+    load_today(session)
     html = post_board(client, transport_rate="2")
     saved = json.loads(html.split("data-profile-update>")[1].split("</script>")[0])
     assert saved["prefs"]["transport_rate"] == "2"
@@ -198,7 +207,7 @@ def test_bad_input(client, en, form, text):
 
 
 def test_market_in_hindi(client, session):
-    load(session, today=date.today())
+    load_today(session)
     client.set_cookie("lang", "hi")
     html = post_board(client, offer="2000")
     assert "मंडी भाव से कम" in html and "गेहूँ" in html
@@ -207,7 +216,7 @@ def test_market_in_hindi(client, session):
 def test_logged_in_offer_check_is_an_event(client, en, session):
     client.post("/farm/save", data={"phone": "9876543210", "pin": "4826", "pin_confirm": "4826", "consent": "yes",
                                     "profile": json.dumps(profile())})
-    load(session, today=date.today())
+    load_today(session)
     client.post("/market/board", data={"crop": "wheat", "offer": "2400", "profile": ""}, headers=HX)
     assert session.scalar(select(Event).where(Event.kind == "market.offer_check")) is not None
 
