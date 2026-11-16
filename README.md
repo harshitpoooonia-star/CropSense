@@ -1,11 +1,14 @@
+<p align="center"><img src="assets/banner.png" alt="AgriSense" width="100%"></p>
+
 # AgriSense 2.0
 
 A farm decision tool for smallholders in north India: crop planning, fertilizer
 bags, mandi prices, spray and irrigation timing, and scheme eligibility, in
 Hindi and English. It sells nothing and shows why it recommends what it does.
 
-**Status:** Phase 1 rebuild in progress. Section 2 (foundation and security)
-is in place; the tools are placeholders until Sections 5–9.
+**Status:** Phase 1 is in. Field setup, the crop planner, fertilizer bags,
+mandi prices, weather timing, schemes and the Today view all work, in Hindi and
+English. There's no public instance yet: run it locally or deploy your own (below).
 
 - Spec: [docs/AgriSense-2.0-spec.md](docs/AgriSense-2.0-spec.md)
 - Architecture decisions: [docs/adr/](docs/adr/)

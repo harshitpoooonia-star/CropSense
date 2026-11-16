@@ -158,6 +158,18 @@ def en(client):
     client.set_cookie("lang", "en")
 
 
+@pytest.fixture
+def on_fixture_day(monkeypatch):
+    # The fixture prices are from 7 Oct 2026. Pin the route's "today" to the day after,
+    # so these tests don't start failing once the fixture falls out of the price window.
+    class FixedDate(date):
+        @classmethod
+        def today(cls):
+            return DAY + timedelta(days=1)
+
+    monkeypatch.setattr("agrisense.blueprints.market.date", FixedDate)
+
+
 def post_board(client, **form):
     data = {"crop": "wheat", "profile": json.dumps(profile()), **form}
     return client.post("/market/board", data=data, headers=HX).get_data(as_text=True)
@@ -168,10 +180,9 @@ def test_market_needs_a_field(client, en):
     assert "tell us where your field is" in html
 
 
-def test_offer_verdict_over_http(client, en, session):
-    load(session, today=date.today() - timedelta(days=0))
+def test_offer_verdict_over_http(client, en, session, on_fixture_day):
+    load(session)
     html = post_board(client, offer="2000")
-    # Fixture rows are dated 7 Oct 2026; relative to today they may be old, which the page must say.
     assert "Below the mandi price" in html and "Trader's offer: ₹2,000" in htmllib.unescape(html)
     assert "Bulandshahr" in html and "Agmarknet" in html
     saved = json.loads(html.split("data-profile-update>")[1].split("</script>")[0])
@@ -183,8 +194,8 @@ def test_no_prices_gives_an_empty_state(client, en):
     assert "No mandi prices for this crop near you" in html and "agmarknet.gov.in" in html
 
 
-def test_transport_rate_is_remembered(client, en, session):
-    load(session, today=date.today())
+def test_transport_rate_is_remembered(client, en, session, on_fixture_day):
+    load(session)
     html = post_board(client, transport_rate="2")
     saved = json.loads(html.split("data-profile-update>")[1].split("</script>")[0])
     assert saved["prefs"]["transport_rate"] == "2"
@@ -197,17 +208,17 @@ def test_bad_input(client, en, form, text):
     assert text in post_board(client, **form)
 
 
-def test_market_in_hindi(client, session):
-    load(session, today=date.today())
+def test_market_in_hindi(client, session, on_fixture_day):
+    load(session)
     client.set_cookie("lang", "hi")
     html = post_board(client, offer="2000")
     assert "मंडी भाव से कम" in html and "गेहूँ" in html
 
 
-def test_logged_in_offer_check_is_an_event(client, en, session):
+def test_logged_in_offer_check_is_an_event(client, en, session, on_fixture_day):
     client.post("/farm/save", data={"phone": "9876543210", "pin": "4826", "pin_confirm": "4826", "consent": "yes",
                                     "profile": json.dumps(profile())})
-    load(session, today=date.today())
+    load(session)
     client.post("/market/board", data={"crop": "wheat", "offer": "2400", "profile": ""}, headers=HX)
     assert session.scalar(select(Event).where(Event.kind == "market.offer_check")) is not None
 
