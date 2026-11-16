@@ -1265,8 +1265,8 @@ msgid "We need it to find the mandis nearest you."
 msgstr ""
 
 msgid ""
-"We use these only to give advice for your field. Only you see your farm; the AgriSense team opens"
-" the data only to fix problems."
+"We use these only to give advice for your field. Only you see your farm; we open the data only to"
+" fix problems."
 msgstr ""
 
 msgid "What is your main crop?"

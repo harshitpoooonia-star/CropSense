@@ -39,7 +39,7 @@ the prices, but as tables nobody reads on a phone.
 
 **R4. Offer checker**
 - [ ] One big ₹/quintal input. Reference price: the nearest mandi with a fresh price, else the nearest with any price.
-- [ ] Verdict: below / fair / above, with icon + word + colour, the gap in ₹ and %. **Fair = within `FAIR_BAND_PCT` of the modal price** (config; proposed 5%, for team review). The band is stated in the reasons.
+- [ ] Verdict: below / fair / above, with icon + word + colour, the gap in ₹ and %. **Fair = within `FAIR_BAND_PCT` of the modal price** (config; proposed 5%, still under review). The band is stated in the reasons.
 - [ ] Confidence high for a fresh price, low for an old one; source line names the mandi and date.
 
 **R5. Today tab**: price change for the farmer's top planned crop at the nearest mandi with two recent price days.
@@ -51,6 +51,6 @@ the prices, but as tables nobody reads on a phone.
 
 ## Open questions
 
-- **Blocking for real data:** `DATA_GOV_IN_KEY`, and the first live run to confirm the API's field names and date format (Gate 0 script). *Team*
-- **Not blocking:** the mandi list comes from a 1996 Lok Sabha table; confirm it against the market names Agmarknet reports. Shikarpur and Chharra have no coordinates yet. *Team*
-- **Not blocking:** the warm-up time of day depends on Agmarknet's publishing lag (Gate 0). *Team*
+- **Blocking for real data:** `DATA_GOV_IN_KEY`, and the first live run to confirm the API's field names and date format (Gate 0 script). *Me*
+- **Not blocking:** the mandi list comes from a 1996 Lok Sabha table; confirm it against the market names Agmarknet reports. Shikarpur and Chharra have no coordinates yet. *Me*
+- **Not blocking:** the warm-up time of day depends on Agmarknet's publishing lag (Gate 0). *Me*

@@ -1,6 +1,6 @@
 # Scheme Finder data (spec 06). One entry per scheme.
 #
-# Every entry starts `verified: false`. A team member opens the official page,
+# Every entry starts `verified: false`. I open the official page,
 # checks every field, then sets `verified: true` and `last_checked`.
 # In production only verified entries are shown (ADR-004).
 #

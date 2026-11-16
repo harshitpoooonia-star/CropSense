@@ -1,7 +1,7 @@
 # Architecture decision records
 
-One file per decision. Status moves Proposed → Accepted once all four team
-members sign the table at the bottom of the ADR. Change an accepted decision
+One file per decision. Status moves Proposed → Accepted once it is signed off in the table at the bottom
+of the ADR. Change an accepted decision
 with a new ADR that supersedes it; don't edit the old one.
 
 | ADR | Decision (recommended) | Status |
@@ -13,7 +13,7 @@ with a new ADR that supersedes it; don't edit the old one.
 | [005](ADR-005-map-pin.md) | Farm pin: Leaflet 1.9.4 vendored, OSM tiles, loaded only on the wizard's map step; GPS and district list as fallbacks | Proposed |
 | [006](ADR-006-offline.md) | Offline: hand-written service worker; pages and server-marked tool answers kept on the phone, profile blocks stripped, cleared on logout/delete | Proposed |
 
-## Decisions the team must make before Section 2
+## Decisions to make before Section 2
 
 - **Hosting cold start** (ADR-002): Render free spins down after 15 min idle
   (~1 min to wake), which breaks LCP < 3 s. Paid instance for the pilot, or

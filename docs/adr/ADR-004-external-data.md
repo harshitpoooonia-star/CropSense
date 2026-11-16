@@ -2,7 +2,7 @@
 
 **Status:** Proposed
 **Date:** 2026-10-07
-**Deciders:** AgriSense team (4) — sign-off below
+**Decider:** Harshit Poonia (solo rebuild)
 
 ## Context
 
@@ -12,7 +12,7 @@ Phase 1 tools depend on three outside sources and several static datasets:
 |---|---|---|
 | Agmarknet via data.gov.in API | Mandi Prices, offer checker, Crop Planner profit, Today | Daily, published with a lag; API key; limits not documented to us yet |
 | Open-Meteo forecast API | Spray & Irrigation Advisor, Today | Hourly; no key; free tier is **non-commercial**, < 10,000 calls/day, < 5,000/hour, < 600/min, CC-BY 4.0 attribution ([terms](https://open-meteo.com/en/terms)) |
-| Scheme rules (`data/schemes.yaml`) | Scheme Finder | Curated by the team from official pages; changes yearly |
+| Scheme rules (`data/schemes.yaml`) | Scheme Finder | Curated by hand from official pages; changes yearly |
 | Static tables in `data/` | All tools | District centroids, mandi coordinates, KVK contacts, crop names, area units, fertilizer RDF/prices, district crop economics |
 
 Requirements: P0-4 ("if data is older than 3 days, say so"), P0-5 (72-hour
@@ -98,7 +98,7 @@ stays far under Open-Meteo's daily limit.
   district/crop codes.
 - `data/schemes.yaml` entries carry `verified` and `last_checked`. **In
   production, only `verified: true` schemes are shown**; unverified ones show
-  in dev and on `/styleguide` so the team can review them.
+  in dev and on `/styleguide` so they can be reviewed.
 
 ### Tests
 
@@ -188,7 +188,7 @@ uniform across tools rather than re-implemented in each.
 
 ## Action Items
 
-1. [ ] Team sign-off.
+1. [ ] Sign off.
 2. [ ] Section 2: `agrisense/data/base.py` with `SourceInfo`/`Result`, the socket-blocking test fixture, `REFRESH_TOKEN` and `DATA_GOV_IN_KEY` in config + deploy checklist.
 3. [ ] Section 7: Agmarknet adapter on this contract, reusing Gate 0 parsing; GitHub Actions daily warm-up.
 4. [ ] Section 8: Open-Meteo adapter; attribution on the source line.
@@ -198,7 +198,4 @@ uniform across tools rather than re-implemented in each.
 
 | Name | Role | Agree / Disagree | Date |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Harshit Poonia | Developer | | |

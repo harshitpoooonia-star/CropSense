@@ -121,11 +121,11 @@ hiding) how sure it is.
 
 ## Open questions
 
-- **Blocking for real defaults:** the source for district soil defaults. Candidates are the Soil Health Card portal's district summaries, or KVK/state soil-testing lab reports. *Data / team*
-- **Not blocking:** KVK phone numbers for Gautam Buddh Nagar and Bulandshahr. Addresses are from ICAR records; phones need a call or the ICAR KVK portal. *Team*
-- **Not blocking:** bigha size per target district. *Team, via the revenue office or KVK*
-- **Not blocking:** whether to send step-reached counts at all in Phase 1, or only use the moderated tests. *Team (privacy)*
-- **Blocking for the pilot:** a contact for data questions in the consent text (DPDP Act 2023 grievance contact), and faculty review of that text. *Team / faculty*
+- **Blocking for real defaults:** the source for district soil defaults. Candidates are the Soil Health Card portal's district summaries, or KVK/state soil-testing lab reports. *Me (data)*
+- **Not blocking:** KVK phone numbers for Gautam Buddh Nagar and Bulandshahr. Addresses are from ICAR records; phones need a call or the ICAR KVK portal. *Me*
+- **Not blocking:** bigha size per target district. *Me, via the revenue office or KVK*
+- **Not blocking:** whether to send step-reached counts at all in Phase 1, or only use the moderated tests. *Me (privacy)*
+- **Blocking for the pilot:** a contact for data questions in the consent text (DPDP Act 2023 grievance contact), and faculty review of that text. *Me / faculty*
 - **Not blocking:** Wikidata lists 76 UP and 21 Haryana districts against the official 75 and 22; reconcile with the LGD directory before relying on the list for anything beyond suggestions. *Data*
 
 ## Implementation notes (Section 4)

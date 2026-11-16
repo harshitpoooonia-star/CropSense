@@ -35,7 +35,7 @@ A1 decides the gate. A2–A4 feed Sections 4, 6, 7 and 9.
 - 8 farmers: 4 in Gautam Buddh Nagar, 4 in Bulandshahr.
 - Own or lease and work 1–5 acres; make the sowing decision themselves.
 - Mix: at least 2 who say they have a Soil Health Card, at least 2 who say they don't; at least 1 woman farmer if possible; at least 1 tenant/lessee.
-- Not: input dealers, FPO staff, family of team members.
+- Not: input dealers, FPO staff, my own family or friends.
 - Recruit through the district KVK or the university's rural outreach (open question in the spec; settle this first).
 
 ### Roles and kit
@@ -83,7 +83,7 @@ answer to the first question is no, thank them and stop.
 | यह फ़ोटो सिर्फ़ यह समझने के लिए है कि ऐप में ये नंबर कैसे भरे जाएँ। प्रोजेक्ट खत्म होने पर हम इसे मिटा देंगे। आप कहें तो आज ही मिटा देंगे। | The photo is only to understand how the app should read these numbers. We delete it when the project ends, or today if you ask. |
 | **क्या हम फ़ोटो ले सकते हैं?** ☐ हाँ ☐ नहीं | **May we take the photo?** ☐ Yes ☐ No |
 
-Photo handling: store on the team's shared drive only, file name = farmer code
+Photo handling: store on my private drive only, file name = farmer code
 (e.g. `BSR-2_shc.jpg`), never in this git repo. Delete the copy on the phone the
 same day. Delete all photos at project end.
 

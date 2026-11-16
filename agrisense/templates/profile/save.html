@@ -13,14 +13,14 @@
     {{ ui.field("pin_confirm", _("Enter the PIN again"), type="password", inputmode="numeric", autocomplete="new-password", maxlength=4) }}
 
     {# Consent text version: auth.CONSENT_VERSION. Change the text -> bump the version.
-       TODO(team): add a contact for data questions (DPDP Act 2023 grievance contact),
+       TODO: add a contact for data questions (DPDP Act 2023 grievance contact),
        and have faculty review this text before the pilot. #}
     <section aria-labelledby="consent-heading" class="rounded-card border border-line-soft bg-surface-2 p-4">
       <h2 id="consent-heading" class="font-bold">{{ _("What we keep, and why") }}</h2>
       <ul class="mt-2 list-disc space-y-2 ps-5 text-base">
         <li>{{ _("Your mobile number and PIN, scrambled so that even we can't read them back.") }}</li>
         <li>{{ _("Your field: the pin or district, its size, how it's watered, soil card values, and the answers tools gave you.") }}</li>
-        <li>{{ _("We use these only to give advice for your field. Only you see your farm; the AgriSense team opens the data only to fix problems.") }}</li>
+        <li>{{ _("We use these only to give advice for your field. Only you see your farm; we open the data only to fix problems.") }}</li>
         <li>{{ _("We don't sell or share it, show no ads, and never send you messages.") }}</li>
         <li>{{ _("When you use the map, OpenStreetMap sees which area of the map you are looking at.") }}</li>
         <li>{{ _("You can delete your farm and account at any time from More.") }}</li>

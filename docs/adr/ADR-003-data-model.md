@@ -2,7 +2,7 @@
 
 **Status:** Proposed
 **Date:** 2026-10-07
-**Deciders:** AgriSense team (4) — sign-off below
+**Decider:** Harshit Poonia (solo rebuild)
 
 ## Context
 
@@ -183,7 +183,7 @@ Same shape the tools return to templates (Section 4), so storing a result is
 | Complexity | Medium: 9 tables, one JSON-payload table. |
 | Extensibility | High: diary, calendar, sensors, reports and FPO views read events; no migration per feature. |
 | Query cost | JSON payload queries are slower; fine at pilot scale; add typed tables if a kind gets hot. |
-| Team familiarity | Medium. |
+| Familiarity | Medium. |
 
 **Pros:** matches the spec's architecture note; tool results become history for
 free; P&L and loan reports are queries over events.
@@ -256,11 +256,11 @@ doesn't need the clear number, and a leak of the table exposes far less.
 ## Open questions
 
 - [x] Forgotten PIN in Phase 1: **staff-assisted reset** (decided 2026-10-08, see Consequences).
-- [ ] Does Pooja (KVK/FPO staff) need her own account that *owns* several farms in Phase 1, or is that P2? The `helper` role only resets PINs today. — *team*
+- [ ] Does Pooja (KVK/FPO staff) need her own account that *owns* several farms in Phase 1, or is that P2? The `helper` role only resets PINs today.
 
 ## Action Items
 
-1. [ ] Team sign-off, including the phone-hash decision and the PIN-reset answer.
+1. [ ] Sign off, including the phone-hash decision and the PIN-reset answer.
 2. [ ] Section 2: models + initial migration exactly as above; `PHONE_PEPPER` env var added to config and deploy checklist.
 3. [ ] Section 2: `event` payload validators module with one schema per `kind` + version.
 4. [ ] Section 4: guest-profile JSON schema shared by the browser script and the server validator; migration from guest to saved farm with tests.
@@ -270,7 +270,4 @@ doesn't need the clear number, and a leak of the table exposes far less.
 
 | Name | Role | Agree / Disagree | Date |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Harshit Poonia | Developer | | |

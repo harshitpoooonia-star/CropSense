@@ -76,10 +76,10 @@ including accessibility checks, an offline flow and a rehearsal of six moderated
 
 ## Status
 
-The software for v2.0.0 is complete and its checks pass. Before the release tag, the team still has to
+The software for v2.0.0 is complete and its checks pass. Before the release tag, I still have to
 run the moderated sessions with farmers and do the first production deploy; see
 [docs/launch-review.md](docs/launch-review.md). Planning docs: [spec](docs/AgriSense-2.0-spec.md),
-[roadmap](docs/AgriSense-2.0-roadmap.md), [per-tool specs](docs/specs/), [research kits](docs/research/).
+[per-tool specs](docs/specs/), [research kits](docs/research/).
 
 ## Run it locally
 
@@ -144,7 +144,7 @@ set `STYLEGUIDE=1` to show it in production). Design tokens and rules:
 ## Crop Planner data
 
 Every figure the planner shows comes from a cited row in `data/`; rows stay
-`verified=false` until a team member checks them against the source.
+`verified=false` until I check them against the source.
 
 ```bash
 python scripts/build_crop_data.py --download   # DES yields (APY/UPAG) + UP cost of cultivation -> economics, seasons
@@ -170,7 +170,7 @@ In production a scheduled GitHub Actions workflow (`refresh-prices.yml`) calls
 `POST /internal/refresh/prices` daily. Set the repository secrets
 `REFRESH_URL` (the Render URL) and `REFRESH_TOKEN` (same value as the app's
 `REFRESH_TOKEN` env var); without them the workflow skips. The "fair offer"
-band is `FAIR_BAND_PCT` (default 5, for team review).
+band is `FAIR_BAND_PCT` (default 5, still under review).
 Spec: [docs/specs/04-mandi.md](docs/specs/04-mandi.md).
 
 ## Tests
@@ -200,10 +200,14 @@ new PIN at `/pin/reset`.
 - Start: `gunicorn wsgi:app`
 - Follow [docs/deploy-checklist.md](docs/deploy-checklist.md) every time.
 
-## Team
+## Author
 
-Built as a Design Thinking & Innovation (DTI) project at **Bennett University** by
-Harshit Poonia, Shivansh Gupta, Anaya Bakshi, Tushita and Anant Vaibhav.
+Designed, rebuilt and maintained solo by **Harshit Poonia**, Oct to Nov 2026.
+
+AgriSense started as a Design Thinking & Innovation (DTI) course project at
+Bennett University with Shivansh Gupta, Anaya Bakshi, Tushita and Anant Vaibhav.
+This repository is my from-scratch rebuild: the course app was replaced
+section by section, and none of its code is left in the current version.
 
 ## License
 

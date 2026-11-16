@@ -27,7 +27,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from .models import LoginAttempt, User, aware, utcnow
 
-CONSENT_VERSION = "2026-10-v2"  # bump when the consent text changes
+CONSENT_VERSION = "2026-11-v3"  # bump when the consent text changes
 
 _INDIAN_MOBILE = re.compile(r"[6-9]\d{9}")
 _PIN = re.compile(r"\d{4}")

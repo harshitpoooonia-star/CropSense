@@ -106,8 +106,8 @@ English, every tool's answer in both languages, and keyboard focus on 6 pages.
 | Shared phones: logout and "Delete my farm" clear the phone's profile and offline copies | Pass (e2e) |
 
 **Gap:** there are **no analytics** yet. The spec's "time to first useful answer"
-and "repeat use" metrics assume privacy-light analytics events. Until the team
-decides how (and records it in an ADR), those two metrics come from the
+and "repeat use" metrics assume privacy-light analytics events. Until I
+decide how (and record it in an ADR), those two metrics come from the
 moderated sessions only.
 
 ## 5. Performance (unchanged from Section 10)
@@ -121,7 +121,7 @@ The tag goes on the commit that is actually deployed (deploy checklist §8), so
 v2.0.0 is **not** tagged yet. In order:
 
 1. [ ] Push the repo to GitHub and see CI pass there (it has only run locally).
-2. [ ] Team items still open from earlier sections: `DATA_GOV_IN_KEY`; verify the
+2. [ ] Items still open from earlier sections: `DATA_GOV_IN_KEY`; verify the
        cited data rows (`verified=false`); KVK phone numbers; bigha sizes; district
        soil defaults; the consent text's grievance contact; review the proposed
        weather thresholds and `FAIR_BAND_PCT`; check schemes and set `verified: true`;

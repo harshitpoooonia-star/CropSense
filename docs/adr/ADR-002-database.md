@@ -2,7 +2,7 @@
 
 **Status:** Proposed
 **Date:** 2026-10-07
-**Deciders:** AgriSense team (4) — sign-off below
+**Decider:** Harshit Poonia (solo rebuild)
 
 ## Context
 
@@ -16,7 +16,7 @@ each deploy or idle period.
 2.0 needs durable storage for saved farms, plots, soil cards, the per-plot
 event log, the mandi price cache and the weather cache (ADR-003). Constraints:
 
-- Free or near-free for a student team; data volume is small (a 20-farmer
+- Free or near-free for a student project; data volume is small (a 20-farmer
   pilot, a few thousand cached price rows a week).
 - **"Migration run on a copy first, DB backup before migration"** is part of
   the deploy checklist (roadmap, Section 2).
@@ -49,7 +49,7 @@ pre-migration backup. Pick the Neon and Render regions closest to each other
 | Complexity | Lowest. |
 | Cost | Free. |
 | Durability | **None on free tier**: wiped on redeploy/restart/spin-down. Render disks are paid only. |
-| Team familiarity | High. |
+| Familiarity | High. |
 
 **Pros:** zero setup; same engine locally and in prod.
 **Cons:** loses every saved farm. Disqualified for production; kept for dev/tests.
@@ -61,7 +61,7 @@ pre-migration backup. Pick the Neon and Render regions closest to each other
 | Complexity | Low; same dashboard as the web service. |
 | Cost | Free DB **expires after 30 days**; a 6-week phase plus a semester pilot needs a paid plan. |
 | Durability | Good while paid. |
-| Team familiarity | Medium. |
+| Familiarity | Medium. |
 
 **Pros:** same provider and region as the app, internal networking.
 **Cons:** free tier doesn't outlive Phase 1; recreating monthly means data loss.
@@ -73,7 +73,7 @@ pre-migration backup. Pick the Neon and Render regions closest to each other
 | Complexity | Medium; a whole platform (auth, storage, REST) of which we'd use only Postgres. |
 | Cost | Free, 500 MB. |
 | Durability | Good, but **pauses after 7 days idle**; must be restored by hand. |
-| Team familiarity | Low–medium. |
+| Familiarity | Low–medium. |
 
 **Pros:** generous free tier; storage bucket could hold Phase 2 photos.
 **Cons:** a pause between field visits takes the app down until someone
@@ -87,7 +87,7 @@ Flask-owned auth and the server-rendered stack (ADR-001).
 | Complexity | Low; plain Postgres connection string. |
 | Cost | Free: 0.5 GB, 100 CU-hours/month. Enough for Phase 1 volumes. |
 | Durability | Good; no expiry; scale-to-zero instead of pausing the project. |
-| Team familiarity | Low, but it is just Postgres + a dashboard. |
+| Familiarity | Low, but it is just Postgres + a dashboard. |
 
 **Pros**
 - Doesn't expire or pause the project; idle compute wakes on connect.
@@ -129,17 +129,14 @@ for demos only.
 
 ## Action Items
 
-1. [ ] Team sign-off; confirm free-tier limits on the provider pages on the day.
+1. [ ] Sign off; confirm free-tier limits on the provider pages on the day.
 2. [ ] Create a Neon project (Singapore or nearest to the Render region); store the connection string only in Render env vars and GitHub Actions secrets.
 3. [ ] Section 2: Flask-Migrate initial migration from the ADR-003 models; Postgres service container in CI.
 4. [ ] Section 2 deploy checklist: `neon branch create` before migrate, run migration on the branch, then on main; delete branches older than the last 2 releases.
-5. [ ] Decide before the pilot: paid Render instance vs accepting cold starts (owner: team; input: Gate 0 farmer phone/network answers).
+5. [ ] Decide before the pilot: paid Render instance vs accepting cold starts (owner: me; input: Gate 0 farmer phone/network answers).
 
 ## Sign-off
 
 | Name | Role | Agree / Disagree | Date |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Harshit Poonia | Developer | | |
