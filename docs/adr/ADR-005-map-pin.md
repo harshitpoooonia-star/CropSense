@@ -2,7 +2,7 @@
 
 **Status:** Proposed
 **Date:** 2026-10-08
-**Deciders:** AgriSense team (4) — sign-off below
+**Decider:** Harshit Poonia (solo rebuild)
 
 ## Context
 
@@ -46,7 +46,7 @@ GPS and "choose district" stay available, so the map is never required.
 
 ## Action items
 
-1. [ ] Team sign-off.
+1. [ ] Sign off.
 2. [ ] Section 4: vendor Leaflet via `scripts/get_assets.py leaflet` with npm integrity; no CDN at runtime.
 3. [ ] Tile URL and attribution in config (`MAP_TILE_URL`, `MAP_ATTRIBUTION`) so the server can change without code.
 4. [ ] Before public launch: re-read the OSM tile usage policy against expected traffic.
@@ -55,7 +55,4 @@ GPS and "choose district" stay available, so the map is never required.
 
 | Name | Role | Agree / Disagree | Date |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Harshit Poonia | Developer | | |

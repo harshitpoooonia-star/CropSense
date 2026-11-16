@@ -2,7 +2,7 @@
 
 **Status:** Proposed
 **Date:** 2026-10-07
-**Deciders:** AgriSense team (4) — sign-off below
+**Decider:** Harshit Poonia (solo rebuild)
 
 ## Context
 
@@ -17,7 +17,7 @@ Forces:
   throttled 4G, 360 px baseline, tap targets ≥ 48 px. Design doc goal: under
   100 KB of JS.
 - **Offline:** installable PWA, last result of every tool readable offline.
-- **Team:** 4 students, 6 weeks. The current app is Flask + Jinja; the ML
+- **Builder:** one developer (solo rebuild), 6 weeks. The current app is Flask + Jinja; the ML
   (scikit-learn) is Python and must run server-side.
 - **Hosting:** Render free tier (see ADR-002 for its limits).
 - **i18n:** every string in hi + en catalogues, switchable on every page.
@@ -38,12 +38,12 @@ switch, share, service worker). Any further JS library needs its own ADR.
 
 | Dimension | Assessment |
 |---|---|
-| Complexity | Low. One Python app, one deploy, templates the team already writes. |
+| Complexity | Low. One Python app, one deploy, templates I already write. |
 | Cost | Free. One Render web service. |
 | Performance | Best of the three. HTMX is ~16 KB min+gzip (check when pinning); pages are HTML from the server, so LCP doesn't wait for JS. |
 | Offline / PWA | Service worker caches HTML pages and HTMX partials like any other response (Section 10). |
 | i18n | Flask-Babel in templates and Python, one catalogue system. |
-| Team familiarity | High: the current app is Flask + Jinja. |
+| Familiarity | High: the current app is Flask + Jinja. |
 
 **Pros**
 - Smallest JS payload; the 300 KB budget is mostly fonts and CSS.
@@ -67,7 +67,7 @@ switch, share, service worker). Any further JS library needs its own ADR.
 | Performance | Worst of the three. Framework runtime is commonly 80–100 KB gzip before app code (measure if reconsidered); hydration on a 2 GB phone adds input delay. |
 | Offline / PWA | Good tooling, but more moving parts. |
 | i18n | next-intl or similar, separate from Python messages: two catalogues. |
-| Team familiarity | Mixed; the skills pack's react-best-practices exists, but nobody has shipped Next here. |
+| Familiarity | Low; I haven't shipped a Next.js app before. |
 
 **Pros**
 - Huge ecosystem; easy rich interactions.
@@ -75,7 +75,7 @@ switch, share, service worker). Any further JS library needs its own ADR.
 
 **Cons**
 - Spends much of the JS budget before any feature.
-- Splits a 4-person team across two stacks in a 6-week phase.
+- Splits one developer across two stacks in a 6-week phase.
 - Two translation systems for a Hindi-first product.
 
 ### Option C: Flask + Jinja + Alpine.js (with or without HTMX)
@@ -85,7 +85,7 @@ switch, share, service worker). Any further JS library needs its own ADR.
 | Complexity | Low–medium. |
 | Cost | Free, same as A. |
 | Performance | Good. Alpine is a similar size to HTMX; both together roughly double it. |
-| Team familiarity | Low for Alpine. |
+| Familiarity | Low for Alpine. |
 
 **Pros**
 - Declarative client state (tabs, toggles, unit switch) without writing listeners.
@@ -119,11 +119,11 @@ outgrows vanilla JS, adding Alpine later is a small, reversible ADR.
   - Leaflet and any other heavy asset loads only on the screen that needs it.
   - Lottie, Bootstrap and the `static/*.jpg` hero images are retired in Section 3.
 - **Revisit if:** Phase 2 needs offline data entry (farm diary) beyond what a
-  service worker + small JS can do, or the team adds a native app.
+  service worker + small JS can do, or a native app gets added.
 
 ## Action Items
 
-1. [ ] Team sign-off on this ADR.
+1. [ ] Sign off this ADR.
 2. [ ] Section 2: app factory + blueprints on Flask; pin HTMX version and vendor it into `static/` (no CDN at runtime).
 3. [ ] Section 3: add the Tailwind v4 standalone CLI binary to the build (download script + checksum, not committed), `@theme` tokens, minified output.
 4. [ ] Section 3: retire Bootstrap, Lottie JSON and hero images; record before/after page weight.
@@ -133,7 +133,4 @@ outgrows vanilla JS, adding Alpine later is a small, reversible ADR.
 
 | Name | Role | Agree / Disagree | Date |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Harshit Poonia | Developer | | |

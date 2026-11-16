@@ -87,7 +87,7 @@ The chatbot is cut as a *feature*, not as a channel. Phase 2 voice input routes 
 
 ## Brainstorm 3 — Kill list
 
-These were considered and set aside. Each fails the test or costs more than it returns for a 4-person student team.
+These were considered and set aside. Each fails the test or costs more than it returns for a solo student build.
 
 | Idea | Why it's out | Revisit if… |
 | --- | --- | --- |
@@ -196,7 +196,7 @@ The five bottom-nav tabs are Today, Plan, Field, Market and More. Each tool read
 - **Type that renders Hindi as well as English.** Pair such as Mukta or Noto Sans Devanagari with a matching Latin face; body ≥ 16 px; key numbers large.
 - **Calm, earthy palette.** Off-white and soil-brown neutrals, one green accent. Good / warning / critical always carry an icon and a word, never colour alone.
 - **Every result card ends with** source, date and a confidence badge.
-- **No decoration that costs load time:** no hero video, 3D, parallax, carousels or stock photos. Real field photos from the team's visits.
+- **No decoration that costs load time:** no hero video, 3D, parallax, carousels or stock photos. Real field photos from my own visits.
 - **Share to WhatsApp on every result** as a clean text + image card — that's how advice travels in a village.
 - **Stack for speed:** Flask + Jinja + Tailwind + HTMX + a service worker; under 100 KB of JS. A separate `/about` page carries the architecture and validation results for the jury.
 

@@ -30,7 +30,7 @@ them; the dashboard can do every Neon step below too.
 - [ ] The diff has been read by someone other than the author and merged to `main`.
 - [ ] No known bug that breaks a tool for guests.
 - [ ] You know the previous live commit (write it above). That is the rollback target.
-- [ ] Teammates know a deploy is happening. Don't deploy during a field visit or demo.
+- [ ] Don't deploy during a field visit or demo.
 
 ### 2. Environment variables (Render → Environment)
 
@@ -91,7 +91,7 @@ The free service may take about a minute to wake up. Wait, then:
       `/fertilizer`, `/market`, `/weather`, `/schemes`, `/farm/save`, `/login`
 - [ ] `/home` redirects to `/plan` and `/history` redirects to `/`
 - [ ] Language switch: हिंदी ↔ English works and sticks after reload
-- [ ] With a test account the team keeps for this purpose: log in, log out.
+- [ ] With a test account kept for this purpose: log in, log out.
       Never use a real farmer's account.
 - [ ] From Section 3 on, Lighthouse mobile (throttled 4G) on `/`: LCP under 3 s,
       JS+CSS under 300 KB. Measure it after the service is warm and note the

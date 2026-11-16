@@ -2,7 +2,7 @@
 
 **Status:** Proposed
 **Date:** 2026-10-08
-**Deciders:** AgriSense team (4) — sign-off below
+**Decider:** Harshit Poonia (solo rebuild)
 
 ## Context
 
@@ -61,15 +61,12 @@ and every answer must show its sources and date (trust layer).
 
 ## Action items
 
-1. [ ] Team sign-off.
-2. [ ] Pilot: test install and offline on the team's own low-end Android phones and one iPhone.
+1. [ ] Sign off.
+2. [ ] Pilot: test install and offline on my own low-end Android phone and one borrowed iPhone.
 3. [ ] Deploy checklist §4: confirm `/sw.js`'s version changes on each release.
 
 ## Sign-off
 
 | Name | Role | Agree / Disagree | Date |
 |---|---|---|---|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Harshit Poonia | Developer | | |
