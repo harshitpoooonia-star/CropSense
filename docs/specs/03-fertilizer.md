@@ -54,6 +54,6 @@ cost, and when to apply them, from a source that sells nothing.
 
 ## Open questions
 
-- **Blocking for launch:** a person checks each dose row and price against its source; wheat's UP page is cited from a search excerpt because its TLS certificate had expired. *Team*
-- **Not blocking:** cited doses for mustard and maize in western UP (SVPUAT package of practices). *Team / KVK*
-- **Not blocking:** MOP and SSP MRPs are open; the table uses the 2023-24 official averages. Show the bag's printed MRP? *Team*
+- **Blocking for launch:** a person checks each dose row and price against its source; wheat's UP page is cited from a search excerpt because its TLS certificate had expired. *Me*
+- **Not blocking:** cited doses for mustard and maize in western UP (SVPUAT package of practices). *Me / KVK*
+- **Not blocking:** MOP and SSP MRPs are open; the table uses the 2023-24 official averages. Show the bag's printed MRP? *Me*

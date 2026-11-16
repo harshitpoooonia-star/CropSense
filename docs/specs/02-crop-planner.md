@@ -89,6 +89,6 @@ missing.
 
 ## Open questions
 
-- **Blocking for launch:** a person checks each `verified=false` row (yields, costs, water, MSP) against its source. *Team*
-- **Not blocking:** cost data is 2021-22 (latest in the DES series). Should cards show it as-is (current choice) or adjust with an index? Adjusting would add our own estimate. *Team*
+- **Blocking for launch:** a person checks each `verified=false` row (yields, costs, water, MSP) against its source. *Me*
+- **Not blocking:** cost data is 2021-22 (latest in the DES series). Should cards show it as-is (current choice) or adjust with an index? Adjusting would add our own estimate. *Me*
 - **Not blocking:** the season months used for climate normals are an assumption (kharif Jun–Oct, rabi Nov–Mar, zaid Mar–Jun). *Data*

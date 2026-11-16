@@ -38,6 +38,6 @@ Seeded (all `verified: false`): PM-KISAN, PMFBY, KCC, PM-KMY (central); Mukhyama
 
 ## Open questions
 
-- **Blocking for launch:** a person checks each scheme against its official page and sets `verified: true` with `last_checked`. Specific TODOs in the YAML: KCC's ₹3 lakh vs ₹5 lakh subsidised limit; KDKY's document list and claim window; whether UP free tubewell power is still running and how to register; the MFMB document list. *Team*
-- **Not blocking:** more UP schemes (e.g. farm-machinery subsidy, PM-KUSUM solar pumps) once their current terms are sourced. *Team*
-- **Not blocking:** a grievance/helpline number per scheme. *Team*
+- **Blocking for launch:** a person checks each scheme against its official page and sets `verified: true` with `last_checked`. Specific TODOs in the YAML: KCC's ₹3 lakh vs ₹5 lakh subsidised limit; KDKY's document list and claim window; whether UP free tubewell power is still running and how to register; the MFMB document list. *Me*
+- **Not blocking:** more UP schemes (e.g. farm-machinery subsidy, PM-KUSUM solar pumps) once their current terms are sourced. *Me*
+- **Not blocking:** a grievance/helpline number per scheme. *Me*

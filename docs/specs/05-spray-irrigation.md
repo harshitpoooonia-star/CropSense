@@ -50,5 +50,5 @@ Change a value in the CSV; no code changes are needed.
 
 ## Open questions
 
-- **Blocking before the pilot:** review the proposed cut-offs with the KVK; ideally replace them with cited district advisory figures. *Team / KVK*
-- **Not blocking:** add crop and sowing date to the profile so irrigation can use critical stages (needs a cited stage table). *Team*
+- **Blocking before the pilot:** review the proposed cut-offs with the KVK; ideally replace them with cited district advisory figures. *Me / KVK*
+- **Not blocking:** add crop and sowing date to the profile so irrigation can use critical stages (needs a cited stage table). *Me*

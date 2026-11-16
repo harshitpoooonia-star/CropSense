@@ -32,10 +32,10 @@ Contents
 - At least 8 farmers who did **not** take part in the Gate 0 interviews (they've seen the card).
 - Same profile as Gate 0: work 1–5 acres, make the sowing decision, a mix of Soil Health Card / no card, at least 1 tenant, at least 1 woman farmer if possible.
 - From the five districts the planner has data for: Gautam Buddh Nagar, Bulandshahr, Ghaziabad, Hapur, Aligarh. A farmer from elsewhere uses the scenario field below.
-- Not: input dealers, FPO/KVK staff, team members' families.
+- Not: input dealers, FPO/KVK staff, my own family or friends.
 - Each farmer gets a code (P01, P02, …). **No names or phone numbers on any sheet.**
 
-### The app must be ready (team checks the day before)
+### The app must be ready ((check the day before))
 
 - [ ] The release candidate is deployed and warm (open `/api/health` 2 minutes before each session: the free tier sleeps).
 - [ ] Live mandi prices: `DATA_GOV_IN_KEY` is set and `/market` shows prices from the last 3 days for wheat. **Without it task 3 can't be tested.**
@@ -188,7 +188,7 @@ Would tell another farmer? Y / N, why: ________________________________
 
 ## 6. After the sessions
 
-1. Fill the totals and send them to the team the same day:
+1. Fill the totals and write them up the same day:
 
    | Metric | Result | Pass? |
    | --- | --- | --- |

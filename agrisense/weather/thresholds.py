@@ -1,6 +1,6 @@
 """Advisor thresholds (data/weather_thresholds.csv). Every value carries a
 status: 'cited' (with its source) or 'proposed' (a product choice waiting for
-team review). Rules read them from here, never from literals in code."""
+review). Rules read them from here, never from literals in code."""
 
 from __future__ import annotations
 

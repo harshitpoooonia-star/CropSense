@@ -15,7 +15,7 @@ Sources (all Open Data Commons Attribution, via the India Data Portal):
     Table 14 (crop water need, mm per season) and section 4.4 (extra water
     for flooded paddy); mustard from a lysimeter study in MAUSAM.
 
-Every row is written with verified=false. A team member flips it after
+Every row is written with verified=false. I flip it after
 checking the figure against the source. Nothing is estimated here: a crop
 without a figure gets a blank.
 

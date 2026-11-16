@@ -60,7 +60,7 @@ def build_config(profile: str | None = None, environ: Mapping[str, str] | None =
         "MAP_TILE_URL": get("MAP_TILE_URL") or "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
         "MAP_ATTRIBUTION": get("MAP_ATTRIBUTION")
         or '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        # Spec 04. FAIR_BAND_PCT is a product choice, proposed for team review:
+        # Spec 04. FAIR_BAND_PCT is a product choice, proposed, still under review:
         # an offer within this % of the modal price counts as fair.
         "FAIR_BAND_PCT": get("FAIR_BAND_PCT") or "5",
         "PRICE_STALE_DAYS": 3,  # spec P0-4: say so when the price is older than 3 days

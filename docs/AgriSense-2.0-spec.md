@@ -218,7 +218,7 @@ The five bottom-nav tabs are Today, Plan, Field, Market and More. Each tool read
 2. **80% task completion** in moderated tests with at least 8 farmers, in Hindi.
 3. Every recommendation shows **source, reasoning and a confidence level**.
 4. The app loads in **under 3 s on a mid-range Android over a throttled 4G connection** and is installable as a PWA.
-5. Crop Planner v2 is validated against **at least 30 real farm records** collected by the team, not only the Kaggle split.
+5. Crop Planner v2 is validated against **at least 30 real farm records** collected by me, not only the Kaggle split.
 
 ### Non-goals
 
@@ -230,7 +230,7 @@ The five bottom-nav tabs are Today, Plan, Field, Market and More. Each tool read
 
 ## Spec — Requirements
 
-Nine P0 requirements make Phase 1. Each has acceptance criteria the team can test.
+Nine P0 requirements make Phase 1. Each has acceptance criteria I can test.
 
 ### P0 — must ship in Phase 1
 
@@ -326,12 +326,12 @@ The riskiest assumption is that farmers will trust a crop ranking from an app ov
 
 ### Open questions
 
-- [ ] **Stack:** stay on Flask + Jinja + HTMX + Tailwind (light, matches the team's skills) or move to React/Next? My recommendation: Flask + HTMX for speed on low-end phones. — *engineering*
+- [ ] **Stack:** stay on Flask + Jinja + HTMX + Tailwind (light, matches my skills) or move to React/Next? My recommendation: Flask + HTMX for speed on low-end phones. — *engineering*
 - [ ] **Database on Render:** SQLite is wiped on redeploys; move to managed Postgres (Render, Supabase or Neon free tier)? — *engineering*
-- [ ] **Which deployed `app.py` is live:** the hashed, sqlite3 rewrite or the project copy with plain-text passwords? — *team*
-- [ ] **Target districts for Phase 1:** Gautam Buddh Nagar + Bulandshahr suggested, for field access from campus. — *team*
-- [ ] **Farmer access:** can a KVK or the university's rural outreach set up 8–10 interviews? — *team / faculty*
-- [ ] **Name:** the folder says AgriSense, the course project says CropSense. Pick one before the redesign. — *team*
+- [ ] **Which deployed `app.py` is live:** the hashed, sqlite3 rewrite or the project copy with plain-text passwords? — *me*
+- [ ] **Target districts for Phase 1:** Gautam Buddh Nagar + Bulandshahr suggested, for field access from campus. — *me*
+- [ ] **Farmer access:** can a KVK or the university's rural outreach set up 8–10 interviews? — *me / faculty*
+- [ ] **Name:** the folder says AgriSense, the course project says CropSense. Pick one before the redesign. — *me*
 - [ ] **Crop list:** data.csv covers 22 crops, including coffee and apple, but not wheat, mustard or sugarcane — the main crops in western UP. Add them with district yield data? — *data*
 
 ## Sources
