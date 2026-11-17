@@ -1,4 +1,4 @@
-# ADR-006: Offline — what the service worker keeps on the phone
+# ADR-006: Offline - what the service worker keeps on the phone
 
 **Status:** Proposed
 **Date:** 2026-10-08
@@ -22,7 +22,7 @@ and every answer must show its sources and date (trust layer).
 | Static files (CSS, JS, fonts, icons) | Cache first. URLs carry a content hash (`?v=`), so a changed file is a new URL. App shell precached on install | `agrisense-shell-<version>`; old versions deleted on activate |
 | Pages (GET navigations) | Network first; offline → the copy from the last visit, else the bilingual `/offline` page | `agrisense-pages` |
 | Tool answers (HTMX POSTs) | Network first. Saved only when the server marks the response `X-Offline-Keep: 1` (a real answer, not a form error or empty state). Offline → that saved answer with a note "no internet, your last answer from <time>"; no saved answer → a "connect and try again" message | `agrisense-pages`, key `/__last/<path>` |
-| Login, logout, PIN, farm account, `/lang`, `/api`, `/internal`, other sites (map tiles) | Not touched | — |
+| Login, logout, PIN, farm account, `/lang`, `/api`, `/internal`, other sites (map tiles) | Not touched | - |
 
 - **Saved copies have their `data-profile-update` block removed**, so
   replaying an old answer can never overwrite the farm on the phone.
@@ -40,7 +40,7 @@ and every answer must show its sources and date (trust layer).
 |---|---|---|---|
 | Size | ~5 KB unminified, ours to read | Library from a CDN or a JS build step | 0 |
 | Fits the stack | Yes: Jinja renders the precache list | Needs Node or `importScripts` from Google's CDN | Yes |
-| Control over what's kept | Exact: server marks answers, profile blocks stripped | Possible, with plugins | — |
+| Control over what's kept | Exact: server marks answers, profile blocks stripped | Possible, with plugins | - |
 | Offline answers | Yes | Yes | No |
 
 ## Trade-offs and consequences

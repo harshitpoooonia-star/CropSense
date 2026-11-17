@@ -1,8 +1,8 @@
-# AgriSense 2.0 — Redesign Brainstorm, Competitive Brief & Spec
+# AgriSense 2.0 - Redesign Brainstorm, Competitive Brief & Spec
 
 Oct 7, 2026 · @BigDaddy
 
-AgriSense stops being a 7-number crop guesser and becomes a farm decision tool: every screen must change what a farmer plants, spends, sprays or sells — or it doesn't ship.
+AgriSense stops being a 7-number crop guesser and becomes a farm decision tool: every screen must change what a farmer plants, spends, sprays or sells - or it doesn't ship.
 
 ## Decisions at a glance
 
@@ -17,7 +17,7 @@ Ship a mobile-first, Hindi-first web app built around one farm profile, with six
 
 One thing to fix before any redesign work: the project copy of `app.py` still stores passwords in plain text and uses `flask_sqlalchemy`. If that is the deployed version rather than the rewritten one, fix it first.
 
-## Brainstorm 1 — Problem framing
+## Brainstorm 1 - Problem framing
 
 The real problem is not "farmers don't know which crop suits their soil". It is that a smallholder makes five money decisions a season with no neutral advice, and the person who advises them usually sells them something.
 
@@ -49,7 +49,7 @@ The real problem is not "farmers don't know which crop suits their soil". It is 
 
 **My pushback on the current product:** the 7-number form asks for N, P, K, pH, rainfall and humidity, which no farmer has at hand. The tool only works for someone who already has a soil report, and even then it ignores season, location and price. Fixing the input problem matters more than any new feature.
 
-## Brainstorm 2 — The no-gimmick test
+## Brainstorm 2 - The no-gimmick test
 
 22 ideas scored: 16 pass all four checks, 4 pass with caveats, 2 are cut. A feature ships only if it passes all four checks below.
 
@@ -64,7 +64,7 @@ The real problem is not "farmers don't know which crop suits their soil". It is 
 | Crop Planner v2: profit + risk ranking with reasons | Which crop to sow | 4/4 | 1 |
 | Fertilizer Calculator from Soil Health Card | How many bags of urea/DAP/MOP to buy, and the ₹ cost | 4/4 | 1 |
 | Mandi price board, nearest mandis net of transport | Where and when to sell | 4/4 | 1 |
-| Offer checker ("trader offers ₹X/qtl — fair?") | Accept or refuse a price | 4/4 | 1 |
+| Offer checker ("trader offers ₹X/qtl - fair?") | Accept or refuse a price | 4/4 | 1 |
 | Spray & irrigation window (rain, wind, humidity next 72 h) | Whether to spray or irrigate tomorrow | 4/4 | 1 |
 | Scheme Finder with document checklist | Which schemes to claim, what papers to carry | 4/4 | 1 |
 | Hindi/English UI, local units, icons | Lets the actual user use every tool | 4/4 | 1 |
@@ -72,20 +72,20 @@ The real problem is not "farmers don't know which crop suits their soil". It is 
 | Crop Doctor (leaf photo → likely issue → treatment, incl. non-chemical) | What to spray, or whether to wait | 4/4 if it shows confidence and an "unsure" path | 2 |
 | Crop calendar with stage-wise tasks | Nothing missed: sowing, top-dress, irrigation, harvest | 4/4 | 2 |
 | Farm diary: expenses, yields, sales → season profit | Knows what actually made money; ready for loan papers | 4/4 | 2 |
-| ESP32 soil node (moisture, temp, EC) feeding the farm profile | Irrigates on real moisture, not guesswork | 3/4 — opt-in kit | 2 |
+| ESP32 soil node (moisture, temp, EC) feeding the farm profile | Irrigates on real moisture, not guesswork | 3/4 - opt-in kit | 2 |
 | Sentinel-2 field health (NDVI/NDMI zones) | Which part of the field to walk and check | 4/4 | 2 |
 | KVK / expert hand-off (district KVK contacts, Kisan Call Centre) | Gets a human when the AI is unsure | 4/4 | 2 |
 | Voice input in Hindi (Bhashini) | Use without typing | 4/4 | 2 |
-| Weather-driven pest risk alerts | Scout before damage spreads | 3/4 — needs validated rules per crop | 3 |
-| Sell-or-hold price forecast | Timing of sale | 2/4 — forecasts are weak; show range only | 3 |
+| Weather-driven pest risk alerts | Scout before damage spreads | 3/4 - needs validated rules per crop | 3 |
+| Sell-or-hold price forecast | Timing of sale | 2/4 - forecasts are weak; show range only | 3 |
 | Insurance (PMFBY) claim helper: geotagged photos + checklist | Files a claim correctly, on time | 4/4 | 3 |
-| Farm report PDF for KCC/loan | Easier credit | 3/4 — depends on diary adoption | 3 |
+| Farm report PDF for KCC/loan | Easier credit | 3/4 - depends on diary adoption | 3 |
 | Generic AI chatbot "ask anything" | Nothing specific | 1/4 | Cut |
 | Carbon/water credit tracker | Nothing today; no buyer for 1-acre farms | 0/4 | Cut |
 
 The chatbot is cut as a *feature*, not as a channel. Phase 2 voice input routes the farmer's question into the six tools above, so every answer comes from a calculation, never from free-form text.
 
-## Brainstorm 3 — Kill list
+## Brainstorm 3 - Kill list
 
 These were considered and set aside. Each fails the test or costs more than it returns for a solo student build.
 
@@ -94,7 +94,7 @@ These were considered and set aside. Each fails the test or costs more than it r
 | Carbon / water credit tracking | No buyer pays for 1–2 acre credits today; promising income we can't deliver breaks trust | A registry accepts aggregated smallholder credits via an FPO |
 | Digital farm twin, "what-if" simulator | Needs calibrated crop models per variety; output would be invented precision | Phase 2 sensors + NDVI give a season of real data |
 | Drone / rover scouting | Hardware cost and permissions; farmers can't use it from a phone | It's a robotics course demo, kept separate from the product |
-| Free-form AI chatbot | Answers without grounding; hallucination risk on pesticide doses | Never as free text — only as a voice router into the tools |
+| Free-form AI chatbot | Answers without grounding; hallucination risk on pesticide doses | Never as free text - only as a voice router into the tools |
 | Input marketplace / buy-now buttons | Destroys the neutrality that is our whole positioning | Never |
 | Equipment or labour rental marketplace | Two-sided cold-start problem; needs ops, not code | An FPO partner wants to run it |
 | Gamification (badges, streaks, leaderboards) | Farmers open the app when a decision is due, not daily | Never |
@@ -103,7 +103,7 @@ These were considered and set aside. Each fails the test or costs more than it r
 | Blockchain traceability | Solves a buyer's problem, not the farmer's | A buyer partner asks for it |
 | Accuracy % as the headline | 96.8% on an augmented Kaggle set says little about real farms | Validated on our own field data |
 
-## Competitive brief — Landscape
+## Competitive brief - Landscape
 
 Every strong player does one slice well; nobody joins soil, field, weather, price and schemes into one neutral, explained answer for a 1-acre farmer.
 
@@ -112,7 +112,7 @@ Every strong player does one slice well; nobody joins soil, field, weather, pric
 | Input dealer / neighbour | Status quo (the real rival) | Trusted, face to face, gives credit | Advice tied to what he sells; no data |
 | Plantix | Direct (diagnosis) | Photo diagnosis; claims 69 crops, 950+ issues, 19 languages | No soil, sensor or price layer; revenue from input-company ads at the moment of diagnosis |
 | Fasal | Direct (IoT) | Sensor kits + ML for horticulture | Proprietary, priced for orchards, not field crops |
-| DeHaat, AgroStar, BharatAgri | Indirect (commerce + advice) | Full stack, large reach; DeHaat reports ₹3,041 cr FY25 revenue | Advice funds input sales — not neutral |
+| DeHaat, AgroStar, BharatAgri | Indirect (commerce + advice) | Full stack, large reach; DeHaat reports ₹3,041 cr FY25 revenue | Advice funds input sales - not neutral |
 | Digital Green FarmerChat | Direct (AI advisor) | Voice/image GenAI, 16 languages, 2M+ farmers claimed | Generic to the region, no farm-level data or prices |
 | Bharat-VISTAAR, Kisan e-Mitra | Substitute (government) | Free, multilingual voice; national scale; scheme answers | Generic advice; no field-level view |
 | Agmarknet, eNAM, myScheme, Soil Health Card portal | Substitute (government data) | The raw data, free | Hard to use; no answer, just tables |
@@ -135,11 +135,11 @@ Strong / Adequate / Weak / Absent, judged from public product descriptions, not 
 | On-farm sensors | Absent | Strong | Absent | Absent | Absent | Adequate (open kit) |
 | Satellite field view | Absent | Adequate | Weak | Absent | Weak | Adequate |
 | Shows reasoning and confidence | Weak | Adequate | Weak | Adequate | Weak | Strong |
-| Neutral — sells no inputs | Weak | Strong | Absent | Strong | Strong | Strong |
+| Neutral - sells no inputs | Weak | Strong | Absent | Strong | Strong | Strong |
 | Hindi + voice | Strong | Adequate | Strong | Strong | Strong | Adequate |
 | Useful with only a phone | Strong | Weak | Strong | Strong | Strong | Strong |
 
-## Competitive brief — Positioning and implications
+## Competitive brief - Positioning and implications
 
 Own "neutral and shows its working". It is the one position no funded player can take, because their revenue depends on selling inputs or ads.
 
@@ -154,7 +154,7 @@ Own "neutral and shows its working". It is the one position no funded player can
 | Crowded: "AI-powered", "smart farming" | Everyone | Never lead with "AI" on the site |
 | Crowded: disease photo diagnosis | Plantix | Parity only, Phase 2; don't try to beat 150M images |
 | Unclaimed: profit-ranked crop choice with reasons | Nobody | Lead feature |
-| Unclaimed: offer checker against mandi rates | Nobody | Lead feature — cheapest to build, easiest to demo |
+| Unclaimed: offer checker against mandi rates | Nobody | Lead feature - cheapest to build, easiest to demo |
 | Unclaimed: open, low-cost sensor kit for field crops | Nobody (Fasal is closed, horticulture) | Differentiator for the IoT/robotics story |
 | Vulnerable claim: "free advice" from commerce apps | DeHaat, AgroStar | Contrast quietly: "we don't sell seeds or sprays" |
 
@@ -183,7 +183,7 @@ The five bottom-nav tabs are Today, Plan, Field, Market and More. Each tool read
 
 | Screen | What it shows | Primary action |
 | --- | --- | --- |
-| Public home | One-line promise, three entry tiles (Plan a crop · Check a price · Find a scheme), language switch, "We don't sell seeds or sprays" | Try a tool — no sign-up |
+| Public home | One-line promise, three entry tiles (Plan a crop · Check a price · Find a scheme), language switch, "We don't sell seeds or sprays" | Try a tool - no sign-up |
 | Today | Spray/irrigate verdict for 3 days, price change for my crops, tasks due, nearest scheme deadline | Tap a card to open its tool |
 | Crop Planner result | 3 crop cards: ₹/acre range, water need, risk, "why" chips | Plan this crop → Fertilizer for it |
 | Fertilizer result | Bags per field drawn as bag icons, split by stage, ₹ total | Share to WhatsApp |
@@ -197,10 +197,10 @@ The five bottom-nav tabs are Today, Plan, Field, Market and More. Each tool read
 - **Calm, earthy palette.** Off-white and soil-brown neutrals, one green accent. Good / warning / critical always carry an icon and a word, never colour alone.
 - **Every result card ends with** source, date and a confidence badge.
 - **No decoration that costs load time:** no hero video, 3D, parallax, carousels or stock photos. Real field photos from my own visits.
-- **Share to WhatsApp on every result** as a clean text + image card — that's how advice travels in a village.
+- **Share to WhatsApp on every result** as a clean text + image card - that's how advice travels in a village.
 - **Stack for speed:** Flask + Jinja + Tailwind + HTMX + a service worker; under 100 KB of JS. A separate `/about` page carries the architecture and validation results for the jury.
 
-## Spec — Problem, goals, non-goals
+## Spec - Problem, goals, non-goals
 
 **Problem.** Today AgriSense asks a farmer for seven lab values and returns one crop name. It ignores season, location and price, hides everything behind a sign-up page, and works only in English. A smallholder can't use it, and it doesn't help with the decisions that cost them money: what to buy, when to spray, where to sell, what to claim.
 
@@ -228,11 +228,11 @@ The five bottom-nav tabs are Today, Plan, Field, Market and More. Each tool read
 - **Lab-grade soil measurement.** Low-cost probes are estimates and are labelled as such.
 - **Price prediction as a promise.** Forecasts, if shown, are ranges with a warning.
 
-## Spec — Requirements
+## Spec - Requirements
 
 Nine P0 requirements make Phase 1. Each has acceptance criteria I can test.
 
-### P0 — must ship in Phase 1
+### P0 - must ship in Phase 1
 
 1. **Guest-first access and farm profile.** *As Ramesh, I want to try a tool without signing up so that I see value before giving my number.*
    - [ ] `/` is a public home page; all six tools run without login
@@ -244,7 +244,7 @@ Nine P0 requirements make Phase 1. Each has acceptance criteria I can test.
    - [ ] Season filter (kharif / rabi / zaid) removes out-of-season crops
    - [ ] Top 3 crops show suitability, expected ₹/acre range (yield × recent modal price − input cost), water need and risk level
    - [ ] Each card lists the 2–3 factors that drove the ranking (SHAP or feature importance) in plain Hindi/English
-   - [ ] "Why not paddy?" — the user can ask why a crop ranked low
+   - [ ] "Why not paddy?" - the user can ask why a crop ranked low
 3. **Fertilizer Calculator.** *As Ramesh at the dealer's counter, I want the number of bags so that I don't overbuy.*
    - [ ] Given crop, area and N/P/K values, output bags of urea, DAP and MOP (or SSP option) and ₹ total at current subsidised prices
    - [ ] Split schedule by crop stage (basal, first and second top-dress)
@@ -261,7 +261,7 @@ Nine P0 requirements make Phase 1. Each has acceptance criteria I can test.
 6. **Scheme Finder.** *As Ramesh, I want to know which schemes I qualify for so that I claim what I'm owed.*
    - [ ] 5–6 questions (state, land size, ownership, crop, category) → list of likely-eligible central and UP/Haryana schemes
    - [ ] Each scheme: benefit in one line, documents checklist, official link, deadline if known
-   - [ ] Labelled "likely eligible — confirm at the official portal or CSC"
+   - [ ] Labelled "likely eligible - confirm at the official portal or CSC"
 7. **Hindi / English and local units.** *As Ramesh, I want everything in Hindi so that I can use it alone.*
    - [ ] Every string in locale files; language switch on every page; Devanagari font loaded
    - [ ] Units switch acre / bigha / hectare and kg / quintal; crops shown by local name
@@ -273,21 +273,21 @@ Nine P0 requirements make Phase 1. Each has acceptance criteria I can test.
    - [ ] First load under 300 KB JS+CSS; LCP under 3 s on throttled 4G
    - [ ] Tap targets ≥ 48 px; WCAG AA contrast; status never shown by colour alone
 
-### P1 — Phase 2 fast follows
+### P1 - Phase 2 fast follows
 
-- **Crop Doctor:** leaf photo → top-3 likely issues with confidence; below a threshold, show "Not sure — send to expert". Treatments list non-chemical options first and name active ingredients, never brands. Fine-tuned on field images (PlantDoc + own photos), not PlantVillage alone.
+- **Crop Doctor:** leaf photo → top-3 likely issues with confidence; below a threshold, show "Not sure - send to expert". Treatments list non-chemical options first and name active ingredients, never brands. Fine-tuned on field images (PlantDoc + own photos), not PlantVillage alone.
 - **Sensor Hub:** pair an ESP32 node (moisture, temperature, EC; NPK probe marked "estimate") over MQTT/HTTP; readings feed the farm profile and the irrigation advisor; calibration step against the soil card.
 - **Field health:** draw field boundary; Sentinel-2 NDVI/NDMI map every \~5 days with "check this corner" zones.
 - **Farm diary:** log costs, yield, sales; season P&L per plot; export PDF.
 - **Crop calendar:** stage-wise tasks from sowing date, adjusted by weather.
 - **Voice input:** Hindi speech → routed to the right tool (Bhashini).
 
-### P2 — design for, don't build
+### P2 - design for, don't build
 
 - Pest risk alerts, PMFBY claim helper, loan-ready farm report, sell-or-hold range, FPO multi-farm view, AgriStack Farmer ID link.
 - Architecture implication: the farm profile is the core entity. Every tool reads from it and writes to a per-plot event log, so the diary, reports and FPO views come later without schema changes.
 
-## Spec — Success metrics
+## Spec - Success metrics
 
 Judge Phase 1 on whether farmers finish tasks and act on the answer, not on downloads or model accuracy.
 
@@ -296,14 +296,14 @@ Judge Phase 1 on whether farmers finish tasks and act on the answer, not on down
 | Task completion in Hindi, unaided | Leading | 80% | 90% | Moderated tests, ≥ 8 farmers, 6 tasks each | End of week 6 |
 | Time to first useful answer, guest | Leading | < 2 min | < 60 s | Stopwatch in tests + analytics event | Week 6 |
 | Farmers who say they'd act on the answer | Leading | 60% | 75% | Post-task question in tests | Week 6 |
-| Fertilizer output matches ICAR/SHC | Quality | 10/10 within 1 bag | — | Hand-checked cases | Before launch |
+| Fertilizer output matches ICAR/SHC | Quality | 10/10 within 1 bag | - | Hand-checked cases | Before launch |
 | Crop Planner top-3 contains the crop a good local farmer chose | Quality | 70% of 30 records | 80% | Own field records | Week 8 |
 | LCP on throttled 4G, mid-range Android | Quality | < 3 s | < 2 s | Lighthouse mobile | Every release |
 | Repeat use within a season | Lagging | 40% of pilot farmers return | 60% | Analytics, 20-farmer pilot | End of semester |
 
 Analytics must be privacy-light: no names or phone numbers in events, consent on first save, in line with the DPDP Act 2023.
 
-## Spec — Roadmap
+## Spec - Roadmap
 
 Phase 1 is six weeks of software only, so every farmer with a phone benefits before any hardware is built.
 
@@ -326,16 +326,16 @@ The riskiest assumption is that farmers will trust a crop ranking from an app ov
 
 ### Open questions
 
-- [ ] **Stack:** stay on Flask + Jinja + HTMX + Tailwind (light, matches my skills) or move to React/Next? My recommendation: Flask + HTMX for speed on low-end phones. — *engineering*
-- [ ] **Database on Render:** SQLite is wiped on redeploys; move to managed Postgres (Render, Supabase or Neon free tier)? — *engineering*
-- [ ] **Which deployed `app.py` is live:** the hashed, sqlite3 rewrite or the project copy with plain-text passwords? — *me*
-- [ ] **Target districts for Phase 1:** Gautam Buddh Nagar + Bulandshahr suggested, for field access from campus. — *me*
-- [ ] **Farmer access:** can a KVK or the university's rural outreach set up 8–10 interviews? — *me / faculty*
-- [ ] **Name:** the folder says AgriSense, the course project says CropSense. Pick one before the redesign. — *me*
-- [ ] **Crop list:** data.csv covers 22 crops, including coffee and apple, but not wheat, mustard or sugarcane — the main crops in western UP. Add them with district yield data? — *data*
+- [ ] **Stack:** stay on Flask + Jinja + HTMX + Tailwind (light, matches my skills) or move to React/Next? My recommendation: Flask + HTMX for speed on low-end phones. - *engineering*
+- [ ] **Database on Render:** SQLite is wiped on redeploys; move to managed Postgres (Render, Supabase or Neon free tier)? - *engineering*
+- [ ] **Which deployed `app.py` is live:** the hashed, sqlite3 rewrite or the project copy with plain-text passwords? - *me*
+- [ ] **Target districts for Phase 1:** Gautam Buddh Nagar + Bulandshahr suggested, for field access from campus. - *me*
+- [ ] **Farmer access:** can a KVK or the university's rural outreach set up 8–10 interviews? - *me / faculty*
+- [ ] **Name:** the folder says AgriSense, the course project says CropSense. Pick one before the redesign. - *me*
+- [ ] **Crop list:** data.csv covers 22 crops, including coffee and apple, but not wheat, mustard or sugarcane - the main crops in western UP. Add them with district yield data? - *data*
 
 ## Sources
 
-- *AgriSense 2.0: Upgrading a Crop Recommender into a Voice-First Platform…* — the project's research doc. All competitor figures above come from it and were not re-verified for this brief; most are company-reported.
+- *AgriSense 2.0: Upgrading a Crop Recommender into a Voice-First Platform…* - the project's research doc. All competitor figures above come from it and were not re-verified for this brief; most are company-reported.
 - Project files `app.py`, `data.csv` (profiled: 2,683 rows, 22 crops, 1 duplicate row, no location, season or price columns; no wheat, mustard or sugarcane).
 - Capability ratings are our own assessment from public product descriptions, not hands-on testing. Re-check before using them in a jury deck.

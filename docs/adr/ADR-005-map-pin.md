@@ -1,4 +1,4 @@
-# ADR-005: Map for the farm pin — Leaflet + OpenStreetMap tiles
+# ADR-005: Map for the farm pin - Leaflet + OpenStreetMap tiles
 
 **Status:** Proposed
 **Date:** 2026-10-08
@@ -28,7 +28,7 @@ GPS and "choose district" stay available, so the map is never required.
 | Cost | Free | API key, billing account | Free |
 | Privacy | Tile requests show OSM the rough area being viewed | Location and usage sent to Google | Nothing leaves the device except to us |
 | Usability | Drag a pin on a real map | Same | No way to correct a bad GPS fix on the field |
-| Neutrality / lock-in | Open data, swap tile server by config | Vendor lock-in | — |
+| Neutrality / lock-in | Open data, swap tile server by config | Vendor lock-in | - |
 
 ## Trade-offs and consequences
 

@@ -142,7 +142,7 @@ Hand over the phone on the AgriSense home page. Start the stopwatch when you fin
 ### After each task / हर काम के बाद
 
 > "अगर यह आपके असली खेत की बात होती, तो क्या आप इस जवाब के हिसाब से कुछ करते?"
-> (If this were about your real field, would you act on this answer?) **हाँ / शायद / नहीं** — "क्यों?" (Why?)
+> (If this were about your real field, would you act on this answer?) **हाँ / शायद / नहीं** - "क्यों?" (Why?)
 
 (Task 6 has no answer to act on: skip the question.)
 
@@ -167,7 +167,7 @@ Phone/network: ____  Moderator: ____  Note-taker: ____
 | 3 | Trader's offer | | | | | |
 | 4 | Spray tomorrow | | | | | |
 | 5 | Find a scheme | | | | | |
-| 6 | Save my farm | | | | — | |
+| 6 | Save my farm | | | | - | |
 
 U = unaided, A = assisted (moderator helped or 2 min stuck), F = failed or stopped.
 Y = yes, M = maybe, N = no.

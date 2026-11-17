@@ -1,4 +1,4 @@
-# ADR-003: Data model — farm profile as core entity + per-plot event log
+# ADR-003: Data model - farm profile as core entity + per-plot event log
 
 **Status:** Proposed
 **Date:** 2026-10-07
@@ -176,7 +176,7 @@ Same shape the tools return to templates (Section 4), so storing a result is
 
 ## Options Considered
 
-### Option A: Farm/plot core + generic per-plot event log — recommended
+### Option A: Farm/plot core + generic per-plot event log - recommended
 
 | Dimension | Assessment |
 |---|---|

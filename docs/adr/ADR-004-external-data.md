@@ -1,4 +1,4 @@
-# ADR-004: External data — adapters, caching, staleness, failure
+# ADR-004: External data - adapters, caching, staleness, failure
 
 **Status:** Proposed
 **Date:** 2026-10-07
@@ -62,7 +62,7 @@ into the trust layer's `sources[]` and lower `confidence` when `stale`.
 | Refresh | Daily warm-up + on-read if today's rows missing | On read when `valid_until` passed (TTL 1 h, spec) | On deploy | On deploy |
 | Request timeout on read path | 4 s, then serve cache | 4 s, then serve cache | n/a | n/a |
 | Stale when | price date > 3 days old (P0-4) | **TODO** threshold for review; propose: fetched > 3 h ago | `last_checked` > 12 months, or `verified: false` | `as_of` shown; no auto-stale |
-| Retries | 3, backoff on 429/5xx | 2, backoff on 429/5xx | — | — |
+| Retries | 3, backoff on 429/5xx | 2, backoff on 429/5xx | - | - |
 | Secrets | `DATA_GOV_IN_KEY` env | none | none | none |
 
 **Price warm-up:** a scheduled GitHub Actions workflow calls
@@ -112,7 +112,7 @@ stays far under Open-Meteo's daily limit.
 
 ## Options Considered
 
-### Option A: Adapters + read-through DB cache + scheduled warm-up — recommended
+### Option A: Adapters + read-through DB cache + scheduled warm-up - recommended
 
 | Dimension | Assessment |
 |---|---|

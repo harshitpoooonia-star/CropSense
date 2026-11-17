@@ -34,7 +34,7 @@ switch, share, service worker). Any further JS library needs its own ADR.
 
 ## Options Considered
 
-### Option A: Flask + Jinja + HTMX + Tailwind (standalone CLI) — recommended
+### Option A: Flask + Jinja + HTMX + Tailwind (standalone CLI) - recommended
 
 | Dimension | Assessment |
 |---|---|

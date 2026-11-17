@@ -80,7 +80,7 @@ pre-migration backup. Pick the Neon and Render regions closest to each other
 restores it; temptation to adopt Supabase auth/REST, which conflicts with
 Flask-owned auth and the server-rendered stack (ADR-001).
 
-### Option D: Neon (Postgres) — recommended
+### Option D: Neon (Postgres) - recommended
 
 | Dimension | Assessment |
 |---|---|

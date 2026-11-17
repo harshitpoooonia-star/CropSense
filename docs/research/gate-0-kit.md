@@ -93,7 +93,7 @@ same day. Delete all photos at project end.
 
 Times are targets. If short of time, protect **F (card)** and cut E.
 
-### A. Warm-up — 2 min
+### A. Warm-up - 2 min
 
 | हिंदी | English |
 | --- | --- |
@@ -103,7 +103,7 @@ Times are targets. If short of time, protect **F (card)** and cut E.
 
 Note-taker: area **in the unit they use** (bigha, acre, killa) and the crops.
 
-### B. Choosing a crop, and who advises — 5 min
+### B. Choosing a crop, and who advises - 5 min
 
 | हिंदी | English | Probe / जाँच |
 | --- | --- | --- |
@@ -112,7 +112,7 @@ Note-taker: area **in the unit they use** (bigha, acre, killa) and the crops.
 | क्या कभी किसी की सलाह से नुकसान हुआ? क्या हुआ था? | Has anyone's advice ever cost you money? What happened? | |
 | पिछले साल कोई और फसल बोने का सोचा था पर नहीं बोई? क्यों? | Did you consider a different crop last year but not sow it? Why not? | पैसा, पानी, बाज़ार, जोखिम? / Money, water, market, risk? |
 
-### C. Soil Health Card — 3 min
+### C. Soil Health Card - 3 min
 
 | हिंदी | English | Probe |
 | --- | --- | --- |
@@ -123,22 +123,22 @@ Note-taker: area **in the unit they use** (bigha, acre, killa) and the crops.
 
 Then the photo consent (§2) if they have the card.
 
-### D. Selling and checking a price — 3 min
+### D. Selling and checking a price - 3 min
 
 | हिंदी | English | Probe |
 | --- | --- | --- |
 | पिछली बार गेहूँ/धान कहाँ और किसे बेचा? | Where and to whom did you last sell wheat/paddy? | मंडी, आढ़ती, गाँव का व्यापारी, सरकारी खरीद? / Mandi, commission agent, village trader, govt procurement? |
-| जो भाव मिला, वह ठीक है या नहीं — यह कैसे पता किया? | How did you know whether the price offered was fair? | किसी से पूछा? फ़ोन पर देखा? / Asked someone? Checked a phone? |
+| जो भाव मिला, वह ठीक है या नहीं - यह कैसे पता किया? | How did you know whether the price offered was fair? | किसी से पूछा? फ़ोन पर देखा? / Asked someone? Checked a phone? |
 | किसी और मंडी में बेचने के बारे में सोचा? क्यों/क्यों नहीं? | Did you consider another mandi? Why or why not? | भाड़ा, दूरी, उधार? / Transport, distance, credit? |
 
-### E. Schemes — 2 min
+### E. Schemes - 2 min
 
 | हिंदी | English | Probe |
 | --- | --- | --- |
 | कौन-सी सरकारी योजनाओं का पैसा या फ़ायदा मिलता है? | Which government schemes do you get money or benefits from? | Don't name schemes first. Note what they name. |
 | किसी योजना में आवेदन करने में दिक्कत आई? क्या? | Any trouble applying for a scheme? What? | कागज़, CSC, ऑनलाइन, समय-सीमा? / Papers, CSC, online, deadline? |
 
-### F. Crop Planner card — 4 min (the gate question)
+### F. Crop Planner card - 4 min (the gate question)
 
 Hand over the card for **their district** (§4). Fill in their area in their unit
 before handing it over. Then say only:
@@ -167,7 +167,7 @@ the interviewer checks):
 - **No** = would do the same as planned, or doesn't trust it.
 - For the gate, **only Yes counts**. Maybe counts as No.
 
-### G. Wrap-up — 1 min
+### G. Wrap-up - 1 min
 
 | हिंदी | English |
 | --- | --- |

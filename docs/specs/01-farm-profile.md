@@ -115,9 +115,9 @@ hiding) how sure it is.
 |---|---|---|---|---|
 | Time from opening `/field/setup` to a finished profile, guest, Hindi | Leading | < 2 min | < 60 s | Stopwatch in the 8 moderated tests; Playwright timing as a floor |
 | Guests who finish the wizard after starting it | Leading | 70% | 85% | Privacy-light count of step-reached events (no location, no phone) |
-| Results shown with every trust field present | Quality | 100% | — | Contract test on every tool |
+| Results shown with every trust field present | Quality | 100% | - | Contract test on every tool |
 | Farmers who say they understand why a result was given | Leading | 60% | 75% | Post-task question in moderated tests |
-| Guests who later "Save my farm" | Lagging | Measured, no target yet | — | Pilot count (spec's riskiest-assumptions table) |
+| Guests who later "Save my farm" | Lagging | Measured, no target yet | - | Pilot count (spec's riskiest-assumptions table) |
 
 ## Open questions
 

@@ -14,8 +14,8 @@ of its 44 px.
 
 | Token | Hex | Use | Contrast |
 |---|---|---|---|
-| `bg` | `#faf7f2` | page | — |
-| `surface` / `surface-2` | `#ffffff` / `#f1ebe1` | cards / muted panels | — |
+| `bg` | `#faf7f2` | page | - |
+| `surface` / `surface-2` | `#ffffff` / `#f1ebe1` | cards / muted panels | - |
 | `ink` | `#2b2118` | body text | 14.7:1 on bg |
 | `ink-muted` | `#5c4b3b` | secondary text | 7.8:1 on bg |
 | `soil` / `soil-soft` | `#5a3b22` / `#7a5230` | top bar, bag icons, soil band | white on soil 10.1:1 |
@@ -23,7 +23,7 @@ of its 44 px.
 | `good` / `good-bg` | `#1e5a2a` / `#e3f1e3` | good verdicts, high confidence | 7.0:1 |
 | `warn` / `warn-bg` | `#7a4a00` / `#fdf0d2` | caution, medium confidence | 6.6:1 |
 | `crit` / `crit-bg` | `#9b1c1c` / `#fbe5e3` | don't, errors | 6.8:1 |
-| `line` / `line-soft` | `#8c7b68` / `#d9cfc1` | input borders (3.8:1) / dividers | — |
+| `line` / `line-soft` | `#8c7b68` / `#d9cfc1` | input borders (3.8:1) / dividers | - |
 
 `tests/test_design_tokens.py` re-checks every pair. Tailwind's default palette
 is switched off (`--color-*: initial`), so only these colours exist.
