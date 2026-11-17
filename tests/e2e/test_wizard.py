@@ -89,6 +89,10 @@ def test_choose_district_without_gps(page):
     page.select_option('form:has(input[value="district"]) select[name="district_code"]', "UP-gautam-buddh-nagar")
     page.locator('form:has(input[value="district"]) button[type=submit]').click()
     page.wait_for_selector('input[name="area"]')
+    # The profile is written to localStorage after the step renders; wait for it.
+    page.wait_for_function(
+        "(JSON.parse(localStorage.getItem('agrisense.profile') || '{}').farm || {}).location_source"
+    )
     assert stored(page)["farm"]["location_source"] == "district"
 
 
